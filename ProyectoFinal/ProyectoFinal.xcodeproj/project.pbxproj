@@ -12,6 +12,22 @@
 		6A18290C2819D9FF004984D4 /* ProyectoFinal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6A18290A2819D9FF004984D4 /* ProyectoFinal.xcdatamodeld */; };
 		6A18290E2819DA01004984D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A18290D2819DA01004984D4 /* Assets.xcassets */; };
 		6A1829112819DA01004984D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A18290F2819DA01004984D4 /* LaunchScreen.storyboard */; };
+		6A8EF5562819FE5200F35C37 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8EF54F2819FE5200F35C37 /* LoginPresenter.swift */; };
+		6A8EF5572819FE5200F35C37 /* LoginLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8EF5502819FE5200F35C37 /* LoginLocalDataManager.swift */; };
+		6A8EF5582819FE5200F35C37 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8EF5512819FE5200F35C37 /* LoginProtocols.swift */; };
+		6A8EF5592819FE5200F35C37 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8EF5522819FE5200F35C37 /* LoginInteractor.swift */; };
+		6A8EF55A2819FE5200F35C37 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8EF5532819FE5200F35C37 /* LoginView.swift */; };
+		6A8EF55B2819FE5200F35C37 /* LoginRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8EF5542819FE5200F35C37 /* LoginRemoteDataManager.swift */; };
+		6A8EF55C2819FE5200F35C37 /* LoginWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8EF5552819FE5200F35C37 /* LoginWireFrame.swift */; };
+		6A8EF55F2819FE6D00F35C37 /* LoginView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A8EF55E2819FE6D00F35C37 /* LoginView.storyboard */; };
+		6A8EF567281A0C8E00F35C37 /* SignupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8EF560281A0C8D00F35C37 /* SignupPresenter.swift */; };
+		6A8EF568281A0C8E00F35C37 /* SignupLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8EF561281A0C8D00F35C37 /* SignupLocalDataManager.swift */; };
+		6A8EF569281A0C8E00F35C37 /* SignupProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8EF562281A0C8D00F35C37 /* SignupProtocols.swift */; };
+		6A8EF56A281A0C8E00F35C37 /* SignupInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8EF563281A0C8D00F35C37 /* SignupInteractor.swift */; };
+		6A8EF56B281A0C8E00F35C37 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8EF564281A0C8D00F35C37 /* SignupView.swift */; };
+		6A8EF56C281A0C8E00F35C37 /* SignupRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8EF565281A0C8D00F35C37 /* SignupRemoteDataManager.swift */; };
+		6A8EF56D281A0C8E00F35C37 /* SignupWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8EF566281A0C8D00F35C37 /* SignupWireFrame.swift */; };
+		6A8EF570281A0CD600F35C37 /* SignupView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A8EF56F281A0CD600F35C37 /* SignupView.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +38,22 @@
 		6A18290D2819DA01004984D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A1829102819DA01004984D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A1829122819DA01004984D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A8EF54F2819FE5200F35C37 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		6A8EF5502819FE5200F35C37 /* LoginLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginLocalDataManager.swift; sourceTree = "<group>"; };
+		6A8EF5512819FE5200F35C37 /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
+		6A8EF5522819FE5200F35C37 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		6A8EF5532819FE5200F35C37 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		6A8EF5542819FE5200F35C37 /* LoginRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRemoteDataManager.swift; sourceTree = "<group>"; };
+		6A8EF5552819FE5200F35C37 /* LoginWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWireFrame.swift; sourceTree = "<group>"; };
+		6A8EF55E2819FE6D00F35C37 /* LoginView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginView.storyboard; sourceTree = "<group>"; };
+		6A8EF560281A0C8D00F35C37 /* SignupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPresenter.swift; sourceTree = "<group>"; };
+		6A8EF561281A0C8D00F35C37 /* SignupLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupLocalDataManager.swift; sourceTree = "<group>"; };
+		6A8EF562281A0C8D00F35C37 /* SignupProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupProtocols.swift; sourceTree = "<group>"; };
+		6A8EF563281A0C8D00F35C37 /* SignupInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupInteractor.swift; sourceTree = "<group>"; };
+		6A8EF564281A0C8D00F35C37 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		6A8EF565281A0C8D00F35C37 /* SignupRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupRemoteDataManager.swift; sourceTree = "<group>"; };
+		6A8EF566281A0C8D00F35C37 /* SignupWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupWireFrame.swift; sourceTree = "<group>"; };
+		6A8EF56F281A0CD600F35C37 /* SignupView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignupView.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +90,42 @@
 				6A1829032819D9FF004984D4 /* SceneDelegate.swift */,
 				6A18290D2819DA01004984D4 /* Assets.xcassets */,
 				6A18290F2819DA01004984D4 /* LaunchScreen.storyboard */,
+				6A8EF56E281A0C9D00F35C37 /* SignupView */,
+				6A8EF55D2819FE5900F35C37 /* LoginView */,
 				6A1829122819DA01004984D4 /* Info.plist */,
 				6A18290A2819D9FF004984D4 /* ProyectoFinal.xcdatamodeld */,
 			);
 			path = ProyectoFinal;
+			sourceTree = "<group>";
+		};
+		6A8EF55D2819FE5900F35C37 /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				6A8EF5532819FE5200F35C37 /* LoginView.swift */,
+				6A8EF55E2819FE6D00F35C37 /* LoginView.storyboard */,
+				6A8EF54F2819FE5200F35C37 /* LoginPresenter.swift */,
+				6A8EF5502819FE5200F35C37 /* LoginLocalDataManager.swift */,
+				6A8EF5512819FE5200F35C37 /* LoginProtocols.swift */,
+				6A8EF5522819FE5200F35C37 /* LoginInteractor.swift */,
+				6A8EF5542819FE5200F35C37 /* LoginRemoteDataManager.swift */,
+				6A8EF5552819FE5200F35C37 /* LoginWireFrame.swift */,
+			);
+			path = LoginView;
+			sourceTree = "<group>";
+		};
+		6A8EF56E281A0C9D00F35C37 /* SignupView */ = {
+			isa = PBXGroup;
+			children = (
+				6A8EF564281A0C8D00F35C37 /* SignupView.swift */,
+				6A8EF56F281A0CD600F35C37 /* SignupView.storyboard */,
+				6A8EF560281A0C8D00F35C37 /* SignupPresenter.swift */,
+				6A8EF561281A0C8D00F35C37 /* SignupLocalDataManager.swift */,
+				6A8EF562281A0C8D00F35C37 /* SignupProtocols.swift */,
+				6A8EF563281A0C8D00F35C37 /* SignupInteractor.swift */,
+				6A8EF565281A0C8D00F35C37 /* SignupRemoteDataManager.swift */,
+				6A8EF566281A0C8D00F35C37 /* SignupWireFrame.swift */,
+			);
+			path = SignupView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,7 +187,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A1829112819DA01004984D4 /* LaunchScreen.storyboard in Resources */,
+				6A8EF570281A0CD600F35C37 /* SignupView.storyboard in Resources */,
 				6A18290E2819DA01004984D4 /* Assets.xcassets in Resources */,
+				6A8EF55F2819FE6D00F35C37 /* LoginView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,9 +200,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A8EF567281A0C8E00F35C37 /* SignupPresenter.swift in Sources */,
+				6A8EF56D281A0C8E00F35C37 /* SignupWireFrame.swift in Sources */,
+				6A8EF5562819FE5200F35C37 /* LoginPresenter.swift in Sources */,
 				6A18290C2819D9FF004984D4 /* ProyectoFinal.xcdatamodeld in Sources */,
+				6A8EF5592819FE5200F35C37 /* LoginInteractor.swift in Sources */,
+				6A8EF569281A0C8E00F35C37 /* SignupProtocols.swift in Sources */,
 				6A1829022819D9FF004984D4 /* AppDelegate.swift in Sources */,
+				6A8EF568281A0C8E00F35C37 /* SignupLocalDataManager.swift in Sources */,
+				6A8EF55C2819FE5200F35C37 /* LoginWireFrame.swift in Sources */,
+				6A8EF5582819FE5200F35C37 /* LoginProtocols.swift in Sources */,
+				6A8EF56B281A0C8E00F35C37 /* SignupView.swift in Sources */,
 				6A1829042819D9FF004984D4 /* SceneDelegate.swift in Sources */,
+				6A8EF55A2819FE5200F35C37 /* LoginView.swift in Sources */,
+				6A8EF5572819FE5200F35C37 /* LoginLocalDataManager.swift in Sources */,
+				6A8EF56A281A0C8E00F35C37 /* SignupInteractor.swift in Sources */,
+				6A8EF55B2819FE5200F35C37 /* LoginRemoteDataManager.swift in Sources */,
+				6A8EF56C281A0C8E00F35C37 /* SignupRemoteDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +360,7 @@
 				INFOPLIST_FILE = ProyectoFinal/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = LoginView;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -308,7 +388,7 @@
 				INFOPLIST_FILE = ProyectoFinal/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = LoginView;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
