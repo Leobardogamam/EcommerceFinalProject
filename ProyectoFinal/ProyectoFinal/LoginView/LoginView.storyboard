@@ -34,12 +34,15 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Forgot Password?"/>
+                                            <connections>
+                                                <action selector="forgetPassPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="LNv-9K-EQQ"/>
+                                            </connections>
                                         </button>
                                         <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Qh-DA-aGi">
                                             <rect key="frame" x="32" y="46" width="265" height="34"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" systemColor="tertiarySystemFillColor"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
@@ -58,6 +61,9 @@
                                                     <integer key="value" value="5"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="loginPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="kLZ-j8-Ih6"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3B-s4-HeC">
                                             <rect key="frame" x="226" y="231" width="94" height="31"/>
@@ -115,6 +121,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ygz-II-p4n"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="6Qh-DA-aGi" id="sng-YG-uQf"/>
+                        <outlet property="passTextField" destination="vTq-lM-mY7" id="e74-M3-J7n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

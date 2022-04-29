@@ -12,6 +12,7 @@ import UIKit
 protocol LoginViewProtocol: AnyObject {
     // PRESENTER -> VIEW
     var presenter: LoginPresenterProtocol? { get set }
+    func compareGetData(userList : [Users])
 }
 
 protocol LoginWireFrameProtocol: AnyObject {
@@ -32,6 +33,7 @@ protocol LoginPresenterProtocol: AnyObject {
 
 protocol LoginInteractorOutputProtocol: AnyObject {
 // INTERACTOR -> PRESENTER
+    func interactorPushDataPresenter(receivedData : [Users])
 }
 
 protocol LoginInteractorInputProtocol: AnyObject {
@@ -39,6 +41,8 @@ protocol LoginInteractorInputProtocol: AnyObject {
     var presenter: LoginInteractorOutputProtocol? { get set }
     var localDatamanager: LoginLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: LoginRemoteDataManagerInputProtocol? { get set }
+    
+    func getUsers()
 }
 
 protocol LoginDataManagerInputProtocol: AnyObject {
@@ -48,10 +52,13 @@ protocol LoginDataManagerInputProtocol: AnyObject {
 protocol LoginRemoteDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> REMOTEDATAMANAGER
     var remoteRequestHandler: LoginRemoteDataManagerOutputProtocol? { get set }
+    
+    func externalGetUsers()
 }
 
 protocol LoginRemoteDataManagerOutputProtocol: AnyObject {
     // REMOTEDATAMANAGER -> INTERACTOR
+    func remoteDataManagerCallBackData(with userList : [Users])
 }
 
 protocol LoginLocalDataManagerInputProtocol: AnyObject {

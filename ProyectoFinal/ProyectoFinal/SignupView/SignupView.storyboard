@@ -59,6 +59,9 @@
                                                     <integer key="value" value="5"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="signUpPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fvE-ud-INf"/>
+                                            </connections>
                                         </button>
                                         <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TSk-3F-wQt">
                                             <rect key="frame" x="32" y="31" width="265" height="34"/>
@@ -114,6 +117,12 @@
                             <constraint firstItem="oS1-pf-Yqx" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="dmH-Nw-slX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="confirmPass" destination="S0t-08-slP" id="UOg-h2-DjL"/>
+                        <outlet property="emailTextField" destination="5ks-6d-yiT" id="QqS-fq-Qcx"/>
+                        <outlet property="nameTextField" destination="TSk-3F-wQt" id="MgW-PU-5F5"/>
+                        <outlet property="passTextField" destination="y7Y-0C-qSh" id="sG9-KO-MWg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

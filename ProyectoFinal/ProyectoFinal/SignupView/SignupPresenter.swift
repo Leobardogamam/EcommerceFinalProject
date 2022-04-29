@@ -8,21 +8,40 @@
 
 import Foundation
 
-class SignupPresenter  {
+class SignupPresenter: SignupPresenterProtocol  {
     
     // MARK: Properties
     weak var view: SignupViewProtocol?
     var interactor: SignupInteractorInputProtocol?
     var wireFrame: SignupWireFrameProtocol?
     
-}
-
-extension SignupPresenter: SignupPresenterProtocol {
+    var email: String?
+    var password: String?
+    var name: String?
+    
     // TODO: implement presenter methods
     func viewDidLoad() {
+        interactor?.checkUser(email: email!)
     }
+    
 }
 
+
 extension SignupPresenter: SignupInteractorOutputProtocol {
+   
     // TODO: implement interactor output methods
+    func interactorPushCheckUser(userExist: Bool) {
+        if !userExist{
+            interactor?.addUser(email: email!, password: password!, name: name!)
+        }
+        else{
+            view?.alertUserNotAvailable()
+        }
+    }
+    
+    func interactorPushUserAdded(userAdded: UserAdded) {
+        
+    }
+    
+    
 }

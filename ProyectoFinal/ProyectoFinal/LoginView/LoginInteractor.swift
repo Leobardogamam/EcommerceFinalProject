@@ -14,9 +14,18 @@ class LoginInteractor: LoginInteractorInputProtocol {
     weak var presenter: LoginInteractorOutputProtocol?
     var localDatamanager: LoginLocalDataManagerInputProtocol?
     var remoteDatamanager: LoginRemoteDataManagerInputProtocol?
+    
+    func getUsers() {
+        remoteDatamanager?.externalGetUsers()
+    }
 
 }
 
 extension LoginInteractor: LoginRemoteDataManagerOutputProtocol {
+    
     // TODO: Implement use case methods
+    
+    func remoteDataManagerCallBackData(with userList: [Users]) {
+        presenter?.interactorPushDataPresenter(receivedData: userList)
+    }
 }
