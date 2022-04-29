@@ -231,11 +231,11 @@
 			isa = PBXGroup;
 			children = (
 				975B77A9281A234C00AF96BD /* CardPay */,
-				975B77A8281A232100AF96BD /* BuyItems */,
 				97901F48281A4C1F00E367BB /* DeleteEditCards */,
 				97901F47281A4C1800E367BB /* AddCards */,
 				97901F46281A4C0700E367BB /* MyCards */,
 				975B77AB281A237800AF96BD /* ViewProfile */,
+				975B77A8281A232100AF96BD /* BuyItems */,
 				975B77AA281A235800AF96BD /* ViewPurchases-VerCompras */,
 				975B77A7281A22A400AF96BD /* ShopingCar */,
 				975B77A6281A227000AF96BD /* DetailProductView */,
@@ -254,7 +254,6 @@
 		975B77A3281A225500AF96BD /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
-				D62208F7281A57AF00FEE193 /* hola */,
 				975B77AD281A23D500AF96BD /* HomeView.storyboard */,
 				975B77AF281A23DD00AF96BD /* HomeViewPresenter.swift */,
 				975B77B0281A23DD00AF96BD /* HomeViewLocalDataManager.swift */,
@@ -390,6 +389,7 @@
 		97901F47281A4C1800E367BB /* AddCards */ = {
 			isa = PBXGroup;
 			children = (
+				97901F67281A4CF000E367BB /* AddCards.storyboard */,
 				97901F59281A4CDA00E367BB /* AddCardsPresenter.swift */,
 				97901F5A281A4CDA00E367BB /* AddCardsLocalDataManager.swift */,
 				97901F5B281A4CDA00E367BB /* AddCardsProtocols.swift */,
@@ -397,7 +397,6 @@
 				97901F5D281A4CDA00E367BB /* AddCardsView.swift */,
 				97901F5E281A4CDA00E367BB /* AddCardsRemoteDataManager.swift */,
 				97901F5F281A4CDA00E367BB /* AddCardsWireFrame.swift */,
-				97901F67281A4CF000E367BB /* AddCards.storyboard */,
 			);
 			path = AddCards;
 			sourceTree = "<group>";
@@ -415,13 +414,6 @@
 				97901F71281A4D0C00E367BB /* DeleteEditCardsWireFrame.swift */,
 			);
 			path = DeleteEditCards;
-			sourceTree = "<group>";
-		};
-		D62208F7281A57AF00FEE193 /* hola */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = hola;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
