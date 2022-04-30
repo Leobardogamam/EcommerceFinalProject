@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View View-->
         <scene sceneID="EYJ-OZ-iuh">
             <objects>
-                <viewController id="ykY-nd-deQ" customClass="ViewController" customModule="ProyectoFinal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ykY-nd-deQ" customClass="HomeViewView" customModule="ProyectoFinal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TPe-PQ-kih">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="210" width="414" height="592"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celdaTabla" rowHeight="310" id="LFK-ZK-sVG" customClass="CeldaTabla" customModule="ProyectoFinal" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellTableHomeView" rowHeight="310" id="LFK-ZK-sVG" customClass="HomeTableViewCell" customModule="ProyectoFinal" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="310"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LFK-ZK-sVG" id="0bP-Zo-gqh">
@@ -42,7 +42,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="celdaCollection" id="ddx-g8-M5U" customClass="CeldaCollection" customModule="ProyectoFinal" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellCollectionTableHome" id="ddx-g8-M5U" customClass="CollectionTableHomeView" customModule="ProyectoFinal" customModuleProvider="target">
                                                             <rect key="frame" x="10" y="34" width="150" height="150"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7Rr-7r-Zgh">
@@ -98,7 +98,9 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
-                                                                <outlet property="img" destination="qO5-66-lXs" id="vQc-Or-xtC"/>
+                                                                <outlet property="imgCollectionTableHome" destination="qO5-66-lXs" id="Nt8-LM-scq"/>
+                                                                <outlet property="lblNombreProducto" destination="Zt4-n0-eG8" id="1Xk-fp-TZK"/>
+                                                                <outlet property="lblPrecioProducto" destination="B9L-0J-nNa" id="BeS-yS-Oc9"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
@@ -141,11 +143,14 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="colecctionView" destination="6zL-dh-BzB" id="JCA-jR-5Yv"/>
-                                            <outlet property="label" destination="Nna-er-aoM" id="dt5-0k-dn1"/>
+                                            <outlet property="collectionTableViewHome" destination="6zL-dh-BzB" id="lSy-ih-Y6m"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ykY-nd-deQ" id="Cey-Gn-p2u"/>
+                                    <outlet property="delegate" destination="ykY-nd-deQ" id="l2p-h1-kuu"/>
+                                </connections>
                             </tableView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SXA-cG-Amm">
                                 <rect key="frame" x="0.0" y="120" width="414" height="80"/>
@@ -161,7 +166,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="celdaCollectionView" id="819-sk-rt5">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellCollectionView" id="819-sk-rt5" customClass="CollectionHomeView" customModule="ProyectoFinal" customModuleProvider="target">
                                         <rect key="frame" x="10" y="0.0" width="100" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8fy-pN-L55">
@@ -206,16 +211,24 @@
                                                 <integer key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="imgCollectionView" destination="L5E-kE-Pp3" id="fvG-0z-04q"/>
+                                            <outlet property="lblNombreProductoCollectionView" destination="J60-HY-CvV" id="h9O-Zh-VGF"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="o6V-uT-rUm">
                                     <rect key="frame" x="0.0" y="0.0" width="10" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionReusableView>
-                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="" id="3eI-SQ-vo7">
+                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="cellCollectionView" id="3eI-SQ-vo7">
                                     <rect key="frame" x="110" y="0.0" width="25" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="ykY-nd-deQ" id="m3c-yX-C6L"/>
+                                    <outlet property="delegate" destination="ykY-nd-deQ" id="w5R-la-K9d"/>
+                                </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yr7-l7-JI6">
                                 <rect key="frame" x="0.0" y="802" width="414" height="60"/>
@@ -244,11 +257,29 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" image="cart" catalog="system" id="8Yn-qt-lgd"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="collectionView" destination="SXA-cG-Amm" id="fZB-lp-Gm2"/>
-                        <outlet property="tableView" destination="7Cq-NJ-CC9" id="Yic-z5-qKd"/>
+                        <outlet property="collectionHomeView" destination="SXA-cG-Amm" id="CFA-72-8pF"/>
+                        <outlet property="tableHomeView" destination="7Cq-NJ-CC9" id="UZl-3g-c4H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0BF-v5-9XD" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1839.1304347826087" y="81.696428571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="38g-7l-oah">
+            <objects>
+                <navigationController storyboardIdentifier="navigation" automaticallyAdjustsScrollViewInsets="NO" id="XcH-Y1-wgf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UB1-5J-5Vt">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ykY-nd-deQ" kind="relationship" relationship="rootViewController" id="klP-Ii-LxP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7VU-yf-PGA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="81.696428571428569"/>
         </scene>
