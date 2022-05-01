@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class SignupPresenter: SignupPresenterProtocol  {
     
@@ -18,6 +19,7 @@ class SignupPresenter: SignupPresenterProtocol  {
     var email: String?
     var password: String?
     var name: String?
+    var avatarImage: UIImage?
     
     // TODO: implement presenter methods
     func viewDidLoad() {
@@ -28,16 +30,26 @@ class SignupPresenter: SignupPresenterProtocol  {
 
 
 extension SignupPresenter: SignupInteractorOutputProtocol {
+    
    
     // TODO: implement interactor output methods
     func interactorPushCheckUser(userExist: Bool) {
-        if !userExist{
-            interactor?.addUser(email: email!, password: password!, name: name!)
+        if userExist{
+            interactor?.addImage(avatarImage: avatarImage!)
         }
         else{
-            view?.alertUserNotAvailable()
+            
+            DispatchQueue.main.async {
+                self.view?.alertUserNotAvailable()
+            }
+           
         }
     }
+    
+    func interactorPushImageAdded(imageAdded: String) {
+        interactor?.addUser(email: email!, password: password!, name: name!, avatar: imageAdded)
+    }
+    
     
     func interactorPushUserAdded(userAdded: UserAdded) {
         

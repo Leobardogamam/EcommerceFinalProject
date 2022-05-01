@@ -14,6 +14,7 @@
 		6A1829112819DA01004984D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A18290F2819DA01004984D4 /* LaunchScreen.storyboard */; };
 		6A890755281B775B0017D87F /* CheckUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A890754281B775B0017D87F /* CheckUser.swift */; };
 		6A890757281B8BBF0017D87F /* UserAdded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A890756281B8BBF0017D87F /* UserAdded.swift */; };
+		6A890759281C837C0017D87F /* ImageAdded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A890758281C837B0017D87F /* ImageAdded.swift */; };
 		6A8EF5562819FE5200F35C37 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8EF54F2819FE5200F35C37 /* LoginPresenter.swift */; };
 		6A8EF5572819FE5200F35C37 /* LoginLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8EF5502819FE5200F35C37 /* LoginLocalDataManager.swift */; };
 		6A8EF5582819FE5200F35C37 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8EF5512819FE5200F35C37 /* LoginProtocols.swift */; };
@@ -45,6 +46,7 @@
 		6A1829122819DA01004984D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A890754281B775B0017D87F /* CheckUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUser.swift; sourceTree = "<group>"; };
 		6A890756281B8BBF0017D87F /* UserAdded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAdded.swift; sourceTree = "<group>"; };
+		6A890758281C837B0017D87F /* ImageAdded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAdded.swift; sourceTree = "<group>"; };
 		6A8EF54F2819FE5200F35C37 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		6A8EF5502819FE5200F35C37 /* LoginLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginLocalDataManager.swift; sourceTree = "<group>"; };
 		6A8EF5512819FE5200F35C37 /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				6A8EF566281A0C8D00F35C37 /* SignupWireFrame.swift */,
 				6A890754281B775B0017D87F /* CheckUser.swift */,
 				6A890756281B8BBF0017D87F /* UserAdded.swift */,
+				6A890758281C837B0017D87F /* ImageAdded.swift */,
 			);
 			path = SignupView;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A890759281C837C0017D87F /* ImageAdded.swift in Sources */,
 				6A8EF567281A0C8E00F35C37 /* SignupPresenter.swift in Sources */,
 				6A8EF56D281A0C8E00F35C37 /* SignupWireFrame.swift in Sources */,
 				6A8EF5562819FE5200F35C37 /* LoginPresenter.swift in Sources */,

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class SignupInteractor: SignupInteractorInputProtocol {
 
@@ -19,8 +20,12 @@ class SignupInteractor: SignupInteractorInputProtocol {
         remoteDatamanager?.externalCheckUser(email: email)
     }
     
-    func addUser(email: String, password: String, name: String) {
-        remoteDatamanager?.externalAddUser(email: email, password: password, name: name)
+    func addImage(avatarImage: UIImage) {
+        remoteDatamanager?.externalAddImage(avatarImage: avatarImage)
+    }
+    
+    func addUser(email: String, password: String, name: String, avatar: String) {
+        remoteDatamanager?.externalAddUser(email: email, password: password, name: name, avatar: avatar)
     }
 
 }
@@ -31,6 +36,10 @@ extension SignupInteractor: SignupRemoteDataManagerOutputProtocol {
     
     func remotePushCheckUser(userExist: Bool) {
         presenter?.interactorPushCheckUser(userExist: userExist)
+    }
+    
+    func remotepushImageAdded(imageAdded: String) {
+        presenter?.interactorPushImageAdded(imageAdded: imageAdded)
     }
     
     func remotepushUserAdded(userAdded: UserAdded) {

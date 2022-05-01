@@ -29,6 +29,7 @@ protocol SignupPresenterProtocol: AnyObject {
     var email: String? { get set }
     var password : String? { get set }
     var name : String? { get set }
+    var avatarImage : UIImage? { get set }
     
     func viewDidLoad()
    
@@ -37,6 +38,7 @@ protocol SignupPresenterProtocol: AnyObject {
 protocol SignupInteractorOutputProtocol: AnyObject {
 // INTERACTOR -> PRESENTER
     func interactorPushCheckUser(userExist : Bool)
+    func interactorPushImageAdded(imageAdded : String)
     func interactorPushUserAdded(userAdded : UserAdded)
 }
 
@@ -47,7 +49,8 @@ protocol SignupInteractorInputProtocol: AnyObject {
     var remoteDatamanager: SignupRemoteDataManagerInputProtocol? { get set }
     
     func checkUser(email : String)
-    func addUser(email : String, password : String, name : String)
+    func addUser(email : String, password : String, name : String, avatar : String)
+    func addImage(avatarImage : UIImage)
 }
 
 protocol SignupDataManagerInputProtocol: AnyObject {
@@ -58,12 +61,14 @@ protocol SignupRemoteDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> REMOTEDATAMANAGER
     var remoteRequestHandler: SignupRemoteDataManagerOutputProtocol? { get set }
     func externalCheckUser(email : String)
-    func externalAddUser(email : String, password : String, name : String)
+    func externalAddUser(email : String, password : String, name : String, avatar : String)
+    func externalAddImage(avatarImage : UIImage)
 }
 
 protocol SignupRemoteDataManagerOutputProtocol: AnyObject {
     // REMOTEDATAMANAGER -> INTERACTOR
     func remotePushCheckUser(userExist : Bool)
+    func remotepushImageAdded(imageAdded : String)
     func remotepushUserAdded(userAdded : UserAdded)
 }
 
