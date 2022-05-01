@@ -18,11 +18,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let scene = (scene as? UIWindowScene) else { return }
         
-        //Inicializar el modulo de viper y mostrar una ventana con este ViewController
-        let loginView = LoginWireFrame.createLoginModule()// Se encarga de inicializar los modulos y tambien de presentarlos
+        let homeView = HomeViewWireFrame.createHomeViewModule()
         window = UIWindow(windowScene: scene)
-        window!.rootViewController = loginView
-        window!.makeKeyAndVisible()
+        window?.rootViewController = homeView
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
