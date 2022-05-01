@@ -12,6 +12,7 @@
 		6A18290C2819D9FF004984D4 /* ProyectoFinal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6A18290A2819D9FF004984D4 /* ProyectoFinal.xcdatamodeld */; };
 		6A18290E2819DA01004984D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A18290D2819DA01004984D4 /* Assets.xcassets */; };
 		6A1829112819DA01004984D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A18290F2819DA01004984D4 /* LaunchScreen.storyboard */; };
+		9706B1DF281ECD1B002023E6 /* structCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9706B1DE281ECD1B002023E6 /* structCategories.swift */; };
 		97094648281CF07F005296E8 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97094647281CF07F005296E8 /* HomeTableViewCell.swift */; };
 		975B77AE281A23D500AF96BD /* HomeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 975B77AD281A23D500AF96BD /* HomeView.storyboard */; };
 		975B77B6281A23DD00AF96BD /* HomeViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975B77AF281A23DD00AF96BD /* HomeViewPresenter.swift */; };
@@ -113,6 +114,7 @@
 		6A18290D2819DA01004984D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A1829102819DA01004984D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A1829122819DA01004984D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9706B1DE281ECD1B002023E6 /* structCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = structCategories.swift; sourceTree = "<group>"; };
 		97094647281CF07F005296E8 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		975B77AD281A23D500AF96BD /* HomeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeView.storyboard; sourceTree = "<group>"; };
 		975B77AF281A23DD00AF96BD /* HomeViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewPresenter.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 				975B77B4281A23DD00AF96BD /* HomeViewRemoteDataManager.swift */,
 				975B77B5281A23DD00AF96BD /* HomeViewWireFrame.swift */,
 				97094649281CF0B2005296E8 /* TableViewCell */,
+				9706B1DE281ECD1B002023E6 /* structCategories.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -579,6 +582,7 @@
 				975B77FD281A243700AF96BD /* BuyItemsRemoteDataManager.swift in Sources */,
 				97901F75281A4D0C00E367BB /* DeleteEditCardsInteractor.swift in Sources */,
 				975B77D7281A240C00AF96BD /* DetailProductViewLocalDataManager.swift in Sources */,
+				9706B1DF281ECD1B002023E6 /* structCategories.swift in Sources */,
 				97901F76281A4D0C00E367BB /* DeleteEditCardsView.swift in Sources */,
 				97901F74281A4D0C00E367BB /* DeleteEditCardsProtocols.swift in Sources */,
 				97901F60281A4CDA00E367BB /* AddCardsPresenter.swift in Sources */,

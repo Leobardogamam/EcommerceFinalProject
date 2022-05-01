@@ -20,9 +20,15 @@ class HomeViewPresenter  {
 extension HomeViewPresenter: HomeViewPresenterProtocol {
     // TODO: implement presenter methods
     func viewDidLoad() {
+        interactor?.getCategoriesData()
+        
     }
 }
 
 extension HomeViewPresenter: HomeViewInteractorOutputProtocol {
     // TODO: implement interactor output methods
+    func pushData(with data: [Categories]) {
+        view?.pushData(with: data)
+    }
+    
 }

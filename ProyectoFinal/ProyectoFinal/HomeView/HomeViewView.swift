@@ -17,6 +17,7 @@ class HomeViewView: UIViewController {
 
     // MARK: Properties
     var presenter: HomeViewPresenterProtocol?
+    var dataCategories = [Categories]()
     
     @IBOutlet weak var collectionHomeView: UICollectionView!
     @IBOutlet weak var TabBar: TabBarNavigationButtons!
@@ -27,23 +28,37 @@ class HomeViewView: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.viewDidLoad()
     }
 }
 
 extension HomeViewView: HomeViewViewProtocol {
+    func pushData(with data: [Categories]) {
+        self.dataCategories = data
+        DispatchQueue.main.async {
+            self.collectionHomeView.reloadData()
+            self.tableHomeView.reloadData()
+        }
+    }
+    
     // TODO: implement view output methods
 }
-
+//MARK: COLLECTION
 extension HomeViewView: UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return self.dataCategories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellCollectionView", for: indexPath) as? CollectionHomeView
-        
-        cell?.imgCollectionView.image = UIImage(named: "9")
-        cell?.lblNombreProductoCollectionView.text = "Nombre"
+        DispatchQueue.global(qos: .default).async {
+            let url = URL(string: (self.dataCategories[indexPath.row].image) ?? "https://static.wikia.nocookie.net/ssbb/images/b/b8/025Pikachu_LG.png/revision/latest?cb=20190520161120&path-prefix=es")
+            let data = try? Data(contentsOf: url!)
+            DispatchQueue.main.async {
+                cell?.imgCollectionView.image = UIImage(data: data!)
+            }
+        }
+        cell?.lblNombreProductoCollectionView.text = self.dataCategories[indexPath.row].name
         
         return cell ?? UICollectionViewCell()
     }

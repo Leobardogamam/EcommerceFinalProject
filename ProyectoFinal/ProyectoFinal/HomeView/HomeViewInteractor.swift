@@ -9,14 +9,24 @@
 import Foundation
 
 class HomeViewInteractor: HomeViewInteractorInputProtocol {
+    
 
     // MARK: Properties
     weak var presenter: HomeViewInteractorOutputProtocol?
     var localDatamanager: HomeViewLocalDataManagerInputProtocol?
     var remoteDatamanager: HomeViewRemoteDataManagerInputProtocol?
+    
+    func getCategoriesData() {
+        remoteDatamanager?.callCategoriesData()
+    }
+    
 
 }
 
 extension HomeViewInteractor: HomeViewRemoteDataManagerOutputProtocol {
     // TODO: Implement use case methods
+    func getCategoriesData(with data: [Categories]) {
+        presenter?.pushData(with: data)
+    }
+    
 }

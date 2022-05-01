@@ -12,6 +12,7 @@ import UIKit
 protocol HomeViewViewProtocol: class {
     // PRESENTER -> VIEW
     var presenter: HomeViewPresenterProtocol? { get set }
+    func pushData(with data:[Categories])
 }
 
 protocol HomeViewWireFrameProtocol: class {
@@ -30,6 +31,7 @@ protocol HomeViewPresenterProtocol: class {
 
 protocol HomeViewInteractorOutputProtocol: class {
 // INTERACTOR -> PRESENTER
+    func pushData(with data:[Categories])
 }
 
 protocol HomeViewInteractorInputProtocol: class {
@@ -37,6 +39,8 @@ protocol HomeViewInteractorInputProtocol: class {
     var presenter: HomeViewInteractorOutputProtocol? { get set }
     var localDatamanager: HomeViewLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: HomeViewRemoteDataManagerInputProtocol? { get set }
+    
+    func getCategoriesData()
 }
 
 protocol HomeViewDataManagerInputProtocol: class {
@@ -46,10 +50,13 @@ protocol HomeViewDataManagerInputProtocol: class {
 protocol HomeViewRemoteDataManagerInputProtocol: class {
     // INTERACTOR -> REMOTEDATAMANAGER
     var remoteRequestHandler: HomeViewRemoteDataManagerOutputProtocol? { get set }
+    
+    func callCategoriesData()
 }
 
 protocol HomeViewRemoteDataManagerOutputProtocol: class {
     // REMOTEDATAMANAGER -> INTERACTOR
+    func getCategoriesData(with data:[Categories])
 }
 
 protocol HomeViewLocalDataManagerInputProtocol: class {
