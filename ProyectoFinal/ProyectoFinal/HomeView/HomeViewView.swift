@@ -19,6 +19,7 @@ class HomeViewView: UIViewController {
     var presenter: HomeViewPresenterProtocol?
     
     @IBOutlet weak var collectionHomeView: UICollectionView!
+    @IBOutlet weak var TabBar: TabBarNavigationButtons!
     @IBOutlet weak var tableHomeView: UITableView!
     
 

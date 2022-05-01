@@ -101,6 +101,8 @@
 		97901F76281A4D0C00E367BB /* DeleteEditCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97901F6F281A4D0C00E367BB /* DeleteEditCardsView.swift */; };
 		97901F77281A4D0C00E367BB /* DeleteEditCardsRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97901F70281A4D0C00E367BB /* DeleteEditCardsRemoteDataManager.swift */; };
 		97901F78281A4D0C00E367BB /* DeleteEditCardsWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97901F71281A4D0C00E367BB /* DeleteEditCardsWireFrame.swift */; };
+		97AF0EAF281E53C5009583F6 /* TabBarNavigationButtons.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97AF0EAE281E53C5009583F6 /* TabBarNavigationButtons.xib */; };
+		97AF0EB1281E540E009583F6 /* TabBarNavigationButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AF0EB0281E540E009583F6 /* TabBarNavigationButtons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -200,6 +202,8 @@
 		97901F6F281A4D0C00E367BB /* DeleteEditCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteEditCardsView.swift; sourceTree = "<group>"; };
 		97901F70281A4D0C00E367BB /* DeleteEditCardsRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteEditCardsRemoteDataManager.swift; sourceTree = "<group>"; };
 		97901F71281A4D0C00E367BB /* DeleteEditCardsWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteEditCardsWireFrame.swift; sourceTree = "<group>"; };
+		97AF0EAE281E53C5009583F6 /* TabBarNavigationButtons.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarNavigationButtons.xib; sourceTree = "<group>"; };
+		97AF0EB0281E540E009583F6 /* TabBarNavigationButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarNavigationButtons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +236,7 @@
 		6A1829002819D9FF004984D4 /* ProyectoFinal */ = {
 			isa = PBXGroup;
 			children = (
+				97AF0EAD281E53A5009583F6 /* TabBarNavigationButtons */,
 				975B77A9281A234C00AF96BD /* CardPay */,
 				97901F48281A4C1F00E367BB /* DeleteEditCards */,
 				97901F47281A4C1800E367BB /* AddCards */,
@@ -427,6 +432,15 @@
 			path = DeleteEditCards;
 			sourceTree = "<group>";
 		};
+		97AF0EAD281E53A5009583F6 /* TabBarNavigationButtons */ = {
+			isa = PBXGroup;
+			children = (
+				97AF0EAE281E53C5009583F6 /* TabBarNavigationButtons.xib */,
+				97AF0EB0281E540E009583F6 /* TabBarNavigationButtons.swift */,
+			);
+			path = TabBarNavigationButtons;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -490,6 +504,7 @@
 				975B77F0281A242F00AF96BD /* BuyItems.storyboard in Resources */,
 				97901F6A281A4D0500E367BB /* DeleteEditCards.storyboard in Resources */,
 				975B77CC281A23F800AF96BD /* UserAccount.storyboard in Resources */,
+				97AF0EAF281E53C5009583F6 /* TabBarNavigationButtons.xib in Resources */,
 				975B782E281A248800AF96BD /* ViewProfile.storyboard in Resources */,
 				6A1829112819DA01004984D4 /* LaunchScreen.storyboard in Resources */,
 				975B780E281A245000AF96BD /* Cards.storyboard in Resources */,
@@ -585,6 +600,7 @@
 				975B781C281A246200AF96BD /* ViewPurchasesView.swift in Sources */,
 				975B77E8281A241500AF96BD /* ShopingCarView.swift in Sources */,
 				975B7829281A247C00AF96BD /* ViewProfileInteractor.swift in Sources */,
+				97AF0EB1281E540E009583F6 /* TabBarNavigationButtons.swift in Sources */,
 				975B77D6281A240C00AF96BD /* DetailProductViewPresenter.swift in Sources */,
 				97901F66281A4CDA00E367BB /* AddCardsWireFrame.swift in Sources */,
 				97901F63281A4CDA00E367BB /* AddCardsInteractor.swift in Sources */,

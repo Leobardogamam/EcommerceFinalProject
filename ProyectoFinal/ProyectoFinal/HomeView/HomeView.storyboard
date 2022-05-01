@@ -230,7 +230,7 @@
                                     <outlet property="delegate" destination="ykY-nd-deQ" id="w5R-la-K9d"/>
                                 </connections>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yr7-l7-JI6">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yr7-l7-JI6" customClass="TabBarNavigationButtons" customModule="ProyectoFinal" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="802" width="414" height="60"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -257,6 +257,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" image="cart" catalog="system" id="8Yn-qt-lgd"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="TabBar" destination="yr7-l7-JI6" id="kmQ-cD-m9A"/>
                         <outlet property="collectionHomeView" destination="SXA-cG-Amm" id="CFA-72-8pF"/>
                         <outlet property="tableHomeView" destination="7Cq-NJ-CC9" id="UZl-3g-c4H"/>
                     </connections>
