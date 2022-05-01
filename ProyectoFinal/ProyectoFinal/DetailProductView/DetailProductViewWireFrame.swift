@@ -11,9 +11,9 @@ import UIKit
 
 class DetailProductViewWireFrame: DetailProductViewWireFrameProtocol {
 
-    class func createDetailProductViewModule() -> UIViewController {
-        let navController = mainStoryboard.instantiateViewController(withIdentifier: "DetailProductViewView")
-        if let view = navController.children.first as? DetailProductViewView {
+    class func createDetailProductViewModule(product:Product) -> UIViewController {
+        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "DetailProductView")
+        if let view = viewController as? DetailProductViewView {
             let presenter: DetailProductViewPresenterProtocol & DetailProductViewInteractorOutputProtocol = DetailProductViewPresenter()
             let interactor: DetailProductViewInteractorInputProtocol & DetailProductViewRemoteDataManagerOutputProtocol = DetailProductViewInteractor()
             let localDataManager: DetailProductViewLocalDataManagerInputProtocol = DetailProductViewLocalDataManager()
@@ -23,19 +23,20 @@ class DetailProductViewWireFrame: DetailProductViewWireFrameProtocol {
             view.presenter = presenter
             presenter.view = view
             presenter.wireFrame = wireFrame
+            presenter.product = product
             presenter.interactor = interactor
             interactor.presenter = presenter
             interactor.localDatamanager = localDataManager
             interactor.remoteDatamanager = remoteDataManager
             remoteDataManager.remoteRequestHandler = interactor
             
-            return navController
+            return viewController
         }
         return UIViewController()
     }
     
     static var mainStoryboard: UIStoryboard {
-        return UIStoryboard(name: "DetailProductViewView", bundle: Bundle.main)
+        return UIStoryboard(name: "DetailProductView", bundle: Bundle.main)
     }
     
 }

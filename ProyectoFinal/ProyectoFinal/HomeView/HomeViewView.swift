@@ -51,8 +51,9 @@ extension HomeViewView: UICollectionViewDelegate,UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellCollectionView", for: indexPath) as? CollectionHomeView
+        cell?.imgCollectionView.image = UIImage(named: "loading")
         DispatchQueue.global(qos: .default).async {
-            let url = URL(string: (self.dataCategories[indexPath.row].image) ?? "https://static.wikia.nocookie.net/ssbb/images/b/b8/025Pikachu_LG.png/revision/latest?cb=20190520161120&path-prefix=es")
+            let url = URL(string: (self.dataCategories[indexPath.row].image) )
             let data = try? Data(contentsOf: url!)
             DispatchQueue.main.async {
                 cell?.imgCollectionView.image = UIImage(data: data!)
@@ -66,13 +67,19 @@ extension HomeViewView: UICollectionViewDelegate,UICollectionViewDataSource{
 
 extension HomeViewView:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.dataCategories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellTableHomeView", for: indexPath) as? HomeTableViewCell
         
+        cell?.lblNombreCategory.text = self.dataCategories[indexPath.row].name
+        
         return cell ?? UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.showSpecifcCategory(id: self.dataCategories[indexPath.row].id, name: self.dataCategories[indexPath.row].name)
     }
     
     

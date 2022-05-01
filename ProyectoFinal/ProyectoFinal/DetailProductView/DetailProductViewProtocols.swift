@@ -12,11 +12,13 @@ import UIKit
 protocol DetailProductViewViewProtocol: class {
     // PRESENTER -> VIEW
     var presenter: DetailProductViewPresenterProtocol? { get set }
+    
+    func getDataProduct(product:Product)
 }
 
 protocol DetailProductViewWireFrameProtocol: class {
     // PRESENTER -> WIREFRAME
-    static func createDetailProductViewModule() -> UIViewController
+    static func createDetailProductViewModule(product:Product) -> UIViewController
 }
 
 protocol DetailProductViewPresenterProtocol: class {
@@ -24,6 +26,7 @@ protocol DetailProductViewPresenterProtocol: class {
     var view: DetailProductViewViewProtocol? { get set }
     var interactor: DetailProductViewInteractorInputProtocol? { get set }
     var wireFrame: DetailProductViewWireFrameProtocol? { get set }
+    var product:Product? {get set}
     
     func viewDidLoad()
 }

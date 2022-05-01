@@ -8,20 +8,25 @@
 
 import Foundation
 
-class DetailProductViewPresenter  {
+class DetailProductViewPresenter: DetailProductViewPresenterProtocol  {
     
     // MARK: Properties
     weak var view: DetailProductViewViewProtocol?
     var interactor: DetailProductViewInteractorInputProtocol?
     var wireFrame: DetailProductViewWireFrameProtocol?
+    var product: Product?
     
-}
-
-extension DetailProductViewPresenter: DetailProductViewPresenterProtocol {
     // TODO: implement presenter methods
     func viewDidLoad() {
+        guard let product = product else {
+            return
+        }
+
+        view?.getDataProduct(product: product)
+        
     }
 }
+
 
 extension DetailProductViewPresenter: DetailProductViewInteractorOutputProtocol {
     // TODO: implement interactor output methods

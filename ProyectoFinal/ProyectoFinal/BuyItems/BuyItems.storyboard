@@ -122,6 +122,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RxK-P4-Gwx">
+                                <rect key="frame" x="16" y="408" width="382" height="3"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="3" id="TRe-nF-PZk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -129,11 +139,14 @@
                             <constraint firstItem="aZb-Pi-M7R" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="180" id="3QJ-HX-e0b"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="dAt-FP-YpW" secondAttribute="trailing" constant="32" id="AdO-2f-gkh"/>
                             <constraint firstItem="asB-Y3-M4w" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="PBs-ZW-dSP"/>
+                            <constraint firstAttribute="trailing" secondItem="RxK-P4-Gwx" secondAttribute="trailing" constant="16" id="RZL-vt-a3B"/>
                             <constraint firstAttribute="bottomMargin" secondItem="hko-A2-3Nk" secondAttribute="bottom" constant="-20" id="afi-6Y-5XN"/>
+                            <constraint firstItem="RxK-P4-Gwx" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="16" id="cqr-x9-Dmy"/>
                             <constraint firstItem="hko-A2-3Nk" firstAttribute="top" secondItem="asB-Y3-M4w" secondAttribute="bottom" constant="32" id="dKJ-dj-ppB"/>
                             <constraint firstItem="aZb-Pi-M7R" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="dZm-Rc-YbJ"/>
                             <constraint firstItem="hko-A2-3Nk" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="478" id="e7y-Em-mIB"/>
                             <constraint firstItem="hko-A2-3Nk" firstAttribute="top" secondItem="dAt-FP-YpW" secondAttribute="bottom" constant="32" id="j7W-qG-pHQ"/>
+                            <constraint firstItem="RxK-P4-Gwx" firstAttribute="top" secondItem="aZb-Pi-M7R" secondAttribute="bottom" constant="64" id="mPx-pe-YsH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hko-A2-3Nk" secondAttribute="trailing" constant="-24" id="nei-eQ-F1V"/>
                             <constraint firstItem="hko-A2-3Nk" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leadingMargin" constant="-40" id="xDx-ao-dhZ"/>
                         </constraints>
@@ -147,6 +160,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

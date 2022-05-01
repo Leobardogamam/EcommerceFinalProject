@@ -18,6 +18,7 @@ protocol HomeViewViewProtocol: class {
 protocol HomeViewWireFrameProtocol: class {
     // PRESENTER -> WIREFRAME
     static func createHomeViewModule() -> UIViewController
+    func showSpecificCategory(from view:HomeViewViewProtocol,id:Int, name:String)
 }
 
 protocol HomeViewPresenterProtocol: class {
@@ -27,6 +28,7 @@ protocol HomeViewPresenterProtocol: class {
     var wireFrame: HomeViewWireFrameProtocol? { get set }
     
     func viewDidLoad()
+    func showSpecifcCategory(id:Int, name: String)
 }
 
 protocol HomeViewInteractorOutputProtocol: class {

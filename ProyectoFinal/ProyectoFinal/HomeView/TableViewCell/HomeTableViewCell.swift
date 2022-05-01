@@ -15,6 +15,7 @@ class CollectionTableHomeView: UICollectionViewCell{
 
 class HomeTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lblNombreCategory: UILabel!
     @IBOutlet weak var collectionTableViewHome: UICollectionView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,7 +41,7 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellCollectionTableHome", for: indexPath) as? CollectionTableHomeView
         
-        cell?.imgCollectionTableHome.image = UIImage(named: "9")
+        cell?.imgCollectionTableHome.image = UIImage(named: "loading")
         cell?.lblNombreProducto.text = "Producto"
         cell?.lblPrecioProducto.text = "200"
         

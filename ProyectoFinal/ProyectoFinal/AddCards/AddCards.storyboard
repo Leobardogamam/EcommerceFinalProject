@@ -233,9 +233,12 @@
                                     <constraint firstItem="rSi-a0-JEz" firstAttribute="leading" secondItem="COP-xA-YBf" secondAttribute="trailing" constant="8" id="wI5-cC-fot"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6WI-s4-PbL">
-                                <rect key="frame" x="70.5" y="575" width="273.5" height="56"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6WI-s4-PbL">
+                                <rect key="frame" x="70.5" y="580" width="273.5" height="56"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="273.5" id="7q9-zM-jnL"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Agregar Tarjeta">
@@ -252,6 +255,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="bpM-zD-E9l" firstAttribute="top" secondItem="Rdx-CT-8Yc" secondAttribute="bottom" constant="40" id="53c-xN-b1T"/>
+                            <constraint firstItem="6WI-s4-PbL" firstAttribute="top" secondItem="ch6-oX-mhX" secondAttribute="bottom" constant="32" id="H7R-Jd-eT9"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ch6-oX-mhX" secondAttribute="trailing" id="I8H-7H-3wZ"/>
                             <constraint firstItem="Rdx-CT-8Yc" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="120" id="L1e-lX-odB"/>
                             <constraint firstItem="ch6-oX-mhX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ZGj-bF-gWO"/>

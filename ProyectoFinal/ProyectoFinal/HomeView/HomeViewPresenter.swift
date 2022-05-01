@@ -23,6 +23,9 @@ extension HomeViewPresenter: HomeViewPresenterProtocol {
         interactor?.getCategoriesData()
         
     }
+    func showSpecifcCategory(id: Int, name:String) {
+        wireFrame?.showSpecificCategory(from: view!, id: id, name: name)
+    }
 }
 
 extension HomeViewPresenter: HomeViewInteractorOutputProtocol {
