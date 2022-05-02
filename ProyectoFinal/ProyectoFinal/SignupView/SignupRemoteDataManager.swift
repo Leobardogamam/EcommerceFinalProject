@@ -50,60 +50,32 @@ class SignupRemoteDataManager:SignupRemoteDataManagerInputProtocol {
     
     func externalAddImage(avatarImage: UIImage) {
         
-        avatarImage.accessibilityIdentifier = "avatarImage.png"
-        print(avatarImage.accessibilityIdentifier!)
-        
-        let parameters = [
-          [
-            "key": "file",
-            "src": avatarImage.accessibilityIdentifier!,
-            "type": "file"
-          ]] as [[String : Any]]
-
-        let boundary = "Boundary-\(UUID().uuidString)"
-        var body = ""
-        var error: Error? = nil
-        
-        for param in parameters {
-          if param["disabled"] == nil {
-            let paramName = param["key"]!
-            body += "--\(boundary)\r\n"
-            body += "Content-Disposition:form-data; name=\"\(paramName)\""
-            if param["contentType"] != nil {
-              body += "\r\nContent-Type: \(param["contentType"] as! String)"
-            }
-            let paramType = param["type"] as! String
-            if paramType == "text" {
-              let paramValue = param["value"] as! String
-              body += "\r\n\r\n\(paramValue)\r\n"
-            } else {
-              let paramSrc = param["src"] as! String
-              let fileData = (try? NSData(contentsOfFile:paramSrc, options:[]) as Data)!
-              let fileContent = String(data: fileData, encoding: .utf8)!
-            body += "; filename=\"\(paramSrc)\"\r\n"
-                + "Content-Type: \"content-type header\"\r\n\r\n\(fileContent)\r\n"
-            }
-          }
-        }
-        body += "--\(boundary)--\r\n";
-        let postData = body.data(using: .utf8)
-
-        var request = URLRequest(url: URL(string: "https://api.escuelajs.co/api/v1/files/upload")!,timeoutInterval: Double.infinity)
-        request.addValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
-
-        request.httpMethod = "POST"
-        request.httpBody = postData
-
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-          guard let data = data else {
-            print(String(describing: error))
-       
-            return
-          }
-          print(String(data: data, encoding: .utf8)!)
-        }
-
-        task.resume()
+        let nombreParametro = "file"
+        let nombreArchivo = "avatarImagen.png"
+        //Genera y válida URL
+              guard let url = URL(string: "https://api.escuelajs.co/api/v1/files/upload") else {return}
+              //Para entidades de tipo multipart la directiva boundary es obligatoria. Ella consiste en una secuencia de 1 a 70 caracteres de un conjunto conocido por su robustez en pasarelas de correo electrónico, y no pueden terminar con espacios en blanco. Es usada para encapsular los limites de los mensajes de múltiples partes.
+              let boundary = UUID().uuidString
+              var urlRequest = URLRequest(url: url)
+              urlRequest.httpMethod = "POST"
+              urlRequest.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+              var data = Data()
+              data.append("\r\n--\(boundary)\r\n".data(using: .utf8)!)
+              data.append("Content-Disposition: form-data; name=\"\(nombreParametro)\"; filename=\"\(nombreArchivo)\"\r\n".data(using: .utf8)!)
+              data.append("Content-Type: image/png\r\n\r\n".data(using: .utf8)!)
+              data.append(avatarImage.pngData()!)
+              data.append("\r\n--\(boundary)--\r\n".data(using: .utf8)!)
+              print(String(decoding: data, as: UTF8.self))
+              URLSession.shared.uploadTask(with: urlRequest, from: data, completionHandler: { responseData, response, error in
+                  if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                      print("statusCode debería ser 200 y es \(httpStatus.statusCode)")
+                      print("response = \(response)")
+                  }
+                  if error == nil {
+                      let jsonData = try? JSONDecoder().decode(ImageAdded.self, from: responseData!)
+                      self.remoteRequestHandler?.remotepushImageAdded(imageAdded: jsonData!.location)
+                  }
+              }).resume()
     }
     
     func externalAddUser(email: String, password: String, name: String, avatar: String) {
