@@ -56,8 +56,8 @@
                                                                     <color key="textColor" red="0.7449327912" green="0.37206744759999999" blue="0.36509291579999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Fondo" translatesAutoresizingMaskIntoConstraints="NO" id="iU5-iz-0Wg">
-                                                                    <rect key="frame" x="0.0" y="-1" width="160" height="210"/>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fondo" translatesAutoresizingMaskIntoConstraints="NO" id="iU5-iz-0Wg">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="210"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="160" id="9hk-hM-djX"/>
                                                                         <constraint firstAttribute="height" constant="210" id="Rz6-WU-z3U"/>
@@ -93,11 +93,11 @@
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
-                                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tLT-HK-aWJ">
+                                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="categoryCollectionHeader" id="tLT-HK-aWJ">
                                                     <rect key="frame" x="0.0" y="0.0" width="366" height="10"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </collectionReusableView>
-                                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Rkn-pU-o9q">
+                                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="categoryCollectionFooter" id="Rkn-pU-o9q">
                                                     <rect key="frame" x="0.0" y="270" width="366" height="10"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </collectionReusableView>

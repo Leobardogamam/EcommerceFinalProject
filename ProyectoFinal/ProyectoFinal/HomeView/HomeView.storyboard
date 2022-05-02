@@ -104,11 +104,11 @@
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
-                                                    <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="b9Y-fy-y38">
+                                                    <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="headerCellCategories" id="b9Y-fy-y38">
                                                         <rect key="frame" x="0.0" y="0.0" width="10" height="218"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </collectionReusableView>
-                                                    <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="WXa-Pc-6cR">
+                                                    <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="footerCellCategories" id="WXa-Pc-6cR">
                                                         <rect key="frame" x="160" y="0.0" width="10" height="218"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </collectionReusableView>
@@ -215,10 +215,11 @@
                                         <connections>
                                             <outlet property="imgCollectionView" destination="L5E-kE-Pp3" id="fvG-0z-04q"/>
                                             <outlet property="lblNombreProductoCollectionView" destination="J60-HY-CvV" id="h9O-Zh-VGF"/>
+                                            <outlet property="viewCategory" destination="8fy-pN-L55" id="jjL-H0-HSq"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="o6V-uT-rUm">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="categoriesCeldaCollectionHeader" id="o6V-uT-rUm">
                                     <rect key="frame" x="0.0" y="0.0" width="10" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionReusableView>
