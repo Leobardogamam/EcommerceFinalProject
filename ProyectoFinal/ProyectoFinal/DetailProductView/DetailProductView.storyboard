@@ -102,7 +102,7 @@
                                     <constraint firstAttribute="height" constant="50" id="h90-tq-G8T"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="delete.backward" catalog="system" title="">
+                                <buttonConfiguration key="configuration" style="plain" image="multiply.circle" catalog="system" title="">
                                     <color key="baseForegroundColor" systemColor="tintColor"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -138,7 +138,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="delete.backward" catalog="system" width="128" height="104"/>
+        <image name="multiply.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

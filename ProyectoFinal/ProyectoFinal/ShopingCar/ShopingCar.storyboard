@@ -119,14 +119,14 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aeX-gM-Sgc" customClass="TabBarNavigationButtons" customModule="ProyectoFinal" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="802" width="414" height="60"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="qO4-xu-f3G"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="P6o-UZ-xRh"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstItem="6xg-yZ-XBn" firstAttribute="top" secondItem="JT6-mm-vxn" secondAttribute="top" id="CJx-Bk-2LH"/>
                             <constraint firstAttribute="trailing" secondItem="6xg-yZ-XBn" secondAttribute="trailing" id="J0C-Ni-3bG"/>
@@ -150,6 +150,9 @@
         <image name="arrow.right.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -27,7 +27,7 @@
                                 <rect key="frame" x="24" y="110" width="366" height="786"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KoZ-R8-6S8">
-                                        <rect key="frame" x="0.0" y="0.0" width="366" height="770"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="366" height="700"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oRc-FV-cUR">
                                                 <rect key="frame" x="0.0" y="0.0" width="366" height="700"/>
@@ -106,42 +106,6 @@
                                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="OXs-UG-1fD"/>
                                                 </connections>
                                             </collectionView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XwW-0k-mby">
-                                                <rect key="frame" x="0.0" y="700" width="366" height="70"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="97" translatesAutoresizingMaskIntoConstraints="NO" id="eLC-4u-BU9">
-                                                        <rect key="frame" x="58" y="0.0" width="250" height="70"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Frf-XP-fC8">
-                                                                <rect key="frame" x="0.0" y="0.0" width="18.5" height="70"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" image="icons8-back-64" title=""/>
-                                                            </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOh-Dz-v7G">
-                                                                <rect key="frame" x="115.5" y="0.0" width="19" height="70"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDI-Tn-tjl">
-                                                                <rect key="frame" x="231.5" y="0.0" width="18.5" height="70"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" image="icons8-next-page-64" title=""/>
-                                                            </button>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="250" id="iDK-V3-cf9"/>
-                                                            <constraint firstAttribute="height" constant="70" id="vNo-5B-pJM"/>
-                                                        </constraints>
-                                                    </stackView>
-                                                </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstItem="eLC-4u-BU9" firstAttribute="centerY" secondItem="XwW-0k-mby" secondAttribute="centerY" id="dBN-TC-Lin"/>
-                                                    <constraint firstAttribute="height" constant="70" id="gRI-k8-edo"/>
-                                                    <constraint firstItem="eLC-4u-BU9" firstAttribute="centerX" secondItem="XwW-0k-mby" secondAttribute="centerX" id="gWS-jg-LAu"/>
-                                                </constraints>
-                                            </view>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -194,8 +158,6 @@
     </scenes>
     <resources>
         <image name="Fondo" width="156" height="322"/>
-        <image name="icons8-back-64" width="64" height="64"/>
-        <image name="icons8-next-page-64" width="64" height="64"/>
         <image name="multiply.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
