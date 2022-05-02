@@ -23,7 +23,6 @@ class HomeViewRemoteDataManager:HomeViewRemoteDataManagerInputProtocol {
             do{
                 let datosDecodificados = try JSONDecoder().decode([Categories].self, from:datos)
                 self.dataCategories = datosDecodificados
-//                print("Los datos son: ",self.dataCategories)
                 self.remoteRequestHandler?.getCategoriesData(with: self.dataCategories)
             }catch{
                 print("Ocurrio un error al convertir los datos")

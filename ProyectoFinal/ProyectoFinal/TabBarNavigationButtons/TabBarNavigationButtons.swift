@@ -7,8 +7,13 @@
 
 import UIKit
 
-class TabBarNavigationButtons: UIView {
+protocol MyViewDelegate {
+    func didTapButton(number:Int)
+}
 
+
+class TabBarNavigationButtons: UIView {
+    var delegate: MyViewDelegate?
     
     @IBOutlet weak var btnHome: UIButton!
     @IBOutlet weak var btnUserAccount: UIButton!
@@ -29,5 +34,24 @@ class TabBarNavigationButtons: UIView {
         xibView.frame = self.bounds
         addSubview(xibView)
     }
+   
+    @IBAction func actionsNavigation(_ sender: UIButton) {
+        switch sender.tag{
+        case 0:
+            buttonTapAction(number: sender.tag)
+        case 1:
+            buttonTapAction(number: sender.tag)
+        case 2:
+            buttonTapAction(number: sender.tag)
+                print("Go to the user")
+        default:
+            print("Error")
+        }
+    }
+
+    func buttonTapAction(number:Int) {
+            delegate?.didTapButton(number: number)
+        }
+    
     
 }

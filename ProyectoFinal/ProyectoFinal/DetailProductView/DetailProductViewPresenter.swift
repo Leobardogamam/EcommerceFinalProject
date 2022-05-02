@@ -21,9 +21,7 @@ class DetailProductViewPresenter: DetailProductViewPresenterProtocol  {
         guard let product = product else {
             return
         }
-
         view?.getDataProduct(product: product)
-        
     }
 }
 

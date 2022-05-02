@@ -14,9 +14,9 @@ class CollectionHomeView: UICollectionViewCell{
     @IBOutlet weak var viewCategory: UIView!
 }
 
-class HomeViewView: UIViewController {
-
+class HomeViewView: UIViewController , MyViewDelegate{
     // MARK: Properties
+    //var tabBar = TabBarNavigationButtons()
     var presenter: HomeViewPresenterProtocol?
     var dataCategories = [Categories]()
     var dataCategoriesTable = [Categories]()
@@ -36,6 +36,24 @@ class HomeViewView: UIViewController {
         TabBar.btnHome.backgroundColor = .systemGray2
         TabBar.btnCart.backgroundColor = .clear
         TabBar.btnUserAccount.backgroundColor = .clear
+        TabBar.delegate = self
+        
+    }
+    
+    func didTapButton(number:Int) {
+        switch number{
+        case 0:
+            self.navigationController?.pushViewController(HomeViewWireFrame.createHomeViewModule(), animated: true)
+        case 1:
+            self.navigationController?.pushViewController(ShopingCarWireFrame.createShopingCarModule(), animated: true)
+            self.present(UserAccountWireFrame.createUserAccountModule(),animated:true)
+        case 2:
+            dismiss(animated: true)
+            self.present(UserAccountWireFrame.createUserAccountModule(),animated:true)
+            
+        default:
+            print("Error")
+        }
     }
 }
 
@@ -86,7 +104,7 @@ extension HomeViewView: UICollectionViewDelegate,UICollectionViewDataSource{
         }
     }
 }
-
+//MARK: TABLE VIEW
 extension HomeViewView:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataCategoriesTable.count

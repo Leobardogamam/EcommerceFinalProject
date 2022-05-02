@@ -19,7 +19,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pAD-Qu-0ah">
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pAD-Qu-0ah">
                     <rect key="frame" x="177" y="0.0" width="60" height="60"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="Re7-D0-8Fa"/>
@@ -27,6 +27,9 @@
                     </constraints>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="cart" catalog="system"/>
+                    <connections>
+                        <action selector="actionsNavigation:" destination="-1" eventType="touchUpInside" id="UHv-2n-V3Z"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sHK-QK-b0s">
                     <rect key="frame" x="32" y="0.0" width="60" height="60"/>
@@ -37,8 +40,11 @@
                     </constraints>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="homekit" catalog="system"/>
+                    <connections>
+                        <action selector="actionsNavigation:" destination="-1" eventType="touchUpInside" id="lMy-dS-6km"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="diQ-sq-tpt">
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="diQ-sq-tpt">
                     <rect key="frame" x="322" y="0.0" width="60" height="60"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="MnI-lx-n7d"/>
@@ -46,6 +52,9 @@
                     </constraints>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="person" catalog="system"/>
+                    <connections>
+                        <action selector="actionsNavigation:" destination="-1" eventType="touchUpInside" id="92R-9X-0M6"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

@@ -12,7 +12,7 @@
         <!--Home View View-->
         <scene sceneID="EYJ-OZ-iuh">
             <objects>
-                <viewController id="ykY-nd-deQ" customClass="HomeViewView" customModule="ProyectoFinal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeView" id="ykY-nd-deQ" customClass="HomeViewView" customModule="ProyectoFinal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TPe-PQ-kih">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -267,24 +267,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0BF-v5-9XD" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1839.1304347826087" y="81.696428571428569"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="38g-7l-oah">
-            <objects>
-                <navigationController storyboardIdentifier="navigation" automaticallyAdjustsScrollViewInsets="NO" id="XcH-Y1-wgf" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UB1-5J-5Vt">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="ykY-nd-deQ" kind="relationship" relationship="rootViewController" id="klP-Ii-LxP"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7VU-yf-PGA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="928.98550724637687" y="81.696428571428569"/>
         </scene>
     </scenes>
     <resources>

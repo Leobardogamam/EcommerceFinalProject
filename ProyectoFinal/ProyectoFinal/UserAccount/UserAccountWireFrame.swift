@@ -12,8 +12,8 @@ import UIKit
 class UserAccountWireFrame: UserAccountWireFrameProtocol {
 
     class func createUserAccountModule() -> UIViewController {
-        let navController = mainStoryboard.instantiateViewController(withIdentifier: "UserAccountView")
-        if let view = navController.children.first as? UserAccountView {
+        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "UserAccountView")
+        if let view = viewController as? UserAccountView {
             let presenter: UserAccountPresenterProtocol & UserAccountInteractorOutputProtocol = UserAccountPresenter()
             let interactor: UserAccountInteractorInputProtocol & UserAccountRemoteDataManagerOutputProtocol = UserAccountInteractor()
             let localDataManager: UserAccountLocalDataManagerInputProtocol = UserAccountLocalDataManager()
@@ -29,13 +29,13 @@ class UserAccountWireFrame: UserAccountWireFrameProtocol {
             interactor.remoteDatamanager = remoteDataManager
             remoteDataManager.remoteRequestHandler = interactor
             
-            return navController
+            return viewController
         }
         return UIViewController()
     }
     
     static var mainStoryboard: UIStoryboard {
-        return UIStoryboard(name: "UserAccountView", bundle: Bundle.main)
+        return UIStoryboard(name: "UserAccount", bundle: Bundle.main)
     }
     
 }
