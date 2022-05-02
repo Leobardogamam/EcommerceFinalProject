@@ -43,7 +43,6 @@ class TabBarNavigationButtons: UIView {
             buttonTapAction(number: sender.tag)
         case 2:
             buttonTapAction(number: sender.tag)
-                print("Go to the user")
         default:
             print("Error")
         }

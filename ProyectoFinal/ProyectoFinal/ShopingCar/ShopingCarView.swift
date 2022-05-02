@@ -25,17 +25,14 @@ class ShopingCarView: UIViewController, MyViewDelegate {
     func didTapButton(number: Int) {
         switch number{
         case 0:
-            self.navigationController?.pushViewController(HomeViewWireFrame.createHomeViewModule(), animated: true)
+            self.present(HomeViewWireFrame.createHomeViewModule(),animated:true)
         case 1:
-            
-            self.navigationController?.pushViewController(ShopingCarWireFrame.createShopingCarModule(), animated: true)
+            print("Ya estas Aqui")
         case 2:
-            //self.navigationController?.popViewController(animated: true)
-            self.navigationController?.pushViewController(UserAccountWireFrame.createUserAccountModule(), animated: true)
+            self.present(UserAccountWireFrame.createUserAccountModule(),animated:true)
         default:
             print("Error")
         }
-        
     }
 }
 

@@ -43,12 +43,14 @@ class HomeViewView: UIViewController , MyViewDelegate{
     func didTapButton(number:Int) {
         switch number{
         case 0:
-            self.navigationController?.pushViewController(HomeViewWireFrame.createHomeViewModule(), animated: true)
+           print("Ya estas ahi wey......")
         case 1:
-            self.navigationController?.pushViewController(ShopingCarWireFrame.createShopingCarModule(), animated: true)
-            self.present(UserAccountWireFrame.createUserAccountModule(),animated:true)
+//            self.navigationController?.pushViewController(ShopingCarWireFrame.createShopingCarModule(), animated: true)
+            
+            self.present(ShopingCarWireFrame.createShopingCarModule(),animated:true)
+            
         case 2:
-            dismiss(animated: true)
+            
             self.present(UserAccountWireFrame.createUserAccountModule(),animated:true)
             
         default:
@@ -104,6 +106,7 @@ extension HomeViewView: UICollectionViewDelegate,UICollectionViewDataSource{
         }
     }
 }
+
 //MARK: TABLE VIEW
 extension HomeViewView:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

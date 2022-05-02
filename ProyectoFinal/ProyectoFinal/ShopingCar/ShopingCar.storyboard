@@ -11,7 +11,7 @@
         <!--Shoping Car View-->
         <scene sceneID="YYP-AX-3nn">
             <objects>
-                <viewController storyboardIdentifier="ShopingCar" id="STK-sk-yw6" customClass="ShopingCarView" customModule="ProyectoFinal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShopingCar" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="STK-sk-yw6" customClass="ShopingCarView" customModule="ProyectoFinal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JT6-mm-vxn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

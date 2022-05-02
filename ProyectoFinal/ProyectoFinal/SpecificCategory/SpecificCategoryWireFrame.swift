@@ -43,7 +43,8 @@ class SpecificCategoryWireFrame: SpecificCategoryWireFrameProtocol {
         let newProductView = DetailProductViewWireFrame.createDetailProductViewModule(product: product)
         
         if let newView = view as? UIViewController{
-            newView.navigationController?.pushViewController(newProductView, animated: true)
+            newView.present(newProductView, animated: true)
+//            newView.navigationController?.pushViewController(newProductView, animated: true)
         }
     }
 }

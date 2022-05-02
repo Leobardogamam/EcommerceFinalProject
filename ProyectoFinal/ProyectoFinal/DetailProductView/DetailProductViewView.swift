@@ -16,6 +16,7 @@ class DetailProductViewView: UIViewController {
     @IBOutlet weak var lblNameProduct: UILabel!
     @IBOutlet weak var lblPriceProduct: UILabel!
     @IBOutlet weak var lblDescriptionProduct: UILabel!
+    @IBOutlet weak var btnReturnBack: UIButton!
     var presenter: DetailProductViewPresenterProtocol?
 
     // MARK: Lifecycle
@@ -23,7 +24,15 @@ class DetailProductViewView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()
+        btnReturnBack.layer.cornerRadius = btnReturnBack.frame.height / 2
     }
+    
+    @IBAction func onPressReturnBack(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
+
+    
+    
 }
 
 extension DetailProductViewView: DetailProductViewViewProtocol {

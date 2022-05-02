@@ -29,6 +29,9 @@ class SpecificCategoryView: UIViewController {
         super.viewDidLoad()
         presenter?.viewDidLoad()
     }
+    @IBAction func onPressReturnBack(_ sender: Any) {
+        dismiss(animated: true)
+    }
 }
 
 extension SpecificCategoryView: SpecificCategoryViewProtocol {

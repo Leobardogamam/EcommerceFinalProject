@@ -39,10 +39,11 @@ class HomeViewWireFrame: HomeViewWireFrameProtocol {
     
     
     func showSpecificCategory(from view: HomeViewViewProtocol, id: Int, name:String) {
-        let newDetailView = SpecificCategoryWireFrame.createSpecificCategoryModule(with: id, name: name)
+//        let newDetailView = SpecificCategoryWireFrame.createSpecificCategoryModule(with: id, name: name)
         
         if let newView = view as? UIViewController{
-            newView.navigationController?.pushViewController(newDetailView, animated: true)
+            newView.present(SpecificCategoryWireFrame.createSpecificCategoryModule(with: id, name: name),animated:true)
+//            newView.navigationController?.pushViewController(newDetailView, animated: true)
         }
     }
     

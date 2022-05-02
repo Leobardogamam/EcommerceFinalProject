@@ -12,7 +12,7 @@
         <!--Home View View-->
         <scene sceneID="EYJ-OZ-iuh">
             <objects>
-                <viewController storyboardIdentifier="homeView" id="ykY-nd-deQ" customClass="HomeViewView" customModule="ProyectoFinal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeView" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="ykY-nd-deQ" customClass="HomeViewView" customModule="ProyectoFinal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TPe-PQ-kih">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
