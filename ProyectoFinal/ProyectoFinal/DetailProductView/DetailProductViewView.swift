@@ -43,7 +43,7 @@ extension DetailProductViewView: DetailProductViewViewProtocol {
         self.lblNameProduct.text = product.title
         self.imgProduct.image = UIImage(named: "loading")
         DispatchQueue.global(qos: .default).async {
-            let url = URL(string: product.images[0])
+            let url = URL(string: product.images?[0] ?? "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930")
             let data = try? Data(contentsOf: url!)
             guard let dat = data else{return}
             DispatchQueue.main.async {

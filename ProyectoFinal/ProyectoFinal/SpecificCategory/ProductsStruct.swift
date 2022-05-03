@@ -12,5 +12,5 @@ struct Product:Codable{
     let title:String
     let price: Int
     let description: String
-    let images:[String]
+    let images:[String]?
 }

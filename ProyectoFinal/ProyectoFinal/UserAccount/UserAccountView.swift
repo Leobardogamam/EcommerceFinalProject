@@ -22,6 +22,10 @@ class UserAccountView: UIViewController, MyViewDelegate {
         tabBar.delegate = self
     }
     
+    
+    
+    
+    
     func didTapButton(number: Int) {
         switch number{
         case 0:

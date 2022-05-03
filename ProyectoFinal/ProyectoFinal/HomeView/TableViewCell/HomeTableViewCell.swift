@@ -6,6 +6,11 @@
 //
 
 import UIKit
+
+protocol passCollectionProduct{
+    func pasarProducto(product:Product)
+}
+
 class CollectionTableHomeView: UICollectionViewCell{
     @IBOutlet weak var imgCollectionTableHome: UIImageView!
     @IBOutlet weak var lblPrecioProducto: UILabel!
@@ -20,7 +25,8 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var lblNombreCategory: UILabel!
     @IBOutlet weak var collectionTableViewHome: UICollectionView!
     var id = Int()
-    var datos = [Product]()
+    var datos:[Product]?
+    var delegate:passCollectionProduct?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -39,7 +45,7 @@ class HomeTableViewCell: UITableViewCell {
 extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
       
-    return datos.count
+        return datos?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -47,19 +53,28 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellCollectionTableHome", for: indexPath) as? CollectionTableHomeView
         cell?.imgCollectionTableHome.image = UIImage(named: "loading")
         DispatchQueue.global(qos: .default).async {
-            let url = URL(string: self.datos[indexPath.row].images[0])
-            guard let url = url else {return}
-            let data = try? Data(contentsOf: url)
-            DispatchQueue.main.async {
-                guard let data = data else {return}
-                cell?.imgCollectionTableHome.image = UIImage(data: data)
+            
+            if self.datos?[indexPath.row].images?.count == 0{
+                
+            }else{
+                let url = URL(string: self.datos?[indexPath.row].images?[0] ?? "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930")
+                guard let url = url else {return}
+                let data = try? Data(contentsOf: url)
+                DispatchQueue.main.async {
+                    guard let data = data else {return}
+                    cell?.imgCollectionTableHome.image = UIImage(data: data)
+                }
             }
+           
         }
         
-        cell?.lblNombreProducto.text = datos[indexPath.row].title
-        cell?.lblPrecioProducto.text =  "$ " + String(datos[indexPath.row].price)
-        
+        cell?.lblNombreProducto.text = datos?[indexPath.row].title
+        cell?.lblPrecioProducto.text =  "$ " + String(datos?[indexPath.row].price ?? 0)
         return cell ?? UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.pasarProducto(product: (datos?[indexPath.row])!)
     }
     
     
@@ -76,7 +91,7 @@ extension HomeTableViewCell{
             }
             do{
                 let datosDecodificados = try? JSONDecoder().decode([Product].self, from:datos)
-                self.datos = datosDecodificados ?? [Product]()
+                self.datos = datosDecodificados
                 DispatchQueue.main.async {
                     self.collectionTableViewHome.reloadData()
                 }

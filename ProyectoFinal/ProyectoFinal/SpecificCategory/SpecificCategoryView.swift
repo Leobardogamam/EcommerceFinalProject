@@ -61,7 +61,12 @@ extension SpecificCategoryView: UICollectionViewDelegate, UICollectionViewDataSo
         DispatchQueue.global(qos: .default).async {
             var url: URL?
             do {
-                url = try URL(string: self.dataProducts[indexPath.row].images[0])
+                if self.dataProducts[indexPath.row].images?.count == 0{
+                    
+                }else{
+                    
+                    url = try URL(string: self.dataProducts[indexPath.row].images?[0] ?? "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930")
+                }
             } catch  {
                 
             }

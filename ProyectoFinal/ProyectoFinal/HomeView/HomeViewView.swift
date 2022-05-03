@@ -14,7 +14,9 @@ class CollectionHomeView: UICollectionViewCell{
     @IBOutlet weak var viewCategory: UIView!
 }
 
-class HomeViewView: UIViewController , MyViewDelegate{
+class HomeViewView: UIViewController , MyViewDelegate, passCollectionProduct{
+    
+    
     // MARK: Properties
     //var tabBar = TabBarNavigationButtons()
     var presenter: HomeViewPresenterProtocol?
@@ -38,6 +40,7 @@ class HomeViewView: UIViewController , MyViewDelegate{
         TabBar.btnUserAccount.backgroundColor = .clear
         TabBar.delegate = self
         
+        
     }
     
     func didTapButton(number:Int) {
@@ -57,6 +60,10 @@ class HomeViewView: UIViewController , MyViewDelegate{
             print("Error")
         }
     }
+    
+    func pasarProducto(product: Product) {
+        presenter?.showSpecifcCategory(id: product.id, name: product.title)
+    }
 }
 
 extension HomeViewView: HomeViewViewProtocol {
@@ -72,6 +79,7 @@ extension HomeViewView: HomeViewViewProtocol {
     // TODO: implement view output methods
 }
 //MARK: COLLECTION
+
 extension HomeViewView: UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.dataCategories.count
