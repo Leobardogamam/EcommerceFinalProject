@@ -115,7 +115,7 @@ extension HomeViewView:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellTableHomeView", for: indexPath) as? HomeTableViewCell
-        
+        cell?.id = self.dataCategoriesTable[indexPath.row].id
         cell?.lblNombreCategory.text = self.dataCategoriesTable[indexPath.row].name
         
         return cell ?? UITableViewCell()

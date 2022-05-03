@@ -59,7 +59,13 @@ extension SpecificCategoryView: UICollectionViewDelegate, UICollectionViewDataSo
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellCategorySpecific", for: indexPath) as? collectionCellProduct
         cell?.imgProduct.image = UIImage(named: "Fondo")
         DispatchQueue.global(qos: .default).async {
-            let url = URL(string: self.dataProducts[indexPath.row].images[0])
+            var url: URL?
+            do {
+                url = try URL(string: self.dataProducts[indexPath.row].images[0])
+            } catch  {
+                
+            }
+            
             if (url == nil){
                 
             }else{
