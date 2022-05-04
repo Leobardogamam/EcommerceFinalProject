@@ -102,6 +102,7 @@ extension HomeViewView: UICollectionViewDelegate,UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
         if self.dataCategories[indexPath.row].name == self.dataCategoriesTable[0].name && isCategorySelected == true{
             self.dataCategoriesTable = self.dataCategories
             isCategorySelected = false
@@ -131,6 +132,7 @@ extension HomeViewView:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter?.showSpecifcCategory(id: self.dataCategoriesTable[indexPath.row].id, name: self.dataCategoriesTable[indexPath.row].name)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class ShopingCarPresenter  {
     
@@ -18,11 +19,21 @@ class ShopingCarPresenter  {
 }
 
 extension ShopingCarPresenter: ShopingCarPresenterProtocol {
+    
+    
     // TODO: implement presenter methods
     func viewDidLoad() {
+        getAllCarCoredataSave()
+    }
+    
+    func getAllCarCoredataSave() {
+        interactor?.getAllCarCoredataSave()
     }
 }
 
 extension ShopingCarPresenter: ShopingCarInteractorOutputProtocol {
     // TODO: implement interactor output methods
+    func getApiDescodificados(product:[Product], precioTotal:Int) {
+        view?.getDatosDescodificados(product: product)
+    }
 }

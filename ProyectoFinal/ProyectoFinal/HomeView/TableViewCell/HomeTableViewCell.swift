@@ -67,7 +67,6 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
             }
            
         }
-        
         cell?.lblNombreProducto.text = datos?[indexPath.row].title
         cell?.lblPrecioProducto.text =  "$ " + String(datos?[indexPath.row].price ?? 0)
         return cell ?? UICollectionViewCell()
@@ -100,5 +99,20 @@ extension HomeTableViewCell{
             }
         }
         tarea.resume()
+    }
+}
+
+extension Collection where Indices.Iterator.Element == Index {
+    subscript (safe index: Index) -> Iterator.Element? {
+        return indices.contains(index) ? self[index] : nil
+    }
+}
+extension Array {
+    public subscript(safeIndex index: Int) -> Element? {
+        guard index >= startIndex, index < endIndex else {
+            return nil
+        }
+
+        return self[index]
     }
 }

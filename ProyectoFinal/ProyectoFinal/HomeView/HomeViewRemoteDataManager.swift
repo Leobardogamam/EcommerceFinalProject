@@ -30,7 +30,4 @@ class HomeViewRemoteDataManager:HomeViewRemoteDataManagerInputProtocol {
         }
         tarea.resume()
     }
-    
-    
-    
 }

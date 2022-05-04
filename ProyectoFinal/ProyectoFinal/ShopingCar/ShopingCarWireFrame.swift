@@ -15,7 +15,7 @@ class ShopingCarWireFrame: ShopingCarWireFrameProtocol {
         let navController = mainStoryboard.instantiateViewController(withIdentifier: "ShopingCar")
         if let view = navController as? ShopingCarView {
             let presenter: ShopingCarPresenterProtocol & ShopingCarInteractorOutputProtocol = ShopingCarPresenter()
-            let interactor: ShopingCarInteractorInputProtocol & ShopingCarRemoteDataManagerOutputProtocol = ShopingCarInteractor()
+            let interactor: ShopingCarInteractorInputProtocol & ShopingCarRemoteDataManagerOutputProtocol & ShopingCarLocalDataManagerOutputProtocol  = ShopingCarInteractor()
             let localDataManager: ShopingCarLocalDataManagerInputProtocol = ShopingCarLocalDataManager()
             let remoteDataManager: ShopingCarRemoteDataManagerInputProtocol = ShopingCarRemoteDataManager()
             let wireFrame: ShopingCarWireFrameProtocol = ShopingCarWireFrame()
@@ -25,10 +25,10 @@ class ShopingCarWireFrame: ShopingCarWireFrameProtocol {
             presenter.wireFrame = wireFrame
             presenter.interactor = interactor
             interactor.presenter = presenter
+            localDataManager.interactor = interactor
             interactor.localDatamanager = localDataManager
             interactor.remoteDatamanager = remoteDataManager
             remoteDataManager.remoteRequestHandler = interactor
-            
             return navController
         }
         return UIViewController()

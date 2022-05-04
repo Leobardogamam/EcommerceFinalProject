@@ -29,6 +29,7 @@ protocol DetailProductViewPresenterProtocol: class {
     var product:Product? {get set}
     
     func viewDidLoad()
+    func saveDataInCoreData(idCustomer:Int,idProduct:Int)
 }
 
 protocol DetailProductViewInteractorOutputProtocol: class {
@@ -40,6 +41,9 @@ protocol DetailProductViewInteractorInputProtocol: class {
     var presenter: DetailProductViewInteractorOutputProtocol? { get set }
     var localDatamanager: DetailProductViewLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: DetailProductViewRemoteDataManagerInputProtocol? { get set }
+    
+    
+    func saveDataInCoreData(idCustomer:Int,idProduct:Int)
 }
 
 protocol DetailProductViewDataManagerInputProtocol: class {
@@ -57,4 +61,6 @@ protocol DetailProductViewRemoteDataManagerOutputProtocol: class {
 
 protocol DetailProductViewLocalDataManagerInputProtocol: class {
     // INTERACTOR -> LOCALDATAMANAGER
+    
+    func saveDataInCoreData(idCustomer:Int,idProduct:Int)
 }

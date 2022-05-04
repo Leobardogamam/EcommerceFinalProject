@@ -10,6 +10,8 @@ import Foundation
 
 class DetailProductViewPresenter: DetailProductViewPresenterProtocol  {
     
+    
+    
     // MARK: Properties
     weak var view: DetailProductViewViewProtocol?
     var interactor: DetailProductViewInteractorInputProtocol?
@@ -22,6 +24,10 @@ class DetailProductViewPresenter: DetailProductViewPresenterProtocol  {
             return
         }
         view?.getDataProduct(product: product)
+    }
+    
+    func saveDataInCoreData(idCustomer: Int, idProduct: Int) {
+        interactor?.saveDataInCoreData(idCustomer: idCustomer, idProduct: idProduct)
     }
 }
 

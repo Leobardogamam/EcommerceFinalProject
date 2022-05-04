@@ -18,6 +18,7 @@ class DetailProductViewView: UIViewController {
     @IBOutlet weak var lblDescriptionProduct: UILabel!
     @IBOutlet weak var btnReturnBack: UIButton!
     var presenter: DetailProductViewPresenterProtocol?
+    var idProduct:Int?
 
     // MARK: Lifecycle
 
@@ -30,14 +31,27 @@ class DetailProductViewView: UIViewController {
     @IBAction func onPressReturnBack(_ sender: UIButton) {
         dismiss(animated: true)
     }
-
     
+
+    @IBAction func onPressAddCar(_ sender: UIButton) {
+        alert(title: "Se agrego al carrito", message: "El producto se agrego al carrito")
+        presenter?.saveDataInCoreData(idCustomer: 1, idProduct: idProduct ?? 0)
+        dismiss(animated: true)
+    }
+    
+    func alert(title:String,message:String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .cancel)
+        alert.addAction(action)
+        self.present(alert,animated:true)
+    }
     
 }
 
 extension DetailProductViewView: DetailProductViewViewProtocol {
     // TODO: implement view output methods
     func getDataProduct(product: Product) {
+        idProduct = product.id
         self.lblPriceProduct.text = "$" + String(product.price)
         self.lblDescriptionProduct.text = product.description
         self.lblNameProduct.text = product.title

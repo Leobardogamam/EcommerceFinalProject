@@ -8,10 +8,13 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 protocol ShopingCarViewProtocol: class {
     // PRESENTER -> VIEW
     var presenter: ShopingCarPresenterProtocol? { get set }
+    
+    func getDatosDescodificados(product:[Product])
 }
 
 protocol ShopingCarWireFrameProtocol: class {
@@ -26,10 +29,12 @@ protocol ShopingCarPresenterProtocol: class {
     var wireFrame: ShopingCarWireFrameProtocol? { get set }
     
     func viewDidLoad()
+    func getAllCarCoredataSave()
 }
 
 protocol ShopingCarInteractorOutputProtocol: class {
 // INTERACTOR -> PRESENTER
+    func getApiDescodificados(product:[Product], precioTotal: Int)
 }
 
 protocol ShopingCarInteractorInputProtocol: class {
@@ -37,6 +42,8 @@ protocol ShopingCarInteractorInputProtocol: class {
     var presenter: ShopingCarInteractorOutputProtocol? { get set }
     var localDatamanager: ShopingCarLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: ShopingCarRemoteDataManagerInputProtocol? { get set }
+    
+    func getAllCarCoredataSave()
 }
 
 protocol ShopingCarDataManagerInputProtocol: class {
@@ -46,12 +53,27 @@ protocol ShopingCarDataManagerInputProtocol: class {
 protocol ShopingCarRemoteDataManagerInputProtocol: class {
     // INTERACTOR -> REMOTEDATAMANAGER
     var remoteRequestHandler: ShopingCarRemoteDataManagerOutputProtocol? { get set }
+    var localRequestHandler: ShopingCarLocalDataManagerOutputProtocol? { get set }
+    
+    func getProductsApi(ids:[Int])
 }
 
 protocol ShopingCarRemoteDataManagerOutputProtocol: class {
     // REMOTEDATAMANAGER -> INTERACTOR
+    func returnDatosApi(product:Product)
+    
 }
 
 protocol ShopingCarLocalDataManagerInputProtocol: class {
     // INTERACTOR -> LOCALDATAMANAGER
+    var interactor:ShopingCarLocalDataManagerOutputProtocol? {get set}
+    func getAllCarCoredataSave()
+}
+
+
+protocol ShopingCarLocalDataManagerOutputProtocol: class {
+    // LOCALDATAMANAGER -> INTERACTOR
+    
+    func getIdProducts(id:Int)
+    
 }
