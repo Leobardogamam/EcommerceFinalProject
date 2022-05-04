@@ -9,17 +9,17 @@
 import Foundation
 import UIKit
 
-protocol BuyItemsViewProtocol: class {
+protocol BuyItemsViewProtocol: AnyObject {
     // PRESENTER -> VIEW
     var presenter: BuyItemsPresenterProtocol? { get set }
 }
 
-protocol BuyItemsWireFrameProtocol: class {
+protocol BuyItemsWireFrameProtocol: AnyObject {
     // PRESENTER -> WIREFRAME
     static func createBuyItemsModule() -> UIViewController
 }
 
-protocol BuyItemsPresenterProtocol: class {
+protocol BuyItemsPresenterProtocol: AnyObject {
     // VIEW -> PRESENTER
     var view: BuyItemsViewProtocol? { get set }
     var interactor: BuyItemsInteractorInputProtocol? { get set }
@@ -28,30 +28,30 @@ protocol BuyItemsPresenterProtocol: class {
     func viewDidLoad()
 }
 
-protocol BuyItemsInteractorOutputProtocol: class {
+protocol BuyItemsInteractorOutputProtocol: AnyObject {
 // INTERACTOR -> PRESENTER
 }
 
-protocol BuyItemsInteractorInputProtocol: class {
+protocol BuyItemsInteractorInputProtocol: AnyObject {
     // PRESENTER -> INTERACTOR
     var presenter: BuyItemsInteractorOutputProtocol? { get set }
     var localDatamanager: BuyItemsLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: BuyItemsRemoteDataManagerInputProtocol? { get set }
 }
 
-protocol BuyItemsDataManagerInputProtocol: class {
+protocol BuyItemsDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> DATAMANAGER
 }
 
-protocol BuyItemsRemoteDataManagerInputProtocol: class {
+protocol BuyItemsRemoteDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> REMOTEDATAMANAGER
     var remoteRequestHandler: BuyItemsRemoteDataManagerOutputProtocol? { get set }
 }
 
-protocol BuyItemsRemoteDataManagerOutputProtocol: class {
+protocol BuyItemsRemoteDataManagerOutputProtocol: AnyObject {
     // REMOTEDATAMANAGER -> INTERACTOR
 }
 
-protocol BuyItemsLocalDataManagerInputProtocol: class {
+protocol BuyItemsLocalDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> LOCALDATAMANAGER
 }

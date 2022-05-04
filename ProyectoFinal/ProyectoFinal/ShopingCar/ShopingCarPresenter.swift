@@ -19,8 +19,6 @@ class ShopingCarPresenter  {
 }
 
 extension ShopingCarPresenter: ShopingCarPresenterProtocol {
-    
-    
     // TODO: implement presenter methods
     func viewDidLoad() {
         getAllCarCoredataSave()
@@ -29,11 +27,21 @@ extension ShopingCarPresenter: ShopingCarPresenterProtocol {
     func getAllCarCoredataSave() {
         interactor?.getAllCarCoredataSave()
     }
+    
+    
+    func eliminate(id: Int, price:Int) {
+        interactor?.eliminate(id: id, price: price)
+    }
 }
 
 extension ShopingCarPresenter: ShopingCarInteractorOutputProtocol {
+    
+    
     // TODO: implement interactor output methods
     func getApiDescodificados(product:[Product], precioTotal:Int) {
-        view?.getDatosDescodificados(product: product)
+        view?.getDatosDescodificados(product: product, precioTotal:precioTotal)
+    }
+    func resetPrice(price: Int) {
+        view?.resetPrice(price: price)
     }
 }

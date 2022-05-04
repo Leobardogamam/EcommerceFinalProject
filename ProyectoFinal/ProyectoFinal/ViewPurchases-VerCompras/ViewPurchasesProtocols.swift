@@ -9,17 +9,17 @@
 import Foundation
 import UIKit
 
-protocol ViewPurchasesViewProtocol: class {
+protocol ViewPurchasesViewProtocol: AnyObject {
     // PRESENTER -> VIEW
     var presenter: ViewPurchasesPresenterProtocol? { get set }
 }
 
-protocol ViewPurchasesWireFrameProtocol: class {
+protocol ViewPurchasesWireFrameProtocol: AnyObject {
     // PRESENTER -> WIREFRAME
     static func createViewPurchasesModule() -> UIViewController
 }
 
-protocol ViewPurchasesPresenterProtocol: class {
+protocol ViewPurchasesPresenterProtocol: AnyObject {
     // VIEW -> PRESENTER
     var view: ViewPurchasesViewProtocol? { get set }
     var interactor: ViewPurchasesInteractorInputProtocol? { get set }
@@ -28,30 +28,30 @@ protocol ViewPurchasesPresenterProtocol: class {
     func viewDidLoad()
 }
 
-protocol ViewPurchasesInteractorOutputProtocol: class {
+protocol ViewPurchasesInteractorOutputProtocol: AnyObject {
 // INTERACTOR -> PRESENTER
 }
 
-protocol ViewPurchasesInteractorInputProtocol: class {
+protocol ViewPurchasesInteractorInputProtocol: AnyObject {
     // PRESENTER -> INTERACTOR
     var presenter: ViewPurchasesInteractorOutputProtocol? { get set }
     var localDatamanager: ViewPurchasesLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: ViewPurchasesRemoteDataManagerInputProtocol? { get set }
 }
 
-protocol ViewPurchasesDataManagerInputProtocol: class {
+protocol ViewPurchasesDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> DATAMANAGER
 }
 
-protocol ViewPurchasesRemoteDataManagerInputProtocol: class {
+protocol ViewPurchasesRemoteDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> REMOTEDATAMANAGER
     var remoteRequestHandler: ViewPurchasesRemoteDataManagerOutputProtocol? { get set }
 }
 
-protocol ViewPurchasesRemoteDataManagerOutputProtocol: class {
+protocol ViewPurchasesRemoteDataManagerOutputProtocol: AnyObject {
     // REMOTEDATAMANAGER -> INTERACTOR
 }
 
-protocol ViewPurchasesLocalDataManagerInputProtocol: class {
+protocol ViewPurchasesLocalDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> LOCALDATAMANAGER
 }

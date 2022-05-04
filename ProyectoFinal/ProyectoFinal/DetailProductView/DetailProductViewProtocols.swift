@@ -9,19 +9,19 @@
 import Foundation
 import UIKit
 
-protocol DetailProductViewViewProtocol: class {
+protocol DetailProductViewViewProtocol: AnyObject {
     // PRESENTER -> VIEW
     var presenter: DetailProductViewPresenterProtocol? { get set }
     
     func getDataProduct(product:Product)
 }
 
-protocol DetailProductViewWireFrameProtocol: class {
+protocol DetailProductViewWireFrameProtocol: AnyObject {
     // PRESENTER -> WIREFRAME
     static func createDetailProductViewModule(product:Product) -> UIViewController
 }
 
-protocol DetailProductViewPresenterProtocol: class {
+protocol DetailProductViewPresenterProtocol: AnyObject {
     // VIEW -> PRESENTER
     var view: DetailProductViewViewProtocol? { get set }
     var interactor: DetailProductViewInteractorInputProtocol? { get set }
@@ -32,11 +32,11 @@ protocol DetailProductViewPresenterProtocol: class {
     func saveDataInCoreData(idCustomer:Int,idProduct:Int)
 }
 
-protocol DetailProductViewInteractorOutputProtocol: class {
+protocol DetailProductViewInteractorOutputProtocol: AnyObject {
 // INTERACTOR -> PRESENTER
 }
 
-protocol DetailProductViewInteractorInputProtocol: class {
+protocol DetailProductViewInteractorInputProtocol: AnyObject {
     // PRESENTER -> INTERACTOR
     var presenter: DetailProductViewInteractorOutputProtocol? { get set }
     var localDatamanager: DetailProductViewLocalDataManagerInputProtocol? { get set }
@@ -46,20 +46,20 @@ protocol DetailProductViewInteractorInputProtocol: class {
     func saveDataInCoreData(idCustomer:Int,idProduct:Int)
 }
 
-protocol DetailProductViewDataManagerInputProtocol: class {
+protocol DetailProductViewDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> DATAMANAGER
 }
 
-protocol DetailProductViewRemoteDataManagerInputProtocol: class {
+protocol DetailProductViewRemoteDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> REMOTEDATAMANAGER
     var remoteRequestHandler: DetailProductViewRemoteDataManagerOutputProtocol? { get set }
 }
 
-protocol DetailProductViewRemoteDataManagerOutputProtocol: class {
+protocol DetailProductViewRemoteDataManagerOutputProtocol: AnyObject {
     // REMOTEDATAMANAGER -> INTERACTOR
 }
 
-protocol DetailProductViewLocalDataManagerInputProtocol: class {
+protocol DetailProductViewLocalDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> LOCALDATAMANAGER
     
     func saveDataInCoreData(idCustomer:Int,idProduct:Int)

@@ -9,17 +9,17 @@
 import Foundation
 import UIKit
 
-protocol DeleteEditCardsViewProtocol: class {
+protocol DeleteEditCardsViewProtocol: AnyObject {
     // PRESENTER -> VIEW
     var presenter: DeleteEditCardsPresenterProtocol? { get set }
 }
 
-protocol DeleteEditCardsWireFrameProtocol: class {
+protocol DeleteEditCardsWireFrameProtocol: AnyObject {
     // PRESENTER -> WIREFRAME
     static func createDeleteEditCardsModule() -> UIViewController
 }
 
-protocol DeleteEditCardsPresenterProtocol: class {
+protocol DeleteEditCardsPresenterProtocol: AnyObject {
     // VIEW -> PRESENTER
     var view: DeleteEditCardsViewProtocol? { get set }
     var interactor: DeleteEditCardsInteractorInputProtocol? { get set }
@@ -28,30 +28,30 @@ protocol DeleteEditCardsPresenterProtocol: class {
     func viewDidLoad()
 }
 
-protocol DeleteEditCardsInteractorOutputProtocol: class {
+protocol DeleteEditCardsInteractorOutputProtocol: AnyObject {
 // INTERACTOR -> PRESENTER
 }
 
-protocol DeleteEditCardsInteractorInputProtocol: class {
+protocol DeleteEditCardsInteractorInputProtocol: AnyObject {
     // PRESENTER -> INTERACTOR
     var presenter: DeleteEditCardsInteractorOutputProtocol? { get set }
     var localDatamanager: DeleteEditCardsLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: DeleteEditCardsRemoteDataManagerInputProtocol? { get set }
 }
 
-protocol DeleteEditCardsDataManagerInputProtocol: class {
+protocol DeleteEditCardsDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> DATAMANAGER
 }
 
-protocol DeleteEditCardsRemoteDataManagerInputProtocol: class {
+protocol DeleteEditCardsRemoteDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> REMOTEDATAMANAGER
     var remoteRequestHandler: DeleteEditCardsRemoteDataManagerOutputProtocol? { get set }
 }
 
-protocol DeleteEditCardsRemoteDataManagerOutputProtocol: class {
+protocol DeleteEditCardsRemoteDataManagerOutputProtocol: AnyObject {
     // REMOTEDATAMANAGER -> INTERACTOR
 }
 
-protocol DeleteEditCardsLocalDataManagerInputProtocol: class {
+protocol DeleteEditCardsLocalDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> LOCALDATAMANAGER
 }

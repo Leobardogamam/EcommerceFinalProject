@@ -11,7 +11,6 @@ import CoreData
 
 class ShopingCarInteractor: ShopingCarInteractorInputProtocol, ShopingCarLocalDataManagerOutputProtocol {
     
-   
     
     // MARK: Properties
     weak var presenter: ShopingCarInteractorOutputProtocol?
@@ -36,6 +35,18 @@ class ShopingCarInteractor: ShopingCarInteractorInputProtocol, ShopingCarLocalDa
     }
     
     
+    func eliminate(id: Int, price:Int) {
+        localDatamanager?.getIdDeleteProduct(id: id, price: price)
+    }
+    
+    func changePrice(price: Int) {
+        let precio = precio.integer(forKey: "Precio") - price
+        self.precio.set(precio, forKey: "Precio")
+        presenter?.resetPrice(price: self.precio.integer(forKey: "Precio"))
+        
+    }
+    
+   
     
 
 }
@@ -45,6 +56,8 @@ extension ShopingCarInteractor: ShopingCarRemoteDataManagerOutputProtocol {
         var isUsable = false
         if products.count == 0{
             products.append(product)
+            precio.set(product.price, forKey: "Precio")
+            print(precio.set(product.price, forKey: "Precio"))
         }else{
             for idProduct in 0...products.count-1{
                 if product.id == products[idProduct].id{
@@ -54,8 +67,12 @@ extension ShopingCarInteractor: ShopingCarRemoteDataManagerOutputProtocol {
             if isUsable{
             }else{
                 products.append(product)
-                let valor = precio.integer(forKey: "Precio") + product.price
-                precio.set(valor, forKey: "Precio")
+                let valorUserDefault = precio.integer(forKey: "Precio")
+                print("El valor de userDafult es: ", valorUserDefault)
+                var valorTotal = product.price
+                valorTotal = valorTotal + valorUserDefault
+                precio.set(valorTotal, forKey: "Precio")
+                print(precio.integer(forKey: "Precio"))
             }
         }
         

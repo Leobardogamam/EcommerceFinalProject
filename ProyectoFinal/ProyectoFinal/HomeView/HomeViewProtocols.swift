@@ -9,19 +9,19 @@
 import Foundation
 import UIKit
 
-protocol HomeViewViewProtocol: class {
+protocol HomeViewViewProtocol: AnyObject {
     // PRESENTER -> VIEW
     var presenter: HomeViewPresenterProtocol? { get set }
     func pushData(with data:[Categories])
 }
 
-protocol HomeViewWireFrameProtocol: class {
+protocol HomeViewWireFrameProtocol: AnyObject {
     // PRESENTER -> WIREFRAME
     static func createHomeViewModule() -> UIViewController
     func showSpecificCategory(from view:HomeViewViewProtocol,id:Int, name:String)
 }
 
-protocol HomeViewPresenterProtocol: class {
+protocol HomeViewPresenterProtocol: AnyObject {
     // VIEW -> PRESENTER
     var view: HomeViewViewProtocol? { get set }
     var interactor: HomeViewInteractorInputProtocol? { get set }
@@ -31,12 +31,12 @@ protocol HomeViewPresenterProtocol: class {
     func showSpecifcCategory(id:Int, name: String)
 }
 
-protocol HomeViewInteractorOutputProtocol: class {
+protocol HomeViewInteractorOutputProtocol: AnyObject {
 // INTERACTOR -> PRESENTER
     func pushData(with data:[Categories])
 }
 
-protocol HomeViewInteractorInputProtocol: class {
+protocol HomeViewInteractorInputProtocol: AnyObject {
     // PRESENTER -> INTERACTOR
     var presenter: HomeViewInteractorOutputProtocol? { get set }
     var localDatamanager: HomeViewLocalDataManagerInputProtocol? { get set }
@@ -45,22 +45,22 @@ protocol HomeViewInteractorInputProtocol: class {
     func getCategoriesData()
 }
 
-protocol HomeViewDataManagerInputProtocol: class {
+protocol HomeViewDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> DATAMANAGER
 }
 
-protocol HomeViewRemoteDataManagerInputProtocol: class {
+protocol HomeViewRemoteDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> REMOTEDATAMANAGER
     var remoteRequestHandler: HomeViewRemoteDataManagerOutputProtocol? { get set }
     
     func callCategoriesData()
 }
 
-protocol HomeViewRemoteDataManagerOutputProtocol: class {
+protocol HomeViewRemoteDataManagerOutputProtocol: AnyObject {
     // REMOTEDATAMANAGER -> INTERACTOR
     func getCategoriesData(with data:[Categories])
 }
 
-protocol HomeViewLocalDataManagerInputProtocol: class {
+protocol HomeViewLocalDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> LOCALDATAMANAGER
 }

@@ -25,7 +25,6 @@ class SpecificCategoryPresenter: SpecificCategoryPresenterProtocol {
         }else{
             print("este es el id \(self.id!)")
             interactor?.getCategory(id: id!)
-            print(name)
             view?.sendNameCategory(name: name ?? "Error")
         }
     }

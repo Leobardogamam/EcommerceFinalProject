@@ -76,7 +76,6 @@ extension HomeViewView: HomeViewViewProtocol {
         }
     }
     
-    // TODO: implement view output methods
 }
 //MARK: COLLECTION
 
@@ -134,6 +133,7 @@ extension HomeViewView:UITableViewDelegate,UITableViewDataSource{
         presenter?.showSpecifcCategory(id: self.dataCategoriesTable[indexPath.row].id, name: self.dataCategoriesTable[indexPath.row].name)
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
     
     
 }

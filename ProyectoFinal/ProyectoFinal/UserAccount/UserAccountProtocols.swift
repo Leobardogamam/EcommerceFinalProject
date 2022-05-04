@@ -9,17 +9,17 @@
 import Foundation
 import UIKit
 
-protocol UserAccountViewProtocol: class {
+protocol UserAccountViewProtocol: AnyObject {
     // PRESENTER -> VIEW
     var presenter: UserAccountPresenterProtocol? { get set }
 }
 
-protocol UserAccountWireFrameProtocol: class {
+protocol UserAccountWireFrameProtocol: AnyObject {
     // PRESENTER -> WIREFRAME
     static func createUserAccountModule() -> UIViewController
 }
 
-protocol UserAccountPresenterProtocol: class {
+protocol UserAccountPresenterProtocol: AnyObject {
     // VIEW -> PRESENTER
     var view: UserAccountViewProtocol? { get set }
     var interactor: UserAccountInteractorInputProtocol? { get set }
@@ -28,30 +28,30 @@ protocol UserAccountPresenterProtocol: class {
     func viewDidLoad()
 }
 
-protocol UserAccountInteractorOutputProtocol: class {
+protocol UserAccountInteractorOutputProtocol: AnyObject {
 // INTERACTOR -> PRESENTER
 }
 
-protocol UserAccountInteractorInputProtocol: class {
+protocol UserAccountInteractorInputProtocol: AnyObject {
     // PRESENTER -> INTERACTOR
     var presenter: UserAccountInteractorOutputProtocol? { get set }
     var localDatamanager: UserAccountLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: UserAccountRemoteDataManagerInputProtocol? { get set }
 }
 
-protocol UserAccountDataManagerInputProtocol: class {
+protocol UserAccountDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> DATAMANAGER
 }
 
-protocol UserAccountRemoteDataManagerInputProtocol: class {
+protocol UserAccountRemoteDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> REMOTEDATAMANAGER
     var remoteRequestHandler: UserAccountRemoteDataManagerOutputProtocol? { get set }
 }
 
-protocol UserAccountRemoteDataManagerOutputProtocol: class {
+protocol UserAccountRemoteDataManagerOutputProtocol: AnyObject {
     // REMOTEDATAMANAGER -> INTERACTOR
 }
 
-protocol UserAccountLocalDataManagerInputProtocol: class {
+protocol UserAccountLocalDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> LOCALDATAMANAGER
 }

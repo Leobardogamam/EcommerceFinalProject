@@ -9,17 +9,17 @@
 import Foundation
 import UIKit
 
-protocol CardsViewProtocol: class {
+protocol CardsViewProtocol: AnyObject {
     // PRESENTER -> VIEW
     var presenter: CardsPresenterProtocol? { get set }
 }
 
-protocol CardsWireFrameProtocol: class {
+protocol CardsWireFrameProtocol: AnyObject {
     // PRESENTER -> WIREFRAME
     static func createCardsModule() -> UIViewController
 }
 
-protocol CardsPresenterProtocol: class {
+protocol CardsPresenterProtocol: AnyObject {
     // VIEW -> PRESENTER
     var view: CardsViewProtocol? { get set }
     var interactor: CardsInteractorInputProtocol? { get set }
@@ -28,30 +28,30 @@ protocol CardsPresenterProtocol: class {
     func viewDidLoad()
 }
 
-protocol CardsInteractorOutputProtocol: class {
+protocol CardsInteractorOutputProtocol: AnyObject {
 // INTERACTOR -> PRESENTER
 }
 
-protocol CardsInteractorInputProtocol: class {
+protocol CardsInteractorInputProtocol: AnyObject {
     // PRESENTER -> INTERACTOR
     var presenter: CardsInteractorOutputProtocol? { get set }
     var localDatamanager: CardsLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: CardsRemoteDataManagerInputProtocol? { get set }
 }
 
-protocol CardsDataManagerInputProtocol: class {
+protocol CardsDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> DATAMANAGER
 }
 
-protocol CardsRemoteDataManagerInputProtocol: class {
+protocol CardsRemoteDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> REMOTEDATAMANAGER
     var remoteRequestHandler: CardsRemoteDataManagerOutputProtocol? { get set }
 }
 
-protocol CardsRemoteDataManagerOutputProtocol: class {
+protocol CardsRemoteDataManagerOutputProtocol: AnyObject {
     // REMOTEDATAMANAGER -> INTERACTOR
 }
 
-protocol CardsLocalDataManagerInputProtocol: class {
+protocol CardsLocalDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> LOCALDATAMANAGER
 }

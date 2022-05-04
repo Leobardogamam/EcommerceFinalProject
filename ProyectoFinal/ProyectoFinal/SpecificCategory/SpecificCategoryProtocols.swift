@@ -9,20 +9,20 @@
 import Foundation
 import UIKit
 
-protocol SpecificCategoryViewProtocol: class {
+protocol SpecificCategoryViewProtocol: AnyObject {
     // PRESENTER -> VIEW
     var presenter: SpecificCategoryPresenterProtocol? { get set }
     func showDataProducts(with product:[Product])
     func sendNameCategory(name:String)
 }
 
-protocol SpecificCategoryWireFrameProtocol: class {
+protocol SpecificCategoryWireFrameProtocol: AnyObject {
     // PRESENTER -> WIREFRAME
     static func createSpecificCategoryModule(with id:Int, name:String) -> UIViewController
     func showDetailProductView(from view:SpecificCategoryViewProtocol,product:Product)
 }
 
-protocol SpecificCategoryPresenterProtocol: class {
+protocol SpecificCategoryPresenterProtocol: AnyObject {
     // VIEW -> PRESENTER
     var view: SpecificCategoryViewProtocol? { get set }
     var interactor: SpecificCategoryInteractorInputProtocol? { get set }
@@ -36,12 +36,12 @@ protocol SpecificCategoryPresenterProtocol: class {
     
 }
 
-protocol SpecificCategoryInteractorOutputProtocol: class {
+protocol SpecificCategoryInteractorOutputProtocol: AnyObject {
 // INTERACTOR -> PRESENTER
     func showDataProducts(with product:[Product])
 }
 
-protocol SpecificCategoryInteractorInputProtocol: class {
+protocol SpecificCategoryInteractorInputProtocol: AnyObject {
     // PRESENTER -> INTERACTOR
     var presenter: SpecificCategoryInteractorOutputProtocol? { get set }
     var localDatamanager: SpecificCategoryLocalDataManagerInputProtocol? { get set }
@@ -50,22 +50,22 @@ protocol SpecificCategoryInteractorInputProtocol: class {
     func getCategory(id:Int)
 }
 
-protocol SpecificCategoryDataManagerInputProtocol: class {
+protocol SpecificCategoryDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> DATAMANAGER
 }
 
-protocol SpecificCategoryRemoteDataManagerInputProtocol: class {
+protocol SpecificCategoryRemoteDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> REMOTEDATAMANAGER
     var remoteRequestHandler: SpecificCategoryRemoteDataManagerOutputProtocol? { get set }
     func getCategory(id:Int)
 }
 
-protocol SpecificCategoryRemoteDataManagerOutputProtocol: class {
+protocol SpecificCategoryRemoteDataManagerOutputProtocol: AnyObject {
     // REMOTEDATAMANAGER -> INTERACTOR
     
     func showDataProducts(with product:[Product])
 }
 
-protocol SpecificCategoryLocalDataManagerInputProtocol: class {
+protocol SpecificCategoryLocalDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> LOCALDATAMANAGER
 }

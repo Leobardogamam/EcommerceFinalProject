@@ -44,8 +44,11 @@ class HomeTableViewCell: UITableViewCell {
 
 extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-      
-        return datos?.count ?? 0
+        if datos?.count == 0{
+            return 0
+        }else{
+            return 6
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -94,8 +97,7 @@ extension HomeTableViewCell{
                 DispatchQueue.main.async {
                     self.collectionTableViewHome.reloadData()
                 }
-            }catch{
-                print("Ocurrio un error al convertir los datos")
+            
             }
         }
         tarea.resume()

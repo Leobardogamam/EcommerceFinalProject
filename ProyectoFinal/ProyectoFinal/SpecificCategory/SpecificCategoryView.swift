@@ -65,18 +65,17 @@ extension SpecificCategoryView: UICollectionViewDelegate, UICollectionViewDataSo
                     
                 }else{
                     
-                    url = try URL(string: self.dataProducts[indexPath.row].images?[0] ?? "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930")
+                    url =  URL(string: self.dataProducts[indexPath.row].images?[0] ?? "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930")
                 }
-            } catch  {
-                
-            }
+            } 
             
             if (url == nil){
                 
             }else{
                 let data = try? Data(contentsOf: url!)
                 DispatchQueue.main.async {
-                    cell?.imgProduct.image = UIImage(data: data!)
+                    guard let data = data else{return}
+                    cell?.imgProduct.image = UIImage(data: data)
                 }
             }
         }

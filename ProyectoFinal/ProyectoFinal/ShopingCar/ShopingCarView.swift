@@ -33,7 +33,6 @@ class ShopingCarView: UIViewController, MyViewDelegate {
         tabBar.delegate = self
     }
     
-    
     func didTapButton(number: Int) {
         switch number{
         case 0:
@@ -50,12 +49,19 @@ class ShopingCarView: UIViewController, MyViewDelegate {
 
 extension ShopingCarView: ShopingCarViewProtocol {
     // TODO: implement view output methods
-    func getDatosDescodificados(product:[Product]) {
+    func getDatosDescodificados(product:[Product], precioTotal:Int) {
         carrito = product
         DispatchQueue.main.async {[self] in
             tableCarProduct.reloadData()
+            lblTotalPrice.text = "$" + String(precioTotal)
         }
     }
+    
+    func resetPrice(price: Int) {
+        lblTotalPrice.text = String(price)
+        
+    }
+    
 }
 
 
@@ -69,8 +75,6 @@ extension ShopingCarView: UITableViewDataSource, UITableViewDelegate{
         
         cell?.lblProductName.text = carrito[indexPath.row].title
         cell?.lblProductPrice.text = "$"  + String(carrito[indexPath.row].price)
-        price = price + carrito[indexPath.row].price
-        self.lblTotalPrice.text = "$" + String(price)
         cell?.imageProduct.image = UIImage(named: "loading")
         DispatchQueue.global(qos: .background).async {
             if self.carrito[indexPath.row].images?.count == 0{
@@ -85,9 +89,17 @@ extension ShopingCarView: UITableViewDataSource, UITableViewDelegate{
                 }
             }
         }
-        
         return cell ?? UITableViewCell()
     }
     
-    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            
+            presenter?.eliminate(id: carrito[indexPath.row].id, price: carrito[indexPath.row].price)
+            carrito.remove(at: indexPath.row)
+            DispatchQueue.main.async {
+                tableView.reloadData()
+            }
+        }
+    }
 }

@@ -42,12 +42,15 @@
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZaR-tb-k8A">
                                                             <rect key="frame" x="16" y="8" width="60" height="60"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="60" id="6Dz-bj-nP6"/>
-                                                                <constraint firstAttribute="height" constant="60" id="wMc-CC-wh3"/>
+                                                                <constraint firstAttribute="width" constant="60" id="4Bb-IQ-fks"/>
+                                                                <constraint firstAttribute="height" constant="60" id="DvE-JY-I7r"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGG-9n-xEL">
-                                                            <rect key="frame" x="100" y="27.5" width="115.5" height="21.5"/>
+                                                            <rect key="frame" x="84" y="27.5" width="200" height="21.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="200" id="89q-2s-vEM"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -60,13 +63,12 @@
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="ZaR-tb-k8A" secondAttribute="bottom" constant="8" id="6tS-vi-s6i"/>
-                                                        <constraint firstItem="ZGG-9n-xEL" firstAttribute="leading" secondItem="ZaR-tb-k8A" secondAttribute="trailing" constant="24" id="9Fb-WF-Sdn"/>
-                                                        <constraint firstItem="ZaR-tb-k8A" firstAttribute="top" secondItem="Sb2-On-7fU" secondAttribute="top" constant="8" id="DNt-fn-CWW"/>
-                                                        <constraint firstItem="ZGG-9n-xEL" firstAttribute="centerY" secondItem="ZaR-tb-k8A" secondAttribute="centerY" id="RWD-z2-Lh1"/>
-                                                        <constraint firstAttribute="trailingMargin" secondItem="rDt-04-qoG" secondAttribute="trailing" constant="8" id="as1-ph-1N3"/>
-                                                        <constraint firstItem="ZaR-tb-k8A" firstAttribute="leading" secondItem="Sb2-On-7fU" secondAttribute="leading" constant="16" id="dQK-ns-5aR"/>
-                                                        <constraint firstItem="rDt-04-qoG" firstAttribute="centerY" secondItem="ZGG-9n-xEL" secondAttribute="centerY" id="p7V-W5-IBW"/>
+                                                        <constraint firstItem="ZaR-tb-k8A" firstAttribute="leading" secondItem="Sb2-On-7fU" secondAttribute="leading" constant="16" id="AI3-nz-DJg"/>
+                                                        <constraint firstItem="ZGG-9n-xEL" firstAttribute="centerY" secondItem="ZaR-tb-k8A" secondAttribute="centerY" id="dGe-P8-0Bk"/>
+                                                        <constraint firstItem="ZGG-9n-xEL" firstAttribute="leading" secondItem="ZaR-tb-k8A" secondAttribute="trailing" constant="8" id="e8x-YC-79G"/>
+                                                        <constraint firstItem="ZaR-tb-k8A" firstAttribute="top" secondItem="Sb2-On-7fU" secondAttribute="top" constant="8" id="iyF-WG-StC"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="rDt-04-qoG" secondAttribute="trailing" constant="8" id="peb-7c-PVq"/>
+                                                        <constraint firstItem="rDt-04-qoG" firstAttribute="centerY" secondItem="ZGG-9n-xEL" secondAttribute="centerY" id="uAH-jS-njB"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>

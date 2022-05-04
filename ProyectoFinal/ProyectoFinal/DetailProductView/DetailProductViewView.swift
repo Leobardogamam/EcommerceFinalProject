@@ -36,12 +36,13 @@ class DetailProductViewView: UIViewController {
     @IBAction func onPressAddCar(_ sender: UIButton) {
         alert(title: "Se agrego al carrito", message: "El producto se agrego al carrito")
         presenter?.saveDataInCoreData(idCustomer: 1, idProduct: idProduct ?? 0)
-        dismiss(animated: true)
     }
     
     func alert(title:String,message:String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Ok", style: .cancel)
+        let action = UIAlertAction(title: "Ok", style: .default) { alert in
+            self.dismiss(animated: true)
+        }
         alert.addAction(action)
         self.present(alert,animated:true)
     }
