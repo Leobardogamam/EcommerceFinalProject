@@ -20,7 +20,7 @@ class ShopingCarRemoteDataManager:ShopingCarRemoteDataManagerInputProtocol {
     func getProductsApi(ids: [Int]) {
         for id in ids{
             guard let url = URL(string: "https://api.escuelajs.co/api/v1/products/\(id)") else{return}
-            print(url)
+//            print(url)
             let tarea =  URLSession.shared.dataTask(with: url) { data, response, error in
                 guard let datos = data else{
                     print("No hay datos en la solicitud")
@@ -28,7 +28,7 @@ class ShopingCarRemoteDataManager:ShopingCarRemoteDataManagerInputProtocol {
                 }
                 do{
                     let datosDecodificados = try JSONDecoder().decode(Product.self, from:datos)
-                    print(datosDecodificados)
+//                    print(datosDecodificados)
                     self.remoteRequestHandler?.returnDatosApi(product: datosDecodificados)
                     
                 }catch{

@@ -69,13 +69,18 @@ extension ShopingCarView: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return carrito.count
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        DispatchQueue.main.async {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cartTableCell", for: indexPath) as? cartTableViewCell
         
         cell?.lblProductName.text = carrito[indexPath.row].title
         cell?.lblProductPrice.text = "$"  + String(carrito[indexPath.row].price)
         cell?.imageProduct.image = UIImage(named: "loading")
+        cell?.isUserInteractionEnabled = false
         DispatchQueue.global(qos: .background).async {
             if self.carrito[indexPath.row].images?.count == 0{
                 

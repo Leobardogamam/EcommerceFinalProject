@@ -65,7 +65,7 @@ class ShopingCarLocalDataManager:ShopingCarLocalDataManagerInputProtocol {
         context.delete(data)
         do {
         try context.save()
-            print("Valor borrado con exito")
+//            print("Valor borrado con exito")
             interactor?.changePrice(price: price)
         }
         catch {

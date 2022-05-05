@@ -25,20 +25,20 @@ class DetailProductViewLocalDataManager:DetailProductViewLocalDataManagerInputPr
         }
         
         
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ProductoCustomer")
-                //request.predicate = NSPredicate(format: "age = %@", "21")
-        request.returnsObjectsAsFaults = false
-        do {
-                    let result = try context.fetch(request)
-                    for data in result as! [NSManagedObject]
-        {
-            print(data)
-          }
-
-               } catch {
-
-                   print("Failed")
-        }
+//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ProductoCustomer")
+//                //request.predicate = NSPredicate(format: "age = %@", "21")
+//        request.returnsObjectsAsFaults = false
+//        do {
+//                    let result = try context.fetch(request)
+//                    for data in result as! [NSManagedObject]
+//        {
+//            print(data)
+//          }
+//
+//               } catch {
+//
+//                   print("Failed")
+//        }
     }
     
     

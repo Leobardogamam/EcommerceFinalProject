@@ -57,7 +57,7 @@ extension ShopingCarInteractor: ShopingCarRemoteDataManagerOutputProtocol {
         if products.count == 0{
             products.append(product)
             precio.set(product.price, forKey: "Precio")
-            print(precio.set(product.price, forKey: "Precio"))
+//            print(precio.set(product.price, forKey: "Precio"))
         }else{
             for idProduct in 0...products.count-1{
                 if product.id == products[idProduct].id{
@@ -68,7 +68,7 @@ extension ShopingCarInteractor: ShopingCarRemoteDataManagerOutputProtocol {
             }else{
                 products.append(product)
                 let valorUserDefault = precio.integer(forKey: "Precio")
-                print("El valor de userDafult es: ", valorUserDefault)
+//                print("El valor de userDafult es: ", valorUserDefault)
                 var valorTotal = product.price
                 valorTotal = valorTotal + valorUserDefault
                 precio.set(valorTotal, forKey: "Precio")
