@@ -44,7 +44,6 @@ class SpecificCategoryWireFrame: SpecificCategoryWireFrameProtocol {
         
         if let newView = view as? UIViewController{
             newView.present(newProductView, animated: true)
-//            newView.navigationController?.pushViewController(newProductView, animated: true)
         }
     }
 }

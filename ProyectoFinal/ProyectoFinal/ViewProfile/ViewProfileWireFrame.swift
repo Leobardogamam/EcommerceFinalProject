@@ -13,7 +13,7 @@ class ViewProfileWireFrame: ViewProfileWireFrameProtocol {
 
     class func createViewProfileModule() -> UIViewController {
         let navController = mainStoryboard.instantiateViewController(withIdentifier: "ViewProfileView")
-        if let view = navController.children.first as? ViewProfileView {
+        if let view = navController as? ViewProfileView {
             let presenter: ViewProfilePresenterProtocol & ViewProfileInteractorOutputProtocol = ViewProfilePresenter()
             let interactor: ViewProfileInteractorInputProtocol & ViewProfileRemoteDataManagerOutputProtocol = ViewProfileInteractor()
             let localDataManager: ViewProfileLocalDataManagerInputProtocol = ViewProfileLocalDataManager()
@@ -35,7 +35,7 @@ class ViewProfileWireFrame: ViewProfileWireFrameProtocol {
     }
     
     static var mainStoryboard: UIStoryboard {
-        return UIStoryboard(name: "ViewProfileView", bundle: Bundle.main)
+        return UIStoryboard(name: "ViewProfile", bundle: Bundle.main)
     }
     
 }

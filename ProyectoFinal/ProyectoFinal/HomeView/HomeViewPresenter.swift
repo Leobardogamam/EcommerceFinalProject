@@ -18,13 +18,20 @@ class HomeViewPresenter  {
 }
 
 extension HomeViewPresenter: HomeViewPresenterProtocol {
+   
+    
     // TODO: implement presenter methods
     func viewDidLoad() {
         interactor?.getCategoriesData()
         
+        
     }
     func showSpecifcCategory(id: Int, name:String) {
         wireFrame?.showSpecificCategory(from: view!, id: id, name: name)
+    }
+    
+    func showDetailProductView(product: Product) {
+        wireFrame?.showDetailProduct(from: view!, product: product)
     }
 }
 

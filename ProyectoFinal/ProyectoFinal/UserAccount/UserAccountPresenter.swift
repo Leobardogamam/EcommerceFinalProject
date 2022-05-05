@@ -21,6 +21,19 @@ extension UserAccountPresenter: UserAccountPresenterProtocol {
     // TODO: implement presenter methods
     func viewDidLoad() {
     }
+    
+    func showViewProfile() {
+        wireFrame?.showViewProfile(from: self.view!)
+    }
+    
+    func showMyCards() {
+        wireFrame?.showMyCards(from: self.view!)
+    }
+    
+    func showViewPurchases() {
+        wireFrame?.showViewPurchases(from: self.view!)
+    }
+    
 }
 
 extension UserAccountPresenter: UserAccountInteractorOutputProtocol {

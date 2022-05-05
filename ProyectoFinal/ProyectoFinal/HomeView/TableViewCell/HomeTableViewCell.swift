@@ -11,22 +11,27 @@ protocol passCollectionProduct{
     func pasarProducto(product:Product)
 }
 
-class CollectionTableHomeView: UICollectionViewCell{
+protocol passTableToHome{
+    func pasarProducto(product:Product)
+}
+
+class CollectionTableHomeViewCell: UICollectionViewCell{
     @IBOutlet weak var imgCollectionTableHome: UIImageView!
     @IBOutlet weak var lblPrecioProducto: UILabel!
     @IBOutlet weak var lblNombreProducto: UILabel!
-    
-    
+    var delegate : passCollectionProduct?
 }
 
 
-class HomeTableViewCell: UITableViewCell {
-
+class HomeTableViewCell: UITableViewCell, passCollectionProduct {
+    
+    
+    var presenter: HomeViewPresenterProtocol?
     @IBOutlet weak var lblNombreCategory: UILabel!
     @IBOutlet weak var collectionTableViewHome: UICollectionView!
     var id = Int()
     var datos:[Product]?
-    var delegate:passCollectionProduct?
+    var delegate: passTableToHome?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -39,10 +44,15 @@ class HomeTableViewCell: UITableViewCell {
         // Configure the view for the selected state
         getAllProductsByCategory(id: id)
     }
-
+    
+    func pasarProducto(product: Product) {
+        delegate?.pasarProducto(product: product)
+    }
 }
 
 extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource{
+    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if datos?.count == 0{
             return 0
@@ -53,7 +63,7 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellCollectionTableHome", for: indexPath) as? CollectionTableHomeView
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellCollectionTableHome", for: indexPath) as? CollectionTableHomeViewCell
         cell?.imgCollectionTableHome.image = UIImage(named: "loading")
         DispatchQueue.global(qos: .default).async {
             
@@ -70,16 +80,18 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
             }
            
         }
+        
         cell?.lblNombreProducto.text = datos?[indexPath.row].title
         cell?.lblPrecioProducto.text =  "$ " + String(datos?[indexPath.row].price ?? 0)
         return cell ?? UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.pasarProducto(product: (datos?[indexPath.row])!)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellCollectionTableHome", for: indexPath) as? CollectionTableHomeViewCell
+        cell?.delegate = self
+        cell?.delegate?.pasarProducto(product: (datos?[indexPath.row])!)
+        presenter?.showDetailProductView(product: (datos?[indexPath.row])!)
     }
-    
-    
 }
 
 extension HomeTableViewCell{
@@ -104,17 +116,3 @@ extension HomeTableViewCell{
     }
 }
 
-extension Collection where Indices.Iterator.Element == Index {
-    subscript (safe index: Index) -> Iterator.Element? {
-        return indices.contains(index) ? self[index] : nil
-    }
-}
-extension Array {
-    public subscript(safeIndex index: Int) -> Element? {
-        guard index >= startIndex, index < endIndex else {
-            return nil
-        }
-
-        return self[index]
-    }
-}

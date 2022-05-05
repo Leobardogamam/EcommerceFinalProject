@@ -12,8 +12,8 @@ import UIKit
 class AddCardsWireFrame: AddCardsWireFrameProtocol {
 
     class func createAddCardsModule() -> UIViewController {
-        let navController = mainStoryboard.instantiateViewController(withIdentifier: "AddCardsView")
-        if let view = navController.children.first as? AddCardsView {
+        let navController = mainStoryboard.instantiateViewController(withIdentifier: "AddCards")
+        if let view = navController as? AddCardsView {
             let presenter: AddCardsPresenterProtocol & AddCardsInteractorOutputProtocol = AddCardsPresenter()
             let interactor: AddCardsInteractorInputProtocol & AddCardsRemoteDataManagerOutputProtocol = AddCardsInteractor()
             let localDataManager: AddCardsLocalDataManagerInputProtocol = AddCardsLocalDataManager()
@@ -35,7 +35,7 @@ class AddCardsWireFrame: AddCardsWireFrameProtocol {
     }
     
     static var mainStoryboard: UIStoryboard {
-        return UIStoryboard(name: "AddCardsView", bundle: Bundle.main)
+        return UIStoryboard(name: "AddCards", bundle: Bundle.main)
     }
     
 }

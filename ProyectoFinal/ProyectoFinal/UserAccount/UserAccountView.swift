@@ -22,6 +22,23 @@ class UserAccountView: UIViewController, MyViewDelegate {
         tabBar.delegate = self
     }
     
+//    MARK: Navegacion De Opciones De usuario
+    @IBAction func onPressActions(_ sender: UIButton) {
+        switch sender.tag{
+        case 0:
+            presenter?.showViewProfile()
+        case 1:
+            presenter?.showViewPurchases()
+        case 2:
+            presenter?.showMyCards()
+        case 3:
+            print("Cerrar Sesion")
+        default:
+            print("Error")
+        }
+    }
+    
+//    MARK: Navegacion TabBar
     func didTapButton(number: Int) {
         switch number{
         case 0:
@@ -30,7 +47,6 @@ class UserAccountView: UIViewController, MyViewDelegate {
             self.present(ShopingCarWireFrame.createShopingCarModule(),animated:true)
         case 2:
             print("Ya estas Aqui")
-            
         default:
             print("Error")
         }

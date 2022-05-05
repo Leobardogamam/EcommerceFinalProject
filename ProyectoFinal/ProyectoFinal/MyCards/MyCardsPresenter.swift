@@ -21,6 +21,11 @@ extension MyCardsPresenter: MyCardsPresenterProtocol {
     // TODO: implement presenter methods
     func viewDidLoad() {
     }
+    
+    func showAddCards() {
+        wireFrame?.showAddCards(from: self.view!)
+    }
+    
 }
 
 extension MyCardsPresenter: MyCardsInteractorOutputProtocol {

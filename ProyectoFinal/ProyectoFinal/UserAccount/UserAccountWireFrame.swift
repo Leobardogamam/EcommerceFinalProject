@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 class UserAccountWireFrame: UserAccountWireFrameProtocol {
-
     class func createUserAccountModule() -> UIViewController {
         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "UserAccountView")
         if let view = viewController as? UserAccountView {
@@ -38,4 +37,23 @@ class UserAccountWireFrame: UserAccountWireFrameProtocol {
         return UIStoryboard(name: "UserAccount", bundle: Bundle.main)
     }
     
+    
+    
+    func showViewProfile(from view:UserAccountViewProtocol) {
+        if let newView = view as? UIViewController{
+            newView.present(ViewProfileWireFrame.createViewProfileModule(),animated:true)
+        }
+    }
+    
+    func showMyCards(from view:UserAccountViewProtocol) {
+        if let newView = view as? UIViewController{
+            newView.present(MyCardsWireFrame.createMyCardsModule(),animated:true)
+        }
+    }
+    
+    func showViewPurchases(from view:UserAccountViewProtocol) {
+        if let newView = view as? UIViewController{
+            newView.present(ViewPurchasesWireFrame.createViewPurchasesModule(),animated:true)
+        }
+    }
 }

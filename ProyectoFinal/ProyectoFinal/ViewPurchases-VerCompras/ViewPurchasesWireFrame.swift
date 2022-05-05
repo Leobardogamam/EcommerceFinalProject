@@ -12,8 +12,8 @@ import UIKit
 class ViewPurchasesWireFrame: ViewPurchasesWireFrameProtocol {
 
     class func createViewPurchasesModule() -> UIViewController {
-        let navController = mainStoryboard.instantiateViewController(withIdentifier: "ViewPurchasesView")
-        if let view = navController.children.first as? ViewPurchasesView {
+        let navController = mainStoryboard.instantiateViewController(withIdentifier: "ViewPurchases")
+        if let view = navController as? ViewPurchasesView {
             let presenter: ViewPurchasesPresenterProtocol & ViewPurchasesInteractorOutputProtocol = ViewPurchasesPresenter()
             let interactor: ViewPurchasesInteractorInputProtocol & ViewPurchasesRemoteDataManagerOutputProtocol = ViewPurchasesInteractor()
             let localDataManager: ViewPurchasesLocalDataManagerInputProtocol = ViewPurchasesLocalDataManager()
@@ -35,7 +35,7 @@ class ViewPurchasesWireFrame: ViewPurchasesWireFrameProtocol {
     }
     
     static var mainStoryboard: UIStoryboard {
-        return UIStoryboard(name: "ViewPurchasesView", bundle: Bundle.main)
+        return UIStoryboard(name: "ViewPurchases", bundle: Bundle.main)
     }
     
 }

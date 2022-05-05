@@ -10,8 +10,6 @@ import Foundation
 
 class DetailProductViewPresenter: DetailProductViewPresenterProtocol  {
     
-    
-    
     // MARK: Properties
     weak var view: DetailProductViewViewProtocol?
     var interactor: DetailProductViewInteractorInputProtocol?

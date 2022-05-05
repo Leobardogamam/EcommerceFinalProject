@@ -19,6 +19,7 @@ protocol HomeViewWireFrameProtocol: AnyObject {
     // PRESENTER -> WIREFRAME
     static func createHomeViewModule() -> UIViewController
     func showSpecificCategory(from view:HomeViewViewProtocol,id:Int, name:String)
+    func showDetailProduct(from view:HomeViewViewProtocol, product:Product)
 }
 
 protocol HomeViewPresenterProtocol: AnyObject {
@@ -29,6 +30,7 @@ protocol HomeViewPresenterProtocol: AnyObject {
     
     func viewDidLoad()
     func showSpecifcCategory(id:Int, name: String)
+    func showDetailProductView(product: Product)
 }
 
 protocol HomeViewInteractorOutputProtocol: AnyObject {

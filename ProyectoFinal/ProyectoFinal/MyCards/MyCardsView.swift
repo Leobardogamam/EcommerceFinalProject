@@ -19,6 +19,11 @@ class MyCardsView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    @IBAction func onPressGoToAddCard(_ sender: UIButton) {
+        presenter?.showAddCards()
+    }
+    
 }
 
 extension MyCardsView: MyCardsViewProtocol {

@@ -10,10 +10,9 @@ import Foundation
 import UIKit
 
 class MyCardsWireFrame: MyCardsWireFrameProtocol {
-
     class func createMyCardsModule() -> UIViewController {
-        let navController = mainStoryboard.instantiateViewController(withIdentifier: "MyCardsView")
-        if let view = navController.children.first as? MyCardsView {
+        let navController = mainStoryboard.instantiateViewController(withIdentifier: "MyCards")
+        if let view = navController as? MyCardsView {
             let presenter: MyCardsPresenterProtocol & MyCardsInteractorOutputProtocol = MyCardsPresenter()
             let interactor: MyCardsInteractorInputProtocol & MyCardsRemoteDataManagerOutputProtocol = MyCardsInteractor()
             let localDataManager: MyCardsLocalDataManagerInputProtocol = MyCardsLocalDataManager()
@@ -35,7 +34,16 @@ class MyCardsWireFrame: MyCardsWireFrameProtocol {
     }
     
     static var mainStoryboard: UIStoryboard {
-        return UIStoryboard(name: "MyCardsView", bundle: Bundle.main)
+        return UIStoryboard(name: "MyCards", bundle: Bundle.main)
     }
+    
+    
+    func showAddCards(from view: MyCardsViewProtocol) {
+        if let newView = view as? UIViewController{
+            newView.present(AddCardsWireFrame.createAddCardsModule(), animated: true)
+        }
+    }
+    
+
     
 }

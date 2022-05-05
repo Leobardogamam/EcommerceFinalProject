@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class HomeViewWireFrame: HomeViewWireFrameProtocol {
+    
     class func createHomeViewModule() -> UIViewController {
         let navController = mainStoryboard.instantiateViewController(withIdentifier: "homeView")
         if let view = navController as? HomeViewView {
@@ -43,6 +44,12 @@ class HomeViewWireFrame: HomeViewWireFrameProtocol {
         
         if let newView = view as? UIViewController{
             newView.present(SpecificCategoryWireFrame.createSpecificCategoryModule(with: id, name: name),animated:true)
+//            newView.navigationController?.pushViewController(newDetailView, animated: true)
+        }
+    }
+    func showDetailProduct(from view: HomeViewViewProtocol, product: Product) {
+        if let newView = view as? UIViewController{
+            newView.present(DetailProductViewWireFrame.createDetailProductViewModule(product: product),animated:true)
 //            newView.navigationController?.pushViewController(newDetailView, animated: true)
         }
     }

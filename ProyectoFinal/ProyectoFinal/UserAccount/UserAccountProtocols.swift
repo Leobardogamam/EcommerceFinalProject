@@ -17,6 +17,10 @@ protocol UserAccountViewProtocol: AnyObject {
 protocol UserAccountWireFrameProtocol: AnyObject {
     // PRESENTER -> WIREFRAME
     static func createUserAccountModule() -> UIViewController
+    
+    func showViewProfile(from view:UserAccountViewProtocol)
+    func showMyCards(from view:UserAccountViewProtocol)
+    func showViewPurchases(from view:UserAccountViewProtocol)
 }
 
 protocol UserAccountPresenterProtocol: AnyObject {
@@ -26,6 +30,11 @@ protocol UserAccountPresenterProtocol: AnyObject {
     var wireFrame: UserAccountWireFrameProtocol? { get set }
     
     func viewDidLoad()
+    func showViewProfile()
+    func showMyCards()
+    func showViewPurchases()
+    
+    
 }
 
 protocol UserAccountInteractorOutputProtocol: AnyObject {

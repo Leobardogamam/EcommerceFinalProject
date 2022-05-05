@@ -33,7 +33,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="U3s-Om-3gX">
-                                        <rect key="frame" x="16" y="167" width="382" height="224"/>
+                                        <rect key="frame" x="16" y="167" width="382" height="264"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="QQd-MM-ghl">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
@@ -54,6 +54,9 @@
                                                         <buttonConfiguration key="configuration" style="plain" title="Ver Cuenta">
                                                             <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="onPressActions:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="k3J-Zq-Fze"/>
+                                                        </connections>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowtriangle.forward.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rjC-6g-KfW">
                                                         <rect key="frame" x="362" y="2" width="20" height="45.5"/>
@@ -65,8 +68,18 @@
                                                     </imageView>
                                                 </subviews>
                                             </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3V-D3-18j">
+                                                <rect key="frame" x="0.0" y="58" width="382" height="2"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="2" id="8AT-XL-sDP"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="xMJ-kI-vh9">
-                                                <rect key="frame" x="0.0" y="58" width="382" height="50"/>
+                                                <rect key="frame" x="0.0" y="68" width="382" height="50"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xuD-9m-pKE">
                                                         <rect key="frame" x="0.0" y="1.5" width="50" height="48.5"/>
@@ -76,7 +89,7 @@
                                                             <constraint firstAttribute="height" constant="50" id="GH5-Z6-V7t"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pnd-wX-f4w">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pnd-wX-f4w">
                                                         <rect key="frame" x="66" y="0.0" width="280" height="50"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -84,6 +97,9 @@
                                                         <buttonConfiguration key="configuration" style="plain" title="Ver Historial De Compras">
                                                             <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="onPressActions:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="zct-PS-vEU"/>
+                                                        </connections>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowtriangle.forward.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="a5G-oC-J3K">
                                                         <rect key="frame" x="362" y="2" width="20" height="45.5"/>
@@ -95,8 +111,18 @@
                                                     </imageView>
                                                 </subviews>
                                             </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AqK-d4-FyX">
+                                                <rect key="frame" x="0.0" y="126" width="382" height="2"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="2" id="MMo-Lb-hcB"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fa5-45-d5W">
-                                                <rect key="frame" x="0.0" y="116" width="382" height="50"/>
+                                                <rect key="frame" x="0.0" y="136" width="382" height="50"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="creditcard" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="x9D-rh-IfV">
                                                         <rect key="frame" x="0.0" y="1.5" width="50" height="46.5"/>
@@ -106,7 +132,7 @@
                                                             <constraint firstAttribute="height" constant="50" id="tlx-54-FyO"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ue4-yJ-otY">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ue4-yJ-otY">
                                                         <rect key="frame" x="66" y="0.0" width="280" height="50"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -114,6 +140,9 @@
                                                         <buttonConfiguration key="configuration" style="plain" title="Ver Tarjetas">
                                                             <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="onPressActions:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fqU-2o-ULy"/>
+                                                        </connections>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowtriangle.forward.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qTa-rR-eIg">
                                                         <rect key="frame" x="362" y="2" width="20" height="45.5"/>
@@ -125,8 +154,18 @@
                                                     </imageView>
                                                 </subviews>
                                             </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HzO-c9-dF0">
+                                                <rect key="frame" x="0.0" y="194" width="382" height="2"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="2" id="XQf-DV-pGQ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="tjP-p3-VLB">
-                                                <rect key="frame" x="0.0" y="174" width="382" height="50"/>
+                                                <rect key="frame" x="0.0" y="204" width="382" height="50"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowshape.turn.up.right.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rBT-cS-ner">
                                                         <rect key="frame" x="0.0" y="0.5" width="50" height="49"/>
@@ -136,7 +175,7 @@
                                                             <constraint firstAttribute="height" constant="50" id="WBX-wh-EI6"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9a-RP-e79">
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9a-RP-e79">
                                                         <rect key="frame" x="66" y="0.0" width="280" height="50"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -144,6 +183,9 @@
                                                         <buttonConfiguration key="configuration" style="plain" title="Cerrar Sesion">
                                                             <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="onPressActions:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="TpD-7s-P9F"/>
+                                                        </connections>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowtriangle.forward.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Nba-uU-CdJ">
                                                         <rect key="frame" x="362" y="2" width="20" height="45.5"/>
@@ -155,6 +197,16 @@
                                                     </imageView>
                                                 </subviews>
                                             </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zbp-vn-mIA">
+                                                <rect key="frame" x="0.0" y="262" width="382" height="2"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="2" id="Elt-4V-VrN"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="quaternarySystemFillColor"/>
                                         <userDefinedRuntimeAttributes>
