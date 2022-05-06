@@ -25,6 +25,26 @@
 		97094648281CF07F005296E8 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97094647281CF07F005296E8 /* HomeTableViewCell.swift */; };
 		9741ADBD2821909F0073FABF /* ProductoCustomer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9741ADBB2821909F0073FABF /* ProductoCustomer+CoreDataClass.swift */; };
 		9741ADBE2821909F0073FABF /* ProductoCustomer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9741ADBC2821909F0073FABF /* ProductoCustomer+CoreDataProperties.swift */; };
+		9756375F28248A810006C761 /* SignupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9756375828248A810006C761 /* SignupPresenter.swift */; };
+		9756376028248A810006C761 /* SignupLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9756375928248A810006C761 /* SignupLocalDataManager.swift */; };
+		9756376128248A810006C761 /* SignupProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9756375A28248A810006C761 /* SignupProtocols.swift */; };
+		9756376228248A810006C761 /* SignupInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9756375B28248A810006C761 /* SignupInteractor.swift */; };
+		9756376328248A810006C761 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9756375C28248A810006C761 /* SignupView.swift */; };
+		9756376428248A810006C761 /* SignupRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9756375D28248A810006C761 /* SignupRemoteDataManager.swift */; };
+		9756376528248A810006C761 /* SignupWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9756375E28248A810006C761 /* SignupWireFrame.swift */; };
+		9756376728248AAC0006C761 /* CheckUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9756376628248AAC0006C761 /* CheckUser.swift */; };
+		9756376928248ACB0006C761 /* ImageAdded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9756376828248ACB0006C761 /* ImageAdded.swift */; };
+		9756376B28248ADB0006C761 /* UserAdded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9756376A28248ADB0006C761 /* UserAdded.swift */; };
+		9756376D28248B8D0006C761 /* SignupView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9756376C28248B8D0006C761 /* SignupView.storyboard */; };
+		9756377628248C630006C761 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9756376F28248C630006C761 /* LoginPresenter.swift */; };
+		9756377728248C630006C761 /* LoginLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9756377028248C630006C761 /* LoginLocalDataManager.swift */; };
+		9756377828248C630006C761 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9756377128248C630006C761 /* LoginProtocols.swift */; };
+		9756377928248C630006C761 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9756377228248C630006C761 /* LoginInteractor.swift */; };
+		9756377A28248C630006C761 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9756377328248C630006C761 /* LoginView.swift */; };
+		9756377B28248C630006C761 /* LoginRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9756377428248C630006C761 /* LoginRemoteDataManager.swift */; };
+		9756377C28248C630006C761 /* LoginWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9756377528248C630006C761 /* LoginWireFrame.swift */; };
+		9756377E28248CDF0006C761 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9756377D28248CDF0006C761 /* Users.swift */; };
+		9756378028248D250006C761 /* LoginView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9756377F28248D250006C761 /* LoginView.storyboard */; };
 		975B77AE281A23D500AF96BD /* HomeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 975B77AD281A23D500AF96BD /* HomeView.storyboard */; };
 		975B77B6281A23DD00AF96BD /* HomeViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975B77AF281A23DD00AF96BD /* HomeViewPresenter.swift */; };
 		975B77B7281A23DD00AF96BD /* HomeViewLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975B77B0281A23DD00AF96BD /* HomeViewLocalDataManager.swift */; };
@@ -138,6 +158,26 @@
 		97094647281CF07F005296E8 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		9741ADBB2821909F0073FABF /* ProductoCustomer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductoCustomer+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9741ADBC2821909F0073FABF /* ProductoCustomer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductoCustomer+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9756375828248A810006C761 /* SignupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPresenter.swift; sourceTree = "<group>"; };
+		9756375928248A810006C761 /* SignupLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupLocalDataManager.swift; sourceTree = "<group>"; };
+		9756375A28248A810006C761 /* SignupProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupProtocols.swift; sourceTree = "<group>"; };
+		9756375B28248A810006C761 /* SignupInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupInteractor.swift; sourceTree = "<group>"; };
+		9756375C28248A810006C761 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		9756375D28248A810006C761 /* SignupRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupRemoteDataManager.swift; sourceTree = "<group>"; };
+		9756375E28248A810006C761 /* SignupWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupWireFrame.swift; sourceTree = "<group>"; };
+		9756376628248AAC0006C761 /* CheckUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUser.swift; sourceTree = "<group>"; };
+		9756376828248ACB0006C761 /* ImageAdded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAdded.swift; sourceTree = "<group>"; };
+		9756376A28248ADB0006C761 /* UserAdded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAdded.swift; sourceTree = "<group>"; };
+		9756376C28248B8D0006C761 /* SignupView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignupView.storyboard; sourceTree = "<group>"; };
+		9756376F28248C630006C761 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		9756377028248C630006C761 /* LoginLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginLocalDataManager.swift; sourceTree = "<group>"; };
+		9756377128248C630006C761 /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
+		9756377228248C630006C761 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		9756377328248C630006C761 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		9756377428248C630006C761 /* LoginRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRemoteDataManager.swift; sourceTree = "<group>"; };
+		9756377528248C630006C761 /* LoginWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWireFrame.swift; sourceTree = "<group>"; };
+		9756377D28248CDF0006C761 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		9756377F28248D250006C761 /* LoginView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginView.storyboard; sourceTree = "<group>"; };
 		975B77AD281A23D500AF96BD /* HomeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeView.storyboard; sourceTree = "<group>"; };
 		975B77AF281A23DD00AF96BD /* HomeViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewPresenter.swift; sourceTree = "<group>"; };
 		975B77B0281A23DD00AF96BD /* HomeViewLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewLocalDataManager.swift; sourceTree = "<group>"; };
@@ -262,6 +302,8 @@
 		6A1829002819D9FF004984D4 /* ProyectoFinal */ = {
 			isa = PBXGroup;
 			children = (
+				9756376E28248C560006C761 /* LoginView */,
+				9756375728248A4A0006C761 /* SingUpView */,
 				9706B1E0281EE972002023E6 /* SpecificCategory */,
 				975B77A6281A227000AF96BD /* DetailProductView */,
 				97AF0EAD281E53A5009583F6 /* TabBarNavigationButtons */,
@@ -307,6 +349,40 @@
 				97094647281CF07F005296E8 /* HomeTableViewCell.swift */,
 			);
 			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		9756375728248A4A0006C761 /* SingUpView */ = {
+			isa = PBXGroup;
+			children = (
+				9756375828248A810006C761 /* SignupPresenter.swift */,
+				9756375928248A810006C761 /* SignupLocalDataManager.swift */,
+				9756375A28248A810006C761 /* SignupProtocols.swift */,
+				9756375B28248A810006C761 /* SignupInteractor.swift */,
+				9756375C28248A810006C761 /* SignupView.swift */,
+				9756375D28248A810006C761 /* SignupRemoteDataManager.swift */,
+				9756375E28248A810006C761 /* SignupWireFrame.swift */,
+				9756376628248AAC0006C761 /* CheckUser.swift */,
+				9756376A28248ADB0006C761 /* UserAdded.swift */,
+				9756376828248ACB0006C761 /* ImageAdded.swift */,
+				9756376C28248B8D0006C761 /* SignupView.storyboard */,
+			);
+			path = SingUpView;
+			sourceTree = "<group>";
+		};
+		9756376E28248C560006C761 /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				9756376F28248C630006C761 /* LoginPresenter.swift */,
+				9756377028248C630006C761 /* LoginLocalDataManager.swift */,
+				9756377128248C630006C761 /* LoginProtocols.swift */,
+				9756377228248C630006C761 /* LoginInteractor.swift */,
+				9756377328248C630006C761 /* LoginView.swift */,
+				9756377428248C630006C761 /* LoginRemoteDataManager.swift */,
+				9756377528248C630006C761 /* LoginWireFrame.swift */,
+				9756377D28248CDF0006C761 /* Users.swift */,
+				9756377F28248D250006C761 /* LoginView.storyboard */,
+			);
+			path = LoginView;
 			sourceTree = "<group>";
 		};
 		975B77A3281A225500AF96BD /* HomeView */ = {
@@ -550,12 +626,14 @@
 				97901F6A281A4D0500E367BB /* DeleteEditCards.storyboard in Resources */,
 				975B77CC281A23F800AF96BD /* UserAccount.storyboard in Resources */,
 				97AF0EAF281E53C5009583F6 /* TabBarNavigationButtons.xib in Resources */,
+				9756378028248D250006C761 /* LoginView.storyboard in Resources */,
 				975B782E281A248800AF96BD /* ViewProfile.storyboard in Resources */,
 				6A1829112819DA01004984D4 /* LaunchScreen.storyboard in Resources */,
 				975B780E281A245000AF96BD /* Cards.storyboard in Resources */,
 				6A18290E2819DA01004984D4 /* Assets.xcassets in Resources */,
 				975B7810281A245C00AF96BD /* ViewPurchases.storyboard in Resources */,
 				975B77EC281A241900AF96BD /* ShopingCar.storyboard in Resources */,
+				9756376D28248B8D0006C761 /* SignupView.storyboard in Resources */,
 				97901F4A281A4CB200E367BB /* MyCards.storyboard in Resources */,
 				975B77CE281A240200AF96BD /* DetailProductView.storyboard in Resources */,
 			);
@@ -576,22 +654,28 @@
 				975B7827281A247C00AF96BD /* ViewProfileLocalDataManager.swift in Sources */,
 				975B77B7281A23DD00AF96BD /* HomeViewLocalDataManager.swift in Sources */,
 				97901F54281A4CBB00E367BB /* MyCardsProtocols.swift in Sources */,
+				9756377628248C630006C761 /* LoginPresenter.swift in Sources */,
 				975B781A281A246200AF96BD /* ViewPurchasesProtocols.swift in Sources */,
 				975B77DA281A240C00AF96BD /* DetailProductViewView.swift in Sources */,
+				9756377828248C630006C761 /* LoginProtocols.swift in Sources */,
 				975B7808281A244000AF96BD /* CardsProtocols.swift in Sources */,
+				9756377928248C630006C761 /* LoginInteractor.swift in Sources */,
 				97901F61281A4CDA00E367BB /* AddCardsLocalDataManager.swift in Sources */,
 				975B77C9281A23F300AF96BD /* UserAccountRemoteDataManager.swift in Sources */,
 				97901F62281A4CDA00E367BB /* AddCardsProtocols.swift in Sources */,
 				97901F53281A4CBB00E367BB /* MyCardsLocalDataManager.swift in Sources */,
 				97094648281CF07F005296E8 /* HomeTableViewCell.swift in Sources */,
+				9756377B28248C630006C761 /* LoginRemoteDataManager.swift in Sources */,
 				975B77D9281A240C00AF96BD /* DetailProductViewInteractor.swift in Sources */,
 				6A18290C2819D9FF004984D4 /* ProyectoFinal.xcdatamodeld in Sources */,
 				97901F78281A4D0C00E367BB /* DeleteEditCardsWireFrame.swift in Sources */,
 				975B7809281A244000AF96BD /* CardsInteractor.swift in Sources */,
 				975B782B281A247C00AF96BD /* ViewProfileRemoteDataManager.swift in Sources */,
+				9756377E28248CDF0006C761 /* Users.swift in Sources */,
 				975B7826281A247C00AF96BD /* ViewProfilePresenter.swift in Sources */,
 				975B77C8281A23F300AF96BD /* UserAccountView.swift in Sources */,
 				975B77F9281A243700AF96BD /* BuyItemsLocalDataManager.swift in Sources */,
+				9756375F28248A810006C761 /* SignupPresenter.swift in Sources */,
 				975B7807281A244000AF96BD /* CardsLocalDataManager.swift in Sources */,
 				975B780A281A244000AF96BD /* CardsView.swift in Sources */,
 				6A1829022819D9FF004984D4 /* AppDelegate.swift in Sources */,
@@ -606,6 +690,7 @@
 				975B77C4281A23F300AF96BD /* UserAccountPresenter.swift in Sources */,
 				97901F73281A4D0C00E367BB /* DeleteEditCardsLocalDataManager.swift in Sources */,
 				97901F65281A4CDA00E367BB /* AddCardsRemoteDataManager.swift in Sources */,
+				9756376728248AAC0006C761 /* CheckUser.swift in Sources */,
 				975B77BB281A23DD00AF96BD /* HomeViewRemoteDataManager.swift in Sources */,
 				975B781B281A246200AF96BD /* ViewPurchasesInteractor.swift in Sources */,
 				975B77B9281A23DD00AF96BD /* HomeViewInteractor.swift in Sources */,
@@ -615,12 +700,14 @@
 				9706B1EE281EEB64002023E6 /* SpecificCategoryWireFrame.swift in Sources */,
 				975B77FE281A243700AF96BD /* BuyItemsWireFrame.swift in Sources */,
 				975B77D8281A240C00AF96BD /* DetailProductViewProtocols.swift in Sources */,
+				9756376528248A810006C761 /* SignupWireFrame.swift in Sources */,
 				975B780B281A244000AF96BD /* CardsRemoteDataManager.swift in Sources */,
 				975B77CA281A23F300AF96BD /* UserAccountWireFrame.swift in Sources */,
 				97901F57281A4CBB00E367BB /* MyCardsRemoteDataManager.swift in Sources */,
 				975B7819281A246200AF96BD /* ViewPurchasesLocalDataManager.swift in Sources */,
 				9706B1E8281EEB64002023E6 /* SpecificCategoryPresenter.swift in Sources */,
 				975B77BA281A23DD00AF96BD /* HomeViewView.swift in Sources */,
+				9756376928248ACB0006C761 /* ImageAdded.swift in Sources */,
 				975B780C281A244000AF96BD /* CardsWireFrame.swift in Sources */,
 				975B77FB281A243700AF96BD /* BuyItemsInteractor.swift in Sources */,
 				975B77FD281A243700AF96BD /* BuyItemsRemoteDataManager.swift in Sources */,
@@ -630,17 +717,20 @@
 				97901F76281A4D0C00E367BB /* DeleteEditCardsView.swift in Sources */,
 				97901F74281A4D0C00E367BB /* DeleteEditCardsProtocols.swift in Sources */,
 				9741ADBD2821909F0073FABF /* ProductoCustomer+CoreDataClass.swift in Sources */,
+				9756376028248A810006C761 /* SignupLocalDataManager.swift in Sources */,
 				9706B1ED281EEB64002023E6 /* SpecificCategoryRemoteDataManager.swift in Sources */,
 				97901F60281A4CDA00E367BB /* AddCardsPresenter.swift in Sources */,
 				975B7818281A246200AF96BD /* ViewPurchasesPresenter.swift in Sources */,
 				97901F72281A4D0C00E367BB /* DeleteEditCardsPresenter.swift in Sources */,
 				975B77C7281A23F300AF96BD /* UserAccountInteractor.swift in Sources */,
 				975B77DB281A240C00AF96BD /* DetailProductViewRemoteDataManager.swift in Sources */,
+				9756376B28248ADB0006C761 /* UserAdded.swift in Sources */,
 				975B77E9281A241500AF96BD /* ShopingCarRemoteDataManager.swift in Sources */,
 				9706B1EB281EEB64002023E6 /* SpecificCategoryInteractor.swift in Sources */,
 				975B77EA281A241500AF96BD /* ShopingCarWireFrame.swift in Sources */,
 				9706B1EC281EEB64002023E6 /* SpecificCategoryView.swift in Sources */,
 				9706B1EA281EEB64002023E6 /* SpecificCategoryProtocols.swift in Sources */,
+				9756376128248A810006C761 /* SignupProtocols.swift in Sources */,
 				975B77B8281A23DD00AF96BD /* HomeViewProtocols.swift in Sources */,
 				975B77B6281A23DD00AF96BD /* HomeViewPresenter.swift in Sources */,
 				975B77E4281A241500AF96BD /* ShopingCarPresenter.swift in Sources */,
@@ -649,6 +739,8 @@
 				97901F52281A4CBB00E367BB /* MyCardsPresenter.swift in Sources */,
 				975B77E6281A241500AF96BD /* ShopingCarProtocols.swift in Sources */,
 				975B77F8281A243700AF96BD /* BuyItemsPresenter.swift in Sources */,
+				9756376328248A810006C761 /* SignupView.swift in Sources */,
+				9756376228248A810006C761 /* SignupInteractor.swift in Sources */,
 				97901F56281A4CBB00E367BB /* MyCardsView.swift in Sources */,
 				975B781C281A246200AF96BD /* ViewPurchasesView.swift in Sources */,
 				975B77E8281A241500AF96BD /* ShopingCarView.swift in Sources */,
@@ -656,11 +748,15 @@
 				975B7829281A247C00AF96BD /* ViewProfileInteractor.swift in Sources */,
 				97AF0EB1281E540E009583F6 /* TabBarNavigationButtons.swift in Sources */,
 				975B77D6281A240C00AF96BD /* DetailProductViewPresenter.swift in Sources */,
+				9756376428248A810006C761 /* SignupRemoteDataManager.swift in Sources */,
 				9706B1E9281EEB64002023E6 /* SpecificCategoryLocalDataManager.swift in Sources */,
+				9756377A28248C630006C761 /* LoginView.swift in Sources */,
+				9756377C28248C630006C761 /* LoginWireFrame.swift in Sources */,
 				9706B1F2281F1FEF002023E6 /* ProductsStruct.swift in Sources */,
 				97901F66281A4CDA00E367BB /* AddCardsWireFrame.swift in Sources */,
 				97901F63281A4CDA00E367BB /* AddCardsInteractor.swift in Sources */,
 				6A1829042819D9FF004984D4 /* SceneDelegate.swift in Sources */,
+				9756377728248C630006C761 /* LoginLocalDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
