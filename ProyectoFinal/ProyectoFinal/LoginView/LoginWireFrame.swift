@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 class LoginWireFrame: LoginWireFrameProtocol {
-    
     class func createLoginModule() -> UIViewController {
         let navController = mainStoryboard.instantiateViewController(withIdentifier: "LoginView")
         if let view = navController as? LoginView {
@@ -44,8 +43,20 @@ class LoginWireFrame: LoginWireFrameProtocol {
     }
     
     
+    func showHomeUserView(from view: LoginViewProtocol, user: Users) {
+        let newHomeUserView = HomeViewWireFrame.createHomeViewModule(user: user)
+        if let newView = view as? UIViewController{
+            newView.present(newHomeUserView, animated: true)
+        }
+    }
+    
+    
+    
+    
     static var mainStoryboard: UIStoryboard {
         return UIStoryboard(name: "LoginView", bundle: Bundle.main)
     }
+    
+    
     
 }

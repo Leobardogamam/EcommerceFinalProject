@@ -18,7 +18,6 @@ class DetailProductViewInteractor: DetailProductViewInteractorInputProtocol {
     func saveDataInCoreData(idCustomer: Int, idProduct: Int) {
         localDatamanager?.saveDataInCoreData(idCustomer: idCustomer, idProduct: idProduct)
     }
-
 }
 
 extension DetailProductViewInteractor: DetailProductViewRemoteDataManagerOutputProtocol {

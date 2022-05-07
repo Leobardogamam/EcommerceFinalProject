@@ -75,6 +75,9 @@ class SignupView: UIViewController {
     }
     
    
+    @IBAction func onPressDissmis(_ sender: Any) {
+        dismiss(animated: true)
+    }
     
 }
 

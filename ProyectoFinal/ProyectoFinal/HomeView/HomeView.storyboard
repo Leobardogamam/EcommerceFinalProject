@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="15" estimatedSectionHeaderHeight="-1" sectionFooterHeight="20" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7Cq-NJ-CC9">
-                                <rect key="frame" x="0.0" y="230" width="414" height="572"/>
+                                <rect key="frame" x="0.0" y="205" width="414" height="573"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellTableHomeView" rowHeight="310" id="LFK-ZK-sVG" customClass="HomeTableViewCell" customModule="ProyectoFinal" customModuleProvider="target">
@@ -154,7 +154,7 @@
                                 </connections>
                             </tableView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SXA-cG-Amm">
-                                <rect key="frame" x="0.0" y="120" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="95" width="414" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="v6D-ib-STX"/>
@@ -249,9 +249,9 @@
                             <constraint firstItem="dna-oN-fAi" firstAttribute="bottom" secondItem="yr7-l7-JI6" secondAttribute="bottom" id="JTy-ae-Zf9"/>
                             <constraint firstItem="SXA-cG-Amm" firstAttribute="leading" secondItem="dna-oN-fAi" secondAttribute="leading" id="PP2-xZ-SyN"/>
                             <constraint firstItem="dna-oN-fAi" firstAttribute="trailing" secondItem="SXA-cG-Amm" secondAttribute="trailing" id="Plh-X3-Joy"/>
-                            <constraint firstItem="SXA-cG-Amm" firstAttribute="top" secondItem="TPe-PQ-kih" secondAttribute="top" constant="120" id="TkU-kP-EIy"/>
+                            <constraint firstItem="SXA-cG-Amm" firstAttribute="top" secondItem="TPe-PQ-kih" secondAttribute="top" constant="95" id="TkU-kP-EIy"/>
                             <constraint firstItem="dna-oN-fAi" firstAttribute="trailing" secondItem="7Cq-NJ-CC9" secondAttribute="trailing" id="aL1-iz-Tad"/>
-                            <constraint firstItem="yr7-l7-JI6" firstAttribute="top" secondItem="7Cq-NJ-CC9" secondAttribute="bottom" id="cNu-8j-YJb"/>
+                            <constraint firstItem="yr7-l7-JI6" firstAttribute="top" secondItem="7Cq-NJ-CC9" secondAttribute="bottom" constant="24" id="cNu-8j-YJb"/>
                             <constraint firstItem="7Cq-NJ-CC9" firstAttribute="leading" secondItem="dna-oN-fAi" secondAttribute="leading" id="r7x-eo-tK5"/>
                         </constraints>
                     </view>

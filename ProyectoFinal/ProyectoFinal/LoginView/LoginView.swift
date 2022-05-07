@@ -13,6 +13,8 @@ class LoginView: UIViewController {
 
     // MARK: Properties
     var presenter: LoginPresenterProtocol?
+    var role:String?
+    var user: Users?
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passTextField: UITextField!
     
@@ -23,14 +25,14 @@ class LoginView: UIViewController {
     }
     
     @IBAction func loginPressed(_ sender: Any) {
-       
-        presenter?.viewDidLoad()
+       presenter?.viewDidLoad()
         
     }
     @IBAction func signUpPressed(_ sender: Any) {
         presenter?.showSignUpView()
     }
     @IBAction func forgetPassPressed(_ sender: Any) {
+        
     }
 }
 
@@ -47,7 +49,8 @@ extension LoginView: LoginViewProtocol {
             
             for user in userList{
                 if user.email == self.emailTextField.text && user.password == self.passTextField.text{
-                    
+                    self.role = user.role
+                    self.user = user
                   userExist = true
                   break
                     
@@ -57,7 +60,19 @@ extension LoginView: LoginViewProtocol {
                 }
             
                 if userExist == true{
-                    let storyboard = UIStoryboard(name: "Welcome", bundle: nil)
+                    switch self.role{
+                    case "customer":
+                        self.presenter?.showHomeUserView(user: self.user!)
+                    case "admin":
+                        print(self.role)
+                    default:
+                        print("Error")
+                        
+                    }
+//                    let storyboard = UIStoryboard(name: "Welcome", bundle: nil)
+                    
+                    
+                    
 //                    let vc = storyboard.instantiateViewController(withIdentifier: "Welcome") as! WelcomeViewController
                 
 //                    self.present(vc, animated: true, completion: nil)

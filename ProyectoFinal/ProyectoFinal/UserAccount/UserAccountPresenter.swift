@@ -18,6 +18,7 @@ class UserAccountPresenter  {
 }
 
 extension UserAccountPresenter: UserAccountPresenterProtocol {
+    
     // TODO: implement presenter methods
     func viewDidLoad() {
     }
@@ -32,6 +33,11 @@ extension UserAccountPresenter: UserAccountPresenterProtocol {
     
     func showViewPurchases() {
         wireFrame?.showViewPurchases(from: self.view!)
+    }
+    
+    
+    func showLoginView() {
+        wireFrame?.showLoginView(from: view!)
     }
     
 }

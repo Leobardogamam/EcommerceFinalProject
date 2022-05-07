@@ -32,7 +32,7 @@ class UserAccountView: UIViewController, MyViewDelegate {
         case 2:
             presenter?.showMyCards()
         case 3:
-            print("Cerrar Sesion")
+            presenter?.showLoginView()
         default:
             print("Error")
         }

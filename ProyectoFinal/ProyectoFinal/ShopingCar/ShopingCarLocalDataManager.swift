@@ -12,13 +12,14 @@ import CoreData
 class ShopingCarLocalDataManager:ShopingCarLocalDataManagerInputProtocol {
     var interactor: ShopingCarLocalDataManagerOutputProtocol?
     var arrayIdProduct:[Int]?
+    var userDefault = UserDefaults()
     
     func getAllCarCoredataSave() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ProductoCustomer")
-                //request.predicate = NSPredicate(format: "age = %@", "21")
+        request.predicate = NSPredicate(format: "idcustomer = %@", "\(userDefault.integer(forKey: "IdUsuario"))")
         request.returnsObjectsAsFaults = false
         do {
                 let result = try context.fetch(request)

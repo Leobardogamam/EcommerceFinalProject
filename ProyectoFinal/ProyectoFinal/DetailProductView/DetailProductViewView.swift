@@ -19,7 +19,8 @@ class DetailProductViewView: UIViewController {
     @IBOutlet weak var btnReturnBack: UIButton!
     var presenter: DetailProductViewPresenterProtocol?
     var idProduct:Int?
-
+    var userDefault = UserDefaults()
+    
     // MARK: Lifecycle
 
     override func viewDidLoad() {
@@ -27,7 +28,7 @@ class DetailProductViewView: UIViewController {
         presenter?.viewDidLoad()
         btnReturnBack.layer.cornerRadius = btnReturnBack.frame.height / 2
     }
-    
+
     @IBAction func onPressReturnBack(_ sender: UIButton) {
         dismiss(animated: true)
     }
@@ -35,7 +36,8 @@ class DetailProductViewView: UIViewController {
 
     @IBAction func onPressAddCar(_ sender: UIButton) {
         alert(title: "Se agrego al carrito", message: "El producto se agrego al carrito")
-        presenter?.saveDataInCoreData(idCustomer: 1, idProduct: idProduct ?? 0)
+        presenter?.saveDataInCoreData(idCustomer: userDefault.integer(forKey: "IdUsuario"), idProduct: idProduct ?? 0)
+        print("user dafault = ", userDefault.integer(forKey: "IdUsuario"))
     }
     
     func alert(title:String,message:String){
@@ -59,7 +61,11 @@ extension DetailProductViewView: DetailProductViewViewProtocol {
         self.imgProduct.image = UIImage(named: "loading")
         DispatchQueue.global(qos: .default).async {
             let url = URL(string: product.images?[0] ?? "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930")
-            let data = try? Data(contentsOf: url!)
+            guard let url = url else {
+                return
+            }
+
+            let data = try? Data(contentsOf: url)
             guard let dat = data else{return}
             DispatchQueue.main.async {
                 self.imgProduct.image = UIImage(data: dat)

@@ -8,23 +8,19 @@
 
 import Foundation
 
-class HomeViewPresenter  {
+class HomeViewPresenter:  HomeViewPresenterProtocol {
     
     // MARK: Properties
     weak var view: HomeViewViewProtocol?
     var interactor: HomeViewInteractorInputProtocol?
     var wireFrame: HomeViewWireFrameProtocol?
-    
-}
-
-extension HomeViewPresenter: HomeViewPresenterProtocol {
-   
+    var user: Users?
+    var defaults = UserDefaults()
     
     // TODO: implement presenter methods
     func viewDidLoad() {
         interactor?.getCategoriesData()
-        
-        
+        print("El usuario es: ", defaults.integer(forKey: "IdUsuario"))
     }
     func showSpecifcCategory(id: Int, name:String) {
         wireFrame?.showSpecificCategory(from: view!, id: id, name: name)
@@ -33,7 +29,28 @@ extension HomeViewPresenter: HomeViewPresenterProtocol {
     func showDetailProductView(product: Product) {
         wireFrame?.showDetailProduct(from: view!, product: product)
     }
+    
 }
+
+//extension HomeViewPresenter: HomeViewPresenterProtocol {
+//    var user: Users?
+//
+//
+//
+//    // TODO: implement presenter methods
+//    func viewDidLoad() {
+//        interactor?.getCategoriesData()
+//
+//
+//    }
+//    func showSpecifcCategory(id: Int, name:String) {
+//        wireFrame?.showSpecificCategory(from: view!, id: id, name: name)
+//    }
+//
+//    func showDetailProductView(product: Product) {
+//        wireFrame?.showDetailProduct(from: view!, product: product)
+//    }
+//}
 
 extension HomeViewPresenter: HomeViewInteractorOutputProtocol {
     // TODO: implement interactor output methods

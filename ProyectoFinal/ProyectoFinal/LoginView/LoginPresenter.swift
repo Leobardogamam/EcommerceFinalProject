@@ -9,14 +9,10 @@
 import Foundation
 
 class LoginPresenter: LoginPresenterProtocol  {
-
     // MARK: Properties
     weak var view: LoginViewProtocol?
     var interactor: LoginInteractorInputProtocol?
     var wireFrame: LoginWireFrameProtocol?
-
-    
-    
     
     func viewDidLoad() {
         interactor?.getUsers()
@@ -25,6 +21,13 @@ class LoginPresenter: LoginPresenterProtocol  {
     func showSignUpView() {
         wireFrame?.presentNewViewSignUp(from: view!)
     }
+    
+    
+    func showHomeUserView(user:Users) {
+        wireFrame?.showHomeUserView(from: view!, user: user)
+    }
+    
+
     
 }
 

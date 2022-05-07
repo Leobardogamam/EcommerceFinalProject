@@ -19,6 +19,7 @@ protocol LoginWireFrameProtocol: AnyObject {
     // PRESENTER -> WIREFRAME
     static func createLoginModule() -> UIViewController
     func presentNewViewSignUp(from view : LoginViewProtocol)
+    func showHomeUserView(from view: LoginViewProtocol, user: Users)
 }
 
 protocol LoginPresenterProtocol: AnyObject {
@@ -29,6 +30,7 @@ protocol LoginPresenterProtocol: AnyObject {
     
     func viewDidLoad()
     func showSignUpView()
+    func showHomeUserView(user: Users)
 }
 
 protocol LoginInteractorOutputProtocol: AnyObject {
