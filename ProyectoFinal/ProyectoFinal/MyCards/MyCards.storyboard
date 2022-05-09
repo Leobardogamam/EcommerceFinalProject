@@ -18,13 +18,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mis Tarjetas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Epp-1Y-p2v">
-                                <rect key="frame" x="16" y="84" width="178" height="42"/>
+                                <rect key="frame" x="16" y="48" width="178" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NvW-h3-zMz">
-                                <rect key="frame" x="0.0" y="158" width="414" height="264"/>
+                                <rect key="frame" x="0.0" y="122" width="414" height="264"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="oNr-Vr-STp"/>
@@ -90,7 +90,7 @@
                             <constraint firstAttribute="trailing" secondItem="NvW-h3-zMz" secondAttribute="trailing" id="ea0-lQ-ZnY"/>
                             <constraint firstItem="NvW-h3-zMz" firstAttribute="top" secondItem="Epp-1Y-p2v" secondAttribute="bottom" constant="32" id="gtR-Ef-eYB"/>
                             <constraint firstItem="9rk-Lz-zSY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="hhJ-1H-gd5"/>
-                            <constraint firstItem="Epp-1Y-p2v" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="40" id="mY6-E2-ijo"/>
+                            <constraint firstItem="Epp-1Y-p2v" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="48" id="mY6-E2-ijo"/>
                             <constraint firstItem="NvW-h3-zMz" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="ugb-aN-yeu"/>
                         </constraints>
                     </view>

@@ -354,6 +354,7 @@
 		9756375728248A4A0006C761 /* SingUpView */ = {
 			isa = PBXGroup;
 			children = (
+				9756376C28248B8D0006C761 /* SignupView.storyboard */,
 				9756375828248A810006C761 /* SignupPresenter.swift */,
 				9756375928248A810006C761 /* SignupLocalDataManager.swift */,
 				9756375A28248A810006C761 /* SignupProtocols.swift */,
@@ -364,7 +365,6 @@
 				9756376628248AAC0006C761 /* CheckUser.swift */,
 				9756376A28248ADB0006C761 /* UserAdded.swift */,
 				9756376828248ACB0006C761 /* ImageAdded.swift */,
-				9756376C28248B8D0006C761 /* SignupView.storyboard */,
 			);
 			path = SingUpView;
 			sourceTree = "<group>";
@@ -372,6 +372,7 @@
 		9756376E28248C560006C761 /* LoginView */ = {
 			isa = PBXGroup;
 			children = (
+				9756377F28248D250006C761 /* LoginView.storyboard */,
 				9756376F28248C630006C761 /* LoginPresenter.swift */,
 				9756377028248C630006C761 /* LoginLocalDataManager.swift */,
 				9756377128248C630006C761 /* LoginProtocols.swift */,
@@ -380,7 +381,6 @@
 				9756377428248C630006C761 /* LoginRemoteDataManager.swift */,
 				9756377528248C630006C761 /* LoginWireFrame.swift */,
 				9756377D28248CDF0006C761 /* Users.swift */,
-				9756377F28248D250006C761 /* LoginView.storyboard */,
 			);
 			path = LoginView;
 			sourceTree = "<group>";

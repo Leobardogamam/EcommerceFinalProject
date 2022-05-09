@@ -16,24 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="upI-Fw-PKJ" customClass="TabBarNavigationButtons" customModule="ProyectoFinal" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="802" width="414" height="60"/>
-                                <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Gt6-7R-XZG"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qLH-Ih-dCN">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="802"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mi cuenta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3c-hF-lZe">
-                                        <rect key="frame" x="16" y="85" width="147" height="42"/>
+                                        <rect key="frame" x="16" y="48" width="147" height="42"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="U3s-Om-3gX">
-                                        <rect key="frame" x="16" y="167" width="382" height="264"/>
+                                        <rect key="frame" x="16" y="114" width="382" height="264"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="QQd-MM-ghl">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
@@ -218,17 +211,33 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="B3c-hF-lZe" firstAttribute="top" secondItem="qLH-Ih-dCN" secondAttribute="top" constant="85" id="BLz-GW-ATL"/>
+                                    <constraint firstItem="B3c-hF-lZe" firstAttribute="top" secondItem="qLH-Ih-dCN" secondAttribute="top" constant="48" id="BLz-GW-ATL"/>
                                     <constraint firstItem="U3s-Om-3gX" firstAttribute="leading" secondItem="qLH-Ih-dCN" secondAttribute="leading" constant="16" id="LBv-gt-UKg"/>
                                     <constraint firstAttribute="trailing" secondItem="U3s-Om-3gX" secondAttribute="trailing" constant="16" id="WtL-0m-8qR"/>
                                     <constraint firstItem="B3c-hF-lZe" firstAttribute="leading" secondItem="qLH-Ih-dCN" secondAttribute="leading" constant="16" id="gLU-2g-xRN"/>
-                                    <constraint firstItem="U3s-Om-3gX" firstAttribute="top" secondItem="B3c-hF-lZe" secondAttribute="bottom" constant="40" id="tcb-de-fd0"/>
+                                    <constraint firstItem="U3s-Om-3gX" firstAttribute="top" secondItem="B3c-hF-lZe" secondAttribute="bottom" constant="24" id="tcb-de-fd0"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Q3-e3-hah">
+                                <rect key="frame" x="314" y="782" width="80" height="80"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="YMz-k5-mHu"/>
+                                    <constraint firstAttribute="height" constant="80" id="eNr-Z3-yld"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="upI-Fw-PKJ" customClass="TabBarNavigationButtons" customModule="ProyectoFinal" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="802" width="414" height="60"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Gt6-7R-XZG"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
+                            <constraint firstItem="2Q3-e3-hah" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="A1S-Ws-RUS"/>
                             <constraint firstItem="qLH-Ih-dCN" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="E6p-BG-Is4"/>
                             <constraint firstItem="qLH-Ih-dCN" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Kge-eo-vzG"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="upI-Fw-PKJ" secondAttribute="bottom" id="KyY-1E-8uy"/>
@@ -236,10 +245,12 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="upI-Fw-PKJ" secondAttribute="trailing" id="RaP-lt-oqX"/>
                             <constraint firstItem="upI-Fw-PKJ" firstAttribute="top" secondItem="qLH-Ih-dCN" secondAttribute="bottom" id="sua-en-iyK"/>
                             <constraint firstItem="upI-Fw-PKJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="vrb-gr-H6p"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="2Q3-e3-hah" secondAttribute="trailing" constant="20" id="z6v-tI-Pk4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8Iw-WZ-O2e"/>
                     <connections>
+                        <outlet property="imgCircle" destination="2Q3-e3-hah" id="idm-KO-BQh"/>
                         <outlet property="tabBar" destination="upI-Fw-PKJ" id="T7Q-lp-fAB"/>
                     </connections>
                 </viewController>

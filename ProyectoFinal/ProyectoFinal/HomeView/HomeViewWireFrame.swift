@@ -10,8 +10,6 @@ import Foundation
 import UIKit
 
 class HomeViewWireFrame: HomeViewWireFrameProtocol {
-   
-    
     static func createHomeViewModule(user: Users) -> UIViewController {
         let navController = mainStoryboard.instantiateViewController(withIdentifier: "homeView")
         if let view = navController as? HomeViewView {
@@ -32,8 +30,6 @@ class HomeViewWireFrame: HomeViewWireFrameProtocol {
             interactor.localDatamanager = localDataManager
             interactor.remoteDatamanager = remoteDataManager
             remoteDataManager.remoteRequestHandler = interactor
-//            userDefault.set(user, forKey: "User")
-//            print(userDefault.dictionary(forKey: "User"))
             return navController
         }
         return UIViewController()
@@ -82,5 +78,23 @@ class HomeViewWireFrame: HomeViewWireFrameProtocol {
 //            newView.navigationController?.pushViewController(newDetailView, animated: true)
         }
     }
+    
+    
+    func showShopingCart(from view: HomeViewViewProtocol) {
+        let newView = ShopingCarWireFrame.createShopingCarModule()
+        
+        if let view = view as? UIViewController{
+            view.present(newView, animated: true)
+        }
+    }
+    
+    func showUserAccount(from view: HomeViewViewProtocol) {
+        let newView = UserAccountWireFrame.createUserAccountModule()
+        if let view = view as? UIViewController{
+            view.present(newView, animated: true)
+        }
+    }
+    
+   
     
 }

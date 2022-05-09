@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 class ShopingCarWireFrame: ShopingCarWireFrameProtocol {
-
     class func createShopingCarModule() -> UIViewController {
         let navController = mainStoryboard.instantiateViewController(withIdentifier: "ShopingCar")
         if let view = navController as? ShopingCarView {
@@ -36,6 +35,22 @@ class ShopingCarWireFrame: ShopingCarWireFrameProtocol {
     
     static var mainStoryboard: UIStoryboard {
         return UIStoryboard(name: "ShopingCar", bundle: Bundle.main)
+    }
+    
+    func showUserAccount(from view: ShopingCarViewProtocol) {
+        let newView = UserAccountWireFrame.createUserAccountModule()
+        if let view = view as? UIViewController{
+            view.present(newView, animated: true)
+        }
+        
+        
+    }
+    
+    func showViewHome(from view: ShopingCarViewProtocol) {
+        let newView = HomeViewWireFrame.createHomeViewModule()
+        if let view = view as? UIViewController{
+            view.present(newView, animated: true)
+        }
     }
     
 }

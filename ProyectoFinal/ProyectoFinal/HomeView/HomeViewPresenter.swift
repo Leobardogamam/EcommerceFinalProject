@@ -9,7 +9,6 @@
 import Foundation
 
 class HomeViewPresenter:  HomeViewPresenterProtocol {
-    
     // MARK: Properties
     weak var view: HomeViewViewProtocol?
     var interactor: HomeViewInteractorInputProtocol?
@@ -29,6 +28,15 @@ class HomeViewPresenter:  HomeViewPresenterProtocol {
     func showDetailProductView(product: Product) {
         wireFrame?.showDetailProduct(from: view!, product: product)
     }
+    
+    func showUserAccount() {
+        wireFrame?.showUserAccount(from: view!)
+    }
+    
+    func showShopingCart() {
+        wireFrame?.showShopingCart(from: view!)
+    }
+    
     
 }
 

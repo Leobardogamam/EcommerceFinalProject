@@ -13,13 +13,19 @@ class UserAccountView: UIViewController, MyViewDelegate {
 
     // MARK: Properties
     var presenter: UserAccountPresenterProtocol?
+    var userDefault = UserDefaults()
 
+    @IBOutlet weak var imgCircle: UIView!
     @IBOutlet weak var tabBar: TabBarNavigationButtons!
     // MARK: Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBar.delegate = self
+        tabBar.btnUserAccount.tintColor = .blue
+        tabBar.btnUserAccount.layer.cornerRadius = tabBar.btnUserAccount.frame.height / 2
+        tabBar.btnUserAccount.backgroundColor = .systemGray3
+        imgCircle.layer.cornerRadius = imgCircle.frame.height / 2
     }
     
 //    MARK: Navegacion De Opciones De usuario
@@ -32,6 +38,7 @@ class UserAccountView: UIViewController, MyViewDelegate {
         case 2:
             presenter?.showMyCards()
         case 3:
+            userDefault.set(0, forKey: "IdUsuario")
             presenter?.showLoginView()
         default:
             print("Error")
@@ -42,9 +49,9 @@ class UserAccountView: UIViewController, MyViewDelegate {
     func didTapButton(number: Int) {
         switch number{
         case 0:
-            self.present(HomeViewWireFrame.createHomeViewModule(),animated:true)
+            presenter?.showHomeView()
         case 1:
-            self.present(ShopingCarWireFrame.createShopingCarModule(),animated:true)
+            presenter?.showShopingCart()
         case 2:
             print("Ya estas Aqui")
         default:

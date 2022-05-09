@@ -43,6 +43,7 @@ class HomeTableViewCell: UITableViewCell, passCollectionProduct {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
         getAllProductsByCategory(id: id)
+        
     }
     
     func pasarProducto(product: Product) {
@@ -87,9 +88,9 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellCollectionTableHome", for: indexPath) as? CollectionTableHomeViewCell
-        cell?.delegate = self
-        cell?.delegate?.pasarProducto(product: (datos?[indexPath.row])!)
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellCollectionTableHome", for: indexPath) as? CollectionTableHomeViewCell
+//        cell?.delegate = self
+//        cell?.delegate?.pasarProducto(product: (datos?[indexPath.row])!)
         presenter?.showDetailProductView(product: (datos?[indexPath.row])!)
     }
 }

@@ -25,6 +25,7 @@
                         <constraint firstAttribute="height" constant="60" id="Re7-D0-8Fa"/>
                         <constraint firstAttribute="width" constant="60" id="njd-JC-5HQ"/>
                     </constraints>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="cart" catalog="system"/>
                     <connections>
@@ -38,6 +39,7 @@
                         <constraint firstAttribute="height" constant="60" id="36p-vd-byr"/>
                         <constraint firstAttribute="width" constant="60" id="Flk-Nq-DCL"/>
                     </constraints>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="homekit" catalog="system"/>
                     <connections>
@@ -50,6 +52,7 @@
                         <constraint firstAttribute="height" constant="60" id="MnI-lx-n7d"/>
                         <constraint firstAttribute="width" constant="60" id="ReS-Ty-fVE"/>
                     </constraints>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="person" catalog="system"/>
                     <connections>
@@ -61,6 +64,8 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="diQ-sq-tpt" firstAttribute="centerY" secondItem="pAD-Qu-0ah" secondAttribute="centerY" id="3jq-3q-4ag"/>
+                <constraint firstItem="sHK-QK-b0s" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Bw3-vN-7dV"/>
+                <constraint firstItem="diQ-sq-tpt" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="IcP-hT-xUD"/>
                 <constraint firstItem="sHK-QK-b0s" firstAttribute="centerY" secondItem="pAD-Qu-0ah" secondAttribute="centerY" id="Sq6-oa-d5k"/>
                 <constraint firstItem="pAD-Qu-0ah" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="kl0-0d-1vE"/>
                 <constraint firstItem="pAD-Qu-0ah" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="s8D-QG-TKn"/>

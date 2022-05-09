@@ -17,36 +17,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pagar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ol-M5-eLZ">
-                                <rect key="frame" x="16" y="120" width="86" height="42"/>
+                                <rect key="frame" x="16" y="48" width="86" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xy7-dE-pcN">
-                                <rect key="frame" x="24" y="194" width="42" height="21"/>
+                                <rect key="frame" x="24" y="150" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$000.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2W8-uq-VAC">
-                                <rect key="frame" x="306" y="194" width="76" height="21"/>
+                                <rect key="frame" x="306" y="150" width="76" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Método de pago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKl-FK-lNC">
-                                <rect key="frame" x="24" y="250" width="246" height="42"/>
+                                <rect key="frame" x="24" y="206" width="246" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bg3-yf-JTs">
-                                <rect key="frame" x="24" y="324" width="107" height="31"/>
+                                <rect key="frame" x="24" y="280" width="107" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="arrow.down.to.line.circle" catalog="system" title="Opciones"/>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cart" translatesAutoresizingMaskIntoConstraints="NO" id="lFK-tt-WuP">
-                                <rect key="frame" x="32" y="373" width="350" height="230"/>
+                                <rect key="frame" x="32" y="329" width="350" height="230"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="hVQ-vB-b6R"/>
                                     <constraint firstAttribute="height" constant="230" id="s1b-sq-V0C"/>
@@ -67,7 +67,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cm6-Ty-niB">
-                                <rect key="frame" x="16" y="231" width="382" height="3"/>
+                                <rect key="frame" x="16" y="187" width="382" height="3"/>
                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="3" id="wM6-Ud-txI"/>
@@ -84,7 +84,7 @@
                             <constraint firstItem="bg3-yf-JTs" firstAttribute="top" secondItem="KKl-FK-lNC" secondAttribute="bottom" constant="32" id="4Yl-JZ-mon"/>
                             <constraint firstItem="TwI-Vs-p6i" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="522-aT-cga"/>
                             <constraint firstItem="bg3-yf-JTs" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="7vj-To-CvX"/>
-                            <constraint firstItem="6Ol-M5-eLZ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="76" id="Dj1-a9-Jgu"/>
+                            <constraint firstItem="6Ol-M5-eLZ" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="48" id="Dj1-a9-Jgu"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="lFK-tt-WuP" secondAttribute="trailing" constant="32" id="Fv5-1e-8MA"/>
                             <constraint firstItem="Xy7-dE-pcN" firstAttribute="leading" secondItem="KKl-FK-lNC" secondAttribute="leading" id="H7Q-aG-LCD"/>
                             <constraint firstItem="cm6-Ty-niB" firstAttribute="top" secondItem="Xy7-dE-pcN" secondAttribute="bottom" constant="16" id="Hk0-pl-sYf"/>
@@ -98,7 +98,7 @@
                             <constraint firstItem="KKl-FK-lNC" firstAttribute="top" secondItem="cm6-Ty-niB" secondAttribute="bottom" constant="16" id="hP4-Hj-CDX"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="TwI-Vs-p6i" secondAttribute="trailing" constant="24" id="ktL-Wb-qeM"/>
                             <constraint firstItem="lFK-tt-WuP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="uFK-1u-Sov"/>
-                            <constraint firstItem="2W8-uq-VAC" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="150" id="vrO-2b-05R"/>
+                            <constraint firstItem="2W8-uq-VAC" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="150" id="vrO-2b-05R"/>
                         </constraints>
                     </view>
                 </viewController>

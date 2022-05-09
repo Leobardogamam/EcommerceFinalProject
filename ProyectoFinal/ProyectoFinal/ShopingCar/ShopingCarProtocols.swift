@@ -13,6 +13,7 @@ import CoreData
 protocol ShopingCarViewProtocol: AnyObject {
     // PRESENTER -> VIEW
     var presenter: ShopingCarPresenterProtocol? { get set }
+    var carrito:[Product]? {get set}
     
     func getDatosDescodificados(product:[Product], precioTotal:Int)
     func resetPrice(price:Int)
@@ -21,6 +22,9 @@ protocol ShopingCarViewProtocol: AnyObject {
 protocol ShopingCarWireFrameProtocol: AnyObject {
     // PRESENTER -> WIREFRAME
     static func createShopingCarModule() -> UIViewController
+    
+    func showUserAccount(from view: ShopingCarViewProtocol)
+    func showViewHome(from view: ShopingCarViewProtocol)
 }
 
 protocol ShopingCarPresenterProtocol: AnyObject {
@@ -32,6 +36,9 @@ protocol ShopingCarPresenterProtocol: AnyObject {
     func viewDidLoad()
     func getAllCarCoredataSave()
     func eliminate(id:Int,price:Int)
+    func showUserAccount()
+    func showViewHome()
+
 }
 
 protocol ShopingCarInteractorOutputProtocol: AnyObject {

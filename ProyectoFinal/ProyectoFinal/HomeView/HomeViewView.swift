@@ -25,6 +25,7 @@ class HomeViewView: UIViewController , MyViewDelegate, passTableToHome{
     
     @IBOutlet weak var collectionHomeView: UICollectionView!
     @IBOutlet weak var TabBar: TabBarNavigationButtons!
+    @IBOutlet weak var viewCircle: UIView!
     @IBOutlet weak var tableHomeView: UITableView!
     
 
@@ -37,7 +38,10 @@ class HomeViewView: UIViewController , MyViewDelegate, passTableToHome{
         TabBar.btnHome.backgroundColor = .systemGray2
         TabBar.btnCart.backgroundColor = .clear
         TabBar.btnUserAccount.backgroundColor = .clear
+        TabBar.btnHome.tintColor = .blue
         TabBar.delegate = self
+        viewCircle.layer.cornerRadius = viewCircle.frame.height / 2
+        
         
     }
     
@@ -47,14 +51,10 @@ class HomeViewView: UIViewController , MyViewDelegate, passTableToHome{
         case 0:
            print("Ya estas ahi wey......")
         case 1:
-//            self.navigationController?.pushViewController(ShopingCarWireFrame.createShopingCarModule(), animated: true)
-            
-            self.present(ShopingCarWireFrame.createShopingCarModule(),animated:true)
+            presenter?.showShopingCart()
             
         case 2:
-            
-            self.present(UserAccountWireFrame.createUserAccountModule(),animated:true)
-            
+            presenter?.showUserAccount()
         default:
             print("Error")
         }

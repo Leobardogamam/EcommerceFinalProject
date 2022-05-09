@@ -21,6 +21,8 @@ protocol HomeViewWireFrameProtocol: AnyObject {
     static func createHomeViewModule(user:Users) -> UIViewController
     func showSpecificCategory(from view:HomeViewViewProtocol,id:Int, name:String)
     func showDetailProduct(from view:HomeViewViewProtocol, product:Product)
+    func showShopingCart(from view:HomeViewViewProtocol)
+    func showUserAccount(from view:HomeViewViewProtocol)
 }
 
 protocol HomeViewPresenterProtocol: AnyObject {
@@ -31,6 +33,9 @@ protocol HomeViewPresenterProtocol: AnyObject {
     var user: Users? {get set}
     
     func viewDidLoad()
+//    func getProduct(id:Int)
+    func showUserAccount()
+    func showShopingCart()
     func showSpecifcCategory(id:Int, name: String)
     func showDetailProductView(product: Product)
 }

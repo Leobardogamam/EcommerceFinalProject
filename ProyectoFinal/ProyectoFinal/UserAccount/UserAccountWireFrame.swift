@@ -10,8 +10,6 @@ import Foundation
 import UIKit
 
 class UserAccountWireFrame: UserAccountWireFrameProtocol {
-    
-    
     class func createUserAccountModule() -> UIViewController {
         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "UserAccountView")
         if let view = viewController as? UserAccountView {
@@ -65,4 +63,22 @@ class UserAccountWireFrame: UserAccountWireFrameProtocol {
         }
     }
     
+    
+    func showHomeView(from view: UserAccountViewProtocol) {
+        let newView = HomeViewWireFrame.createHomeViewModule()
+        if let view = view as? UIViewController{
+            view.present(newView, animated: true)
+        }
+    }
+    
+    func showShopingCart(from view: UserAccountViewProtocol) {
+        let newView = ShopingCarWireFrame.createShopingCarModule()
+        if let view = view as? UIViewController{
+            view.present(newView, animated: true)
+        }
+    }
+    
+    
+    
+   
 }

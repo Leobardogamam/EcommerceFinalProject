@@ -19,6 +19,8 @@ class ShopingCarPresenter  {
 }
 
 extension ShopingCarPresenter: ShopingCarPresenterProtocol {
+    
+    
     // TODO: implement presenter methods
     func viewDidLoad() {
         getAllCarCoredataSave()
@@ -31,6 +33,15 @@ extension ShopingCarPresenter: ShopingCarPresenterProtocol {
     
     func eliminate(id: Int, price:Int) {
         interactor?.eliminate(id: id, price: price)
+    }
+    
+    func showUserAccount() {
+        wireFrame?.showUserAccount(from: view!)
+    }
+    
+    func showViewHome() {
+        wireFrame?.showViewHome(from: view!)
+        
     }
 }
 

@@ -22,6 +22,8 @@ protocol UserAccountWireFrameProtocol: AnyObject {
     func showMyCards(from view:UserAccountViewProtocol)
     func showViewPurchases(from view:UserAccountViewProtocol)
     func showLoginView(from view:UserAccountViewProtocol)
+    func showHomeView(from view:UserAccountViewProtocol)
+    func showShopingCart(from view:UserAccountViewProtocol)
 }
 
 protocol UserAccountPresenterProtocol: AnyObject {
@@ -35,6 +37,8 @@ protocol UserAccountPresenterProtocol: AnyObject {
     func showMyCards()
     func showViewPurchases()
     func showLoginView()
+    func showHomeView()
+    func showShopingCart()
     
     
 }
