@@ -81,7 +81,6 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
             }
            
         }
-        
         cell?.lblNombreProducto.text = datos?[indexPath.row].title
         cell?.lblPrecioProducto.text =  "$ " + String(datos?[indexPath.row].price ?? 0)
         return cell ?? UICollectionViewCell()

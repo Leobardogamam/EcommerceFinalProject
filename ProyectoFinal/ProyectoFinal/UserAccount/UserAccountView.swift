@@ -38,9 +38,13 @@ class UserAccountView: UIViewController, MyViewDelegate {
         case 2:
             presenter?.showMyCards()
         case 3:
-            userDefault.set(0, forKey: "IdUsuario")
+            let user = Users(id: 0, email: "", password: "", name: "", role: "", avatar: "")
+            let encoder = JSONEncoder()
+            if let encoded = try? encoder.encode(user) {
+                let defaults = UserDefaults.standard
+                defaults.set(encoded, forKey: "UserLogged")
+            }
             self.view.window?.rootViewController?.dismiss(animated: true)
-            dismiss(animated: true)
         default:
             print("Error")
         }

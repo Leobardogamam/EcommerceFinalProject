@@ -41,15 +41,13 @@ class HomeViewView: UIViewController , MyViewDelegate, passTableToHome{
         TabBar.btnHome.tintColor = .blue
         TabBar.delegate = self
         viewCircle.layer.cornerRadius = viewCircle.frame.height / 2
-        
-        
     }
     
 //    MARK: NAVEGACION ENTRE PANTALLAS
     func didTapButton(number:Int) {
         switch number{
         case 0:
-           print("Ya estas ahi wey......")
+           print("Ya estas aqui")
         case 1:
             presenter?.showShopingCart()
             
@@ -136,7 +134,5 @@ extension HomeViewView:UITableViewDelegate,UITableViewDataSource{
         presenter?.showSpecifcCategory(id: self.dataCategoriesTableView[indexPath.row].id, name: self.dataCategoriesTableView[indexPath.row].name)
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
-    
     
 }

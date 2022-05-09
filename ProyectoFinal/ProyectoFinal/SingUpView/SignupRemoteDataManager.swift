@@ -28,8 +28,6 @@ class SignupRemoteDataManager:SignupRemoteDataManagerInputProtocol {
             guard let datosR = data, error == nil else {return}
             
             do{
-                
-                
                 var respuesta = try? JSONDecoder().decode(CheckUser.self, from: datosR)
                 
                 if respuesta?.isAvailable == true

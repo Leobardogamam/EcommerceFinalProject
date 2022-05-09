@@ -15,6 +15,8 @@ class LoginView: UIViewController {
     var presenter: LoginPresenterProtocol?
     var role:String?
     var user: Users?
+    var isAvailable:Bool?
+    var userDefault = UserDefaults()
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passTextField: UITextField!
     
@@ -22,10 +24,36 @@ class LoginView: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.viewDidLoad()
+        print(user?.id)
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        DispatchQueue.main.async {[self] in
+            if user?.id == 3{
+                print("Admin")
+            }else if user?.id == 0{
+                print("Login")
+            }else{
+                presenter?.showHomeUserView(user: (user)!)
+            }
+        }
+        
     }
     
+    
+    
     @IBAction func loginPressed(_ sender: Any) {
-       presenter?.viewDidLoad()
+        if emailTextField.text!.isEmpty || passTextField.text!.isEmpty {
+            let alert = UIAlertController(title: "Error", message: "Agrega los parametros", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Ok", style: .default)
+
+            alert.addAction(action)
+            self.present(alert, animated: true)
+        }else{
+            presenter?.getLoginAuth(email: emailTextField.text!, password: passTextField.text!)
+        }
+        
         
     }
     @IBAction func signUpPressed(_ sender: Any) {
@@ -37,6 +65,35 @@ class LoginView: UIViewController {
 }
 
 extension LoginView: LoginViewProtocol {
+    func isAvailable(isAvailable: Bool) {
+        self.isAvailable = isAvailable
+        if isAvailable == false{
+            DispatchQueue.main.async {
+                let alert = UIAlertController(title: "Error", message: "Usuario o contraseña incorrecta", preferredStyle: .alert)
+                let action = UIAlertAction(title: "Ok", style: .default)
+                alert.addAction(action)
+                self.present(alert, animated: true)
+            }
+            
+        }
+    }
+    
+    func returnUser(user: Users) {
+        DispatchQueue.main.async {
+            if self.isAvailable == true{
+                switch user.role{
+                case "customer":
+                    self.presenter?.showHomeUserView(user: user)
+                case "admin":
+                    print("ADMIN")
+                default:
+                    print("Error")
+                }
+            }
+        }
+        
+    }
+    
 
     
     // TODO: implement view output methods
@@ -69,13 +126,6 @@ extension LoginView: LoginViewProtocol {
                         print("Error")
                         
                     }
-//                    let storyboard = UIStoryboard(name: "Welcome", bundle: nil)
-                    
-                    
-                    
-//                    let vc = storyboard.instantiateViewController(withIdentifier: "Welcome") as! WelcomeViewController
-                
-//                    self.present(vc, animated: true, completion: nil)
                 }
                 else{
                     let alert = UIAlertController(title: "Error", message: "Usuario o contraseña incorrecta", preferredStyle: .alert)

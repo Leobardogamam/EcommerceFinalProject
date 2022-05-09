@@ -6,6 +6,9 @@
 //
 
 import Foundation
+struct Token: Codable{
+    let access_token:String
+}
 
 struct Users: Codable{
     
@@ -14,4 +17,5 @@ struct Users: Codable{
     let password : String
     let name : String
     let role : String
+    let avatar : String
 }

@@ -85,14 +85,6 @@
 		975B77FC281A243700AF96BD /* BuyItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975B77F5281A243700AF96BD /* BuyItemsView.swift */; };
 		975B77FD281A243700AF96BD /* BuyItemsRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975B77F6281A243700AF96BD /* BuyItemsRemoteDataManager.swift */; };
 		975B77FE281A243700AF96BD /* BuyItemsWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975B77F7281A243700AF96BD /* BuyItemsWireFrame.swift */; };
-		975B7806281A244000AF96BD /* CardsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975B77FF281A244000AF96BD /* CardsPresenter.swift */; };
-		975B7807281A244000AF96BD /* CardsLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975B7800281A244000AF96BD /* CardsLocalDataManager.swift */; };
-		975B7808281A244000AF96BD /* CardsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975B7801281A244000AF96BD /* CardsProtocols.swift */; };
-		975B7809281A244000AF96BD /* CardsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975B7802281A244000AF96BD /* CardsInteractor.swift */; };
-		975B780A281A244000AF96BD /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975B7803281A244000AF96BD /* CardsView.swift */; };
-		975B780B281A244000AF96BD /* CardsRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975B7804281A244000AF96BD /* CardsRemoteDataManager.swift */; };
-		975B780C281A244000AF96BD /* CardsWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975B7805281A244000AF96BD /* CardsWireFrame.swift */; };
-		975B780E281A245000AF96BD /* Cards.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 975B780D281A245000AF96BD /* Cards.storyboard */; };
 		975B7810281A245C00AF96BD /* ViewPurchases.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 975B780F281A245C00AF96BD /* ViewPurchases.storyboard */; };
 		975B7818281A246200AF96BD /* ViewPurchasesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975B7811281A246200AF96BD /* ViewPurchasesPresenter.swift */; };
 		975B7819281A246200AF96BD /* ViewPurchasesLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975B7812281A246200AF96BD /* ViewPurchasesLocalDataManager.swift */; };
@@ -218,14 +210,6 @@
 		975B77F5281A243700AF96BD /* BuyItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyItemsView.swift; sourceTree = "<group>"; };
 		975B77F6281A243700AF96BD /* BuyItemsRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyItemsRemoteDataManager.swift; sourceTree = "<group>"; };
 		975B77F7281A243700AF96BD /* BuyItemsWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyItemsWireFrame.swift; sourceTree = "<group>"; };
-		975B77FF281A244000AF96BD /* CardsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsPresenter.swift; sourceTree = "<group>"; };
-		975B7800281A244000AF96BD /* CardsLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsLocalDataManager.swift; sourceTree = "<group>"; };
-		975B7801281A244000AF96BD /* CardsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsProtocols.swift; sourceTree = "<group>"; };
-		975B7802281A244000AF96BD /* CardsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsInteractor.swift; sourceTree = "<group>"; };
-		975B7803281A244000AF96BD /* CardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
-		975B7804281A244000AF96BD /* CardsRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsRemoteDataManager.swift; sourceTree = "<group>"; };
-		975B7805281A244000AF96BD /* CardsWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsWireFrame.swift; sourceTree = "<group>"; };
-		975B780D281A245000AF96BD /* Cards.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cards.storyboard; sourceTree = "<group>"; };
 		975B780F281A245C00AF96BD /* ViewPurchases.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ViewPurchases.storyboard; sourceTree = "<group>"; };
 		975B7811281A246200AF96BD /* ViewPurchasesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPurchasesPresenter.swift; sourceTree = "<group>"; };
 		975B7812281A246200AF96BD /* ViewPurchasesLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPurchasesLocalDataManager.swift; sourceTree = "<group>"; };
@@ -307,7 +291,6 @@
 				9706B1E0281EE972002023E6 /* SpecificCategory */,
 				975B77A6281A227000AF96BD /* DetailProductView */,
 				97AF0EAD281E53A5009583F6 /* TabBarNavigationButtons */,
-				975B77A9281A234C00AF96BD /* CardPay */,
 				97901F48281A4C1F00E367BB /* DeleteEditCards */,
 				97901F47281A4C1800E367BB /* AddCards */,
 				97901F46281A4C0700E367BB /* MyCards */,
@@ -462,21 +445,6 @@
 			path = BuyItems;
 			sourceTree = "<group>";
 		};
-		975B77A9281A234C00AF96BD /* CardPay */ = {
-			isa = PBXGroup;
-			children = (
-				975B780D281A245000AF96BD /* Cards.storyboard */,
-				975B77FF281A244000AF96BD /* CardsPresenter.swift */,
-				975B7800281A244000AF96BD /* CardsLocalDataManager.swift */,
-				975B7801281A244000AF96BD /* CardsProtocols.swift */,
-				975B7802281A244000AF96BD /* CardsInteractor.swift */,
-				975B7803281A244000AF96BD /* CardsView.swift */,
-				975B7804281A244000AF96BD /* CardsRemoteDataManager.swift */,
-				975B7805281A244000AF96BD /* CardsWireFrame.swift */,
-			);
-			path = CardPay;
-			sourceTree = "<group>";
-		};
 		975B77AA281A235800AF96BD /* ViewPurchases-VerCompras */ = {
 			isa = PBXGroup;
 			children = (
@@ -629,7 +597,6 @@
 				9756378028248D250006C761 /* LoginView.storyboard in Resources */,
 				975B782E281A248800AF96BD /* ViewProfile.storyboard in Resources */,
 				6A1829112819DA01004984D4 /* LaunchScreen.storyboard in Resources */,
-				975B780E281A245000AF96BD /* Cards.storyboard in Resources */,
 				6A18290E2819DA01004984D4 /* Assets.xcassets in Resources */,
 				975B7810281A245C00AF96BD /* ViewPurchases.storyboard in Resources */,
 				975B77EC281A241900AF96BD /* ShopingCar.storyboard in Resources */,
@@ -658,7 +625,6 @@
 				975B781A281A246200AF96BD /* ViewPurchasesProtocols.swift in Sources */,
 				975B77DA281A240C00AF96BD /* DetailProductViewView.swift in Sources */,
 				9756377828248C630006C761 /* LoginProtocols.swift in Sources */,
-				975B7808281A244000AF96BD /* CardsProtocols.swift in Sources */,
 				9756377928248C630006C761 /* LoginInteractor.swift in Sources */,
 				97901F61281A4CDA00E367BB /* AddCardsLocalDataManager.swift in Sources */,
 				975B77C9281A23F300AF96BD /* UserAccountRemoteDataManager.swift in Sources */,
@@ -669,19 +635,15 @@
 				975B77D9281A240C00AF96BD /* DetailProductViewInteractor.swift in Sources */,
 				6A18290C2819D9FF004984D4 /* ProyectoFinal.xcdatamodeld in Sources */,
 				97901F78281A4D0C00E367BB /* DeleteEditCardsWireFrame.swift in Sources */,
-				975B7809281A244000AF96BD /* CardsInteractor.swift in Sources */,
 				975B782B281A247C00AF96BD /* ViewProfileRemoteDataManager.swift in Sources */,
 				9756377E28248CDF0006C761 /* Users.swift in Sources */,
 				975B7826281A247C00AF96BD /* ViewProfilePresenter.swift in Sources */,
 				975B77C8281A23F300AF96BD /* UserAccountView.swift in Sources */,
 				975B77F9281A243700AF96BD /* BuyItemsLocalDataManager.swift in Sources */,
 				9756375F28248A810006C761 /* SignupPresenter.swift in Sources */,
-				975B7807281A244000AF96BD /* CardsLocalDataManager.swift in Sources */,
-				975B780A281A244000AF96BD /* CardsView.swift in Sources */,
 				6A1829022819D9FF004984D4 /* AppDelegate.swift in Sources */,
 				975B77E7281A241500AF96BD /* ShopingCarInteractor.swift in Sources */,
 				97901F55281A4CBB00E367BB /* MyCardsInteractor.swift in Sources */,
-				975B7806281A244000AF96BD /* CardsPresenter.swift in Sources */,
 				975B781D281A246200AF96BD /* ViewPurchasesRemoteDataManager.swift in Sources */,
 				975B77C5281A23F300AF96BD /* UserAccountLocalDataManager.swift in Sources */,
 				97901F77281A4D0C00E367BB /* DeleteEditCardsRemoteDataManager.swift in Sources */,
@@ -701,14 +663,12 @@
 				975B77FE281A243700AF96BD /* BuyItemsWireFrame.swift in Sources */,
 				975B77D8281A240C00AF96BD /* DetailProductViewProtocols.swift in Sources */,
 				9756376528248A810006C761 /* SignupWireFrame.swift in Sources */,
-				975B780B281A244000AF96BD /* CardsRemoteDataManager.swift in Sources */,
 				975B77CA281A23F300AF96BD /* UserAccountWireFrame.swift in Sources */,
 				97901F57281A4CBB00E367BB /* MyCardsRemoteDataManager.swift in Sources */,
 				975B7819281A246200AF96BD /* ViewPurchasesLocalDataManager.swift in Sources */,
 				9706B1E8281EEB64002023E6 /* SpecificCategoryPresenter.swift in Sources */,
 				975B77BA281A23DD00AF96BD /* HomeViewView.swift in Sources */,
 				9756376928248ACB0006C761 /* ImageAdded.swift in Sources */,
-				975B780C281A244000AF96BD /* CardsWireFrame.swift in Sources */,
 				975B77FB281A243700AF96BD /* BuyItemsInteractor.swift in Sources */,
 				975B77FD281A243700AF96BD /* BuyItemsRemoteDataManager.swift in Sources */,
 				97901F75281A4D0C00E367BB /* DeleteEditCardsInteractor.swift in Sources */,

@@ -38,6 +38,7 @@ protocol ShopingCarPresenterProtocol: AnyObject {
     func eliminate(id:Int,price:Int)
     func showUserAccount()
     func showViewHome()
+    func show
 
 }
 

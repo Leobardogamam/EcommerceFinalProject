@@ -12,7 +12,10 @@ import UIKit
 protocol LoginViewProtocol: AnyObject {
     // PRESENTER -> VIEW
     var presenter: LoginPresenterProtocol? { get set }
-    func compareGetData(userList : [Users])
+    var isAvailable:Bool? { get set }
+    var user:Users? { get set }
+    func isAvailable(isAvailable:Bool)
+    func returnUser(user:Users)
 }
 
 protocol LoginWireFrameProtocol: AnyObject {
@@ -31,11 +34,13 @@ protocol LoginPresenterProtocol: AnyObject {
     func viewDidLoad()
     func showSignUpView()
     func showHomeUserView(user: Users)
+    func getLoginAuth(email:String, password:String)
 }
 
 protocol LoginInteractorOutputProtocol: AnyObject {
 // INTERACTOR -> PRESENTER
-    func interactorPushDataPresenter(receivedData : [Users])
+    func isAvailable(isAvailable:Bool)
+    func returnUser(user:Users)
 }
 
 protocol LoginInteractorInputProtocol: AnyObject {
@@ -44,7 +49,7 @@ protocol LoginInteractorInputProtocol: AnyObject {
     var localDatamanager: LoginLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: LoginRemoteDataManagerInputProtocol? { get set }
     
-    func getUsers()
+    func getUsers(email:String, password:String)
 }
 
 protocol LoginDataManagerInputProtocol: AnyObject {
@@ -54,13 +59,15 @@ protocol LoginDataManagerInputProtocol: AnyObject {
 protocol LoginRemoteDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> REMOTEDATAMANAGER
     var remoteRequestHandler: LoginRemoteDataManagerOutputProtocol? { get set }
-    
-    func externalGetUsers()
+    func logingAuth(email: String, password: String)
 }
 
 protocol LoginRemoteDataManagerOutputProtocol: AnyObject {
     // REMOTEDATAMANAGER -> INTERACTOR
-    func remoteDataManagerCallBackData(with userList : [Users])
+    
+    func isAvailable(isAvailable:Bool)
+    func returnUser(user:Users)
+    
 }
 
 protocol LoginLocalDataManagerInputProtocol: AnyObject {

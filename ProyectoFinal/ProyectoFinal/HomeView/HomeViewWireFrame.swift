@@ -25,6 +25,19 @@ class HomeViewWireFrame: HomeViewWireFrameProtocol {
             presenter.wireFrame = wireFrame
             presenter.user = user
             userDefault.set(user.id, forKey: "IdUsuario")
+            userDefault.set(user.email, forKey: "email")
+            userDefault.set(user.password, forKey: "password")
+            let encoder = JSONEncoder()
+            if let encoded = try? encoder.encode(user) {
+                let defaults = UserDefaults.standard
+                defaults.set(encoded, forKey: "UserLogged")
+            }
+            if let savedPerson = userDefault.object(forKey: "UserLogged") as? Data {
+                let decoder = JSONDecoder()
+                if let loadedPerson = try? decoder.decode(Users.self, from: savedPerson) {
+                    print(loadedPerson.name)
+                }
+            }
             presenter.interactor = interactor
             interactor.presenter = presenter
             interactor.localDatamanager = localDataManager
@@ -65,21 +78,16 @@ class HomeViewWireFrame: HomeViewWireFrameProtocol {
     
     
     func showSpecificCategory(from view: HomeViewViewProtocol, id: Int, name:String) {
-//        let newDetailView = SpecificCategoryWireFrame.createSpecificCategoryModule(with: id, name: name)
-        
         if let newView = view as? UIViewController{
             newView.present(SpecificCategoryWireFrame.createSpecificCategoryModule(with: id, name: name),animated:true)
-//            newView.navigationController?.pushViewController(newDetailView, animated: true)
         }
     }
     func showDetailProduct(from view: HomeViewViewProtocol, product: Product) {
         if let newView = view as? UIViewController{
             newView.modalPresentationStyle = .automatic
             newView.present(DetailProductViewWireFrame.createDetailProductViewModule(product: product),animated:true)
-//            newView.navigationController?.pushViewController(newDetailView, animated: true)
         }
     }
-    
     
     func showShopingCart(from view: HomeViewViewProtocol) {
         let newView = ShopingCarWireFrame.createShopingCarModule()

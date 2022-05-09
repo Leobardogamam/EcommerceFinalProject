@@ -9,13 +9,26 @@
 import Foundation
 
 class LoginPresenter: LoginPresenterProtocol  {
+    
     // MARK: Properties
     weak var view: LoginViewProtocol?
     var interactor: LoginInteractorInputProtocol?
     var wireFrame: LoginWireFrameProtocol?
+    var userDefault = UserDefaults()
     
     func viewDidLoad() {
-        interactor?.getUsers()
+        if let savedPerson = userDefault.object(forKey: "UserLogged") as? Data {
+            let decoder = JSONDecoder()
+            if let loadedPerson = try? decoder.decode(Users.self, from: savedPerson) {
+                print(loadedPerson.id)
+                view?.user = loadedPerson
+            }
+        }
+        
+    }
+    
+    func getLoginAuth(email: String, password: String) {
+        interactor?.getUsers(email: email, password: password)
     }
     
     func showSignUpView() {
@@ -33,10 +46,16 @@ class LoginPresenter: LoginPresenterProtocol  {
 
 
 extension LoginPresenter: LoginInteractorOutputProtocol {
-    func interactorPushDataPresenter(receivedData: [Users]) {
-        view?.compareGetData(userList: receivedData)
-    }
     
     // TODO: implement interactor output methods
+   
+    func isAvailable(isAvailable: Bool) {
+        view?.isAvailable(isAvailable: isAvailable)
+    }
+    
+    func returnUser(user: Users) {
+        view?.returnUser(user: user)
+    }
+    
     
 }
