@@ -74,6 +74,7 @@ class HomeViewWireFrame: HomeViewWireFrameProtocol {
     }
     func showDetailProduct(from view: HomeViewViewProtocol, product: Product) {
         if let newView = view as? UIViewController{
+            newView.modalPresentationStyle = .automatic
             newView.present(DetailProductViewWireFrame.createDetailProductViewModule(product: product),animated:true)
 //            newView.navigationController?.pushViewController(newDetailView, animated: true)
         }

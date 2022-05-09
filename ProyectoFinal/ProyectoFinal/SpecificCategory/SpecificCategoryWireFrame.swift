@@ -43,7 +43,9 @@ class SpecificCategoryWireFrame: SpecificCategoryWireFrameProtocol {
         let newProductView = DetailProductViewWireFrame.createDetailProductViewModule(product: product)
         
         if let newView = view as? UIViewController{
+            
             newView.present(newProductView, animated: true)
+            newView.modalPresentationStyle = .fullScreen
         }
     }
 }

@@ -39,7 +39,8 @@ class UserAccountView: UIViewController, MyViewDelegate {
             presenter?.showMyCards()
         case 3:
             userDefault.set(0, forKey: "IdUsuario")
-            presenter?.showLoginView()
+            self.view.window?.rootViewController?.dismiss(animated: true)
+            dismiss(animated: true)
         default:
             print("Error")
         }

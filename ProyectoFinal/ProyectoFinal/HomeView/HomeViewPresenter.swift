@@ -19,7 +19,7 @@ class HomeViewPresenter:  HomeViewPresenterProtocol {
     // TODO: implement presenter methods
     func viewDidLoad() {
         interactor?.getCategoriesData()
-        print("El usuario es: ", defaults.integer(forKey: "IdUsuario"))
+//        print("El usuario es: ", defaults.integer(forKey: "IdUsuario"))
     }
     func showSpecifcCategory(id: Int, name:String) {
         wireFrame?.showSpecificCategory(from: view!, id: id, name: name)
@@ -36,29 +36,7 @@ class HomeViewPresenter:  HomeViewPresenterProtocol {
     func showShopingCart() {
         wireFrame?.showShopingCart(from: view!)
     }
-    
-    
 }
-
-//extension HomeViewPresenter: HomeViewPresenterProtocol {
-//    var user: Users?
-//
-//
-//
-//    // TODO: implement presenter methods
-//    func viewDidLoad() {
-//        interactor?.getCategoriesData()
-//
-//
-//    }
-//    func showSpecifcCategory(id: Int, name:String) {
-//        wireFrame?.showSpecificCategory(from: view!, id: id, name: name)
-//    }
-//
-//    func showDetailProductView(product: Product) {
-//        wireFrame?.showDetailProduct(from: view!, product: product)
-//    }
-//}
 
 extension HomeViewPresenter: HomeViewInteractorOutputProtocol {
     // TODO: implement interactor output methods

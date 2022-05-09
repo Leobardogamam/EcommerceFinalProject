@@ -34,6 +34,9 @@ class ShopingCarView: UIViewController, MyViewDelegate {
         tabBar.delegate = self
         viewCircle.layer.cornerRadius = viewCircle.frame.height /
         2
+        tabBar.btnCart.layer.cornerRadius = tabBar.btnCart.frame.height / 2
+        tabBar.btnCart.tintColor = .blue
+        tabBar.btnCart.backgroundColor = .systemGray3
     }
     
     func didTapButton(number: Int) {

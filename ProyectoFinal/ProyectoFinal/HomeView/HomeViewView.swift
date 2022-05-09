@@ -98,7 +98,6 @@ extension HomeViewView: UICollectionViewDelegate,UICollectionViewDataSource{
             }
         }
         cell?.lblNombreProductoCollectionView.text = self.dataCategoriesCollectionView[indexPath.row].name
-        
         return cell ?? UICollectionViewCell()
     }
     
@@ -114,6 +113,7 @@ extension HomeViewView: UICollectionViewDelegate,UICollectionViewDataSource{
         DispatchQueue.main.async {
             self.tableHomeView.reloadData()
         }
+        
     }
 }
 

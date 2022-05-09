@@ -68,11 +68,9 @@ extension ShopingCarInteractor: ShopingCarRemoteDataManagerOutputProtocol {
             }else{
                 products.append(product)
                 let valorUserDefault = precio.integer(forKey: "Precio")
-//                print("El valor de userDafult es: ", valorUserDefault)
                 var valorTotal = product.price
                 valorTotal = valorTotal + valorUserDefault
                 precio.set(valorTotal, forKey: "Precio")
-                print(precio.integer(forKey: "Precio"))
             }
         }
         
