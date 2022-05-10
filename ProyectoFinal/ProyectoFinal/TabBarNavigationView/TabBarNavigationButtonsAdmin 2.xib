@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TabBarNavigationButtonsAdmin" customModule="ProyectoFinal" customModuleProvider="target">
+            <connections>
+                <outlet property="btnCategories" destination="mPC-xd-ywg" id="cQ6-NL-S7q"/>
+                <outlet property="btnProducts" destination="Eiz-Mf-IZu" id="Ykn-Nm-ltm"/>
+                <outlet property="btnProfile" destination="keu-X4-vAu" id="jhV-hh-P16"/>
+                <outlet property="btnUsers" destination="pYt-cs-bGQ" id="Fzk-Ly-xCf"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="424" height="82"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="FHE-Pc-3li">
+                    <rect key="frame" x="40.5" y="25.5" width="343.5" height="31"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eiz-Mf-IZu">
+                            <rect key="frame" x="0.0" y="0.0" width="44.5" height="31"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="bag" catalog="system"/>
+                            <connections>
+                                <action selector="navigationPressed:" destination="-1" eventType="touchUpInside" id="VwZ-fc-87H"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPC-xd-ywg">
+                            <rect key="frame" x="94.5" y="0.0" width="51" height="31"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="list.bullet.indent" catalog="system"/>
+                            <connections>
+                                <action selector="navigationPressed:" destination="-1" eventType="touchUpInside" id="q9P-tG-PMx"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYt-cs-bGQ">
+                            <rect key="frame" x="195.5" y="0.0" width="53.5" height="31"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="person.2" catalog="system"/>
+                            <connections>
+                                <action selector="navigationPressed:" destination="-1" eventType="touchUpInside" id="UCm-zm-dHM"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="keu-X4-vAu">
+                            <rect key="frame" x="299" y="0.0" width="44.5" height="31"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="person" catalog="system"/>
+                            <connections>
+                                <action selector="navigationPressed:" destination="-1" eventType="touchUpInside" id="UEm-gq-WN1"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="31" id="TcP-Nl-TjL"/>
+                        <constraint firstAttribute="width" constant="343.5" id="mu4-A5-Bux"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="FHE-Pc-3li" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="DcA-se-pXj"/>
+                <constraint firstItem="FHE-Pc-3li" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="QUj-bl-L7B"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="155" y="133"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bag" catalog="system" width="128" height="128"/>
+        <image name="list.bullet.indent" catalog="system" width="128" height="74"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person.2" catalog="system" width="128" height="81"/>
+    </resources>
+</document>

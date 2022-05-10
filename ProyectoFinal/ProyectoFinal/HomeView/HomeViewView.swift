@@ -88,7 +88,7 @@ extension HomeViewView: UICollectionViewDelegate,UICollectionViewDataSource{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellCollectionView", for: indexPath) as? CollectionHomeView
         cell?.imgCollectionView.image = UIImage(named: "loading")
         DispatchQueue.global(qos: .default).async {
-            let url = URL(string: (self.dataCategoriesCollectionView[indexPath.row].image) )
+            let url = URL(string: (self.dataCategoriesCollectionView[indexPath.row].image!) )
             let data = try? Data(contentsOf: url!)
             guard let data = data else {return}
             DispatchQueue.main.async {
@@ -124,14 +124,14 @@ extension HomeViewView:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellTableHomeView", for: indexPath) as? HomeTableViewCell
 //        cell?.delegate = self
-        cell?.id = self.dataCategoriesTableView[indexPath.row].id
+        cell?.id = self.dataCategoriesTableView[indexPath.row].id!
         cell?.lblNombreCategory.text = self.dataCategoriesTableView[indexPath.row].name
         cell?.presenter = presenter
         return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter?.showSpecifcCategory(id: self.dataCategoriesTableView[indexPath.row].id, name: self.dataCategoriesTableView[indexPath.row].name)
+        presenter?.showSpecifcCategory(id: self.dataCategoriesTableView[indexPath.row].id!, name: self.dataCategoriesTableView[indexPath.row].name!)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

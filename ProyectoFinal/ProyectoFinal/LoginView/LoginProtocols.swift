@@ -22,7 +22,8 @@ protocol LoginWireFrameProtocol: AnyObject {
     // PRESENTER -> WIREFRAME
     static func createLoginModule() -> UIViewController
     func presentNewViewSignUp(from view : LoginViewProtocol)
-    func showHomeUserView(from view: LoginViewProtocol, user: Users)
+    func showHomeUserView(from view: LoginViewProtocol, user : Users)
+    func showHomeAdminView(from view : LoginViewProtocol, user : Users)
 }
 
 protocol LoginPresenterProtocol: AnyObject {
@@ -34,6 +35,7 @@ protocol LoginPresenterProtocol: AnyObject {
     func viewDidLoad()
     func showSignUpView()
     func showHomeUserView(user: Users)
+    func showHomeAdminView(user : Users)
     func getLoginAuth(email:String, password:String)
 }
 

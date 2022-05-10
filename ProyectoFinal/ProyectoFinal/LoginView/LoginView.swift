@@ -86,7 +86,7 @@ extension LoginView: LoginViewProtocol {
                 case "customer":
                     self.presenter?.showHomeUserView(user: user)
                 case "admin":
-                    print("ADMIN")
+                    self.presenter?.showHomeAdminView(user: user)
                 default:
                     print("Error")
                 }
