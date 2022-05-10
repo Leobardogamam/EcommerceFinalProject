@@ -490,25 +490,9 @@
 		6A1829002819D9FF004984D4 /* ProyectoFinal */ = {
 			isa = PBXGroup;
 			children = (
-				9756376E28248C560006C761 /* LoginView */,
-				9756375728248A4A0006C761 /* SingUpView */,
-				9706B1E0281EE972002023E6 /* SpecificCategory */,
-				975B77A6281A227000AF96BD /* DetailProductView */,
-				97AF0EAD281E53A5009583F6 /* TabBarNavigationButtons */,
-				97901F48281A4C1F00E367BB /* DeleteEditCards */,
-				97901F47281A4C1800E367BB /* AddCards */,
-				97901F46281A4C0700E367BB /* MyCards */,
-				975B77AB281A237800AF96BD /* ViewProfile */,
-				975B77A8281A232100AF96BD /* BuyItems */,
-				975B77AA281A235800AF96BD /* ViewPurchases-VerCompras */,
-				975B77A7281A22A400AF96BD /* ShopingCar */,
-				975B77A5281A226B00AF96BD /* UserAccount */,
-				975B77A3281A225500AF96BD /* HomeView */,
-				6AC0DB85282AABEF00992919 /* ProductAdmin */,
-				6AC0DBCE282AAEAF00992919 /* CategorieAdmin */,
-				6AC0DC17282AB0C400992919 /* UserAdmin */,
-				6AC0DC5E282AB1C200992919 /* ProfileAdmin */,
-				6AC0DC63282AB1F800992919 /* TabBarNavigationButtonsAdmin */,
+				97A49756282ABC2100ECDBF6 /* Admin */,
+				97A49755282ABBE000ECDBF6 /* User */,
+				97A49754282ABBBF00ECDBF6 /* Login SingUp */,
 				6A1829032819D9FF004984D4 /* SceneDelegate.swift */,
 				6A1829012819D9FF004984D4 /* AppDelegate.swift */,
 				6A18290D2819DA01004984D4 /* Assets.xcassets */,
@@ -960,6 +944,46 @@
 				97901F71281A4D0C00E367BB /* DeleteEditCardsWireFrame.swift */,
 			);
 			path = DeleteEditCards;
+			sourceTree = "<group>";
+		};
+		97A49754282ABBBF00ECDBF6 /* Login SingUp */ = {
+			isa = PBXGroup;
+			children = (
+				9756376E28248C560006C761 /* LoginView */,
+				9756375728248A4A0006C761 /* SingUpView */,
+			);
+			path = "Login SingUp";
+			sourceTree = "<group>";
+		};
+		97A49755282ABBE000ECDBF6 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				9706B1E0281EE972002023E6 /* SpecificCategory */,
+				975B77A6281A227000AF96BD /* DetailProductView */,
+				97AF0EAD281E53A5009583F6 /* TabBarNavigationButtons */,
+				97901F48281A4C1F00E367BB /* DeleteEditCards */,
+				97901F47281A4C1800E367BB /* AddCards */,
+				97901F46281A4C0700E367BB /* MyCards */,
+				975B77AB281A237800AF96BD /* ViewProfile */,
+				975B77A8281A232100AF96BD /* BuyItems */,
+				975B77AA281A235800AF96BD /* ViewPurchases-VerCompras */,
+				975B77A7281A22A400AF96BD /* ShopingCar */,
+				975B77A5281A226B00AF96BD /* UserAccount */,
+				975B77A3281A225500AF96BD /* HomeView */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		97A49756282ABC2100ECDBF6 /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				6AC0DC63282AB1F800992919 /* TabBarNavigationButtonsAdmin */,
+				6AC0DB85282AABEF00992919 /* ProductAdmin */,
+				6AC0DBCE282AAEAF00992919 /* CategorieAdmin */,
+				6AC0DC17282AB0C400992919 /* UserAdmin */,
+				6AC0DC5E282AB1C200992919 /* ProfileAdmin */,
+			);
+			path = Admin;
 			sourceTree = "<group>";
 		};
 		97AF0EAD281E53A5009583F6 /* TabBarNavigationButtons */ = {
