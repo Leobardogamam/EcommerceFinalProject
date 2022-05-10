@@ -21,6 +21,11 @@ extension BuyItemsPresenter: BuyItemsPresenterProtocol {
     // TODO: implement presenter methods
     func viewDidLoad() {
     }
+    
+    func showAddCards() {
+        wireFrame?.showAddCards(from: view!)
+    }
+    
 }
 
 extension BuyItemsPresenter: BuyItemsInteractorOutputProtocol {

@@ -25,6 +25,7 @@ protocol ShopingCarWireFrameProtocol: AnyObject {
     
     func showUserAccount(from view: ShopingCarViewProtocol)
     func showViewHome(from view: ShopingCarViewProtocol)
+    func showBuyItems(from view: ShopingCarViewProtocol)
 }
 
 protocol ShopingCarPresenterProtocol: AnyObject {
@@ -38,7 +39,7 @@ protocol ShopingCarPresenterProtocol: AnyObject {
     func eliminate(id:Int,price:Int)
     func showUserAccount()
     func showViewHome()
-    func show
+    func showBuyItems()
 
 }
 

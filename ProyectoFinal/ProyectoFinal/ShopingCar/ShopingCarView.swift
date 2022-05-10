@@ -54,7 +54,7 @@ class ShopingCarView: UIViewController, MyViewDelegate {
     
     
     @IBAction func onPressBuy(_ sender: UIButton) {
-        
+        presenter?.showBuyItems()
     }
 }
 
@@ -69,7 +69,6 @@ extension ShopingCarView: ShopingCarViewProtocol {
             lblTotalPrice.text = "$" + String(precioTotal)
         }
     }
-    
     func resetPrice(price: Int) {
         lblTotalPrice.text = String(price)
         
@@ -112,7 +111,6 @@ extension ShopingCarView: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
-            
             presenter?.eliminate(id: carrito?[indexPath.row].id ?? 0 , price: carrito?[indexPath.row].price ?? 0)
             carrito?.remove(at: indexPath.row)
             DispatchQueue.main.async {

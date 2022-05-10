@@ -73,7 +73,6 @@ extension ShopingCarInteractor: ShopingCarRemoteDataManagerOutputProtocol {
                 precio.set(valorTotal, forKey: "Precio")
             }
         }
-        
         presenter?.getApiDescodificados(product: products, precioTotal: precio.integer(forKey: "Precio") )
     }
     

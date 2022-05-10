@@ -38,6 +38,7 @@ class HomeViewWireFrame: HomeViewWireFrameProtocol {
                     print(loadedPerson.name)
                 }
             }
+            
             presenter.interactor = interactor
             interactor.presenter = presenter
             interactor.localDatamanager = localDataManager

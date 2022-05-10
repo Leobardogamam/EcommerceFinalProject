@@ -19,6 +19,11 @@ class BuyItemsView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    @IBAction func onPressBuy(_ sender: Any) {
+        presenter?.showAddCards()
+    }
+    
 }
 
 extension BuyItemsView: BuyItemsViewProtocol {

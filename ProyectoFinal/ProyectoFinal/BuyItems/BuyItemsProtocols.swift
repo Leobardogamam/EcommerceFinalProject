@@ -17,6 +17,8 @@ protocol BuyItemsViewProtocol: AnyObject {
 protocol BuyItemsWireFrameProtocol: AnyObject {
     // PRESENTER -> WIREFRAME
     static func createBuyItemsModule() -> UIViewController
+    func showAddCards(from view:BuyItemsViewProtocol)
+    
 }
 
 protocol BuyItemsPresenterProtocol: AnyObject {
@@ -26,6 +28,8 @@ protocol BuyItemsPresenterProtocol: AnyObject {
     var wireFrame: BuyItemsWireFrameProtocol? { get set }
     
     func viewDidLoad()
+    func showAddCards()
+    
 }
 
 protocol BuyItemsInteractorOutputProtocol: AnyObject {

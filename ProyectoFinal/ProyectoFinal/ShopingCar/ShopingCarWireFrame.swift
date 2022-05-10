@@ -53,4 +53,13 @@ class ShopingCarWireFrame: ShopingCarWireFrameProtocol {
         }
     }
     
+    
+    func showBuyItems(from view: ShopingCarViewProtocol) {
+        let newView = BuyItemsWireFrame.createBuyItemsModule()
+        if let view = view as? UIViewController{
+            view.present(newView, animated: true)
+        }
+    }
+    
+    
 }

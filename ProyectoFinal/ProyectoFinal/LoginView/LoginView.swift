@@ -25,7 +25,6 @@ class LoginView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()
-        print(user?.id)
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -34,6 +33,8 @@ class LoginView: UIViewController {
                 print("Admin")
             }else if user?.id == 0{
                 print("Login")
+            }else if user == nil{
+                print("Logearte")
             }else{
                 presenter?.showHomeUserView(user: (user)!)
             }
