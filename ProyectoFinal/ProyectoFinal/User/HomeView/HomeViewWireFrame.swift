@@ -24,14 +24,15 @@ class HomeViewWireFrame: HomeViewWireFrameProtocol {
             presenter.view = view
             presenter.wireFrame = wireFrame
             presenter.user = user
-            userDefault.set(user.id, forKey: "IdUsuario")
-            userDefault.set(user.email, forKey: "email")
-            userDefault.set(user.password, forKey: "password")
+            
+            //Encodeamos el user y lo seteamos en userDefaults
             let encoder = JSONEncoder()
             if let encoded = try? encoder.encode(user) {
                 let defaults = UserDefaults.standard
                 defaults.set(encoded, forKey: "UserLogged")
             }
+            
+            //Traemos el user de userDefaults y lo desencodeamos
             if let savedPerson = userDefault.object(forKey: "UserLogged") as? Data {
                 let decoder = JSONDecoder()
                 if let loadedPerson = try? decoder.decode(Users.self, from: savedPerson) {

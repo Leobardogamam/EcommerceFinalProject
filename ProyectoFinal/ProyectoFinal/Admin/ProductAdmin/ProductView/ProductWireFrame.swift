@@ -30,6 +30,7 @@ class ProductWireFrame: ProductWireFrameProtocol {
             interactor.remoteDatamanager = remoteDataManager
             remoteDataManager.remoteRequestHandler = interactor
             
+            
             return viewController
         }
         return UIViewController()
@@ -55,6 +56,13 @@ class ProductWireFrame: ProductWireFrameProtocol {
             interactor.localDatamanager = localDataManager
             interactor.remoteDatamanager = remoteDataManager
             remoteDataManager.remoteRequestHandler = interactor
+            
+            //Encodeamos el user y lo seteamos en userDefaults
+            let encoder = JSONEncoder()
+            if let encoded = try? encoder.encode(user) {
+                let defaults = UserDefaults.standard
+                defaults.set(encoded, forKey: "UserLogged")
+            }
             
             return viewController
         }
