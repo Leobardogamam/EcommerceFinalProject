@@ -11,7 +11,6 @@
 		6A1829042819D9FF004984D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1829032819D9FF004984D4 /* SceneDelegate.swift */; };
 		6A18290C2819D9FF004984D4 /* ProyectoFinal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6A18290A2819D9FF004984D4 /* ProyectoFinal.xcdatamodeld */; };
 		6A18290E2819DA01004984D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A18290D2819DA01004984D4 /* Assets.xcassets */; };
-		6A1829112819DA01004984D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A18290F2819DA01004984D4 /* LaunchScreen.storyboard */; };
 		6AC0DB84282AABE600992919 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC0DB82282AABE600992919 /* Products.swift */; };
 		6AC0DB8F282AAC0400992919 /* ProductProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC0DB86282AAC0300992919 /* ProductProtocols.swift */; };
 		6AC0DB90282AAC0400992919 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC0DB87282AAC0400992919 /* ProductView.swift */; };
@@ -237,7 +236,6 @@
 		6A1829032819D9FF004984D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6A18290B2819D9FF004984D4 /* ProyectoFinal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProyectoFinal.xcdatamodel; sourceTree = "<group>"; };
 		6A18290D2819DA01004984D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6A1829102819DA01004984D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A1829122819DA01004984D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6AC0DB82282AABE600992919 /* Products.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		6AC0DB86282AAC0300992919 /* ProductProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductProtocols.swift; sourceTree = "<group>"; };
@@ -496,7 +494,6 @@
 				6A1829032819D9FF004984D4 /* SceneDelegate.swift */,
 				6A1829012819D9FF004984D4 /* AppDelegate.swift */,
 				6A18290D2819DA01004984D4 /* Assets.xcassets */,
-				6A18290F2819DA01004984D4 /* LaunchScreen.storyboard */,
 				6A1829122819DA01004984D4 /* Info.plist */,
 				6A18290A2819D9FF004984D4 /* ProyectoFinal.xcdatamodeld */,
 			);
@@ -1068,7 +1065,6 @@
 				6AC0DBF0282AAEE500992919 /* CategorieEditView.storyboard in Resources */,
 				975B782E281A248800AF96BD /* ViewProfile.storyboard in Resources */,
 				6AC0DC58282AB1AA00992919 /* ProfileDetailView.storyboard in Resources */,
-				6A1829112819DA01004984D4 /* LaunchScreen.storyboard in Resources */,
 				6A18290E2819DA01004984D4 /* Assets.xcassets in Resources */,
 				975B7810281A245C00AF96BD /* ViewPurchases.storyboard in Resources */,
 				975B77EC281A241900AF96BD /* ShopingCar.storyboard in Resources */,
@@ -1290,17 +1286,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		6A18290F2819DA01004984D4 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6A1829102819DA01004984D4 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		6A1829132819DA01004984D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1423,7 +1408,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 24P2M7WZ4S;
+				DEVELOPMENT_TEAM = L36JY9BGH8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ProyectoFinal/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1450,7 +1435,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 24P2M7WZ4S;
+				DEVELOPMENT_TEAM = L36JY9BGH8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ProyectoFinal/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
