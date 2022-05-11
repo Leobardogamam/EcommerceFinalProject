@@ -34,6 +34,7 @@ class UserView: UIViewController, MyViewDelegateAdmin {
         selectedLabel.clipsToBounds = true
         TabBar.btnProducts.tintColor = .black
         TabBar.btnCategories.tintColor = .black
+        TabBar.btnUsers.setImage(UIImage(systemName: "person.2.fill"), for: .normal)
         TabBar.btnUsers.tintColor = .systemIndigo
         TabBar.btnProfile.tintColor = .black
         TabBar?.delegate = self

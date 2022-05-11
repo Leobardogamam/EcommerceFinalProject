@@ -46,7 +46,12 @@ class ProductEditRemoteDataManager:ProductEditRemoteDataManagerInputProtocol {
           data, response, error in
             guard let datosR = data, error == nil else{return}
             do{
-                _ = try? JSONSerialization.jsonObject(with: datosR, options: .fragmentsAllowed)
+                guard let _ = try? JSONSerialization.jsonObject(with: datosR, options: .fragmentsAllowed) else{
+                    self.remoteRequestHandler?.remoteDataManagerCallBackEditedProduct(edited: false)
+                    return
+                }
+                
+                self.remoteRequestHandler?.remoteDataManagerCallBackEditedProduct(edited: true)
         
             }
         })

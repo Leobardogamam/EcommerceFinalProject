@@ -30,6 +30,7 @@ class ProfileView: UIViewController, MyViewDelegateAdmin {
         TabBar.btnCategories.tintColor = .black
         TabBar.btnUsers.tintColor = .black
         TabBar.btnProfile.tintColor = .systemIndigo
+        TabBar.btnProfile.setImage(UIImage(systemName: "person.fill"), for: .normal)
         TabBar.delegate = self
     }
     
@@ -54,7 +55,18 @@ class ProfileView: UIViewController, MyViewDelegateAdmin {
 
     
     @IBAction func signOut(_ sender: UIButton) {
-        dismissViewControllers()
+        let alert = UIAlertController(title: "Alerta", message: "Estas seguro que deseas cerrar sesion?", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Si", style: .default){UIAlertAction in
+            self.dismissViewControllers()
+        }
+        
+        let cancel = UIAlertAction(title: "Cancelar", style: .cancel)
+
+        alert.addAction(cancel)
+        alert.addAction(action)
+        self.present(alert, animated: true)
+        
+       
     }
     
     @IBAction func seeProfilePressed(_ sender: UIButton) {

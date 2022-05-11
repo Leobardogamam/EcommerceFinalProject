@@ -46,9 +46,6 @@ class ProductEditView: UIViewController {
         }
         else{
             presenter?.presenterSaveEditProduct(id: product!.id!, title: titleTextField.text!, price: Int(priceTextField.text!)!)
-            
-            
-                self.presenter?.showProductView()
 
         }
         
@@ -64,6 +61,7 @@ class ProductEditView: UIViewController {
 }
 
 extension ProductEditView: ProductEditViewProtocol {
+    
     // TODO: implement view output methods
     
     func presenterGetProductView(receivedProduct: Products) {
@@ -83,4 +81,29 @@ extension ProductEditView: ProductEditViewProtocol {
             self.priceTextField.text = "\(String(describing: (product!.price)!))"
         }
     }
+    
+    func presenterGetEditedProduct(edited: Bool) {
+        
+        DispatchQueue.main.async { [self] in
+            if edited{
+                let alert = UIAlertController(title: "Exitoso", message: "El producto se actualizo correctamente", preferredStyle: .alert)
+                
+                let action = UIAlertAction(title: "Ok", style: .default){ UIAlertAction in
+                    self.presenter?.showProductView()
+                }
+
+                alert.addAction(action)
+                present(alert, animated: true)
+            }else{
+                let alert = UIAlertController(title: "Error", message: "Hubo un problema al editar el producto", preferredStyle: .alert)
+                
+                let action = UIAlertAction(title: "Ok", style: .default)
+
+                alert.addAction(action)
+                present(alert, animated: true)
+            }
+        }
+       
+    }
+    
 }

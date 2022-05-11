@@ -8,16 +8,19 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class MyCardsView: UIViewController {
 
     // MARK: Properties
     var presenter: MyCardsPresenterProtocol?
+    var cards : [NSManagedObject]?
 
     // MARK: Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.viewDidLoad()
     }
     
     @IBAction func onPressGoToAddCard(_ sender: UIButton) {
@@ -27,5 +30,13 @@ class MyCardsView: UIViewController {
 }
 
 extension MyCardsView: MyCardsViewProtocol {
+    
+    
     // TODO: implement view output methods
+    
+    func presenterPushCards(cards: [NSManagedObject]) {
+        self.cards = cards
+        
+        
+    }
 }
