@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 class DeleteEditCardsPresenter: DeleteEditCardsPresenterProtocol {
-    
+   
     
     // MARK: Properties
     weak var view: DeleteEditCardsViewProtocol?
@@ -26,6 +26,12 @@ class DeleteEditCardsPresenter: DeleteEditCardsPresenterProtocol {
     func showEditCardView(numSerie: String) {
         wireFrame?.presentNewEditCards(from: view!, data: numSerie)
     }
+    
+    func deleteCard() {
+        
+    }
+    
+    
     
         
 }
