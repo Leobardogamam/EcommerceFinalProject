@@ -10,12 +10,13 @@ import Foundation
 import UIKit
 
 class DeleteEditCardsWireFrame: DeleteEditCardsWireFrameProtocol {
+   
 
-    class func createDeleteEditCardsModule() -> UIViewController {
+    class func createDeleteEditCardsModule(data : String) -> UIViewController {
         let navController = mainStoryboard.instantiateViewController(withIdentifier: "DeleteEditCardsView")
-        if let view = navController.children.first as? DeleteEditCardsView {
+        if let view = navController as? DeleteEditCardsView {
             let presenter: DeleteEditCardsPresenterProtocol & DeleteEditCardsInteractorOutputProtocol = DeleteEditCardsPresenter()
-            let interactor: DeleteEditCardsInteractorInputProtocol & DeleteEditCardsRemoteDataManagerOutputProtocol = DeleteEditCardsInteractor()
+            let interactor: DeleteEditCardsInteractorInputProtocol & DeleteEditCardsRemoteDataManagerOutputProtocol & DeleteEditCardsLocalDataManagerOutputProtocol = DeleteEditCardsInteractor()
             let localDataManager: DeleteEditCardsLocalDataManagerInputProtocol = DeleteEditCardsLocalDataManager()
             let remoteDataManager: DeleteEditCardsRemoteDataManagerInputProtocol = DeleteEditCardsRemoteDataManager()
             let wireFrame: DeleteEditCardsWireFrameProtocol = DeleteEditCardsWireFrame()
@@ -24,10 +25,12 @@ class DeleteEditCardsWireFrame: DeleteEditCardsWireFrameProtocol {
             presenter.view = view
             presenter.wireFrame = wireFrame
             presenter.interactor = interactor
+            presenter.numSerie = data
             interactor.presenter = presenter
             interactor.localDatamanager = localDataManager
             interactor.remoteDatamanager = remoteDataManager
             remoteDataManager.remoteRequestHandler = interactor
+            localDataManager.localRequestHandler = interactor
             
             return navController
         }
@@ -35,7 +38,16 @@ class DeleteEditCardsWireFrame: DeleteEditCardsWireFrameProtocol {
     }
     
     static var mainStoryboard: UIStoryboard {
-        return UIStoryboard(name: "DeleteEditCardsView", bundle: Bundle.main)
+        return UIStoryboard(name: "DeleteEditCards", bundle: Bundle.main)
     }
+    
+    func presentNewEditCards(from view: DeleteEditCardsViewProtocol, data: String) {
+        let newDetailView = EditCardViewWireFrame.createEditCardViewModule(data: data)
+        
+        if let newView = view as? UIViewController{
+            newView.present(newDetailView, animated: true)
+        }
+    }
+    
     
 }

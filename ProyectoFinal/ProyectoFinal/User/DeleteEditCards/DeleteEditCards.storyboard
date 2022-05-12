@@ -8,16 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Delete Edit Cards View-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DeleteEditCardsView" modalPresentationStyle="fullScreen" id="Y6W-OH-hqX" customClass="DeleteEditCardsView" customModule="ProyectoFinal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agregar Tarjeta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EdR-5Q-aMN">
-                                <rect key="frame" x="16" y="48" width="226.5" height="42"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ver Tarjeta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EdR-5Q-aMN">
+                                <rect key="frame" x="16" y="48" width="157" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -39,7 +39,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YFA-jP-lWV">
                                         <rect key="frame" x="0.0" y="0.0" width="155" height="56"/>
-                                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                        <color key="backgroundColor" systemColor="linkColor"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Editar">
@@ -50,10 +50,13 @@
                                                 <integer key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="editPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="VZH-Qa-VxX"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2o-Gm-5fD">
                                         <rect key="frame" x="171" y="0.0" width="155" height="56"/>
-                                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Eliminar">
@@ -64,6 +67,9 @@
                                                 <integer key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="deletePressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="F6g-xS-wJD"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -92,6 +98,21 @@
                                 <rect key="frame" x="344" y="332" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLx-aM-oev">
+                                <rect key="frame" x="356" y="52" width="50" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="KDj-d3-lId"/>
+                                    <constraint firstAttribute="width" constant="50" id="nWx-Q6-64Z"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="multiply.circle" catalog="system" title="">
+                                    <color key="baseForegroundColor" systemColor="tintColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="backPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="MlL-an-dFl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -99,6 +120,8 @@
                             <constraint firstItem="UhU-jq-PKz" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="AZo-BR-2Gq"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="nNe-4E-hmO" secondAttribute="trailing" constant="44" id="Sei-4i-WEx"/>
                             <constraint firstItem="EdR-5Q-aMN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Sf8-bH-rbH"/>
+                            <constraint firstItem="bLx-aM-oev" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="Uas-tG-ZZT"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bLx-aM-oev" secondAttribute="trailing" constant="8" id="Z3v-nh-t0l"/>
                             <constraint firstItem="nNe-4E-hmO" firstAttribute="top" secondItem="UhU-jq-PKz" secondAttribute="bottom" constant="32" id="Zwb-U4-7oI"/>
                             <constraint firstItem="nNe-4E-hmO" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="eKr-Bb-cFP"/>
                             <constraint firstItem="EdR-5Q-aMN" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="48" id="gGe-DL-igT"/>
@@ -106,6 +129,13 @@
                             <constraint firstItem="nNe-4E-hmO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="44" id="zxu-AV-EBa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cardImageView" destination="UhU-jq-PKz" id="R6c-R9-6Mh"/>
+                        <outlet property="cardTypeImageView" destination="ce8-JG-Cq4" id="cTO-xI-VbC"/>
+                        <outlet property="dateLabel" destination="cQI-uq-eQX" id="f0E-ek-Bdk"/>
+                        <outlet property="nameLabel" destination="bnN-Rr-X5R" id="bV0-XQ-xys"/>
+                        <outlet property="numSerieLabel" destination="QSP-DV-0a3" id="yY6-fG-Ku8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -114,11 +144,18 @@
     </scenes>
     <resources>
         <image name="Cart" width="1554" height="980"/>
+        <image name="multiply.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

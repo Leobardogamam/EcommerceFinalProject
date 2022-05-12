@@ -45,7 +45,7 @@ extension MyCardsView: MyCardsViewProtocol {
     
     func presenterPushCards(cards: [NSManagedObject]) {
         self.cards = cards
-        
+    
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }
@@ -83,8 +83,9 @@ extension MyCardsView: UICollectionViewDelegate,UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let card = cards![indexPath.row]
-        let numSerie = card.value(forKey: "numserie") as? String
+        let numSerie = (card.value(forKey: "numserie") as? String)!
         
+        presenter?.showEditDeleteCards(data: numSerie)
         
     }
     
