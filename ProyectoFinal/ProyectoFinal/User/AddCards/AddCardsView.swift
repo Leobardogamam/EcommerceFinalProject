@@ -63,7 +63,7 @@ class AddCardsView: UIViewController,UICollectionViewDataSource, UICollectionVie
         }
         else{
         
-            presenter?.saveCard(cvv: Int(cvvTextField.text!)!, day: Int(dayTextField.text!)!, year: Int(yearTextField.text!)!, idUser: userDefaults.integer(forKey: "IdUsuario") , numSerie: Int(numCardTextField.text!)!, name: nameCardTextField.text!, color: selectedColor, cardType: cardTypeSelected)
+            presenter?.saveCard(cvv: Int(cvvTextField.text!)!, day: Int(dayTextField.text!)!, year: Int(yearTextField.text!)!, idUser: userDefaults.integer(forKey: "IdUsuario") , numSerie: numCardTextField.text!, name: nameCardTextField.text!, color: selectedColor, cardType: cardTypeSelected)
         }
     }
     
@@ -133,7 +133,7 @@ extension AddCardsView: AddCardsViewProtocol {
                 let alert = UIAlertController(title: "Exitoso", message: "La tarjeta se añadio correctamente", preferredStyle: .alert)
                 
                 let action = UIAlertAction(title: "Ok", style: .default) { UIAlertAction in
-                    self.presenter?.showCardView()
+                    self.dismiss(animated: true)
                 }
                 alert.addAction(action)
                 present(alert, animated: true)

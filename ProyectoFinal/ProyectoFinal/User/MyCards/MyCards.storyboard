@@ -24,13 +24,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NvW-h3-zMz">
-                                <rect key="frame" x="0.0" y="122" width="414" height="264"/>
+                                <rect key="frame" x="5" y="122" width="403" height="264"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="414" id="oNr-Vr-STp"/>
+                                    <constraint firstAttribute="width" constant="403" id="oNr-Vr-STp"/>
                                     <constraint firstAttribute="height" constant="264" id="tN7-xi-j1t"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BFI-rk-dM8">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BFI-rk-dM8">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -38,7 +38,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cardCell" id="uuE-ee-M9s" customClass="MyCardCollectionViewCell" customModule="ProyectoFinal" customModuleProvider="target">
-                                        <rect key="frame" x="7" y="0.0" width="400" height="264"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="264"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="KVv-V4-P6G">
                                             <rect key="frame" x="0.0" y="0.0" width="400" height="264"/>
@@ -78,12 +78,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cA8-hR-bjo">
-                                                    <rect key="frame" x="352" y="216" width="40" height="40"/>
+                                                    <rect key="frame" x="342" y="206" width="50" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Zjh-Cc-MpK" firstAttribute="leading" secondItem="KVv-V4-P6G" secondAttribute="leading" id="akF-CL-fyn"/>
+                                                <constraint firstAttribute="trailing" secondItem="Zjh-Cc-MpK" secondAttribute="trailing" id="ecS-cl-iCs"/>
                                                 <constraint firstAttribute="trailing" secondItem="Zjh-Cc-MpK" secondAttribute="trailing" id="g0O-bb-z9a"/>
                                                 <constraint firstAttribute="bottom" secondItem="Zjh-Cc-MpK" secondAttribute="bottom" id="oNJ-ci-ZNT"/>
                                                 <constraint firstItem="Zjh-Cc-MpK" firstAttribute="top" secondItem="KVv-V4-P6G" secondAttribute="top" id="yWk-8h-iFO"/>
@@ -99,9 +100,13 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="M3m-Kx-SIx"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="FWs-X5-YaN"/>
+                                </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9rk-Lz-zSY">
-                                <rect key="frame" x="16" y="446" width="382" height="56"/>
+                                <rect key="frame" x="16" y="446" width="273.5" height="56"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -117,18 +122,35 @@
                                     <action selector="onPressGoToAddCard:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Xyr-I2-uGx"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcn-mr-y2H">
+                                <rect key="frame" x="243.5" y="52" width="50" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="QuA-om-4hk"/>
+                                    <constraint firstAttribute="height" constant="50" id="du4-Yw-I5h"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="multiply.circle" catalog="system" title="">
+                                    <color key="baseForegroundColor" systemColor="tintColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="backPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="sO5-4d-wTk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="dcn-mr-y2H" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="topMargin" constant="8" id="3Sy-0i-h1H"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="9rk-Lz-zSY" secondAttribute="trailing" constant="16" id="Kef-Wh-axL"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="9rk-Lz-zSY" secondAttribute="bottom" constant="360" id="Rg4-xX-Eqk"/>
+                            <constraint firstItem="9rk-Lz-zSY" firstAttribute="top" secondItem="NvW-h3-zMz" secondAttribute="bottom" constant="60" id="Oij-LP-8N7"/>
+                            <constraint firstItem="dcn-mr-y2H" firstAttribute="trailing" secondItem="5EZ-qb-Rvc" secondAttribute="trailingMargin" constant="8" id="S1I-G5-omi"/>
                             <constraint firstItem="Epp-1Y-p2v" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="e62-PH-9ms"/>
                             <constraint firstAttribute="trailing" secondItem="NvW-h3-zMz" secondAttribute="trailing" id="ea0-lQ-ZnY"/>
                             <constraint firstItem="NvW-h3-zMz" firstAttribute="top" secondItem="Epp-1Y-p2v" secondAttribute="bottom" constant="32" id="gtR-Ef-eYB"/>
                             <constraint firstItem="9rk-Lz-zSY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="hhJ-1H-gd5"/>
                             <constraint firstItem="Epp-1Y-p2v" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="48" id="mY6-E2-ijo"/>
-                            <constraint firstItem="NvW-h3-zMz" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="ugb-aN-yeu"/>
+                            <constraint firstItem="NvW-h3-zMz" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="5" id="ugb-aN-yeu"/>
                         </constraints>
                     </view>
                     <connections>
@@ -141,11 +163,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="multiply.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

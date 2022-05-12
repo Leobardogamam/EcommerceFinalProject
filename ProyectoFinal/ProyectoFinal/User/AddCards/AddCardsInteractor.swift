@@ -18,7 +18,7 @@ class AddCardsInteractor: AddCardsInteractorInputProtocol {
     var localDatamanager: AddCardsLocalDataManagerInputProtocol?
     var remoteDatamanager: AddCardsRemoteDataManagerInputProtocol?
 
-    func saveCard(cvv: Int, day: Int, year: Int, idUser: Int, numSerie: Int, name: String, color: UIColor, cardType: String) {
+    func saveCard(cvv: Int, day: Int, year: Int, idUser: Int, numSerie: String, name: String, color: UIColor, cardType: String) {
         localDatamanager?.localSaveCard(cvv: cvv, day: day, year: year, idUser: idUser, numSerie: numSerie, name: name, color: color, cardType: cardType)
     }
 }
