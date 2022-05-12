@@ -9,7 +9,13 @@
 import Foundation
 import UIKit
 
-class DetailProductViewView: UIViewController {
+class DetailProductViewView: UIViewController,  DetailProductViewViewProtocol {
+    
+   
+    
+    
+    // TODO: implement view output methods
+    
 
     // MARK: Properties
     @IBOutlet weak var imgProduct: UIImageView!
@@ -33,12 +39,19 @@ class DetailProductViewView: UIViewController {
         dismiss(animated: true)
     }
     
+    
 
     @IBAction func onPressAddCar(_ sender: UIButton) {
         alert(title: "Se agrego al carrito", message: "El producto se agrego al carrito")
-        presenter?.saveDataInCoreData(idCustomer: userDefault.integer(forKey: "IdUsuario"), idProduct: idProduct ?? 0)
-        print("user dafault = ", userDefault.integer(forKey: "IdUsuario"))
+        if let savedPerson = userDefault.object(forKey: "UserLogged") as? Data {
+            let decoder = JSONDecoder()
+            if let loadedPerson = try? decoder.decode(Users.self, from: savedPerson) {
+                presenter?.saveDataInCoreData(idCustomer: loadedPerson.id, idProduct: idProduct ?? 0)
+                print("user dafault = ", "\(loadedPerson.id)")
+            }
+        }
     }
+        
     
     func alert(title:String,message:String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -48,28 +61,28 @@ class DetailProductViewView: UIViewController {
         alert.addAction(action)
         self.present(alert,animated:true)
     }
+        
+        
+    func getDataProduct(product: Product) {
+            idProduct = product.id
+            self.lblPriceProduct.text = "$" + String(product.price)
+            self.lblDescriptionProduct.text = product.description
+            self.lblNameProduct.text = product.title
+            self.imgProduct.image = UIImage(named: "loading")
+            DispatchQueue.global(qos: .default).async {
+                let url = URL(string: product.images?[0] ?? "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930")
+                guard let url = url else {
+                    return
+                }
+                let data = try? Data(contentsOf: url)
+                guard let dat = data else{return}
+                DispatchQueue.main.async {
+                    self.imgProduct.image = UIImage(data: dat)
+                }
+            }
+    }
     
 }
 
-extension DetailProductViewView: DetailProductViewViewProtocol {
-    // TODO: implement view output methods
-    func getDataProduct(product: Product) {
-        idProduct = product.id
-        self.lblPriceProduct.text = "$" + String(product.price)
-        self.lblDescriptionProduct.text = product.description
-        self.lblNameProduct.text = product.title
-        self.imgProduct.image = UIImage(named: "loading")
-        DispatchQueue.global(qos: .default).async {
-            let url = URL(string: product.images?[0] ?? "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930")
-            guard let url = url else {
-                return
-            }
 
-            let data = try? Data(contentsOf: url)
-            guard let dat = data else{return}
-            DispatchQueue.main.async {
-                self.imgProduct.image = UIImage(data: dat)
-            }
-        }
-    }
-}
+

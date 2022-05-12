@@ -8,25 +8,40 @@
 
 import Foundation
 
-class BuyItemsPresenter  {
+class BuyItemsPresenter:BuyItemsPresenterProtocol {
+    
     
     // MARK: Properties
     weak var view: BuyItemsViewProtocol?
     var interactor: BuyItemsInteractorInputProtocol?
     var wireFrame: BuyItemsWireFrameProtocol?
-    
-}
-
-extension BuyItemsPresenter: BuyItemsPresenterProtocol {
+    var precio: Int?
     // TODO: implement presenter methods
+    
     func viewDidLoad() {
+        view?.sendPrice(price: precio ?? 0)
     }
     
     func showAddCards() {
         wireFrame?.showAddCards(from: view!)
     }
     
+    func getAllShopingCar() {
+        interactor?.getAllShopingCar()
+    }
+    
 }
+
+//extension BuyItemsPresenter: BuyItemsPresenterProtocol {
+//    // TODO: implement presenter methods
+//    func viewDidLoad() {
+//    }
+//
+//    func showAddCards() {
+//        wireFrame?.showAddCards(from: view!)
+//    }
+//
+//}
 
 extension BuyItemsPresenter: BuyItemsInteractorOutputProtocol {
     // TODO: implement interactor output methods

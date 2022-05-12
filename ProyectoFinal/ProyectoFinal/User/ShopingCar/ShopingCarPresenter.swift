@@ -9,17 +9,17 @@
 import Foundation
 import UIKit
 
-class ShopingCarPresenter  {
+class ShopingCarPresenter : ShopingCarPresenterProtocol {
+    // TODO: implement presenter methods
+    var precio: Int?
+    
     
     // MARK: Properties
     weak var view: ShopingCarViewProtocol?
     var interactor: ShopingCarInteractorInputProtocol?
     var wireFrame: ShopingCarWireFrameProtocol?
     
-}
-
-extension ShopingCarPresenter: ShopingCarPresenterProtocol {
-    // TODO: implement presenter methods
+    
     func viewDidLoad() {
         getAllCarCoredataSave()
     }
@@ -41,10 +41,9 @@ extension ShopingCarPresenter: ShopingCarPresenterProtocol {
         wireFrame?.showViewHome(from: view!)
         
     }
-    func showBuyItems() {
-        wireFrame?.showBuyItems(from: view!)
+    func showBuyItems(precio: Int) {
+        wireFrame?.showBuyItems(from: view!,precio: precio)
     }
-    
     
 }
 

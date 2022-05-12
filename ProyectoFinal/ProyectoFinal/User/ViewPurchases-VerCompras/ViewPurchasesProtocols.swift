@@ -37,6 +37,8 @@ protocol ViewPurchasesInteractorInputProtocol: AnyObject {
     var presenter: ViewPurchasesInteractorOutputProtocol? { get set }
     var localDatamanager: ViewPurchasesLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: ViewPurchasesRemoteDataManagerInputProtocol? { get set }
+    
+    func getPurchases()
 }
 
 protocol ViewPurchasesDataManagerInputProtocol: AnyObject {
@@ -54,4 +56,15 @@ protocol ViewPurchasesRemoteDataManagerOutputProtocol: AnyObject {
 
 protocol ViewPurchasesLocalDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> LOCALDATAMANAGER
+    var compras:[CreditCard]? {get set}
+    var localRequestHandler:ViewPurchasesLocalDataManagerOutputProtocol?{get set}
+    func getPurchases()
 }
+protocol ViewPurchasesLocalDataManagerOutputProtocol: AnyObject{
+    // REMOTEDATAMANAGER -> Interactor
+    
+    
+    func returnData()
+    
+}
+

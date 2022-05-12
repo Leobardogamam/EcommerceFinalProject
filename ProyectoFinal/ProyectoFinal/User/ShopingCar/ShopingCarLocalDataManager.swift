@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class ShopingCarLocalDataManager:ShopingCarLocalDataManagerInputProtocol {
-    var interactor: ShopingCarLocalDataManagerOutputProtocol?
+    var localRequestHandler: ShopingCarLocalDataManagerOutputProtocol?
     var arrayIdProduct:[Int]?
     var userDefault = UserDefaults()
     
@@ -19,14 +19,26 @@ class ShopingCarLocalDataManager:ShopingCarLocalDataManagerInputProtocol {
         let context = appDelegate.persistentContainer.viewContext
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ProductoCustomer")
-        request.predicate = NSPredicate(format: "idcustomer = %@", "\(userDefault.integer(forKey: "IdUsuario"))")
+//        MARK: HOLA
+        
+        if let savedPerson = userDefault.object(forKey: "UserLogged") as? Data {
+            let decoder = JSONDecoder()
+            if let loadedPerson = try? decoder.decode(Users.self, from: savedPerson) {
+                do {
+                    request.predicate = NSPredicate(format: "idcustomer = %@", "\(loadedPerson.id)")
+                } catch  {
+                
+                }
+            }
+        }
         request.returnsObjectsAsFaults = false
         do {
                 let result = try context.fetch(request)
                 for data in result as! [NSManagedObject]
         {
-                self.arrayIdProduct?.append(data.value(forKey: "idproduct")! as! Int)
-                interactor?.getIdProducts(id: data.value(forKey: "idproduct")! as! Int)
+                print(data)
+                    self.arrayIdProduct?.append(data.value(forKey: "idproduct")! as! Int)
+                localRequestHandler?.getIdProducts(id: data.value(forKey: "idproduct")! as! Int)
         }
 
         } catch {
@@ -46,9 +58,12 @@ class ShopingCarLocalDataManager:ShopingCarLocalDataManagerInputProtocol {
         request.returnsObjectsAsFaults = false
         do {
                 let result = try context.fetch(request)
+            print(result)
                 for data in result as! [NSManagedObject]
+                        
         {
                 self.arrayIdProduct?.append(data.value(forKey: "idproduct")! as! Int)
+                    print(data)
 //                interactor?.getIdProducts(id: data.value(forKey: "idproduct")! as! Int)
                 eliminate(data: data, price: price)
         }
@@ -67,13 +82,11 @@ class ShopingCarLocalDataManager:ShopingCarLocalDataManagerInputProtocol {
         do {
         try context.save()
 //            print("Valor borrado con exito")
-            interactor?.changePrice(price: price)
+            localRequestHandler?.changePrice(price: price)
         }
         catch {
             // Handle Error
         }
-        
-        
     }
     
     

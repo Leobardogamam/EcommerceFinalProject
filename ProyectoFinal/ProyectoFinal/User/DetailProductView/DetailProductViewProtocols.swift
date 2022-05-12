@@ -61,6 +61,5 @@ protocol DetailProductViewRemoteDataManagerOutputProtocol: AnyObject {
 
 protocol DetailProductViewLocalDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> LOCALDATAMANAGER
-    
     func saveDataInCoreData(idCustomer:Int,idProduct:Int)
 }

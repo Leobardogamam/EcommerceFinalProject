@@ -9,14 +9,32 @@
 import Foundation
 
 class ViewPurchasesInteractor: ViewPurchasesInteractorInputProtocol {
-
     // MARK: Properties
     weak var presenter: ViewPurchasesInteractorOutputProtocol?
     var localDatamanager: ViewPurchasesLocalDataManagerInputProtocol?
     var remoteDatamanager: ViewPurchasesRemoteDataManagerInputProtocol?
 
+    
+    func getPurchases() {
+        localDatamanager?.getPurchases()
+    }
+    
+
 }
 
 extension ViewPurchasesInteractor: ViewPurchasesRemoteDataManagerOutputProtocol {
     // TODO: Implement use case methods
+    
+}
+
+extension ViewPurchasesInteractor: ViewPurchasesLocalDataManagerOutputProtocol{
+    
+    
+    func returnData() {
+        
+    }
+    
+    
+    
+    
 }
