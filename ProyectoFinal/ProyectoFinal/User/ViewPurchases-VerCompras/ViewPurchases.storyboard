@@ -67,6 +67,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="q5p-Mf-39i"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="uXv-Sm-7Yp"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGu-ir-xan">
                                 <rect key="frame" x="16" y="114" width="382" height="3"/>
