@@ -27,7 +27,7 @@ extension AddCardsPresenter: AddCardsPresenterProtocol {
     func viewDidLoad() {
     }
     
-    func saveCard(cvv: Int, day: Int, year: Int, idUser: Int, numSerie: Int, name: String, color: UIColor, cardType : String) {
+    func saveCard(cvv: Int, day: Int, year: Int, idUser: Int, numSerie: String, name: String, color: UIColor, cardType : String) {
         interactor?.saveCard(cvv: cvv, day: day, year: year, idUser: idUser, numSerie: numSerie, name: name, color: color, cardType: cardType)
     }
     

@@ -28,7 +28,7 @@ protocol AddCardsPresenterProtocol: AnyObject {
     var wireFrame: AddCardsWireFrameProtocol? { get set }
     
     func viewDidLoad()
-    func saveCard(cvv : Int, day : Int, year : Int, idUser : Int, numSerie : Int, name : String, color : UIColor, cardType : String )
+    func saveCard(cvv : Int, day : Int, year : Int, idUser : Int, numSerie : String, name : String, color : UIColor, cardType : String )
     func showCardView()
 }
 
@@ -43,7 +43,7 @@ protocol AddCardsInteractorInputProtocol: AnyObject {
     var localDatamanager: AddCardsLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: AddCardsRemoteDataManagerInputProtocol? { get set }
     
-    func saveCard(cvv : Int, day : Int, year : Int, idUser : Int, numSerie : Int, name : String, color : UIColor, cardType : String )
+    func saveCard(cvv : Int, day : Int, year : Int, idUser : Int, numSerie : String, name : String, color : UIColor, cardType : String )
 }
 
 protocol AddCardsDataManagerInputProtocol: AnyObject {
@@ -64,7 +64,7 @@ protocol AddCardsLocalDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> LOCALDATAMANAGER
     var localRequestHandler: AddCardsLocalDataManagerOutputProtocol? {get set}
     
-    func localSaveCard(cvv : Int, day : Int, year : Int, idUser : Int, numSerie : Int, name : String, color : UIColor, cardType : String )
+    func localSaveCard(cvv : Int, day : Int, year : Int, idUser : Int, numSerie : String, name : String, color : UIColor, cardType : String )
     
 }
 
