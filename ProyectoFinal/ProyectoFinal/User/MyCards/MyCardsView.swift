@@ -81,4 +81,11 @@ extension MyCardsView: UICollectionViewDelegate,UICollectionViewDataSource{
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let card = cards![indexPath.row]
+        let numSerie = card.value(forKey: "numserie") as? String
+        
+        
+    }
+    
 }
