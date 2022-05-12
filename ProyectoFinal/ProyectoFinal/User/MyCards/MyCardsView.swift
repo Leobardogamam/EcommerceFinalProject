@@ -28,6 +28,14 @@ class MyCardsView: UIViewController {
         presenter?.showAddCards()
     }
     
+    @IBAction func backPressed(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        presenter?.viewDidLoad()
+    }
+    
 }
 
 extension MyCardsView: MyCardsViewProtocol {
@@ -55,7 +63,18 @@ extension MyCardsView: UICollectionViewDelegate,UICollectionViewDataSource{
         
         let card = cards![indexPath.row]
         
-        cell.cardImageView.backgroundColor = card.value(forKey: "color") as! UIColor
+        cell.cardImageView.backgroundColor = card.value(forKey: "color") as? UIColor
+        cell.numberLabel.text = "\((card.value(forKey: "numserie") as? String)!)"
+        cell.nameLabel.text = "\((card.value(forKey: "name") as? String)!)"
+        cell.dateLabel.text = "\(card.value(forKey: "day")!)/\(card.value(forKey: "year")!)"
+        
+        if card.value(forKey: "cardType") as! String == "Visa"{
+            cell.cardTypeImageView.image = UIImage(named: "Visa_Logo")
+        }else if card.value(forKey: "cardType") as! String == "Mastercard"{
+            cell.cardTypeImageView.image = UIImage(named: "logo-Mastercard")
+        }else if card.value(forKey: "cardType") as! String == "American Express"{
+            cell.cardTypeImageView.image = UIImage(named: "logo-American-Express")
+        }
         
         
         

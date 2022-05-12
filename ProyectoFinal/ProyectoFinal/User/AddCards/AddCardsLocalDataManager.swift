@@ -14,7 +14,7 @@ class AddCardsLocalDataManager:AddCardsLocalDataManagerInputProtocol {
 
     var localRequestHandler: AddCardsLocalDataManagerOutputProtocol?
     
-    func localSaveCard(cvv: Int, day: Int, year: Int, idUser: Int, numSerie: Int, name: String, color: UIColor, cardType: String) {
+    func localSaveCard(cvv: Int, day: Int, year: Int, idUser: Int, numSerie: String, name: String, color: UIColor, cardType: String) {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -25,7 +25,7 @@ class AddCardsLocalDataManager:AddCardsLocalDataManagerInputProtocol {
         creditCard.day = Int64(day)
         creditCard.year = Int64(year)
         creditCard.idUser = Int64(idUser)
-        creditCard.numserie = Int64(numSerie)
+        creditCard.numserie = numSerie
         creditCard.name = name
         creditCard.color = color
         creditCard.cardType = cardType
