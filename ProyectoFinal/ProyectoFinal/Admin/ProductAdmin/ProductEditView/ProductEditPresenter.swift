@@ -33,9 +33,15 @@ class ProductEditPresenter: ProductEditPresenterProtocol {
 
 
 extension ProductEditPresenter: ProductEditInteractorOutputProtocol {
+   
+    
     // TODO: implement interactor output methods
     
     func interactorPushProductPresenter(receivedProduct: Products) {
         view?.presenterGetProductView(receivedProduct: receivedProduct)
+    }
+    
+    func interactorPushEditedProductPresenter(edited: Bool) {
+        view?.presenterGetEditedProduct(edited: edited)
     }
 }

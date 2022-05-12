@@ -11,6 +11,8 @@
 		6A1829042819D9FF004984D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1829032819D9FF004984D4 /* SceneDelegate.swift */; };
 		6A18290C2819D9FF004984D4 /* ProyectoFinal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6A18290A2819D9FF004984D4 /* ProyectoFinal.xcdatamodeld */; };
 		6A18290E2819DA01004984D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A18290D2819DA01004984D4 /* Assets.xcassets */; };
+		6A7E43C5282C3340006AE3A0 /* CreditCard+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7E43C3282C333F006AE3A0 /* CreditCard+CoreDataClass.swift */; };
+		6A7E43C8282C6D65006AE3A0 /* CreditCard+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7E43C7282C6D65006AE3A0 /* CreditCard+CoreDataProperties.swift */; };
 		6AC0DB84282AABE600992919 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC0DB82282AABE600992919 /* Products.swift */; };
 		6AC0DB8F282AAC0400992919 /* ProductProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC0DB86282AAC0300992919 /* ProductProtocols.swift */; };
 		6AC0DB90282AAC0400992919 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC0DB87282AAC0400992919 /* ProductView.swift */; };
@@ -237,6 +239,8 @@
 		6A18290B2819D9FF004984D4 /* ProyectoFinal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProyectoFinal.xcdatamodel; sourceTree = "<group>"; };
 		6A18290D2819DA01004984D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A1829122819DA01004984D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A7E43C3282C333F006AE3A0 /* CreditCard+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreditCard+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6A7E43C7282C6D65006AE3A0 /* CreditCard+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreditCard+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6AC0DB82282AABE600992919 /* Products.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		6AC0DB86282AAC0300992919 /* ProductProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductProtocols.swift; sourceTree = "<group>"; };
 		6AC0DB87282AAC0400992919 /* ProductView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
@@ -470,6 +474,8 @@
 		6A1828F52819D9FF004984D4 = {
 			isa = PBXGroup;
 			children = (
+				6A7E43C7282C6D65006AE3A0 /* CreditCard+CoreDataProperties.swift */,
+				6A7E43C3282C333F006AE3A0 /* CreditCard+CoreDataClass.swift */,
 				9741ADBB2821909F0073FABF /* ProductoCustomer+CoreDataClass.swift */,
 				9741ADBC2821909F0073FABF /* ProductoCustomer+CoreDataProperties.swift */,
 				6A1829002819D9FF004984D4 /* ProyectoFinal */,
@@ -1112,6 +1118,7 @@
 				6AC0DC33282AB13400992919 /* UserAddRemoteDataManager.swift in Sources */,
 				97901F61281A4CDA00E367BB /* AddCardsLocalDataManager.swift in Sources */,
 				6AC0DBB8282AAC5900992919 /* ProductDetailInteractor.swift in Sources */,
+				6A7E43C5282C3340006AE3A0 /* CreditCard+CoreDataClass.swift in Sources */,
 				975B77C9281A23F300AF96BD /* UserAccountRemoteDataManager.swift in Sources */,
 				97901F62281A4CDA00E367BB /* AddCardsProtocols.swift in Sources */,
 				97901F53281A4CBB00E367BB /* MyCardsLocalDataManager.swift in Sources */,
@@ -1150,6 +1157,7 @@
 				6AC0DC34282AB13400992919 /* UserAddPresenter.swift in Sources */,
 				6AC0DC25282AB0DF00992919 /* UserRemoteDataManager.swift in Sources */,
 				6AC0DBEE282AAEE500992919 /* CategorieEditProtocols.swift in Sources */,
+				6A7E43C8282C6D65006AE3A0 /* CreditCard+CoreDataProperties.swift in Sources */,
 				975B77C4281A23F300AF96BD /* UserAccountPresenter.swift in Sources */,
 				6AC0DBB7282AAC5900992919 /* ProductDetailProtocols.swift in Sources */,
 				97901F73281A4D0C00E367BB /* DeleteEditCardsLocalDataManager.swift in Sources */,

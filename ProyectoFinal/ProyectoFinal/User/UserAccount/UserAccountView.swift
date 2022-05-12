@@ -22,9 +22,8 @@ class UserAccountView: UIViewController, MyViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBar.delegate = self
-        tabBar.btnUserAccount.tintColor = .blue
-        tabBar.btnUserAccount.layer.cornerRadius = tabBar.btnUserAccount.frame.height / 2
-        tabBar.btnUserAccount.backgroundColor = .systemGray3
+        tabBar.btnUserAccount.tintColor = .systemPink
+        tabBar.btnUserAccount.setImage(UIImage(systemName: "person.fill"), for: .normal)
         imgCircle.layer.cornerRadius = imgCircle.frame.height / 2
     }
     
@@ -38,13 +37,25 @@ class UserAccountView: UIViewController, MyViewDelegate {
         case 2:
             presenter?.showMyCards()
         case 3:
-            let user = Users(id: 0, email: "", password: "", name: "", role: "", avatar: "")
-            let encoder = JSONEncoder()
-            if let encoded = try? encoder.encode(user) {
-                let defaults = UserDefaults.standard
-                defaults.set(encoded, forKey: "UserLogged")
+            
+            let alert = UIAlertController(title: "Alerta", message: "Estas seguro que deseas cerrar sesion?", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Si", style: .default){UIAlertAction in
+                self.present(alert, animated: true)
+                let user = Users(id: 0, email: "", password: "", name: "", role: "", avatar: "")
+                let encoder = JSONEncoder()
+                if let encoded = try? encoder.encode(user) {
+                    let defaults = UserDefaults.standard
+                    defaults.set(encoded, forKey: "UserLogged")
+                }
+                self.view.window?.rootViewController?.dismiss(animated: true)
             }
-            self.view.window?.rootViewController?.dismiss(animated: true)
+            
+            let cancel = UIAlertAction(title: "Cancelar", style: .cancel)
+
+            alert.addAction(cancel)
+            alert.addAction(action)
+            present(alert, animated: true)
+           
         default:
             print("Error")
         }

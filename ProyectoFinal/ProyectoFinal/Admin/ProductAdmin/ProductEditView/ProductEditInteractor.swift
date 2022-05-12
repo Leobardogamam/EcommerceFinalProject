@@ -27,9 +27,15 @@ class ProductEditInteractor: ProductEditInteractorInputProtocol {
 }
 
 extension ProductEditInteractor: ProductEditRemoteDataManagerOutputProtocol {
+   
+    
     // TODO: Implement use case methods
     
     func remoteDataManagerCallBackProduct(with producto: Products) {
         presenter?.interactorPushProductPresenter(receivedProduct: producto)
+    }
+    
+    func remoteDataManagerCallBackEditedProduct(edited: Bool) {
+        presenter?.interactorPushEditedProductPresenter(edited: edited)
     }
 }
