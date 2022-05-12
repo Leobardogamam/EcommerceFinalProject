@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Edit Card View View-->
+        <scene sceneID="qlV-cj-Avr">
+            <objects>
+                <viewController storyboardIdentifier="EditCardViewView" modalPresentationStyle="fullScreen" id="K5I-77-8Fi" customClass="EditCardViewView" customModule="ProyectoFinal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ddp-1X-CXI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Editar Tarjeta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QlD-cb-4pk">
+                                <rect key="frame" x="16" y="48" width="194" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cart" translatesAutoresizingMaskIntoConstraints="NO" id="Ift-s9-pFE">
+                                <rect key="frame" x="7" y="122" width="400" height="270"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="bie-aU-FbX"/>
+                                    <constraint firstAttribute="height" constant="270" id="iVr-PQ-U8d"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D9Z-VK-u2j">
+                                <rect key="frame" x="129" y="635" width="156.5" height="56"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Guardar">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="35"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="savePressed:" destination="K5I-77-8Fi" eventType="touchUpInside" id="rrX-KG-A6E"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iSL-Qp-TfW">
+                                <rect key="frame" x="0.0" y="486" width="414" height="58"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="CmB-z7-vXo"/>
+                                    <constraint firstAttribute="height" constant="58" id="a2y-5L-G3Q"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cbT-m3-qIn">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ColorCell" id="1Nw-XM-b3L">
+                                        <rect key="frame" x="0.0" y="4" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iFd-3h-iLV">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="50" height="50"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="K5I-77-8Fi" id="1V5-xV-kMx"/>
+                                    <outlet property="delegate" destination="K5I-77-8Fi" id="YOy-zk-uow"/>
+                                </connections>
+                            </collectionView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Numero de Tarjeta" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8SF-Ca-MkU">
+                                <rect key="frame" x="52" y="161" width="311" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="B8e-Eb-fe1"/>
+                                    <constraint firstAttribute="width" constant="311" id="xi0-3S-IJU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="cc-number"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre de Tarjeta" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZXU-e3-gLG">
+                                <rect key="frame" x="16" y="304" width="273" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="4rv-HG-9Bp"/>
+                                    <constraint firstAttribute="width" constant="273" id="LWI-0f-F8V"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dia" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LJS-L4-U1x">
+                                <rect key="frame" x="325" y="275" width="69" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="0FM-uX-MQm"/>
+                                    <constraint firstAttribute="width" constant="69" id="SAA-k3-gpq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qG0-B3-btr">
+                                <rect key="frame" x="47" y="400" width="320" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="3eD-up-lUx"/>
+                                    <constraint firstAttribute="width" constant="320" id="ekF-Xs-wNZ"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="K5I-77-8Fi" id="EMZ-fE-PQt"/>
+                                    <outlet property="delegate" destination="K5I-77-8Fi" id="XeR-yb-j9P"/>
+                                </connections>
+                            </pickerView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CVV" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DHH-k1-vH5">
+                                <rect key="frame" x="159" y="346" width="96" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ND-0P-ZcY">
+                                <rect key="frame" x="356" y="52" width="50" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="g04-4b-94k"/>
+                                    <constraint firstAttribute="height" constant="50" id="kfK-ud-cAD"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="multiply.circle" catalog="system" title="">
+                                    <color key="baseForegroundColor" systemColor="tintColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="backPressed:" destination="K5I-77-8Fi" eventType="touchUpInside" id="ffE-4U-3vU"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Año" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a0k-V1-AZn">
+                                <rect key="frame" x="325" y="317" width="69" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="69" id="1rT-pA-Zaq"/>
+                                    <constraint firstAttribute="height" constant="34" id="9cg-wi-GJN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9Yl-Xc-A72"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qG0-B3-btr" firstAttribute="top" secondItem="DHH-k1-vH5" secondAttribute="bottom" constant="20" id="4wj-tf-fVV"/>
+                            <constraint firstItem="9Yl-Xc-A72" firstAttribute="trailing" secondItem="LJS-L4-U1x" secondAttribute="trailing" constant="20" id="8bs-cu-Myz"/>
+                            <constraint firstItem="qG0-B3-btr" firstAttribute="centerX" secondItem="ddp-1X-CXI" secondAttribute="centerX" id="AuE-eZ-9cS"/>
+                            <constraint firstItem="QlD-cb-4pk" firstAttribute="leading" secondItem="9Yl-Xc-A72" secondAttribute="leading" constant="16" id="Csv-9f-sZG"/>
+                            <constraint firstItem="LJS-L4-U1x" firstAttribute="top" secondItem="8SF-Ca-MkU" secondAttribute="bottom" constant="80" id="Gvk-wv-Ntc"/>
+                            <constraint firstItem="ZXU-e3-gLG" firstAttribute="top" secondItem="8SF-Ca-MkU" secondAttribute="bottom" constant="109" id="Hgr-HT-OX8"/>
+                            <constraint firstItem="qG0-B3-btr" firstAttribute="top" secondItem="Ift-s9-pFE" secondAttribute="bottom" constant="8" symbolic="YES" id="JBm-XU-S2v"/>
+                            <constraint firstItem="8SF-Ca-MkU" firstAttribute="top" secondItem="QlD-cb-4pk" secondAttribute="bottom" constant="71" id="KHv-XA-e4g"/>
+                            <constraint firstItem="ZXU-e3-gLG" firstAttribute="leading" secondItem="9Yl-Xc-A72" secondAttribute="leading" constant="16" id="Kha-QN-0Pa"/>
+                            <constraint firstItem="9Yl-Xc-A72" firstAttribute="trailing" secondItem="a0k-V1-AZn" secondAttribute="trailing" constant="20" id="Ldt-iI-5he"/>
+                            <constraint firstItem="4ND-0P-ZcY" firstAttribute="top" secondItem="9Yl-Xc-A72" secondAttribute="top" constant="8" id="SOq-gL-VLU"/>
+                            <constraint firstItem="DHH-k1-vH5" firstAttribute="leading" secondItem="9Yl-Xc-A72" secondAttribute="leading" constant="159" id="Twf-dn-o01"/>
+                            <constraint firstItem="QlD-cb-4pk" firstAttribute="top" secondItem="ddp-1X-CXI" secondAttribute="top" constant="48" id="WY6-Kt-Tb3"/>
+                            <constraint firstItem="DHH-k1-vH5" firstAttribute="top" secondItem="ZXU-e3-gLG" secondAttribute="bottom" constant="8" symbolic="YES" id="cgH-Rv-ASt"/>
+                            <constraint firstItem="Ift-s9-pFE" firstAttribute="centerX" secondItem="ddp-1X-CXI" secondAttribute="centerX" id="hdr-Re-4zz"/>
+                            <constraint firstItem="iSL-Qp-TfW" firstAttribute="top" secondItem="qG0-B3-btr" secondAttribute="bottom" constant="12" id="j02-vF-XR6"/>
+                            <constraint firstItem="iSL-Qp-TfW" firstAttribute="leading" secondItem="9Yl-Xc-A72" secondAttribute="leading" id="jMU-lU-pxM"/>
+                            <constraint firstItem="a0k-V1-AZn" firstAttribute="top" secondItem="LJS-L4-U1x" secondAttribute="bottom" constant="8" symbolic="YES" id="mnW-CY-kvY"/>
+                            <constraint firstItem="D9Z-VK-u2j" firstAttribute="top" secondItem="iSL-Qp-TfW" secondAttribute="bottom" constant="91" id="nPI-Ue-H8L"/>
+                            <constraint firstItem="8SF-Ca-MkU" firstAttribute="leading" secondItem="9Yl-Xc-A72" secondAttribute="leading" constant="52" id="oGj-eO-dMD"/>
+                            <constraint firstItem="D9Z-VK-u2j" firstAttribute="centerX" secondItem="ddp-1X-CXI" secondAttribute="centerX" id="pUh-xz-oxk"/>
+                            <constraint firstItem="qG0-B3-btr" firstAttribute="leading" secondItem="9Yl-Xc-A72" secondAttribute="leading" constant="47" id="phY-FM-mM6"/>
+                            <constraint firstItem="9Yl-Xc-A72" firstAttribute="trailing" secondItem="4ND-0P-ZcY" secondAttribute="trailing" constant="8" id="uBB-PI-Zwe"/>
+                            <constraint firstItem="Ift-s9-pFE" firstAttribute="top" secondItem="QlD-cb-4pk" secondAttribute="bottom" constant="32" id="w4A-Q4-7fv"/>
+                            <constraint firstItem="DHH-k1-vH5" firstAttribute="centerX" secondItem="ddp-1X-CXI" secondAttribute="centerX" id="zQ0-Cx-iLm"/>
+                            <constraint firstItem="iSL-Qp-TfW" firstAttribute="trailing" secondItem="9Yl-Xc-A72" secondAttribute="trailing" id="zzW-fS-fsc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cardImageView" destination="Ift-s9-pFE" id="thB-Nl-8n4"/>
+                        <outlet property="collectionPickerView" destination="qG0-B3-btr" id="dRc-I3-tGu"/>
+                        <outlet property="colorCollectionView" destination="iSL-Qp-TfW" id="IlO-Nt-b06"/>
+                        <outlet property="cvvTextField" destination="DHH-k1-vH5" id="una-dk-GdK"/>
+                        <outlet property="dayTextField" destination="LJS-L4-U1x" id="Qy4-kS-gcB"/>
+                        <outlet property="nameTextField" destination="ZXU-e3-gLG" id="i9s-LW-6tR"/>
+                        <outlet property="numTextField" destination="8SF-Ca-MkU" id="v3p-oa-KdZ"/>
+                        <outlet property="yearTextField" destination="a0k-V1-AZn" id="fmB-Ok-z8f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qqi-MB-TaG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="128.57142857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Cart" width="1554" height="980"/>
+        <image name="multiply.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

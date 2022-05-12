@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class MyCardsWireFrame: MyCardsWireFrameProtocol {
+ 
     class func createMyCardsModule() -> UIViewController {
         let navController = mainStoryboard.instantiateViewController(withIdentifier: "MyCards")
         if let view = navController as? MyCardsView {
@@ -45,6 +46,13 @@ class MyCardsWireFrame: MyCardsWireFrameProtocol {
         }
     }
     
-
+    func showEditDeleteCards(view: MyCardsViewProtocol, data: String) {
+        let newDetailView = DeleteEditCardsWireFrame.createDeleteEditCardsModule(data: data)
+        
+        if let newView = view as? UIViewController{
+            newView.present(newDetailView, animated: true)
+        }
+    }
+    
     
 }
