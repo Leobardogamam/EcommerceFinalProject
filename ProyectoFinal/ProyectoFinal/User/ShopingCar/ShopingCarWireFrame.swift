@@ -42,8 +42,6 @@ class ShopingCarWireFrame: ShopingCarWireFrameProtocol {
         if let view = view as? UIViewController{
             view.present(newView, animated: true)
         }
-        
-        
     }
     
     func showViewHome(from view: ShopingCarViewProtocol) {
@@ -53,9 +51,8 @@ class ShopingCarWireFrame: ShopingCarWireFrameProtocol {
         }
     }
     
-    
-    func showBuyItems(from view: ShopingCarViewProtocol) {
-        let newView = BuyItemsWireFrame.createBuyItemsModule()
+    func showBuyItems(from view: ShopingCarViewProtocol, precio: Int) {
+        let newView = BuyItemsWireFrame.createBuyItemsModule(price: precio)
         if let view = view as? UIViewController{
             view.present(newView, animated: true)
         }

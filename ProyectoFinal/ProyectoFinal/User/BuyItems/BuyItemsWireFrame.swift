@@ -11,12 +11,12 @@ import UIKit
 
 class BuyItemsWireFrame: BuyItemsWireFrameProtocol {
 
-    class func createBuyItemsModule() -> UIViewController {
+    class func createBuyItemsModule(price:Int) -> UIViewController {
         let navController = mainStoryboard.instantiateViewController(withIdentifier: "buyItems")
         if let view = navController as? BuyItemsView {
             let presenter: BuyItemsPresenterProtocol & BuyItemsInteractorOutputProtocol = BuyItemsPresenter()
-            let interactor: BuyItemsInteractorInputProtocol & BuyItemsRemoteDataManagerOutputProtocol = BuyItemsInteractor()
-            let localDataManager: BuyItemsLocalDataManagerInputProtocol = BuyItemsLocalDataManager()
+            let interactor: BuyItemsInteractorInputProtocol & BuyItemsRemoteDataManagerOutputProtocol & BuyItemsLocalDataDataManagerOutputProtocol = BuyItemsInteractor()
+            let localDataManager: BuyItemsLocalDataManagerInputProtocol  = BuyItemsLocalDataManager()
             let remoteDataManager: BuyItemsRemoteDataManagerInputProtocol = BuyItemsRemoteDataManager()
             let wireFrame: BuyItemsWireFrameProtocol = BuyItemsWireFrame()
             
@@ -24,10 +24,12 @@ class BuyItemsWireFrame: BuyItemsWireFrameProtocol {
             presenter.view = view
             presenter.wireFrame = wireFrame
             presenter.interactor = interactor
+            presenter.precio = price
             interactor.presenter = presenter
             interactor.localDatamanager = localDataManager
             interactor.remoteDatamanager = remoteDataManager
             remoteDataManager.remoteRequestHandler = interactor
+            localDataManager.LocalRequestHandler = interactor
             
             return navController
         }
@@ -37,7 +39,6 @@ class BuyItemsWireFrame: BuyItemsWireFrameProtocol {
     static var mainStoryboard: UIStoryboard {
         return UIStoryboard(name: "BuyItems", bundle: Bundle.main)
     }
-    
     
     func showAddCards(from view: BuyItemsViewProtocol) {
         let newView = AddCardsWireFrame.createAddCardsModule()

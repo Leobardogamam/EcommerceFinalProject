@@ -54,11 +54,14 @@
                                                 <integer key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="Pagar:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fXz-bA-MhP"/>
+                                        </connections>
                                     </button>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tHJ-MH-Nil">
                                         <rect key="frame" x="0.0" y="40" width="438" height="264"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="k2Q-LD-E0u">
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="k2Q-LD-E0u">
                                             <size key="itemSize" width="128" height="128"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -66,7 +69,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="UOV-WG-hYP">
-                                                <rect key="frame" x="19" y="0.0" width="400" height="264"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="400" height="264"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NcR-uQ-y4g">
                                                     <rect key="frame" x="0.0" y="0.0" width="400" height="264"/>
@@ -96,6 +99,10 @@
                                                 <size key="customSize" width="400" height="264"/>
                                             </collectionViewCell>
                                         </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Y6W-OH-hqX" id="7Id-D0-Gy4"/>
+                                            <outlet property="delegate" destination="Y6W-OH-hqX" id="aZr-uf-K1k"/>
+                                        </connections>
                                     </collectionView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NaO-RB-EBq">
                                         <rect key="frame" x="329" y="9" width="85" height="31"/>
@@ -160,6 +167,10 @@
                             <constraint firstItem="hko-A2-3Nk" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leadingMargin" constant="-40" id="xDx-ao-dhZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionTarjet" destination="tHJ-MH-Nil" id="c09-5R-THf"/>
+                        <outlet property="lblPrice" destination="dAt-FP-YpW" id="HVv-g7-Nxb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

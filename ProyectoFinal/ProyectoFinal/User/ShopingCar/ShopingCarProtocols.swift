@@ -25,11 +25,12 @@ protocol ShopingCarWireFrameProtocol: AnyObject {
     
     func showUserAccount(from view: ShopingCarViewProtocol)
     func showViewHome(from view: ShopingCarViewProtocol)
-    func showBuyItems(from view: ShopingCarViewProtocol)
+    func showBuyItems(from view: ShopingCarViewProtocol, precio:Int)
 }
 
 protocol ShopingCarPresenterProtocol: AnyObject {
     // VIEW -> PRESENTER
+    var precio:Int? {get set}
     var view: ShopingCarViewProtocol? { get set }
     var interactor: ShopingCarInteractorInputProtocol? { get set }
     var wireFrame: ShopingCarWireFrameProtocol? { get set }
@@ -39,8 +40,7 @@ protocol ShopingCarPresenterProtocol: AnyObject {
     func eliminate(id:Int,price:Int)
     func showUserAccount()
     func showViewHome()
-    func showBuyItems()
-
+    func showBuyItems(precio:Int)
 }
 
 protocol ShopingCarInteractorOutputProtocol: AnyObject {
@@ -88,9 +88,6 @@ protocol ShopingCarLocalDataManagerInputProtocol: AnyObject {
 
 protocol ShopingCarLocalDataManagerOutputProtocol: AnyObject {
     // LOCALDATAMANAGER -> INTERACTOR
-    
     func getIdProducts(id:Int)
     func changePrice(price:Int)
-    
-    
 }

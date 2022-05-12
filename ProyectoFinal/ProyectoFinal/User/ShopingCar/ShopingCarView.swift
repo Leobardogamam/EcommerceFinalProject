@@ -19,7 +19,7 @@ class cartTableViewCell: UITableViewCell{
 class ShopingCarView: UIViewController, MyViewDelegate {
     // MARK: Properties
     var presenter: ShopingCarPresenterProtocol?
-    var price = Int()
+    var price = 0
     var carrito: [Product]?
     @IBOutlet weak var tableCarProduct: UITableView!
     @IBOutlet weak var lblTotalPrice: UILabel!
@@ -54,7 +54,14 @@ class ShopingCarView: UIViewController, MyViewDelegate {
     
     
     @IBAction func onPressBuy(_ sender: UIButton) {
-        presenter?.showBuyItems()
+        if price == 0{
+            let alert = UIAlertController(title: "No se ha ingresado ningun producto", message: "Inserta Productos", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Ok", style: .default)
+            alert.addAction(action)
+            present(alert, animated: true)
+        }else{
+            presenter?.showBuyItems(precio: price)
+        }
     }
 }
 
@@ -67,6 +74,7 @@ extension ShopingCarView: ShopingCarViewProtocol {
         DispatchQueue.main.async {[self] in
             tableCarProduct.reloadData()
             lblTotalPrice.text = "$" + String(precioTotal)
+            price = precioTotal
         }
     }
     func resetPrice(price: Int) {
