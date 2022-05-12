@@ -18,6 +18,7 @@ class ViewPurchasesView: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.viewDidLoad()
     }
 }
 
@@ -32,8 +33,7 @@ extension ViewPurchasesView: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CellPurchases", for: indexPath) as? TableCellPurchases
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CellPurchases", for: indexPath) as? TableViewPurchase
         return cell ?? UITableViewCell()
     }
     

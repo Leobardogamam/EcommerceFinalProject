@@ -26,7 +26,7 @@
                                 <rect key="frame" x="0.0" y="121" width="414" height="741"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="76" id="vpG-TT-MsR">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellPurchases" rowHeight="76" id="vpG-TT-MsR" customClass="TableViewPurchase" customModule="ProyectoFinal" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vpG-TT-MsR" id="Hrd-0V-6mD">
@@ -65,6 +65,10 @@
                                                 <constraint firstAttribute="bottom" secondItem="YWq-wH-emM" secondAttribute="bottom" constant="8" id="t0w-1Z-vU6"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imgProduct" destination="YWq-wH-emM" id="Ruu-Ba-QEa"/>
+                                            <outlet property="lblProductName" destination="6Un-NK-Uyx" id="gob-zr-qAx"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

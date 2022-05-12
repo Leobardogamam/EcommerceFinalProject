@@ -15,7 +15,7 @@ class ViewPurchasesWireFrame: ViewPurchasesWireFrameProtocol {
         let navController = mainStoryboard.instantiateViewController(withIdentifier: "ViewPurchases")
         if let view = navController as? ViewPurchasesView {
             let presenter: ViewPurchasesPresenterProtocol & ViewPurchasesInteractorOutputProtocol = ViewPurchasesPresenter()
-            let interactor: ViewPurchasesInteractorInputProtocol & ViewPurchasesRemoteDataManagerOutputProtocol = ViewPurchasesInteractor()
+            let interactor: ViewPurchasesInteractorInputProtocol & ViewPurchasesRemoteDataManagerOutputProtocol & ViewPurchasesLocalDataManagerOutputProtocol = ViewPurchasesInteractor()
             let localDataManager: ViewPurchasesLocalDataManagerInputProtocol = ViewPurchasesLocalDataManager()
             let remoteDataManager: ViewPurchasesRemoteDataManagerInputProtocol = ViewPurchasesRemoteDataManager()
             let wireFrame: ViewPurchasesWireFrameProtocol = ViewPurchasesWireFrame()
@@ -28,6 +28,7 @@ class ViewPurchasesWireFrame: ViewPurchasesWireFrameProtocol {
             interactor.localDatamanager = localDataManager
             interactor.remoteDatamanager = remoteDataManager
             remoteDataManager.remoteRequestHandler = interactor
+            localDataManager.localRequestHandler = interactor
             
             return navController
         }

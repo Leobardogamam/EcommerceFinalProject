@@ -79,7 +79,7 @@ protocol ShopingCarRemoteDataManagerOutputProtocol: AnyObject {
 
 protocol ShopingCarLocalDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> LOCALDATAMANAGER
-    var interactor:ShopingCarLocalDataManagerOutputProtocol? {get set}
+    var localRequestHandler:ShopingCarLocalDataManagerOutputProtocol? {get set}
     func getAllCarCoredataSave()
     func getIdDeleteProduct(id:Int, price:Int)
     func eliminate(data:NSManagedObject, price:Int)

@@ -24,7 +24,7 @@ class ShopingCarWireFrame: ShopingCarWireFrameProtocol {
             presenter.wireFrame = wireFrame
             presenter.interactor = interactor
             interactor.presenter = presenter
-            localDataManager.interactor = interactor
+            localDataManager.localRequestHandler = interactor
             interactor.localDatamanager = localDataManager
             interactor.remoteDatamanager = remoteDataManager
             remoteDataManager.remoteRequestHandler = interactor

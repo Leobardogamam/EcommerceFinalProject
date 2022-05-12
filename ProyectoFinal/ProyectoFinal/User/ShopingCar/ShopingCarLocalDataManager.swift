@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class ShopingCarLocalDataManager:ShopingCarLocalDataManagerInputProtocol {
-    var interactor: ShopingCarLocalDataManagerOutputProtocol?
+    var localRequestHandler: ShopingCarLocalDataManagerOutputProtocol?
     var arrayIdProduct:[Int]?
     var userDefault = UserDefaults()
     
@@ -26,7 +26,7 @@ class ShopingCarLocalDataManager:ShopingCarLocalDataManagerInputProtocol {
                 for data in result as! [NSManagedObject]
         {
                 self.arrayIdProduct?.append(data.value(forKey: "idproduct")! as! Int)
-                interactor?.getIdProducts(id: data.value(forKey: "idproduct")! as! Int)
+                localRequestHandler?.getIdProducts(id: data.value(forKey: "idproduct")! as! Int)
         }
 
         } catch {
@@ -67,7 +67,7 @@ class ShopingCarLocalDataManager:ShopingCarLocalDataManagerInputProtocol {
         do {
         try context.save()
 //            print("Valor borrado con exito")
-            interactor?.changePrice(price: price)
+            localRequestHandler?.changePrice(price: price)
         }
         catch {
             // Handle Error

@@ -20,6 +20,7 @@ class ViewPurchasesPresenter  {
 extension ViewPurchasesPresenter: ViewPurchasesPresenterProtocol {
     // TODO: implement presenter methods
     func viewDidLoad() {
+        interactor?.getPurchases()
     }
 }
 
