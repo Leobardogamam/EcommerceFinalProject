@@ -8,10 +8,12 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 protocol MyCardsViewProtocol: AnyObject {
     // PRESENTER -> VIEW
     var presenter: MyCardsPresenterProtocol? { get set }
+    func presenterPushCards(cards : [NSManagedObject])
 }
 
 protocol MyCardsWireFrameProtocol: AnyObject {
@@ -29,10 +31,12 @@ protocol MyCardsPresenterProtocol: AnyObject {
     
     func viewDidLoad()
     func showAddCards()
+
 }
 
 protocol MyCardsInteractorOutputProtocol: AnyObject {
 // INTERACTOR -> PRESENTER
+    func interactorPushCards(cards : [NSManagedObject])
 }
 
 protocol MyCardsInteractorInputProtocol: AnyObject {
@@ -40,6 +44,8 @@ protocol MyCardsInteractorInputProtocol: AnyObject {
     var presenter: MyCardsInteractorOutputProtocol? { get set }
     var localDatamanager: MyCardsLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: MyCardsRemoteDataManagerInputProtocol? { get set }
+    
+    func getCards()
 }
 
 protocol MyCardsDataManagerInputProtocol: AnyObject {
@@ -57,4 +63,14 @@ protocol MyCardsRemoteDataManagerOutputProtocol: AnyObject {
 
 protocol MyCardsLocalDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> LOCALDATAMANAGER
+    var localRequestHandler: MyCardsLocalDataManagerOutputProtocol? {get set}
+    func localGetCards()
+   
+}
+
+
+protocol MyCardsLocalDataManagerOutputProtocol: AnyObject {
+    // LOCALDATAMANAGER -> INTERACTOR
+    func localDataManagerCallBackCards(cards : [NSManagedObject])
+    
 }

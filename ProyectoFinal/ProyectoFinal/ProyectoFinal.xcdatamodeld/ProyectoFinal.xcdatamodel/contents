@@ -4,9 +4,12 @@
         <attribute name="idcustomer" optional="YES" attributeType="Integer 64" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="idproduct" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
-    <entity name="CreditCard" representedClassName="CreditCard" syncable="YES" codeGenerationType="class">
+    <entity name="CreditCard" representedClassName=".CreditCard" syncable="YES">
+        <attribute name="cardType" optional="YES" attributeType="String"/>
+        <attribute name="color" optional="YES" attributeType="Transformable" customClassName="UIColor"/>
         <attribute name="cvv" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="day" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="idUser" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="numserie" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="year" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
@@ -15,14 +18,9 @@
         <attribute name="idcustomer" optional="YES" attributeType="Integer 32" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="idproduct" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
-    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
-        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="tarjeta" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CreditCard"/>
-    </entity>
     <elements>
         <element name="Compras" positionX="-73.88201904296875" positionY="-78.96636962890625" width="128" height="73"/>
-        <element name="CreditCard" positionX="275.443603515625" positionY="-104.1264953613281" width="128" height="118"/>
+        <element name="CreditCard" positionX="275.443603515625" positionY="-104.1264953613281" width="128" height="163"/>
         <element name="ProductoCustomer" positionX="-74.4093017578125" positionY="-147.6900634765625" width="128" height="59"/>
-        <element name="User" positionX="272.9913940429688" positionY="-285.0512847900391" width="128" height="59"/>
     </elements>
 </model>

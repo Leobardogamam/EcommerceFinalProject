@@ -16,6 +16,7 @@ protocol LoginViewProtocol: AnyObject {
     var user:Users? { get set }
     func isAvailable(isAvailable:Bool)
     func returnUser(user:Users)
+    func pushUserView(users : [Users])
 }
 
 protocol LoginWireFrameProtocol: AnyObject {
@@ -37,12 +38,14 @@ protocol LoginPresenterProtocol: AnyObject {
     func showHomeUserView(user: Users)
     func showHomeAdminView(user : Users)
     func getLoginAuth(email:String, password:String)
+    func getUser()
 }
 
 protocol LoginInteractorOutputProtocol: AnyObject {
 // INTERACTOR -> PRESENTER
     func isAvailable(isAvailable:Bool)
     func returnUser(user:Users)
+    func interactorPushUserPresenter(users : [Users])
 }
 
 protocol LoginInteractorInputProtocol: AnyObject {
@@ -52,6 +55,7 @@ protocol LoginInteractorInputProtocol: AnyObject {
     var remoteDatamanager: LoginRemoteDataManagerInputProtocol? { get set }
     
     func getUsers(email:String, password:String)
+    func getUser()
 }
 
 protocol LoginDataManagerInputProtocol: AnyObject {
@@ -62,6 +66,7 @@ protocol LoginRemoteDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> REMOTEDATAMANAGER
     var remoteRequestHandler: LoginRemoteDataManagerOutputProtocol? { get set }
     func logingAuth(email: String, password: String)
+    func externalGetUser()
 }
 
 protocol LoginRemoteDataManagerOutputProtocol: AnyObject {
@@ -69,6 +74,7 @@ protocol LoginRemoteDataManagerOutputProtocol: AnyObject {
     
     func isAvailable(isAvailable:Bool)
     func returnUser(user:Users)
+    func remotePushUserInteractor(users : [Users])
     
 }
 

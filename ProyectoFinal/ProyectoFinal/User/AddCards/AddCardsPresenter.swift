@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class AddCardsPresenter  {
     
@@ -18,11 +19,30 @@ class AddCardsPresenter  {
 }
 
 extension AddCardsPresenter: AddCardsPresenterProtocol {
+   
+    
+    
+    
     // TODO: implement presenter methods
     func viewDidLoad() {
+    }
+    
+    func saveCard(cvv: Int, day: Int, year: Int, idUser: Int, numSerie: Int, name: String, color: UIColor, cardType : String) {
+        interactor?.saveCard(cvv: cvv, day: day, year: year, idUser: idUser, numSerie: numSerie, name: name, color: color, cardType: cardType)
+    }
+    
+    func showCardView() {
+        wireFrame?.presentNewViewCards(from: view!)
     }
 }
 
 extension AddCardsPresenter: AddCardsInteractorOutputProtocol {
+    
     // TODO: implement interactor output methods
+    
+    func interactorPushCardAdded(added: Bool) {
+        view?.presenterPushCardAdded(added: added)
+    }
+    
+    
 }

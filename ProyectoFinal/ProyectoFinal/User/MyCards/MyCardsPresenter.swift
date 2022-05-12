@@ -20,6 +20,7 @@ class MyCardsPresenter  {
 extension MyCardsPresenter: MyCardsPresenterProtocol {
     // TODO: implement presenter methods
     func viewDidLoad() {
+        interactor?.getCards()
     }
     
     func showAddCards() {
@@ -29,5 +30,11 @@ extension MyCardsPresenter: MyCardsPresenterProtocol {
 }
 
 extension MyCardsPresenter: MyCardsInteractorOutputProtocol {
+
+    
     // TODO: implement interactor output methods
+    
+    func interactorPushCards(cards: [NSManagedObject]) {
+        view?.presenterPushCards(cards: cards)
+    }
 }

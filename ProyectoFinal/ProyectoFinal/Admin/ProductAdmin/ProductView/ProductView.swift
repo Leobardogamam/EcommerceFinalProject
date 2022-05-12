@@ -30,6 +30,7 @@ class ProductView: UIViewController, MyViewDelegateAdmin {
         presenter?.viewDidLoad()
         selectedLabel.layer.cornerRadius = (selectedLabel.frame.size.width) / 2
         selectedLabel.clipsToBounds = true
+        TabBar.btnProducts.setImage(UIImage(systemName: "bag.fill"), for: .normal)
         TabBar.btnProducts.tintColor = .systemIndigo
         TabBar.btnCategories.tintColor = .black
         TabBar.btnUsers.tintColor = .black

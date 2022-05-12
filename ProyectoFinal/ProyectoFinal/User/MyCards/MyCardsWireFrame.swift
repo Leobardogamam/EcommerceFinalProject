@@ -14,8 +14,8 @@ class MyCardsWireFrame: MyCardsWireFrameProtocol {
         let navController = mainStoryboard.instantiateViewController(withIdentifier: "MyCards")
         if let view = navController as? MyCardsView {
             let presenter: MyCardsPresenterProtocol & MyCardsInteractorOutputProtocol = MyCardsPresenter()
-            let interactor: MyCardsInteractorInputProtocol & MyCardsRemoteDataManagerOutputProtocol = MyCardsInteractor()
-            let localDataManager: MyCardsLocalDataManagerInputProtocol = MyCardsLocalDataManager()
+            let interactor: MyCardsInteractorInputProtocol & MyCardsRemoteDataManagerOutputProtocol & MyCardsLocalDataManagerOutputProtocol = MyCardsInteractor()
+            let localDataManager: MyCardsLocalDataManagerInputProtocol  = MyCardsLocalDataManager()
             let remoteDataManager: MyCardsRemoteDataManagerInputProtocol = MyCardsRemoteDataManager()
             let wireFrame: MyCardsWireFrameProtocol = MyCardsWireFrame()
             
@@ -26,6 +26,7 @@ class MyCardsWireFrame: MyCardsWireFrameProtocol {
             interactor.presenter = presenter
             interactor.localDatamanager = localDataManager
             interactor.remoteDatamanager = remoteDataManager
+            localDataManager.localRequestHandler = interactor
             remoteDataManager.remoteRequestHandler = interactor
             
             return navController

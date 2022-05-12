@@ -10,7 +10,6 @@ import Foundation
 
 class LoginPresenter: LoginPresenterProtocol  {
     
-    
     // MARK: Properties
     weak var view: LoginViewProtocol?
     var interactor: LoginInteractorInputProtocol?
@@ -44,11 +43,19 @@ class LoginPresenter: LoginPresenterProtocol  {
     func showHomeAdminView(user: Users) {
         wireFrame?.showHomeAdminView(from: view!, user: user)
     }
+    
+    func getUser() {
+        interactor?.getUser()
+    }
+    
+    
+    
         
 }
 
 
 extension LoginPresenter: LoginInteractorOutputProtocol {
+  
     
     // TODO: implement interactor output methods
    
@@ -59,6 +66,11 @@ extension LoginPresenter: LoginInteractorOutputProtocol {
     func returnUser(user: Users) {
         view?.returnUser(user: user)
     }
+    
+    func interactorPushUserPresenter(users: [Users]) {
+        view?.pushUserView(users: users)
+    }
+    
     
     
 }

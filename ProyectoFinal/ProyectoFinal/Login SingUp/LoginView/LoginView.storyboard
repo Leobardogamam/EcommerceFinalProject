@@ -26,7 +26,7 @@
                                             <rect key="frame" x="32" y="95" width="265" height="34"/>
                                             <color key="backgroundColor" systemColor="tertiarySystemFillColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="diK-T4-l18">
                                             <rect key="frame" x="0.0" y="231" width="139.5" height="31"/>

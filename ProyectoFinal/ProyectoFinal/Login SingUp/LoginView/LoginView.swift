@@ -19,15 +19,23 @@ class LoginView: UIViewController {
     var userDefault = UserDefaults()
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passTextField: UITextField!
+    var users : [Users]?
     
     // MARK: Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()
+        presenter?.getUser()
         
     }
     override func viewWillAppear(_ animated: Bool) {
+        
+        
+        
+    }
+    
+    func checkUser(){
         DispatchQueue.main.async {[self] in
             if user?.id == 3{
                 print("Admin")
@@ -36,10 +44,21 @@ class LoginView: UIViewController {
             }else if user == nil{
                 print("Logearte")
             }else{
-                presenter?.showHomeUserView(user: (user)!)
+                guard let listUsers = users else {return}
+                for user in listUsers{
+                    if self.user!.id == user.id{
+                        presenter?.showHomeUserView(user: (user))
+                    }
+                    else{
+                        let alert = UIAlertController(title: "Aviso", message: "Se cerro tu sesion debido a que tu id ya no existe", preferredStyle: .alert)
+                        let action = UIAlertAction(title: "Ok", style: .default)
+                        alert.addAction(action)
+                        self.present(alert, animated: true)
+                    }
+                }
+               
             }
         }
-        
     }
     
     
@@ -66,6 +85,8 @@ class LoginView: UIViewController {
 }
 
 extension LoginView: LoginViewProtocol {
+    
+    
     func isAvailable(isAvailable: Bool) {
         self.isAvailable = isAvailable
         if isAvailable == false{
@@ -93,6 +114,11 @@ extension LoginView: LoginViewProtocol {
             }
         }
         
+    }
+    
+    func pushUserView(users: [Users]) {
+        self.users = users
+        checkUser()
     }
     
 

@@ -13,6 +13,7 @@ protocol ProductEditViewProtocol: AnyObject {
     // PRESENTER -> VIEW
     var presenter: ProductEditPresenterProtocol? { get set }
     func presenterGetProductView(receivedProduct: Products)
+    func presenterGetEditedProduct(edited : Bool)
 }
 
 protocol ProductEditWireFrameProtocol: AnyObject {
@@ -37,6 +38,7 @@ protocol ProductEditPresenterProtocol: AnyObject {
 protocol ProductEditInteractorOutputProtocol: AnyObject {
 // INTERACTOR -> PRESENTER
     func interactorPushProductPresenter(receivedProduct: Products)
+    func interactorPushEditedProductPresenter(edited : Bool)
 }
 
 protocol ProductEditInteractorInputProtocol: AnyObject {
@@ -66,6 +68,7 @@ protocol ProductEditRemoteDataManagerOutputProtocol: AnyObject {
     // REMOTEDATAMANAGER -> INTERACTOR
     
     func remoteDataManagerCallBackProduct(with producto: Products)
+    func remoteDataManagerCallBackEditedProduct(edited : Bool)
 }
 
 protocol ProductEditLocalDataManagerInputProtocol: AnyObject {
