@@ -37,7 +37,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="uuE-ee-M9s">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cardCell" id="uuE-ee-M9s" customClass="MyCardCollectionViewCell" customModule="ProyectoFinal" customModuleProvider="target">
                                         <rect key="frame" x="7" y="0.0" width="400" height="264"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="KVv-V4-P6G">
@@ -90,6 +90,13 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="400" height="264"/>
+                                        <connections>
+                                            <outlet property="cardImageView" destination="Zjh-Cc-MpK" id="qjb-b2-WOJ"/>
+                                            <outlet property="cardTypeImageView" destination="cA8-hR-bjo" id="CCu-Ek-o9z"/>
+                                            <outlet property="dateLabel" destination="LEX-qX-KPL" id="29z-e4-XsE"/>
+                                            <outlet property="nameLabel" destination="Xt9-a0-GKx" id="lS9-8A-0gD"/>
+                                            <outlet property="numberLabel" destination="f86-7D-YYZ" id="bOL-Mb-UIN"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -124,6 +131,9 @@
                             <constraint firstItem="NvW-h3-zMz" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="ugb-aN-yeu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="NvW-h3-zMz" id="roM-ic-Sfy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
