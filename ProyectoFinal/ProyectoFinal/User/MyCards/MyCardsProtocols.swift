@@ -21,6 +21,7 @@ protocol MyCardsWireFrameProtocol: AnyObject {
     static func createMyCardsModule() -> UIViewController
     
     func showAddCards(from view:MyCardsViewProtocol)
+    func showEditDeleteCards(view : MyCardsViewProtocol, data : String)
 }
 
 protocol MyCardsPresenterProtocol: AnyObject {
@@ -31,6 +32,7 @@ protocol MyCardsPresenterProtocol: AnyObject {
     
     func viewDidLoad()
     func showAddCards()
+    func showEditDeleteCards(data : String)
 
 }
 

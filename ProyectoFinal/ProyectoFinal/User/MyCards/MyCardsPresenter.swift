@@ -19,6 +19,7 @@ class MyCardsPresenter  {
 }
 
 extension MyCardsPresenter: MyCardsPresenterProtocol {
+    
     // TODO: implement presenter methods
     func viewDidLoad() {
         interactor?.getCards()
@@ -27,6 +28,11 @@ extension MyCardsPresenter: MyCardsPresenterProtocol {
     func showAddCards() {
         wireFrame?.showAddCards(from: self.view!)
     }
+    
+    func showEditDeleteCards(data: String) {
+        wireFrame?.showEditDeleteCards(view: view!, data: data)
+    }
+    
     
 }
 

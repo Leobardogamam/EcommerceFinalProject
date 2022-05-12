@@ -8,15 +8,18 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 protocol DeleteEditCardsViewProtocol: AnyObject {
     // PRESENTER -> VIEW
     var presenter: DeleteEditCardsPresenterProtocol? { get set }
+    func presenterPushCard(card : [NSManagedObject])
 }
 
 protocol DeleteEditCardsWireFrameProtocol: AnyObject {
     // PRESENTER -> WIREFRAME
-    static func createDeleteEditCardsModule() -> UIViewController
+    static func createDeleteEditCardsModule(data : String) -> UIViewController
+    func presentNewEditCards(from view : DeleteEditCardsViewProtocol, data : String)
 }
 
 protocol DeleteEditCardsPresenterProtocol: AnyObject {
@@ -24,12 +27,16 @@ protocol DeleteEditCardsPresenterProtocol: AnyObject {
     var view: DeleteEditCardsViewProtocol? { get set }
     var interactor: DeleteEditCardsInteractorInputProtocol? { get set }
     var wireFrame: DeleteEditCardsWireFrameProtocol? { get set }
+    var numSerie : String? { get set }
     
     func viewDidLoad()
+    func showEditCardView(numSerie : String)
+    func deleteCard()
 }
 
 protocol DeleteEditCardsInteractorOutputProtocol: AnyObject {
 // INTERACTOR -> PRESENTER
+    func interactorPushCards(card : [NSManagedObject])
 }
 
 protocol DeleteEditCardsInteractorInputProtocol: AnyObject {
@@ -37,6 +44,8 @@ protocol DeleteEditCardsInteractorInputProtocol: AnyObject {
     var presenter: DeleteEditCardsInteractorOutputProtocol? { get set }
     var localDatamanager: DeleteEditCardsLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: DeleteEditCardsRemoteDataManagerInputProtocol? { get set }
+    
+    func getCard(numSerie : String)
 }
 
 protocol DeleteEditCardsDataManagerInputProtocol: AnyObject {
@@ -54,4 +63,12 @@ protocol DeleteEditCardsRemoteDataManagerOutputProtocol: AnyObject {
 
 protocol DeleteEditCardsLocalDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> LOCALDATAMANAGER
+    var localRequestHandler: DeleteEditCardsLocalDataManagerOutputProtocol? {get set}
+    func localGetCard(numSerie : String)
+   
+}
+
+protocol DeleteEditCardsLocalDataManagerOutputProtocol: AnyObject {
+    // LOCALDATAMANAGER -> INTERACTOR
+    func localDataManagerCallBackCards(card : [NSManagedObject])
 }
