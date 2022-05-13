@@ -138,6 +138,7 @@
 		970AD926282D9A6A00AF8245 /* Compras+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970AD924282D9A6A00AF8245 /* Compras+CoreDataClass.swift */; };
 		970AD927282D9A6A00AF8245 /* Compras+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970AD925282D9A6A00AF8245 /* Compras+CoreDataProperties.swift */; };
 		970E81A1282D567000B5214E /* TableViewPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970E81A0282D567000B5214E /* TableViewPurchase.swift */; };
+		9726A3A0282E2FF300CA506C /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9726A39F282E2FF300CA506C /* Collection.swift */; };
 		9741ADBD2821909F0073FABF /* ProductoCustomer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9741ADBB2821909F0073FABF /* ProductoCustomer+CoreDataClass.swift */; };
 		9741ADBE2821909F0073FABF /* ProductoCustomer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9741ADBC2821909F0073FABF /* ProductoCustomer+CoreDataProperties.swift */; };
 		9756375F28248A810006C761 /* SignupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9756375828248A810006C761 /* SignupPresenter.swift */; };
@@ -378,6 +379,7 @@
 		970AD924282D9A6A00AF8245 /* Compras+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Compras+CoreDataClass.swift"; sourceTree = "<group>"; };
 		970AD925282D9A6A00AF8245 /* Compras+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Compras+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		970E81A0282D567000B5214E /* TableViewPurchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewPurchase.swift; sourceTree = "<group>"; };
+		9726A39F282E2FF300CA506C /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		9741ADBB2821909F0073FABF /* ProductoCustomer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductoCustomer+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9741ADBC2821909F0073FABF /* ProductoCustomer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductoCustomer+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9756375828248A810006C761 /* SignupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPresenter.swift; sourceTree = "<group>"; };
@@ -813,6 +815,14 @@
 			path = TableCellPurchase;
 			sourceTree = "<group>";
 		};
+		9726A39E282E2FE700CA506C /* collection */ = {
+			isa = PBXGroup;
+			children = (
+				9726A39F282E2FF300CA506C /* Collection.swift */,
+			);
+			path = collection;
+			sourceTree = "<group>";
+		};
 		9756375728248A4A0006C761 /* SingUpView */ = {
 			isa = PBXGroup;
 			children = (
@@ -911,6 +921,7 @@
 		975B77A8281A232100AF96BD /* BuyItems */ = {
 			isa = PBXGroup;
 			children = (
+				9726A39E282E2FE700CA506C /* collection */,
 				975B77EF281A242F00AF96BD /* BuyItems.storyboard */,
 				975B77F1281A243700AF96BD /* BuyItemsPresenter.swift */,
 				975B77F2281A243700AF96BD /* BuyItemsLocalDataManager.swift */,
@@ -1327,6 +1338,7 @@
 				975B77E8281A241500AF96BD /* ShopingCarView.swift in Sources */,
 				6AC0DBA5282AAC3300992919 /* ProductEditWireFrame.swift in Sources */,
 				9741ADBE2821909F0073FABF /* ProductoCustomer+CoreDataProperties.swift in Sources */,
+				9726A3A0282E2FF300CA506C /* Collection.swift in Sources */,
 				6AC0DB92282AAC0400992919 /* ProductWireFrame.swift in Sources */,
 				6AC0DC55282AB1AA00992919 /* ProfileDetailProtocols.swift in Sources */,
 				975B7829281A247C00AF96BD /* ViewProfileInteractor.swift in Sources */,

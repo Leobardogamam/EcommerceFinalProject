@@ -38,8 +38,6 @@ extension ViewPurchasesView: ViewPurchasesViewProtocol {
     }
     
 }
-
-
 extension ViewPurchasesView: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return compras.count
@@ -60,6 +58,4 @@ extension ViewPurchasesView: UITableViewDelegate, UITableViewDataSource{
         }
         return cell ?? UITableViewCell()
     }
-    
-    
 }
