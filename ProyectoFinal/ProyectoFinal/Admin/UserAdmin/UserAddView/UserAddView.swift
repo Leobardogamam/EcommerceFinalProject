@@ -60,7 +60,7 @@ class UserAddView: UIViewController {
             self.present(alert, animated: true)
             
         } else{
-            if nameTextField.text!.isEmpty || userImageView.image == nil{
+            if nameTextField.text!.isEmpty || userImageView.image == nil || passwordTextField.text!.isEmpty || emailTextField.text!.isEmpty || confirmTextField.text!.isEmpty{
           
                 let alert = UIAlertController(title: "Error", message: "Los campos estan vacios", preferredStyle: .alert)
 
