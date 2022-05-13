@@ -20,7 +20,9 @@ class ViewProfilePresenter  {
 extension ViewProfilePresenter: ViewProfilePresenterProtocol {
     // TODO: implement presenter methods
     func viewDidLoad() {
+        
     }
+    
 }
 
 extension ViewProfilePresenter: ViewProfileInteractorOutputProtocol {

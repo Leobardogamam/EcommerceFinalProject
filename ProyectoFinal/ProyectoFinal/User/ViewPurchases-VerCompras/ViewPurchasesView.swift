@@ -13,7 +13,6 @@ class ViewPurchasesView: UIViewController {
 
     // MARK: Properties
     var presenter: ViewPurchasesPresenterProtocol?
-
     // MARK: Lifecycle
 
     override func viewDidLoad() {
