@@ -34,7 +34,6 @@ class MyCardsLocalDataManager:MyCardsLocalDataManagerInputProtocol {
        
         do {
             self.cards = try context.fetch(request)
-            
             localRequestHandler?.localDataManagerCallBackCards(cards: cards!)
         } catch  {
             

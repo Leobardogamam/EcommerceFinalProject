@@ -7,10 +7,9 @@
 //
 
 import Foundation
+import CoreData
 
 class BuyItemsPresenter:BuyItemsPresenterProtocol {
-    
-    
     // MARK: Properties
     weak var view: BuyItemsViewProtocol?
     var interactor: BuyItemsInteractorInputProtocol?
@@ -20,6 +19,7 @@ class BuyItemsPresenter:BuyItemsPresenterProtocol {
     
     func viewDidLoad() {
         view?.sendPrice(price: precio ?? 0)
+        getAllCardByPerson()
     }
     
     func showAddCards() {
@@ -30,19 +30,17 @@ class BuyItemsPresenter:BuyItemsPresenterProtocol {
         interactor?.getAllShopingCar()
     }
     
+    func getAllCardByPerson() {
+        interactor?.getAllCardByPerson()
+    }
+    
+    
+    
 }
-
-//extension BuyItemsPresenter: BuyItemsPresenterProtocol {
-//    // TODO: implement presenter methods
-//    func viewDidLoad() {
-//    }
-//
-//    func showAddCards() {
-//        wireFrame?.showAddCards(from: view!)
-//    }
-//
-//}
-
 extension BuyItemsPresenter: BuyItemsInteractorOutputProtocol {
     // TODO: implement interactor output methods
+    func presenterPushCards(cards: [NSManagedObject]) {
+        view?.presenterPushCards(cards: cards)
+    }
+    
 }

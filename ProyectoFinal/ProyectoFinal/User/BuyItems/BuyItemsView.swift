@@ -46,6 +46,14 @@ class BuyItemsView: UIViewController {
 }
 
 extension BuyItemsView: BuyItemsViewProtocol {
+    func presenterPushCards(cards: [NSManagedObject]) {
+        self.cards = cards
+        
+        DispatchQueue.main.async {
+            self.collectionTarjet.reloadData()
+        }
+    }
+    
     // TODO: implement view output methods
     func sendPrice(price: Int) {
         lblPrice.text = "$" + String(price)
@@ -54,26 +62,28 @@ extension BuyItemsView: BuyItemsViewProtocol {
 
 extension BuyItemsView: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+
+        print(cards)
         return cards?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell", for: indexPath) as? MyCardCollectionViewCell)!
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellViewPurchases", for: indexPath) as? CollectionBuyItems
         
         let card = cards![indexPath.row]
         
-        cell.cardImageView.backgroundColor = card.value(forKey: "color") as? UIColor
-        cell.numberLabel.text = "\((card.value(forKey: "numserie") as? String)!)"
-        cell.nameLabel.text = "\((card.value(forKey: "name") as? String)!)"
-        cell.dateLabel.text = "\(card.value(forKey: "day")!)/\(card.value(forKey: "year")!)"
+        cell?.cardImageView.backgroundColor = card.value(forKey: "color") as? UIColor
+        cell?.numberLabel.text = "\((card.value(forKey: "numserie") as? String)!)"
+        cell?.nameLabel.text = "\((card.value(forKey: "name") as? String)!)"
+        cell?.dateLabel.text = "\(card.value(forKey: "day")!)/\(card.value(forKey: "year")!)"
         
         if card.value(forKey: "cardType") as! String == "Visa"{
-            cell.cardTypeImageView.image = UIImage(named: "Visa_Logo")
+            cell?.cardTypeImageView.image = UIImage(named: "Visa_Logo")
         }else if card.value(forKey: "cardType") as! String == "Mastercard"{
-            cell.cardTypeImageView.image = UIImage(named: "logo-Mastercard")
+            cell?.cardTypeImageView.image = UIImage(named: "logo-Mastercard")
         }else if card.value(forKey: "cardType") as! String == "American Express"{
-            cell.cardTypeImageView.image = UIImage(named: "logo-American-Express")
+            cell?.cardTypeImageView.image = UIImage(named: "logo-American-Express")
         }
-        return cell
+        return cell ?? UICollectionViewCell()
     }
 }

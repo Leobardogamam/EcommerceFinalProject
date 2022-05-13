@@ -15,6 +15,7 @@ protocol BuyItemsViewProtocol: AnyObject {
     var presenter: BuyItemsPresenterProtocol? { get set }
     
     func sendPrice(price:Int)
+    func presenterPushCards(cards : [NSManagedObject])
 }
 
 protocol BuyItemsWireFrameProtocol: AnyObject {
@@ -34,10 +35,12 @@ protocol BuyItemsPresenterProtocol: AnyObject {
     func viewDidLoad()
     func showAddCards()
     func getAllShopingCar()
+    func getAllCardByPerson()
 }
 
 protocol BuyItemsInteractorOutputProtocol: AnyObject {
 // INTERACTOR -> PRESENTER
+    func presenterPushCards(cards : [NSManagedObject])
 }
 
 protocol BuyItemsInteractorInputProtocol: AnyObject {
@@ -47,6 +50,7 @@ protocol BuyItemsInteractorInputProtocol: AnyObject {
     var remoteDatamanager: BuyItemsRemoteDataManagerInputProtocol? { get set }
     
     func getAllShopingCar()
+    func getAllCardByPerson()
 }
 
 protocol BuyItemsDataManagerInputProtocol: AnyObject {
@@ -68,9 +72,10 @@ protocol BuyItemsLocalDataManagerInputProtocol: AnyObject {
     
     func getAllShopingCar()
     func saveAllBuyItems(compras:[NSManagedObject])
+    func getAllCardByPerson()
 }
 
 protocol BuyItemsLocalDataDataManagerOutputProtocol: AnyObject {
     // LOCALDATAMANAGER -> INTERACTOR
-    
+    func presenterPushCards(cards : [NSManagedObject])
 }

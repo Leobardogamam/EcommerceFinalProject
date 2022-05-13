@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 class BuyItemsInteractor: BuyItemsInteractorInputProtocol {
     // MARK: Properties
@@ -19,6 +20,10 @@ class BuyItemsInteractor: BuyItemsInteractorInputProtocol {
         localDatamanager?.getAllShopingCar()
     }
     
+    func getAllCardByPerson() {
+        localDatamanager?.getAllCardByPerson()
+    }
+    
 }
 
 extension BuyItemsInteractor: BuyItemsRemoteDataManagerOutputProtocol {
@@ -26,5 +31,9 @@ extension BuyItemsInteractor: BuyItemsRemoteDataManagerOutputProtocol {
 }
 
 extension BuyItemsInteractor: BuyItemsLocalDataDataManagerOutputProtocol{
+    func presenterPushCards(cards: [NSManagedObject]) {
+        presenter!.presenterPushCards(cards: cards)
+    }
+    
     
 }

@@ -10,15 +10,13 @@ import UIKit
 import CoreData
 
 class BuyItemsLocalDataManager:BuyItemsLocalDataManagerInputProtocol {
-   
-    
     var LocalRequestHandler: BuyItemsLocalDataDataManagerOutputProtocol?
     let userDefault = UserDefaults()
     var compras:[NSManagedObject]?
+    var cards : [NSManagedObject]?
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     func getAllShopingCar() {
-        
         if let savedPerson = userDefault.object(forKey: "UserLogged") as? Data {
             let decoder = JSONDecoder()
             if let loadedPerson = try? decoder.decode(Users.self, from: savedPerson) {
@@ -34,7 +32,6 @@ class BuyItemsLocalDataManager:BuyItemsLocalDataManagerInputProtocol {
                     
                 }
             }
-            
         }
     }
     
@@ -80,8 +77,40 @@ class BuyItemsLocalDataManager:BuyItemsLocalDataManagerInputProtocol {
         }
         
     }
+    
+    func getAllCardByPerson() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        
+        let request = CreditCard.fetchRequest() as NSFetchRequest<CreditCard>
+        if let savedPerson = userDefault.object(forKey: "UserLogged") as? Data {
+            let decoder = JSONDecoder()
+            if let loadedPerson = try? decoder.decode(Users.self, from: savedPerson) {
+                let pred =  NSPredicate(format: "idUser = %@", "\(loadedPerson.id)")
+                request.predicate = pred
+            }
+        }
+        
+       
+        do {
+            self.cards = try context.fetch(request)
+//            localRequestHandler?.localDataManagerCallBackCards(cards: cards!)
+            LocalRequestHandler?.presenterPushCards(cards: self.cards!)
+        } catch  {
+            
+        }
+        
+    }
+    
+   
+    
 }
 
 extension BuyItemsLocalDataManager: BuyItemsLocalDataDataManagerOutputProtocol{
+    func presenterPushCards(cards: [NSManagedObject]) {
+        
+    }
+    
     
 }

@@ -10,9 +10,21 @@ import Foundation
 import UIKit
 class cartTableViewCell: UITableViewCell{
     
+    var action1: (()->())?
+    var actionLess: (()->())?
     @IBOutlet weak var imageProduct:UIImageView!
     @IBOutlet weak var lblProductPrice: UILabel!
     @IBOutlet weak var lblProductName: UILabel!
+    @IBOutlet weak var menos: UIButton!
+    @IBOutlet weak var plus: UIButton!
+    @IBOutlet weak var ProductCant: UILabel!
+    @IBAction func onPressPluss(_ sender: UIButton) {
+        action1?()
+    }
+    
+    @IBAction func backInfo(_ sender: Any){
+        actionLess?()
+    }
 }
 
 
@@ -87,8 +99,6 @@ class ShopingCarView: UIViewController, MyViewDelegate {
 }
 
 extension ShopingCarView: ShopingCarViewProtocol {
-    
-    
     // TODO: implement view output methods
     func getDatosDescodificados(product:[Product], precioTotal:Int) {
         carrito = product
@@ -121,7 +131,7 @@ extension ShopingCarView: UITableViewDataSource, UITableViewDelegate{
         cell?.lblProductName.text = carrito?[indexPath.row].title
         cell?.lblProductPrice.text = "$"  + String(carrito?[indexPath.row].price ?? 0)
         cell?.imageProduct.image = UIImage(named: "loading")
-        cell?.isUserInteractionEnabled = false
+        //cell?.isUserInteractionEnabled = false
         DispatchQueue.global(qos: .background).async {
             if self.carrito?[indexPath.row].images?.count == 0{
                 
@@ -133,6 +143,22 @@ extension ShopingCarView: UITableViewDataSource, UITableViewDelegate{
                     guard let data = data else {return}
                     cell?.imageProduct.image = UIImage(data: data)
                 }
+            }
+            cell?.action1 = { [self] in
+                cell?.ProductCant.text = String(Int((cell?.ProductCant.text)! )! + 1)
+                self.lblTotalPrice.text = cell?.lblProductPrice.text
+            }
+            cell?.actionLess = {
+                if Int((cell?.ProductCant.text)!)! == 1{
+                    let alert = UIAlertController(title: "No se puede tener cero", message: "Si no desesa el producto eliminalo", preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "Ok", style: .default)
+                    alert.addAction(ok)
+                    self.present(alert, animated: true)
+                    
+                }else{
+                    cell?.ProductCant.text = String(Int((cell?.ProductCant.text)! )! - 1)
+                }
+                
             }
         }
         return cell ?? UITableViewCell()
@@ -147,4 +173,5 @@ extension ShopingCarView: UITableViewDataSource, UITableViewDelegate{
             }
         }
     }
+    
 }
