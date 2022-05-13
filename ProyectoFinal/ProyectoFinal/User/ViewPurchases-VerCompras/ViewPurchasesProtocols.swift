@@ -12,6 +12,8 @@ import UIKit
 protocol ViewPurchasesViewProtocol: AnyObject {
     // PRESENTER -> VIEW
     var presenter: ViewPurchasesPresenterProtocol? { get set }
+    
+    func returnRemoteData(product:Product)
 }
 
 protocol ViewPurchasesWireFrameProtocol: AnyObject {
@@ -30,6 +32,7 @@ protocol ViewPurchasesPresenterProtocol: AnyObject {
 
 protocol ViewPurchasesInteractorOutputProtocol: AnyObject {
 // INTERACTOR -> PRESENTER
+    func returnRemoteData(product:Product)
 }
 
 protocol ViewPurchasesInteractorInputProtocol: AnyObject {
@@ -48,23 +51,22 @@ protocol ViewPurchasesDataManagerInputProtocol: AnyObject {
 protocol ViewPurchasesRemoteDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> REMOTEDATAMANAGER
     var remoteRequestHandler: ViewPurchasesRemoteDataManagerOutputProtocol? { get set }
+    func getProducts(arrayNumbers:[Int])
 }
 
 protocol ViewPurchasesRemoteDataManagerOutputProtocol: AnyObject {
     // REMOTEDATAMANAGER -> INTERACTOR
+    func returnRemoteData(products:Product)
 }
 
 protocol ViewPurchasesLocalDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> LOCALDATAMANAGER
-    var compras:[CreditCard]? {get set}
+    var compras:[Compras]? {get set}
     var localRequestHandler:ViewPurchasesLocalDataManagerOutputProtocol?{get set}
     func getPurchases()
 }
 protocol ViewPurchasesLocalDataManagerOutputProtocol: AnyObject{
     // REMOTEDATAMANAGER -> Interactor
-    
-    
-    func returnData()
-    
+    func returnData(compra:[Compras])
 }
 

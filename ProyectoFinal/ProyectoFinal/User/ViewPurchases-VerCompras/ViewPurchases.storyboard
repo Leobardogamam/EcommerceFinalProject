@@ -46,21 +46,11 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.right.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="jZ3-Cm-BOM">
-                                                    <rect key="frame" x="350" y="18.5" width="40" height="39"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="40" id="Cpn-oA-l1s"/>
-                                                        <constraint firstAttribute="height" constant="40" id="Ubf-qJ-ird"/>
-                                                    </constraints>
-                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="6Un-NK-Uyx" firstAttribute="leading" secondItem="YWq-wH-emM" secondAttribute="trailing" constant="24" id="FSN-WS-hMv"/>
                                                 <constraint firstItem="YWq-wH-emM" firstAttribute="leading" secondItem="Hrd-0V-6mD" secondAttribute="leading" constant="16" id="Man-Rs-2Ot"/>
-                                                <constraint firstAttribute="trailing" secondItem="jZ3-Cm-BOM" secondAttribute="trailing" constant="24" id="RG2-Kt-zyy"/>
-                                                <constraint firstAttribute="bottom" secondItem="jZ3-Cm-BOM" secondAttribute="bottom" constant="18" id="WJm-by-V0j"/>
                                                 <constraint firstItem="6Un-NK-Uyx" firstAttribute="centerY" secondItem="YWq-wH-emM" secondAttribute="centerY" id="g5Z-c7-X4n"/>
-                                                <constraint firstItem="jZ3-Cm-BOM" firstAttribute="top" secondItem="Hrd-0V-6mD" secondAttribute="top" constant="18" id="hrh-QW-eaK"/>
                                                 <constraint firstItem="YWq-wH-emM" firstAttribute="top" secondItem="Hrd-0V-6mD" secondAttribute="top" constant="8" id="r1D-N6-nVE"/>
                                                 <constraint firstAttribute="bottom" secondItem="YWq-wH-emM" secondAttribute="bottom" constant="8" id="t0w-1Z-vU6"/>
                                             </constraints>
@@ -101,6 +91,9 @@
                             <constraint firstItem="WKd-bl-I66" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="zi4-5Y-M4p"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tablePurchases" destination="WKd-bl-I66" id="hAg-1G-fRy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -108,7 +101,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.right.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
