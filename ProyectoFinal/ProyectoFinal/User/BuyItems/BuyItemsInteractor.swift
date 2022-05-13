@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import CoreData
 
 class BuyItemsInteractor: BuyItemsInteractorInputProtocol {
+    
+    
     // MARK: Properties
     weak var presenter: BuyItemsInteractorOutputProtocol?
     var localDatamanager: BuyItemsLocalDataManagerInputProtocol?
@@ -19,6 +22,10 @@ class BuyItemsInteractor: BuyItemsInteractorInputProtocol {
         localDatamanager?.getAllShopingCar()
     }
     
+    func getCards() {
+        localDatamanager?.getCards()
+    }
+    
 }
 
 extension BuyItemsInteractor: BuyItemsRemoteDataManagerOutputProtocol {
@@ -26,5 +33,15 @@ extension BuyItemsInteractor: BuyItemsRemoteDataManagerOutputProtocol {
 }
 
 extension BuyItemsInteractor: BuyItemsLocalDataDataManagerOutputProtocol{
+    
+    func localDataManagerCallBackBuySave(saved: Bool) {
+        presenter?.localDataManagerCallBackBuySave(saved: saved)
+    }
+    
+    
+    func returnLocalDataCreditCar(cards: [NSManagedObject]) {
+        presenter?.returnLocalDataCreditCar(cards: cards)
+    }
+    
     
 }

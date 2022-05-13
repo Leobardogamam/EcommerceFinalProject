@@ -40,6 +40,10 @@ class ShopingCarView: UIViewController, MyViewDelegate {
         tabBar.btnCart.setImage(UIImage(systemName: "cart.fill"), for: .normal)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        presenter?.viewDidLoad()
+    }
+    
     func didTapButton(number: Int) {
         switch number{
         case 0:
@@ -90,7 +94,9 @@ extension ShopingCarView: ShopingCarViewProtocol {
     
     
     // TODO: implement view output methods
-    func getDatosDescodificados(product:[Product], precioTotal:Int) {
+    func
+    getDatosDescodificados(product:[Product], precioTotal:Int) {
+
         carrito = product
         DispatchQueue.main.async {[self] in
             tableCarProduct.reloadData()

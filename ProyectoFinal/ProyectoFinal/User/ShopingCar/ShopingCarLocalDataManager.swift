@@ -29,7 +29,6 @@ class ShopingCarLocalDataManager:ShopingCarLocalDataManagerInputProtocol {
                 do {
                     request.predicate = NSPredicate(format: "idcustomer = %@", "\(loadedPerson.id)")
                 } catch  {
-                
                 }
             }
         }

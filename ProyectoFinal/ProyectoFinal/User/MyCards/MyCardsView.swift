@@ -45,7 +45,7 @@ extension MyCardsView: MyCardsViewProtocol {
     
     func presenterPushCards(cards: [NSManagedObject]) {
         self.cards = cards
-    
+        print("LLEGUE")
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }
