@@ -8,8 +8,15 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class BuyItemsWireFrame: BuyItemsWireFrameProtocol {
+    func returnLocalDataCreditCar(cards: [NSManagedObject]) {
+        
+    }
+    
+    
+    
 
     class func createBuyItemsModule(price:Int) -> UIViewController {
         let navController = mainStoryboard.instantiateViewController(withIdentifier: "buyItems")
@@ -42,6 +49,13 @@ class BuyItemsWireFrame: BuyItemsWireFrameProtocol {
     
     func showAddCards(from view: BuyItemsViewProtocol) {
         let newView = AddCardsWireFrame.createAddCardsModule()
+        if let view = view as? UIViewController{
+            view.present(newView, animated: true)
+        }
+    }
+    
+    func showShopingCar(from view: BuyItemsViewProtocol) {
+        let newView = ShopingCarWireFrame.createShopingCarModule()
         if let view = view as? UIViewController{
             view.present(newView, animated: true)
         }

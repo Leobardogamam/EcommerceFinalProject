@@ -7,8 +7,13 @@
 //
 
 import Foundation
+import CoreData
 
 class BuyItemsPresenter:BuyItemsPresenterProtocol {
+    func showShopingCar() {
+        wireFrame?.showShopingCar(from: view!)
+    }
+    
     
     
     // MARK: Properties
@@ -20,6 +25,7 @@ class BuyItemsPresenter:BuyItemsPresenterProtocol {
     
     func viewDidLoad() {
         view?.sendPrice(price: precio ?? 0)
+        interactor?.getCards()
     }
     
     func showAddCards() {
@@ -44,5 +50,15 @@ class BuyItemsPresenter:BuyItemsPresenterProtocol {
 //}
 
 extension BuyItemsPresenter: BuyItemsInteractorOutputProtocol {
+    
+    func localDataManagerCallBackBuySave(saved: Bool) {
+        view?.localDataManagerCallBackBuySave(saved: saved)
+    }
+    
+    func returnLocalDataCreditCar(cards: [NSManagedObject]) {
+        view?.returnLocalDataCreditCar(cards: cards)
+    }
+    
+    
     // TODO: implement interactor output methods
 }

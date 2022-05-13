@@ -22,6 +22,8 @@ class BuyItemsView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()
+        collectionTarjet.delegate = self
+        collectionTarjet.dataSource = self
     }
     
     @IBAction func Pagar(_ sender: UIButton) {
@@ -46,10 +48,36 @@ class BuyItemsView: UIViewController {
 }
 
 extension BuyItemsView: BuyItemsViewProtocol {
+    func returnLocalDataCreditCar(cards: [NSManagedObject]) {
+        print("ENTRE")
+        self.cards = cards
+        DispatchQueue.main.async {
+            self.collectionTarjet.reloadData()
+        }
+    }
+    
+    
     // TODO: implement view output methods
     func sendPrice(price: Int) {
         lblPrice.text = "$" + String(price)
     }
+    
+    func localDataManagerCallBackBuySave(saved: Bool) {
+        if saved{
+            let alert = UIAlertController(title: "Exitoso", message: "La compra se realizo exitosamente", preferredStyle: .alert)
+            let aceptar = UIAlertAction(title: "Ok", style: .default) { (action) in
+                self.presenter?.showShopingCar()
+            }
+            alert.addAction(aceptar)
+            present(alert, animated: true)
+        }else{
+            let alert = UIAlertController(title: "Error", message: "La compra no se pudo realizar", preferredStyle: .alert)
+            let aceptar = UIAlertAction(title: "Ok", style: .default)
+            alert.addAction(aceptar)
+            present(alert, animated: true)
+        }
+    }
+    
 }
 
 extension BuyItemsView: UICollectionViewDelegate, UICollectionViewDataSource{
@@ -58,7 +86,7 @@ extension BuyItemsView: UICollectionViewDelegate, UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell", for: indexPath) as? MyCardCollectionViewCell)!
+        let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell", for: indexPath) as? CollectionBuyItems)!
         
         let card = cards![indexPath.row]
         

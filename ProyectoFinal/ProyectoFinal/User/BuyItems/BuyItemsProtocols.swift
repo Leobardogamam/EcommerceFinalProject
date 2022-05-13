@@ -15,12 +15,17 @@ protocol BuyItemsViewProtocol: AnyObject {
     var presenter: BuyItemsPresenterProtocol? { get set }
     
     func sendPrice(price:Int)
+    func localDataManagerCallBackBuySave(saved : Bool)
+    func returnLocalDataCreditCar(cards: [NSManagedObject])
+    
 }
 
 protocol BuyItemsWireFrameProtocol: AnyObject {
     // PRESENTER -> WIREFRAME
     static func createBuyItemsModule(price:Int) -> UIViewController
     func showAddCards(from view:BuyItemsViewProtocol)
+    func showShopingCar(from view:BuyItemsViewProtocol)
+    func returnLocalDataCreditCar(cards : [NSManagedObject])
     
 }
 
@@ -30,7 +35,7 @@ protocol BuyItemsPresenterProtocol: AnyObject {
     var view: BuyItemsViewProtocol? { get set }
     var interactor: BuyItemsInteractorInputProtocol? { get set }
     var wireFrame: BuyItemsWireFrameProtocol? { get set }
-    
+    func showShopingCar()
     func viewDidLoad()
     func showAddCards()
     func getAllShopingCar()
@@ -38,6 +43,8 @@ protocol BuyItemsPresenterProtocol: AnyObject {
 
 protocol BuyItemsInteractorOutputProtocol: AnyObject {
 // INTERACTOR -> PRESENTER
+    func localDataManagerCallBackBuySave(saved : Bool)
+    func returnLocalDataCreditCar(cards : [NSManagedObject])
 }
 
 protocol BuyItemsInteractorInputProtocol: AnyObject {
@@ -47,6 +54,7 @@ protocol BuyItemsInteractorInputProtocol: AnyObject {
     var remoteDatamanager: BuyItemsRemoteDataManagerInputProtocol? { get set }
     
     func getAllShopingCar()
+    func getCards()
 }
 
 protocol BuyItemsDataManagerInputProtocol: AnyObject {
@@ -65,12 +73,13 @@ protocol BuyItemsRemoteDataManagerOutputProtocol: AnyObject {
 protocol BuyItemsLocalDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> LOCALDATAMANAGER
     var LocalRequestHandler: BuyItemsLocalDataDataManagerOutputProtocol? { get set }
-    
+    func getCards()
     func getAllShopingCar()
     func saveAllBuyItems(compras:[NSManagedObject])
 }
 
 protocol BuyItemsLocalDataDataManagerOutputProtocol: AnyObject {
     // LOCALDATAMANAGER -> INTERACTOR
-    
+    func localDataManagerCallBackBuySave(saved : Bool)
+    func returnLocalDataCreditCar(cards : [NSManagedObject])
 }
