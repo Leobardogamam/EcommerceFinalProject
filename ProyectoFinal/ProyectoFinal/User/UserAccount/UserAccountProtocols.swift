@@ -39,8 +39,7 @@ protocol UserAccountPresenterProtocol: AnyObject {
     func showLoginView()
     func showHomeView()
     func showShopingCart()
-    
-    
+
 }
 
 protocol UserAccountInteractorOutputProtocol: AnyObject {

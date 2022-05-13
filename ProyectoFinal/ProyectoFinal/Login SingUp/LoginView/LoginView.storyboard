@@ -33,7 +33,7 @@
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Forgot Password?"/>
                                             <connections>
-                                                <action selector="forgetPassPressed:" destination="h6P-ub-Pzv" eventType="touchUpInside" id="CWe-OU-LzO"/>
+                                                <action selector="forgotPasswordPressed:" destination="h6P-ub-Pzv" eventType="touchUpInside" id="l8M-N3-riD"/>
                                             </connections>
                                         </button>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rBd-cj-Shm">
@@ -72,14 +72,24 @@
                                                 <action selector="signUpPressed:" destination="h6P-ub-Pzv" eventType="touchUpInside" id="Hd5-xl-fX9"/>
                                             </connections>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5sS-hd-qfR">
+                                            <rect key="frame" x="125" y="196" width="78" height="31"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Guest"/>
+                                            <connections>
+                                                <action selector="guestPressed:" destination="h6P-ub-Pzv" eventType="touchUpInside" id="Esq-Hh-gPi"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="GO5-t2-Dgk" secondAttribute="trailing" constant="31" id="2iP-8H-PKH"/>
+                                        <constraint firstItem="5sS-hd-qfR" firstAttribute="top" secondItem="GO5-t2-Dgk" secondAttribute="bottom" constant="8" symbolic="YES" id="6NK-mq-db6"/>
                                         <constraint firstAttribute="trailing" secondItem="oQn-Oz-Of4" secondAttribute="trailing" constant="8" id="6VJ-EV-FHK"/>
                                         <constraint firstAttribute="bottom" secondItem="oQn-Oz-Of4" secondAttribute="bottom" constant="8" id="9jN-Kp-tUL"/>
                                         <constraint firstItem="rBd-cj-Shm" firstAttribute="top" secondItem="tZF-RK-gUy" secondAttribute="top" constant="46" id="AF4-mO-avL"/>
                                         <constraint firstItem="z77-et-8HQ" firstAttribute="leading" secondItem="tZF-RK-gUy" secondAttribute="leading" constant="32" id="BGf-B7-0P2"/>
                                         <constraint firstAttribute="trailing" secondItem="z77-et-8HQ" secondAttribute="trailing" constant="31" id="KQA-cO-bnY"/>
+                                        <constraint firstAttribute="trailing" secondItem="5sS-hd-qfR" secondAttribute="trailing" constant="125" id="KhL-94-Cf7"/>
                                         <constraint firstAttribute="bottom" secondItem="diK-T4-l18" secondAttribute="bottom" constant="8" id="SkL-hy-gOA"/>
                                         <constraint firstItem="GO5-t2-Dgk" firstAttribute="leading" secondItem="tZF-RK-gUy" secondAttribute="leading" constant="32" id="ZG9-RH-09T"/>
                                         <constraint firstAttribute="trailing" secondItem="rBd-cj-Shm" secondAttribute="trailing" constant="31" id="ZgL-jf-ahH"/>
@@ -87,6 +97,7 @@
                                         <constraint firstItem="GO5-t2-Dgk" firstAttribute="top" secondItem="z77-et-8HQ" secondAttribute="bottom" constant="27" id="cCm-Yu-RyN"/>
                                         <constraint firstItem="rBd-cj-Shm" firstAttribute="leading" secondItem="tZF-RK-gUy" secondAttribute="leading" constant="32" id="nRb-p3-AGm"/>
                                         <constraint firstItem="z77-et-8HQ" firstAttribute="top" secondItem="rBd-cj-Shm" secondAttribute="bottom" constant="15" id="xyY-BW-pJ8"/>
+                                        <constraint firstItem="5sS-hd-qfR" firstAttribute="leading" secondItem="tZF-RK-gUy" secondAttribute="leading" constant="125" id="zC3-nl-jdG"/>
                                     </constraints>
                                 </view>
                                 <constraints>
@@ -143,7 +154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IFk-ed-pVt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928.98550724637687" y="85.714285714285708"/>
+            <point key="canvasLocation" x="928.79999999999995" y="85.007496251874073"/>
         </scene>
     </scenes>
     <resources>

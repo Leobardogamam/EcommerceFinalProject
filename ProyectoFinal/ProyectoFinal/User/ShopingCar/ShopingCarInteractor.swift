@@ -10,8 +10,7 @@ import Foundation
 import CoreData
 
 class ShopingCarInteractor: ShopingCarInteractorInputProtocol, ShopingCarLocalDataManagerOutputProtocol {
-    
-    
+   
     // MARK: Properties
     weak var presenter: ShopingCarInteractorOutputProtocol?
     var localDatamanager: ShopingCarLocalDataManagerInputProtocol?
@@ -46,8 +45,10 @@ class ShopingCarInteractor: ShopingCarInteractorInputProtocol, ShopingCarLocalDa
         
     }
     
-   
-    
+    func deleteCarWithoutUser() {
+        localDatamanager?.localDeleteCartWithoutUser()
+    }
+     
 
 }
 

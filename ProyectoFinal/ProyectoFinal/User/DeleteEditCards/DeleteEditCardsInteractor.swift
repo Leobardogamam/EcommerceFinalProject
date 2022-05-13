@@ -10,6 +10,8 @@ import Foundation
 import CoreData
 
 class DeleteEditCardsInteractor: DeleteEditCardsInteractorInputProtocol {
+    
+    
    
 
     // MARK: Properties
@@ -22,6 +24,9 @@ class DeleteEditCardsInteractor: DeleteEditCardsInteractorInputProtocol {
     }
     
 
+    func deleteCard(numSerie: String) {
+        localDatamanager?.localDeleteCard(numSerie: numSerie)
+    }
 }
 
 extension DeleteEditCardsInteractor: DeleteEditCardsRemoteDataManagerOutputProtocol {
@@ -29,9 +34,11 @@ extension DeleteEditCardsInteractor: DeleteEditCardsRemoteDataManagerOutputProto
 }
 
 extension DeleteEditCardsInteractor : DeleteEditCardsLocalDataManagerOutputProtocol{
+    
     func localDataManagerCallBackCards(card: [NSManagedObject]) {
         presenter?.interactorPushCards(card: card)
     }
+    
     
     
 }

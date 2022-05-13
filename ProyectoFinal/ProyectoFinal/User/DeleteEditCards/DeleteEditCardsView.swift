@@ -38,11 +38,11 @@ class DeleteEditCardsView: UIViewController {
     }
     
     @IBAction func deletePressed(_ sender: Any) {
-        let alert = UIAlertController(title: "Eliminar", message: "¿Estas seguro que deseas eliminar este producto?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Eliminar", message: "¿Estas seguro que deseas eliminar esta tarjeta?", preferredStyle: .alert)
         
-        let action = UIAlertAction(title: "Si", style: .default) { UIAlertAction in
-            
-            
+        let action = UIAlertAction(title: "Si", style: .default) { [self] UIAlertAction in
+            presenter?.deleteCard(numSerie: (self.cards![0].value(forKey: "numserie") as? String)!)
+            self.dismiss(animated: true)
             
         }
         let cancel = UIAlertAction(title: "Cancelar", style: .cancel)
@@ -62,6 +62,7 @@ class DeleteEditCardsView: UIViewController {
 
 extension DeleteEditCardsView: DeleteEditCardsViewProtocol {
     
+    
     // TODO: implement view output methods
     
     func presenterPushCard(card: [NSManagedObject]) {
@@ -70,10 +71,10 @@ extension DeleteEditCardsView: DeleteEditCardsViewProtocol {
         DispatchQueue.main.async {
             
             let cards = self.cards![0]
-            self.cardImageView.backgroundColor = cards.value(forKey: "color") as? UIColor
-            self.numSerieLabel.text = cards.value(forKey: "numserie") as? String
-            self.nameLabel.text = cards.value(forKey: "name") as? String
+            self.numSerieLabel.text = "\((cards.value(forKey: "numserie") as? String)!)"
+            self.nameLabel.text = "\((cards.value(forKey: "name") as? String)!)"
             self.dateLabel.text = "\(cards.value(forKey: "day")!)/\(cards.value(forKey: "year")!)"
+            self.cardImageView.backgroundColor = cards.value(forKey: "color") as? UIColor
             
             if cards.value(forKey: "cardType") as! String == "Visa"{
                 self.cardTypeImageView.image = UIImage(named: "Visa_Logo")
@@ -84,5 +85,6 @@ extension DeleteEditCardsView: DeleteEditCardsViewProtocol {
             }
         }
     }
+    
     
 }

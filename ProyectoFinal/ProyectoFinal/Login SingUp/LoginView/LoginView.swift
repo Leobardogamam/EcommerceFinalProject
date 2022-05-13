@@ -30,10 +30,49 @@ class LoginView: UIViewController {
         
     }
     override func viewWillAppear(_ animated: Bool) {
-        
-        
-        
+
     }
+    
+    @IBAction func forgotPasswordPressed(_ sender: Any) {
+        let alert = UIAlertController(title: "Recuperar contraseña", message: "Por favor introduzca su correo", preferredStyle: .alert)
+        
+        alert.addTextField()
+
+        
+        guard let textFieldMail = alert.textFields?[0] else {return}
+
+            
+      
+        textFieldMail.placeholder = "Email"
+        
+
+        let action = UIAlertAction(title: "Ok", style: .default) { UIAlertAction in
+            self.showAlertWithPassword(mail: textFieldMail.text!)
+        }
+        
+        let cancel = UIAlertAction(title: "Cancelar", style: .cancel)
+        
+       
+        alert.addAction(action)
+        alert.addAction(cancel)
+        self.present(alert, animated: true)
+    }
+    
+    func showAlertWithPassword(mail : String){
+        for user in self.users!{
+            if user.email == mail{
+                let alert = UIAlertController(title: "Recuperar contraseña", message: "Su contraseña es: \(user.password)", preferredStyle: .alert)
+                
+                let action = UIAlertAction(title: "Ok", style: .default)
+                
+       
+                alert.addAction(action)
+                self.present(alert, animated: true)
+                
+            }
+        }
+    }
+    
     
     func checkUser(){
         DispatchQueue.main.async {[self] in
@@ -74,14 +113,16 @@ class LoginView: UIViewController {
             presenter?.getLoginAuth(email: emailTextField.text!, password: passTextField.text!)
         }
         
-        
     }
+    
+    @IBAction func guestPressed(_ sender: Any) {
+        presenter?.showHomeUserViewWithoutUser(user: 0)
+    }
+    
     @IBAction func signUpPressed(_ sender: Any) {
         presenter?.showSignUpView()
     }
-    @IBAction func forgetPassPressed(_ sender: Any) {
-        
-    }
+ 
 }
 
 extension LoginView: LoginViewProtocol {

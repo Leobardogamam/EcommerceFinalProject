@@ -82,7 +82,7 @@
                                 </connections>
                             </collectionView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Numero de Tarjeta" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8SF-Ca-MkU">
-                                <rect key="frame" x="52" y="161" width="311" height="34"/>
+                                <rect key="frame" x="51.5" y="161" width="311" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="B8e-Eb-fe1"/>
                                     <constraint firstAttribute="width" constant="311" id="xi0-3S-IJU"/>
@@ -156,6 +156,7 @@
                             <constraint firstItem="9Yl-Xc-A72" firstAttribute="trailing" secondItem="LJS-L4-U1x" secondAttribute="trailing" constant="20" id="8bs-cu-Myz"/>
                             <constraint firstItem="qG0-B3-btr" firstAttribute="centerX" secondItem="ddp-1X-CXI" secondAttribute="centerX" id="AuE-eZ-9cS"/>
                             <constraint firstItem="QlD-cb-4pk" firstAttribute="leading" secondItem="9Yl-Xc-A72" secondAttribute="leading" constant="16" id="Csv-9f-sZG"/>
+                            <constraint firstItem="LJS-L4-U1x" firstAttribute="leading" secondItem="ZXU-e3-gLG" secondAttribute="trailing" constant="36" id="Ebt-0d-0Je"/>
                             <constraint firstItem="LJS-L4-U1x" firstAttribute="top" secondItem="8SF-Ca-MkU" secondAttribute="bottom" constant="80" id="Gvk-wv-Ntc"/>
                             <constraint firstItem="ZXU-e3-gLG" firstAttribute="top" secondItem="8SF-Ca-MkU" secondAttribute="bottom" constant="109" id="Hgr-HT-OX8"/>
                             <constraint firstItem="qG0-B3-btr" firstAttribute="top" secondItem="Ift-s9-pFE" secondAttribute="bottom" constant="8" symbolic="YES" id="JBm-XU-S2v"/>
@@ -171,7 +172,7 @@
                             <constraint firstItem="iSL-Qp-TfW" firstAttribute="leading" secondItem="9Yl-Xc-A72" secondAttribute="leading" id="jMU-lU-pxM"/>
                             <constraint firstItem="a0k-V1-AZn" firstAttribute="top" secondItem="LJS-L4-U1x" secondAttribute="bottom" constant="8" symbolic="YES" id="mnW-CY-kvY"/>
                             <constraint firstItem="D9Z-VK-u2j" firstAttribute="top" secondItem="iSL-Qp-TfW" secondAttribute="bottom" constant="91" id="nPI-Ue-H8L"/>
-                            <constraint firstItem="8SF-Ca-MkU" firstAttribute="leading" secondItem="9Yl-Xc-A72" secondAttribute="leading" constant="52" id="oGj-eO-dMD"/>
+                            <constraint firstItem="8SF-Ca-MkU" firstAttribute="centerX" secondItem="ddp-1X-CXI" secondAttribute="centerX" id="nRf-hK-TTo"/>
                             <constraint firstItem="D9Z-VK-u2j" firstAttribute="centerX" secondItem="ddp-1X-CXI" secondAttribute="centerX" id="pUh-xz-oxk"/>
                             <constraint firstItem="qG0-B3-btr" firstAttribute="leading" secondItem="9Yl-Xc-A72" secondAttribute="leading" constant="47" id="phY-FM-mM6"/>
                             <constraint firstItem="9Yl-Xc-A72" firstAttribute="trailing" secondItem="4ND-0P-ZcY" secondAttribute="trailing" constant="8" id="uBB-PI-Zwe"/>

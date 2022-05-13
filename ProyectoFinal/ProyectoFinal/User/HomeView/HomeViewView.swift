@@ -22,6 +22,7 @@ class HomeViewView: UIViewController , MyViewDelegate, passTableToHome{
     var dataCategoriesCollectionView = [Categories]()
     var dataCategoriesTableView = [Categories]()
     var isCategorySelected = false
+    var noUser : Int?
     
     @IBOutlet weak var collectionHomeView: UICollectionView!
     @IBOutlet weak var TabBar: TabBarNavigationButtons!
@@ -34,7 +35,7 @@ class HomeViewView: UIViewController , MyViewDelegate, passTableToHome{
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()
-    
+        noUser = presenter?.noUser
         TabBar.btnCart.backgroundColor = .clear
         TabBar.btnUserAccount.backgroundColor = .clear
         TabBar.btnHome.tintColor = .systemPink
@@ -49,10 +50,32 @@ class HomeViewView: UIViewController , MyViewDelegate, passTableToHome{
         case 0:
            print("Ya estas aqui")
         case 1:
-            presenter?.showShopingCart()
             
+            if noUser != 0{
+                presenter?.showShopingCart()
+            }else{
+                presenter?.showShopingCart(noUser: noUser!)
+            }
+
         case 2:
+            if noUser != 0{
             presenter?.showUserAccount()
+            }else{
+                let alert = UIAlertController(title: "No hay usuario", message: "No cuentas con un usuario, quieres ir al login?", preferredStyle: .alert)
+                
+                let action = UIAlertAction(title: "Si", style: .default) { [self] UIAlertAction in
+                    
+                    presenter?.deleteCarWithoutUser()
+                    self.view.window?.rootViewController?.dismiss(animated: true)
+                    
+                }
+                let cancel = UIAlertAction(title: "Cancelar", style: .cancel)
+                
+
+                alert.addAction(action)
+                alert.addAction(cancel)
+                present(alert, animated: true)
+            }
         default:
             print("Error")
         }

@@ -9,12 +9,16 @@
 import Foundation
 
 class HomeViewPresenter:  HomeViewPresenterProtocol {
+    
+   
+    
     // MARK: Properties
     weak var view: HomeViewViewProtocol?
     var interactor: HomeViewInteractorInputProtocol?
     var wireFrame: HomeViewWireFrameProtocol?
     var user: Users?
     var defaults = UserDefaults()
+    var noUser: Int?
     
     // TODO: implement presenter methods
     func viewDidLoad() {
@@ -36,6 +40,15 @@ class HomeViewPresenter:  HomeViewPresenterProtocol {
     func showShopingCart() {
         wireFrame?.showShopingCart(from: view!)
     }
+    
+    func showShopingCart(noUser: Int) {
+        wireFrame?.showShopingCartWithoutUser(from: view!, noUser: noUser)
+    }
+    
+    func deleteCarWithoutUser() {
+        interactor?.deleteCarWithoutUser()
+    }
+   
 }
 
 extension HomeViewPresenter: HomeViewInteractorOutputProtocol {

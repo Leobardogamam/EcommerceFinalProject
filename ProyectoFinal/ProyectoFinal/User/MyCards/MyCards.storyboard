@@ -56,37 +56,45 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="9999 9999 9999 9999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f86-7D-YYZ">
-                                                    <rect key="frame" x="54" y="47" width="292" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9999 9999 9999 9999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f86-7D-YYZ">
+                                                    <rect key="frame" x="66.5" y="47" width="267" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alejandro Brito Fuentes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xt9-a0-GKx">
-                                                    <rect key="frame" x="8" y="177" width="236" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alejandro Brito Fuentes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xt9-a0-GKx">
+                                                    <rect key="frame" x="8" y="170.5" width="230" height="27.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99/99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEX-qX-KPL">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99/99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEX-qX-KPL">
                                                     <rect key="frame" x="350" y="177" width="47" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cA8-hR-bjo">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cA8-hR-bjo">
                                                     <rect key="frame" x="342" y="206" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="7xg-g6-NPd"/>
+                                                        <constraint firstAttribute="width" constant="50" id="QZ4-jr-6zv"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="cA8-hR-bjo" firstAttribute="top" secondItem="LEX-qX-KPL" secondAttribute="bottom" constant="8" symbolic="YES" id="4Et-wU-whU"/>
+                                                <constraint firstItem="Xt9-a0-GKx" firstAttribute="leading" secondItem="KVv-V4-P6G" secondAttribute="leading" constant="8" id="7Cb-BO-PZj"/>
+                                                <constraint firstAttribute="trailing" secondItem="cA8-hR-bjo" secondAttribute="trailing" constant="8" id="IwV-KZ-jhV"/>
+                                                <constraint firstAttribute="trailing" secondItem="LEX-qX-KPL" secondAttribute="trailing" constant="3" id="SSZ-Fj-H3e"/>
+                                                <constraint firstAttribute="bottom" secondItem="Xt9-a0-GKx" secondAttribute="bottom" constant="66" id="ZLm-fi-zEQ"/>
                                                 <constraint firstItem="Zjh-Cc-MpK" firstAttribute="leading" secondItem="KVv-V4-P6G" secondAttribute="leading" id="akF-CL-fyn"/>
+                                                <constraint firstAttribute="bottom" secondItem="cA8-hR-bjo" secondAttribute="bottom" constant="8" id="bZO-CW-INg"/>
                                                 <constraint firstAttribute="trailing" secondItem="Zjh-Cc-MpK" secondAttribute="trailing" id="ecS-cl-iCs"/>
                                                 <constraint firstAttribute="trailing" secondItem="Zjh-Cc-MpK" secondAttribute="trailing" id="g0O-bb-z9a"/>
+                                                <constraint firstItem="f86-7D-YYZ" firstAttribute="top" secondItem="KVv-V4-P6G" secondAttribute="top" constant="47" id="gtz-gw-xAF"/>
                                                 <constraint firstAttribute="bottom" secondItem="Zjh-Cc-MpK" secondAttribute="bottom" id="oNJ-ci-ZNT"/>
+                                                <constraint firstItem="f86-7D-YYZ" firstAttribute="centerX" secondItem="KVv-V4-P6G" secondAttribute="centerX" id="uw8-3E-y5K"/>
                                                 <constraint firstItem="Zjh-Cc-MpK" firstAttribute="top" secondItem="KVv-V4-P6G" secondAttribute="top" id="yWk-8h-iFO"/>
                                             </constraints>
                                         </collectionViewCellContentView>

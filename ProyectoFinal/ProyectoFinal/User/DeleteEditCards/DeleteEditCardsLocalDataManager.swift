@@ -12,6 +12,7 @@ import UIKit
 
 class DeleteEditCardsLocalDataManager:DeleteEditCardsLocalDataManagerInputProtocol {
     
+    
     var localRequestHandler: DeleteEditCardsLocalDataManagerOutputProtocol?
     var card : [NSManagedObject]?
 
@@ -24,7 +25,7 @@ class DeleteEditCardsLocalDataManager:DeleteEditCardsLocalDataManagerInputProtoc
         
         let request = CreditCard.fetchRequest() as NSFetchRequest<CreditCard>
         
-        let pred =  NSPredicate(format: "numserie = %@", "\(numSerie)")
+        let pred =  NSPredicate(format: "numserie = %@", numSerie)
         request.predicate = pred
         do {
             self.card = try context.fetch(request)
@@ -36,6 +37,28 @@ class DeleteEditCardsLocalDataManager:DeleteEditCardsLocalDataManagerInputProtoc
         
         
     }
+    
+    func localDeleteCard(numSerie: String) {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        
+        let request = CreditCard.fetchRequest() as NSFetchRequest<CreditCard>
+        
+        let pred =  NSPredicate(format: "numserie = %@", "\(numSerie)")
+        request.predicate = pred
+        do {
+            self.card = try context.fetch(request)
+            context.delete(card![0])
+            try context.save()
+
+            
+        } catch  {
+           
+        }
+    }
+    
     
     
     
