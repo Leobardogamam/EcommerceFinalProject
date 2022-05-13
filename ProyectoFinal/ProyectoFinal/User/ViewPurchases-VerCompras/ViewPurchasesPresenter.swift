@@ -26,4 +26,8 @@ extension ViewPurchasesPresenter: ViewPurchasesPresenterProtocol {
 
 extension ViewPurchasesPresenter: ViewPurchasesInteractorOutputProtocol {
     // TODO: implement interactor output methods
+    func returnRemoteData(product:Product) {
+        view?.returnRemoteData(product:product)
+    }
+    
 }

@@ -13,7 +13,7 @@ class ViewPurchasesInteractor: ViewPurchasesInteractorInputProtocol {
     weak var presenter: ViewPurchasesInteractorOutputProtocol?
     var localDatamanager: ViewPurchasesLocalDataManagerInputProtocol?
     var remoteDatamanager: ViewPurchasesRemoteDataManagerInputProtocol?
-
+    
     
     func getPurchases() {
         localDatamanager?.getPurchases()
@@ -24,14 +24,19 @@ class ViewPurchasesInteractor: ViewPurchasesInteractorInputProtocol {
 
 extension ViewPurchasesInteractor: ViewPurchasesRemoteDataManagerOutputProtocol {
     // TODO: Implement use case methods
+    func returnRemoteData(products: Product) {
+        presenter?.returnRemoteData(product: products)
+    }
     
 }
 
 extension ViewPurchasesInteractor: ViewPurchasesLocalDataManagerOutputProtocol{
-    
-    
-    func returnData() {
-        
+    func returnData(compra:[Compras]){
+        var array = [Int]()
+        for compras in compra {
+            array.append(compras.value(forKey: "idproduct") as! Int)
+        }
+        remoteDatamanager?.getProducts(arrayNumbers: array)
     }
     
     

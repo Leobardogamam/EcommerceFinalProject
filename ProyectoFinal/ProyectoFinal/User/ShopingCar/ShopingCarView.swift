@@ -32,8 +32,7 @@ class ShopingCarView: UIViewController, MyViewDelegate {
         super.viewDidLoad()
         presenter?.viewDidLoad()
         tabBar.delegate = self
-        viewCircle.layer.cornerRadius = viewCircle.frame.height /
-        2
+        viewCircle.layer.cornerRadius = viewCircle.frame.height / 2
        
         tabBar.btnCart.tintColor = .systemPink
         tabBar.btnCart.setImage(UIImage(systemName: "cart.fill"), for: .normal)
