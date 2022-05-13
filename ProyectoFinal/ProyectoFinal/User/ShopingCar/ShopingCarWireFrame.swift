@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 class ShopingCarWireFrame: ShopingCarWireFrameProtocol {
+   
+    
     class func createShopingCarModule() -> UIViewController {
         let navController = mainStoryboard.instantiateViewController(withIdentifier: "ShopingCar")
         if let view = navController as? ShopingCarView {
@@ -23,6 +25,30 @@ class ShopingCarWireFrame: ShopingCarWireFrameProtocol {
             presenter.view = view
             presenter.wireFrame = wireFrame
             presenter.interactor = interactor
+            interactor.presenter = presenter
+            localDataManager.localRequestHandler = interactor
+            interactor.localDatamanager = localDataManager
+            interactor.remoteDatamanager = remoteDataManager
+            remoteDataManager.remoteRequestHandler = interactor
+            return navController
+        }
+        return UIViewController()
+    }
+    
+    class func createShopingCarModule(noUser : Int) -> UIViewController {
+        let navController = mainStoryboard.instantiateViewController(withIdentifier: "ShopingCar")
+        if let view = navController as? ShopingCarView {
+            let presenter: ShopingCarPresenterProtocol & ShopingCarInteractorOutputProtocol = ShopingCarPresenter()
+            let interactor: ShopingCarInteractorInputProtocol & ShopingCarRemoteDataManagerOutputProtocol & ShopingCarLocalDataManagerOutputProtocol  = ShopingCarInteractor()
+            let localDataManager: ShopingCarLocalDataManagerInputProtocol = ShopingCarLocalDataManager()
+            let remoteDataManager: ShopingCarRemoteDataManagerInputProtocol = ShopingCarRemoteDataManager()
+            let wireFrame: ShopingCarWireFrameProtocol = ShopingCarWireFrame()
+            
+            view.presenter = presenter
+            presenter.view = view
+            presenter.wireFrame = wireFrame
+            presenter.interactor = interactor
+            presenter.noUser = noUser
             interactor.presenter = presenter
             localDataManager.localRequestHandler = interactor
             interactor.localDatamanager = localDataManager
@@ -58,5 +84,11 @@ class ShopingCarWireFrame: ShopingCarWireFrameProtocol {
         }
     }
     
+    func showHomeUserViewWithoutUser(from view: ShopingCarViewProtocol, user: Int) {
+        let newView = HomeViewWireFrame.createHomeViewModule(user: user)
+        if let view = view as? UIViewController{
+            view.present(newView, animated: true)
+        }
+    }
     
 }

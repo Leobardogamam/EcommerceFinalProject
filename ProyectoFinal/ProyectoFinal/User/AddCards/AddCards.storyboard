@@ -36,7 +36,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6WI-s4-PbL">
-                                <rect key="frame" x="71" y="635" width="273.5" height="56"/>
+                                <rect key="frame" x="70.5" y="594" width="273.5" height="56"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -82,13 +82,13 @@
                                 </connections>
                             </collectionView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Numero de Tarjeta" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gdw-0n-gOn">
-                                <rect key="frame" x="52" y="161" width="311" height="34"/>
+                                <rect key="frame" x="51.5" y="161" width="311" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="6F7-ra-5oB"/>
                                     <constraint firstAttribute="width" constant="311" id="hZV-tV-hbe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="cc-number"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="cc-number"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre de Tarjeta" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iG1-iG-6cL">
                                 <rect key="frame" x="16" y="304" width="273" height="34"/>
@@ -157,6 +157,7 @@
                             <constraint firstItem="bpM-zD-E9l" firstAttribute="top" secondItem="Rdx-CT-8Yc" secondAttribute="bottom" constant="32" id="53c-xN-b1T"/>
                             <constraint firstItem="UkQ-aT-VxB" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="70w-ER-sfh"/>
                             <constraint firstItem="u7L-CT-kkZ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="7jv-S1-BMB"/>
+                            <constraint firstItem="Gdw-0n-gOn" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="907-MS-nm4"/>
                             <constraint firstItem="UkQ-aT-VxB" firstAttribute="top" secondItem="iG1-iG-6cL" secondAttribute="bottom" constant="8" symbolic="YES" id="Cfo-fQ-8b5"/>
                             <constraint firstItem="u7L-CT-kkZ" firstAttribute="top" secondItem="5zb-19-KbG" secondAttribute="bottom" constant="12" id="CnQ-yd-0hV"/>
                             <constraint firstItem="5zb-19-KbG" firstAttribute="top" secondItem="UkQ-aT-VxB" secondAttribute="bottom" constant="20" id="I3l-YM-Onu"/>
@@ -167,12 +168,12 @@
                             <constraint firstItem="iG1-iG-6cL" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="R3r-bA-BMm"/>
                             <constraint firstItem="u7L-CT-kkZ" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Uou-7K-xCc"/>
                             <constraint firstItem="5zb-19-KbG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="47" id="b2W-E9-S5h"/>
-                            <constraint firstItem="6WI-s4-PbL" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="71" id="c2d-ps-lwp"/>
+                            <constraint firstItem="jRH-y2-wCn" firstAttribute="leading" secondItem="iG1-iG-6cL" secondAttribute="trailing" constant="36" id="bCP-Da-Is0"/>
                             <constraint firstItem="UkQ-aT-VxB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="159" id="d4h-aw-TXX"/>
-                            <constraint firstItem="Gdw-0n-gOn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="52" id="l2T-yg-EtL"/>
+                            <constraint firstItem="6WI-s4-PbL" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="g0d-1d-CRP"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="jRH-y2-wCn" secondAttribute="trailing" constant="20" id="mtV-hL-a54"/>
                             <constraint firstItem="5zb-19-KbG" firstAttribute="top" secondItem="bpM-zD-E9l" secondAttribute="bottom" constant="8" symbolic="YES" id="nP3-pE-OQL"/>
-                            <constraint firstItem="6WI-s4-PbL" firstAttribute="top" secondItem="u7L-CT-kkZ" secondAttribute="bottom" constant="91" id="uHJ-SE-KbQ"/>
+                            <constraint firstItem="6WI-s4-PbL" firstAttribute="top" secondItem="u7L-CT-kkZ" secondAttribute="bottom" constant="50" id="uHJ-SE-KbQ"/>
                             <constraint firstItem="Rdx-CT-8Yc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="uRR-Td-T4j"/>
                             <constraint firstItem="jRH-y2-wCn" firstAttribute="top" secondItem="Gdw-0n-gOn" secondAttribute="bottom" constant="80" id="v4f-XM-VIE"/>
                             <constraint firstItem="bpM-zD-E9l" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="xUS-Ah-FwB"/>

@@ -29,7 +29,7 @@ class EditCardViewView: UIViewController, UICollectionViewDataSource, UICollecti
     var colors = [UIColor]()
     var cardTypeSelected : String?
     var selectedColor : UIColor?
-    var userDefaults = UserDefaults()
+    var userDefault = UserDefaults()
     
 
     // MARK: Lifecycle
@@ -65,12 +65,16 @@ class EditCardViewView: UIViewController, UICollectionViewDataSource, UICollecti
         let action = UIAlertAction(title: "Ok", style: .default)
         alert.addAction(action)
         present(alert, animated: true)
-    }
-    else{
+        }else{
     
-        presenter?.saveCard(cvv: Int(cvvTextField.text!)!, day: Int(dayTextField.text!)!, year: Int(yearTextField.text!)!, idUser: userDefaults.integer(forKey: "IdUsuario") , numSerie: numTextField.text!, name: nameTextField.text!, color: selectedColor!, cardType: cardTypeSelected!)
+        if let savedPerson = userDefault.object(forKey: "UserLogged") as? Data {
+            let decoder = JSONDecoder()
+            if let loadedPerson = try? decoder.decode(Users.self, from: savedPerson) {
+                presenter?.saveCard(cvv: Int(cvvTextField.text!)!, day: Int(dayTextField.text!)!, year: Int(yearTextField.text!)!, idUser: loadedPerson.id, numSerie: numTextField.text!, name: nameTextField.text!, color: selectedColor!, cardType: cardTypeSelected!)
+            }
     }
-    }
+}
+}
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.colors.count
@@ -137,6 +141,7 @@ extension EditCardViewView: EditCardViewViewProtocol {
             self.yearTextField.text = "\(String(describing: (cards.value(forKey: "year") as? Int)!))"
             self.cvvTextField.text = "\(String(describing: (cards.value(forKey: "cvv") as? Int)!))"
             self.cardTypeSelected = cards.value(forKey: "cardType") as? String
+            self.selectedColor = cards.value(forKey: "color") as? UIColor
             
             self.collectionPickerView.reloadAllComponents()
             

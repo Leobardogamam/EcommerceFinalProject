@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class AddCardsPresenter  {
     
@@ -19,9 +20,6 @@ class AddCardsPresenter  {
 }
 
 extension AddCardsPresenter: AddCardsPresenterProtocol {
-   
-    
-    
     
     // TODO: implement presenter methods
     func viewDidLoad() {
@@ -34,9 +32,16 @@ extension AddCardsPresenter: AddCardsPresenterProtocol {
     func showCardView() {
         wireFrame?.presentNewViewCards(from: view!)
     }
+    
+    func getCards() {
+        interactor?.getCards()
+    }
+    
+
 }
 
 extension AddCardsPresenter: AddCardsInteractorOutputProtocol {
+    
     
     // TODO: implement interactor output methods
     
@@ -44,5 +49,8 @@ extension AddCardsPresenter: AddCardsInteractorOutputProtocol {
         view?.presenterPushCardAdded(added: added)
     }
     
+    func interactorPushCards(cards: [NSManagedObject]) {
+        view?.presenterPushCards(cards: cards)
+    }
     
 }

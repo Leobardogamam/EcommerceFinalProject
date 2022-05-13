@@ -22,10 +22,13 @@ protocol ShopingCarViewProtocol: AnyObject {
 protocol ShopingCarWireFrameProtocol: AnyObject {
     // PRESENTER -> WIREFRAME
     static func createShopingCarModule() -> UIViewController
+    static func createShopingCarModule(noUser : Int) -> UIViewController
+    
     
     func showUserAccount(from view: ShopingCarViewProtocol)
     func showViewHome(from view: ShopingCarViewProtocol)
     func showBuyItems(from view: ShopingCarViewProtocol, precio:Int)
+    func showHomeUserViewWithoutUser(from view : ShopingCarViewProtocol, user : Int)
 }
 
 protocol ShopingCarPresenterProtocol: AnyObject {
@@ -34,6 +37,7 @@ protocol ShopingCarPresenterProtocol: AnyObject {
     var view: ShopingCarViewProtocol? { get set }
     var interactor: ShopingCarInteractorInputProtocol? { get set }
     var wireFrame: ShopingCarWireFrameProtocol? { get set }
+    var noUser : Int? {get set }
     
     func viewDidLoad()
     func getAllCarCoredataSave()
@@ -41,6 +45,8 @@ protocol ShopingCarPresenterProtocol: AnyObject {
     func showUserAccount()
     func showViewHome()
     func showBuyItems(precio:Int)
+    func showHomeUserViewWithoutUser(user : Int)
+    func deleteCarWithoutUser()
 }
 
 protocol ShopingCarInteractorOutputProtocol: AnyObject {
@@ -57,6 +63,7 @@ protocol ShopingCarInteractorInputProtocol: AnyObject {
     
     func getAllCarCoredataSave()
     func eliminate(id:Int,price:Int)
+    func deleteCarWithoutUser()
 }
 
 protocol ShopingCarDataManagerInputProtocol: AnyObject {
@@ -83,6 +90,7 @@ protocol ShopingCarLocalDataManagerInputProtocol: AnyObject {
     func getAllCarCoredataSave()
     func getIdDeleteProduct(id:Int, price:Int)
     func eliminate(data:NSManagedObject, price:Int)
+    func localDeleteCartWithoutUser()
 }
 
 

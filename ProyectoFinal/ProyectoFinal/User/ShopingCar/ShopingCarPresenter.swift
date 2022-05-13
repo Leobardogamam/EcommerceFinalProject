@@ -10,9 +10,11 @@ import Foundation
 import UIKit
 
 class ShopingCarPresenter : ShopingCarPresenterProtocol {
+   
+    
     // TODO: implement presenter methods
     var precio: Int?
-    
+    var noUser: Int?
     
     // MARK: Properties
     weak var view: ShopingCarViewProtocol?
@@ -44,6 +46,17 @@ class ShopingCarPresenter : ShopingCarPresenterProtocol {
     func showBuyItems(precio: Int) {
         wireFrame?.showBuyItems(from: view!,precio: precio)
     }
+    
+    func showHomeUserViewWithoutUser(user: Int) {
+        wireFrame?.showHomeUserViewWithoutUser(from: view!, user: user)
+    }
+    
+    func deleteCarWithoutUser() {
+        interactor?.deleteCarWithoutUser()
+    }
+    
+   
+   
     
 }
 

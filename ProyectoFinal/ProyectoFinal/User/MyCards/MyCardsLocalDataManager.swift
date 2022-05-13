@@ -23,9 +23,15 @@ class MyCardsLocalDataManager:MyCardsLocalDataManagerInputProtocol {
         
         
         let request = CreditCard.fetchRequest() as NSFetchRequest<CreditCard>
+        if let savedPerson = userDefault.object(forKey: "UserLogged") as? Data {
+            let decoder = JSONDecoder()
+            if let loadedPerson = try? decoder.decode(Users.self, from: savedPerson) {
+                let pred =  NSPredicate(format: "idUser = %@", "\(loadedPerson.id)")
+                request.predicate = pred
+            }
+        }
         
-        let pred =  NSPredicate(format: "idUser = %@", "\(userDefault.integer(forKey: "IdUsuario"))")
-        request.predicate = pred
+       
         do {
             self.cards = try context.fetch(request)
             

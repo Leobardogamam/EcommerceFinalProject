@@ -14,6 +14,7 @@ protocol DeleteEditCardsViewProtocol: AnyObject {
     // PRESENTER -> VIEW
     var presenter: DeleteEditCardsPresenterProtocol? { get set }
     func presenterPushCard(card : [NSManagedObject])
+  
 }
 
 protocol DeleteEditCardsWireFrameProtocol: AnyObject {
@@ -31,12 +32,13 @@ protocol DeleteEditCardsPresenterProtocol: AnyObject {
     
     func viewDidLoad()
     func showEditCardView(numSerie : String)
-    func deleteCard()
+    func deleteCard(numSerie : String)
 }
 
 protocol DeleteEditCardsInteractorOutputProtocol: AnyObject {
 // INTERACTOR -> PRESENTER
     func interactorPushCards(card : [NSManagedObject])
+    
 }
 
 protocol DeleteEditCardsInteractorInputProtocol: AnyObject {
@@ -46,6 +48,7 @@ protocol DeleteEditCardsInteractorInputProtocol: AnyObject {
     var remoteDatamanager: DeleteEditCardsRemoteDataManagerInputProtocol? { get set }
     
     func getCard(numSerie : String)
+    func deleteCard(numSerie : String)
 }
 
 protocol DeleteEditCardsDataManagerInputProtocol: AnyObject {
@@ -65,10 +68,12 @@ protocol DeleteEditCardsLocalDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> LOCALDATAMANAGER
     var localRequestHandler: DeleteEditCardsLocalDataManagerOutputProtocol? {get set}
     func localGetCard(numSerie : String)
+    func localDeleteCard(numSerie : String)
    
 }
 
 protocol DeleteEditCardsLocalDataManagerOutputProtocol: AnyObject {
     // LOCALDATAMANAGER -> INTERACTOR
     func localDataManagerCallBackCards(card : [NSManagedObject])
+    
 }

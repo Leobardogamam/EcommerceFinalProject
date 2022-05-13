@@ -8,11 +8,13 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 protocol AddCardsViewProtocol: AnyObject {
     // PRESENTER -> VIEW
     var presenter: AddCardsPresenterProtocol? { get set }
     func presenterPushCardAdded(added : Bool)
+    func presenterPushCards(cards : [NSManagedObject])
 }
 
 protocol AddCardsWireFrameProtocol: AnyObject {
@@ -30,11 +32,13 @@ protocol AddCardsPresenterProtocol: AnyObject {
     func viewDidLoad()
     func saveCard(cvv : Int, day : Int, year : Int, idUser : Int, numSerie : String, name : String, color : UIColor, cardType : String )
     func showCardView()
+    func getCards()
 }
 
 protocol AddCardsInteractorOutputProtocol: AnyObject {
 // INTERACTOR -> PRESENTER
     func interactorPushCardAdded(added : Bool)
+    func interactorPushCards(cards : [NSManagedObject])
 }
 
 protocol AddCardsInteractorInputProtocol: AnyObject {
@@ -44,6 +48,8 @@ protocol AddCardsInteractorInputProtocol: AnyObject {
     var remoteDatamanager: AddCardsRemoteDataManagerInputProtocol? { get set }
     
     func saveCard(cvv : Int, day : Int, year : Int, idUser : Int, numSerie : String, name : String, color : UIColor, cardType : String )
+    func getCards()
+    
 }
 
 protocol AddCardsDataManagerInputProtocol: AnyObject {
@@ -65,6 +71,7 @@ protocol AddCardsLocalDataManagerInputProtocol: AnyObject {
     var localRequestHandler: AddCardsLocalDataManagerOutputProtocol? {get set}
     
     func localSaveCard(cvv : Int, day : Int, year : Int, idUser : Int, numSerie : String, name : String, color : UIColor, cardType : String )
+    func getCards()
     
 }
 
@@ -72,5 +79,6 @@ protocol AddCardsLocalDataManagerInputProtocol: AnyObject {
 protocol AddCardsLocalDataManagerOutputProtocol: AnyObject {
     // LOCALDATAMANAGER -> INTERACTOR
     func localDataManagerCallBackCardAdded(added : Bool)
+    func localDataManagerCallBackCards(cards : [NSManagedObject])
     
 }

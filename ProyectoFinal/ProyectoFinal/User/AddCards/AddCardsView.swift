@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import MobileCoreServices
 import UniformTypeIdentifiers
+import CoreData
 
 class AddCardsView: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDragDelegate, UIDropInteractionDelegate, UIDragInteractionDelegate  {
   
@@ -23,7 +24,8 @@ class AddCardsView: UIViewController,UICollectionViewDataSource, UICollectionVie
     var cardsType = [String]()
     var cardTypeSelected : String = "Visa"
     var selectedColor : UIColor = .gray
-    var userDefaults = UserDefaults()
+    var userDefault = UserDefaults()
+    var cards : [NSManagedObject]?
     @IBOutlet weak var cardImageView: UIImageView!
     @IBOutlet weak var numCardTextField: UITextField!
     @IBOutlet weak var colorCollectionView: UICollectionView!
@@ -62,8 +64,7 @@ class AddCardsView: UIViewController,UICollectionViewDataSource, UICollectionVie
             present(alert, animated: true)
         }
         else{
-        
-            presenter?.saveCard(cvv: Int(cvvTextField.text!)!, day: Int(dayTextField.text!)!, year: Int(yearTextField.text!)!, idUser: userDefaults.integer(forKey: "IdUsuario") , numSerie: numCardTextField.text!, name: nameCardTextField.text!, color: selectedColor, cardType: cardTypeSelected)
+            presenter?.getCards()
         }
     }
     
@@ -123,7 +124,7 @@ class AddCardsView: UIViewController,UICollectionViewDataSource, UICollectionVie
 }
 
 extension AddCardsView: AddCardsViewProtocol {
-   
+  
     
     // TODO: implement view output methods
     
@@ -149,6 +150,44 @@ extension AddCardsView: AddCardsViewProtocol {
             }
      }
   }
+    
+    func presenterPushCards(cards: [NSManagedObject]) {
+        self.cards = cards
+        
+        if cards.isEmpty{
+            if let savedPerson = userDefault.object(forKey: "UserLogged") as? Data {
+                let decoder = JSONDecoder()
+                if let loadedPerson = try? decoder.decode(Users.self, from: savedPerson) {
+                    
+                    
+                    
+                    presenter?.saveCard(cvv: Int(cvvTextField.text!)!, day: Int(dayTextField.text!)!, year: Int(yearTextField.text!)!, idUser: loadedPerson.id, numSerie: numCardTextField.text!, name: nameCardTextField.text!, color: selectedColor, cardType: cardTypeSelected)
+                }
+        }
+        }else{
+        for card in cards{
+            if card.value(forKey: "numserie") as? String == numCardTextField.text!{
+                let alert = UIAlertController(title: "Error", message: "Esta tarjeta ya se ha añadido", preferredStyle: .alert)
+                
+                let action = UIAlertAction(title: "Ok", style: .default)
+                alert.addAction(action)
+                present(alert, animated: true)
+            }else{
+                if let savedPerson = userDefault.object(forKey: "UserLogged") as? Data {
+                    let decoder = JSONDecoder()
+                    if let loadedPerson = try? decoder.decode(Users.self, from: savedPerson) {
+                        
+                        
+                        
+                        presenter?.saveCard(cvv: Int(cvvTextField.text!)!, day: Int(dayTextField.text!)!, year: Int(yearTextField.text!)!, idUser: loadedPerson.id, numSerie: numCardTextField.text!, name: nameCardTextField.text!, color: selectedColor, cardType: cardTypeSelected)
+                    }
+                }
+            }
+        }
+        }
+    }
+    
+   
 }
 
 extension AddCardsView : UIPickerViewDelegate, UIPickerViewDataSource{

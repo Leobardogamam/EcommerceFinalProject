@@ -87,7 +87,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fcC-9z-XKQ">
-                                <rect key="frame" x="61" y="398" width="293" height="34"/>
+                                <rect key="frame" x="60.5" y="398" width="293" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="8WD-L2-qmP"/>
                                     <constraint firstAttribute="width" constant="293" id="O9b-Jw-Bx0"/>
@@ -131,7 +131,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gpz-F7-oj9">
-                                <rect key="frame" x="61" y="474" width="293" height="34"/>
+                                <rect key="frame" x="60.5" y="474" width="293" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="293" id="QiX-qA-Ji1"/>
                                     <constraint firstAttribute="height" constant="34" id="X4K-cH-ELx"/>
@@ -140,7 +140,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oxp-qv-mHz">
-                                <rect key="frame" x="60" y="239" width="293" height="34"/>
+                                <rect key="frame" x="60.5" y="239" width="293" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="lSE-G6-1cS"/>
                                     <constraint firstAttribute="width" constant="293" id="t5K-3q-261"/>
@@ -154,32 +154,32 @@
                         <constraints>
                             <constraint firstItem="0hn-6G-uGh" firstAttribute="centerX" secondItem="uc0-Lk-2ec" secondAttribute="centerX" id="0FN-Xj-SCQ"/>
                             <constraint firstItem="GTw-L4-Aud" firstAttribute="top" secondItem="Wua-Wx-yqO" secondAttribute="top" id="2f8-uA-i57"/>
+                            <constraint firstItem="fcC-9z-XKQ" firstAttribute="centerX" secondItem="uc0-Lk-2ec" secondAttribute="centerX" id="3dh-rX-HSF"/>
                             <constraint firstItem="dQU-Ip-IOo" firstAttribute="top" secondItem="GTw-L4-Aud" secondAttribute="bottom" constant="8" id="4Ou-Zp-HMK"/>
+                            <constraint firstItem="Gpz-F7-oj9" firstAttribute="centerX" secondItem="uc0-Lk-2ec" secondAttribute="centerX" id="4VH-Mu-lze"/>
                             <constraint firstItem="0vL-s5-nzm" firstAttribute="leading" secondItem="Wua-Wx-yqO" secondAttribute="leading" constant="60" id="5uP-j1-rqE"/>
                             <constraint firstItem="Wua-Wx-yqO" firstAttribute="trailing" secondItem="biu-Ap-txw" secondAttribute="trailing" constant="20" id="6uY-Uw-cfQ"/>
                             <constraint firstItem="q9s-Rq-Rd3" firstAttribute="leading" secondItem="Wua-Wx-yqO" secondAttribute="leading" constant="60" id="8Ww-ml-fx3"/>
                             <constraint firstItem="EZq-ON-Byj" firstAttribute="leading" secondItem="Wua-Wx-yqO" secondAttribute="leading" constant="60" id="9dY-ih-Xwv"/>
                             <constraint firstItem="Wua-Wx-yqO" firstAttribute="trailing" secondItem="GTw-L4-Aud" secondAttribute="trailing" constant="20" id="GW8-em-QbZ"/>
-                            <constraint firstItem="nsZ-l5-tFd" firstAttribute="top" secondItem="GTw-L4-Aud" secondAttribute="bottom" constant="157" id="GxC-fB-bKq"/>
+                            <constraint firstItem="3v0-zx-iEz" firstAttribute="centerX" secondItem="uc0-Lk-2ec" secondAttribute="centerX" id="GdL-h1-3EX"/>
                             <constraint firstItem="0vL-s5-nzm" firstAttribute="top" secondItem="Oxp-qv-mHz" secondAttribute="bottom" constant="17" id="HBJ-LT-RHj"/>
+                            <constraint firstItem="3v0-zx-iEz" firstAttribute="top" secondItem="Gpz-F7-oj9" secondAttribute="bottom" constant="41" id="Iiz-rr-ObU"/>
                             <constraint firstItem="nsZ-l5-tFd" firstAttribute="leading" secondItem="Wua-Wx-yqO" secondAttribute="leading" constant="60" id="KOZ-jE-x53"/>
                             <constraint firstItem="GTw-L4-Aud" firstAttribute="leading" secondItem="Wua-Wx-yqO" secondAttribute="leading" constant="20" id="MYI-v1-Bcp"/>
                             <constraint firstItem="Wua-Wx-yqO" firstAttribute="trailing" secondItem="dQU-Ip-IOo" secondAttribute="trailing" constant="8" id="PJ2-Xj-pJl"/>
+                            <constraint firstItem="Pza-ao-CUr" firstAttribute="centerX" secondItem="uc0-Lk-2ec" secondAttribute="centerX" id="Pan-1h-Br8"/>
                             <constraint firstItem="0hn-6G-uGh" firstAttribute="top" secondItem="GTw-L4-Aud" secondAttribute="bottom" constant="60" id="Rjb-kg-hbC"/>
                             <constraint firstItem="q9s-Rq-Rd3" firstAttribute="top" secondItem="Pza-ao-CUr" secondAttribute="bottom" constant="10" id="WRj-cM-6wG"/>
                             <constraint firstItem="biu-Ap-txw" firstAttribute="bottom" secondItem="Wua-Wx-yqO" secondAttribute="bottom" id="c2i-Rc-EYp"/>
-                            <constraint firstItem="Gpz-F7-oj9" firstAttribute="leading" secondItem="Wua-Wx-yqO" secondAttribute="leading" constant="61" id="d45-UL-eKc"/>
                             <constraint firstItem="biu-Ap-txw" firstAttribute="leading" secondItem="Wua-Wx-yqO" secondAttribute="leading" constant="20" id="ezG-Pv-3FX"/>
                             <constraint firstItem="EZq-ON-Byj" firstAttribute="top" secondItem="fcC-9z-XKQ" secondAttribute="bottom" constant="10" id="fhj-oT-SCM"/>
-                            <constraint firstItem="Pza-ao-CUr" firstAttribute="centerX" secondItem="uc0-Lk-2ec" secondAttribute="centerX" id="ggc-8B-mRV"/>
                             <constraint firstItem="Oxp-qv-mHz" firstAttribute="top" secondItem="nsZ-l5-tFd" secondAttribute="bottom" constant="8" symbolic="YES" id="j4y-e9-iZJ"/>
-                            <constraint firstItem="3v0-zx-iEz" firstAttribute="centerX" secondItem="uc0-Lk-2ec" secondAttribute="centerX" id="l13-FF-qyL"/>
-                            <constraint firstItem="fcC-9z-XKQ" firstAttribute="leading" secondItem="Wua-Wx-yqO" secondAttribute="leading" constant="61" id="lxC-c0-HNV"/>
                             <constraint firstItem="Gpz-F7-oj9" firstAttribute="top" secondItem="EZq-ON-Byj" secondAttribute="bottom" constant="8" symbolic="YES" id="mS7-4g-T4A"/>
-                            <constraint firstItem="Oxp-qv-mHz" firstAttribute="leading" secondItem="Wua-Wx-yqO" secondAttribute="leading" constant="60" id="rLc-Mw-ObZ"/>
                             <constraint firstItem="Pza-ao-CUr" firstAttribute="top" secondItem="0vL-s5-nzm" secondAttribute="bottom" constant="8" symbolic="YES" id="vI4-bN-wxv"/>
+                            <constraint firstItem="Oxp-qv-mHz" firstAttribute="centerX" secondItem="uc0-Lk-2ec" secondAttribute="centerX" id="wN6-Ol-WBk"/>
                             <constraint firstItem="fcC-9z-XKQ" firstAttribute="top" secondItem="q9s-Rq-Rd3" secondAttribute="bottom" constant="8" symbolic="YES" id="xfJ-BA-uLN"/>
-                            <constraint firstItem="3v0-zx-iEz" firstAttribute="centerY" secondItem="uc0-Lk-2ec" secondAttribute="centerY" constant="120" id="ycr-B8-6gc"/>
+                            <constraint firstItem="nsZ-l5-tFd" firstAttribute="top" secondItem="0hn-6G-uGh" secondAttribute="bottom" constant="7" id="zmq-Dg-zDg"/>
                         </constraints>
                     </view>
                     <connections>
