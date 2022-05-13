@@ -52,7 +52,7 @@ class LoginWireFrame: LoginWireFrameProtocol {
     }
     
     func showHomeAdminView(from view: LoginViewProtocol, user: Users) {
-        let newHomeUserView = ProductWireFrame.createProductModule()
+        let newHomeUserView = ProductWireFrame.createProductModule(user: user)
         if let newView = view as? UIViewController{
             newView.present(newHomeUserView, animated: true)
         }

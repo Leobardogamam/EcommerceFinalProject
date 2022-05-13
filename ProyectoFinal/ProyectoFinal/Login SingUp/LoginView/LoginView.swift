@@ -68,7 +68,17 @@ class LoginView: UIViewController {
        
                 alert.addAction(action)
                 self.present(alert, animated: true)
+                break
                 
+            }
+            else{
+                let alert = UIAlertController(title: "Error", message: "Este usuario no esta registrado", preferredStyle: .alert)
+                
+                let action = UIAlertAction(title: "Ok", style: .default)
+                
+       
+                alert.addAction(action)
+                self.present(alert, animated: true)
             }
         }
     }

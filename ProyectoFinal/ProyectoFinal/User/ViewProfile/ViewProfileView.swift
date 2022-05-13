@@ -36,8 +36,8 @@ class ViewProfileView: UIViewController {
         if let savedPerson = userDefault.object(forKey: "UserLogged") as? Data {
             let decoder = JSONDecoder()
             if let loadedPerson = try? decoder.decode(Users.self, from: savedPerson) {
-                lblRole.text = loadedPerson.role
-                lblNombre.text = loadedPerson.name
+                lblRole.text = loadedPerson.role.capitalized
+                lblNombre.text = loadedPerson.name.capitalized
                 lblCorreo.text = loadedPerson.email
                 imgUser.image = UIImage(named: "loading")
                 DispatchQueue.global(qos: .default).async {
@@ -53,6 +53,11 @@ class ViewProfileView: UIViewController {
                 }
             }
         }
+    
+    @IBAction func backPressed(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
 }
 
 extension ViewProfileView: ViewProfileViewProtocol {

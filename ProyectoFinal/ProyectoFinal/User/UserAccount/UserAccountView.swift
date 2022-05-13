@@ -40,7 +40,7 @@ class UserAccountView: UIViewController, MyViewDelegate {
             
             let alert = UIAlertController(title: "Alerta", message: "Estas seguro que deseas cerrar sesion?", preferredStyle: .alert)
             let action = UIAlertAction(title: "Si", style: .default){UIAlertAction in
-                self.present(alert, animated: true)
+    
                 let user = Users(id: 0, email: "", password: "", name: "", role: "", avatar: "")
                 let encoder = JSONEncoder()
                 if let encoded = try? encoder.encode(user) {

@@ -36,6 +36,7 @@ class SignupView: UIViewController {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tap:)))
             avatarImageView.isUserInteractionEnabled = true
             avatarImageView.addGestureRecognizer(tapGestureRecognizer)
+           avatarImageView.image = UIImage(named: "addImage")
         
     }
     
@@ -66,12 +67,51 @@ class SignupView: UIViewController {
             self.present(alert, animated: true)
         }
         else{
-            presenter?.email = emailTextField.text
-            presenter?.name = nameTextField.text
-            presenter?.password = passTextField.text
-            presenter?.avatarImage = image
-            presenter?.viewDidLoad()
+            
+            if emailTextField.text!.isEmpty || nameTextField.text!.isEmpty || passTextField.text!.isEmpty{
+                showAlert()
+            }else{
+            
+            if avatarImageView.image == UIImage(named: "addImage"){
+                let alert = UIAlertController(title: "Aviso", message: "No ha añadido imagen, esta seguro que desea continuar?", preferredStyle: .alert)
+
+
+                let action = UIAlertAction(title: "Si", style: .default){ [self] UIAlertAction in
+                    
+                    if emailTextField.text!.isEmpty || nameTextField.text!.isEmpty || passTextField.text!.isEmpty{
+                        showAlert()
+                    }
+                    else{
+                        presenter?.email = emailTextField.text
+                        presenter?.name = nameTextField.text
+                        presenter?.password = passTextField.text
+                        presenter?.avatarImage = image
+                        presenter?.viewDidLoad()
+                    
+                    }
+                }
+                   
+                
+                let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+
+                alert.addAction(cancel)
+                alert.addAction(action)
+                self.present(alert, animated: true)
+            }
+
+            
         }
+        }
+    }
+    
+    func showAlert(){
+        let alert = UIAlertController(title: "Error", message: "Hay campos vacios", preferredStyle: .alert)
+
+
+        let action = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(action)
+        self.present(alert, animated: true)
+        
     }
     
    

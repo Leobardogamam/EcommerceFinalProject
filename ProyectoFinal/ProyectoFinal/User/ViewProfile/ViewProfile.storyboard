@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -150,6 +151,20 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sM5-QS-anL">
+                                <rect key="frame" x="356" y="8" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="cBz-bj-IfH"/>
+                                    <constraint firstAttribute="height" constant="50" id="qIc-jq-d0G"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="tintColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="multiply.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="backPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="dp1-CU-ymJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -157,10 +172,12 @@
                             <constraint firstItem="k3f-HI-FmO" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="-48" id="14F-Hb-Jrm"/>
                             <constraint firstItem="NG5-GM-EzI" firstAttribute="top" secondItem="V6Q-ZE-Otz" secondAttribute="bottom" constant="16" id="3qf-1L-LsQ"/>
                             <constraint firstItem="mCY-5y-Kif" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="50J-ip-HGp"/>
+                            <constraint firstItem="sM5-QS-anL" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="8" id="HbO-wA-I3C"/>
                             <constraint firstItem="k3f-HI-FmO" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="-24" id="Xhv-g4-9Lf"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="mCY-5y-Kif" secondAttribute="trailing" constant="16" id="dEn-PC-bkb"/>
                             <constraint firstItem="V6Q-ZE-Otz" firstAttribute="top" secondItem="k3f-HI-FmO" secondAttribute="bottom" constant="24" id="fcT-Oa-Zqe"/>
                             <constraint firstAttribute="trailing" secondItem="NG5-GM-EzI" secondAttribute="trailing" id="h2H-ti-zhI"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="sM5-QS-anL" secondAttribute="trailing" constant="8" id="jXo-Ev-aQ6"/>
                             <constraint firstItem="V6Q-ZE-Otz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="sJc-SC-ocn"/>
                             <constraint firstItem="mCY-5y-Kif" firstAttribute="top" secondItem="NG5-GM-EzI" secondAttribute="bottom" constant="80" id="vXx-Rb-nU3"/>
                         </constraints>
@@ -185,6 +202,10 @@
     <resources>
         <image name="Fondo" width="156" height="322"/>
         <image name="mail" catalog="system" width="128" height="93"/>
+        <image name="multiply.circle" catalog="system" width="128" height="121"/>
         <image name="person" catalog="system" width="128" height="117"/>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
