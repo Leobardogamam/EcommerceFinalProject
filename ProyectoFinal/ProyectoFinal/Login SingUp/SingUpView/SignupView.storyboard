@@ -150,6 +150,13 @@
                                     <action selector="onPressDissmis:" destination="a3M-mW-Lfz" eventType="touchUpInside" id="0Xv-OC-i55"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="28S-bW-P8o">
+                                <rect key="frame" x="155" y="54" width="104" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="104" id="ZZs-Rg-UFn"/>
+                                    <constraint firstAttribute="height" constant="66" id="byM-Ji-S5o"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mQw-dn-gsa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -159,7 +166,9 @@
                             <constraint firstItem="mQw-dn-gsa" firstAttribute="trailing" secondItem="dRo-wl-y1Z" secondAttribute="trailing" constant="8" id="Csh-Ah-kJq"/>
                             <constraint firstItem="Q2m-pn-MEa" firstAttribute="centerX" secondItem="Lw7-5y-sb0" secondAttribute="centerX" id="DaC-Pq-umh"/>
                             <constraint firstItem="dRo-wl-y1Z" firstAttribute="top" secondItem="DbV-DC-wUF" secondAttribute="bottom" constant="8" id="UNO-qs-f91"/>
+                            <constraint firstItem="28S-bW-P8o" firstAttribute="top" secondItem="DbV-DC-wUF" secondAttribute="bottom" constant="8" symbolic="YES" id="eNK-a2-53w"/>
                             <constraint firstItem="DbV-DC-wUF" firstAttribute="top" secondItem="mQw-dn-gsa" secondAttribute="top" id="naB-7B-cfH"/>
+                            <constraint firstItem="28S-bW-P8o" firstAttribute="centerX" secondItem="Lw7-5y-sb0" secondAttribute="centerX" id="nbo-RN-8cb"/>
                             <constraint firstItem="uT2-XB-ixE" firstAttribute="centerY" secondItem="Lw7-5y-sb0" secondAttribute="centerY" id="oUy-05-LyH"/>
                             <constraint firstItem="uT2-XB-ixE" firstAttribute="centerX" secondItem="Lw7-5y-sb0" secondAttribute="centerX" id="oec-ts-wpQ"/>
                             <constraint firstItem="Q2m-pn-MEa" firstAttribute="centerY" secondItem="Lw7-5y-sb0" secondAttribute="centerY" constant="-200" id="wWH-ks-FzW"/>
@@ -179,6 +188,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BG_Logo" width="744" height="442"/>
         <image name="defaultAvatarImage" width="1000" height="992"/>
         <image name="multiply.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">

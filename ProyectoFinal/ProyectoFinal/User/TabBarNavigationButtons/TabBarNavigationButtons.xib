@@ -41,7 +41,7 @@
                     </constraints>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" image="house" catalog="system"/>
+                    <buttonConfiguration key="configuration" style="plain" image="bg_logo_png"/>
                     <connections>
                         <action selector="actionsNavigation:" destination="-1" eventType="touchUpInside" id="lMy-dS-6km"/>
                     </connections>
@@ -77,8 +77,8 @@
         </view>
     </objects>
     <resources>
+        <image name="bg_logo_png" width="60" height="60"/>
         <image name="cart" catalog="system" width="128" height="102"/>
-        <image name="house" catalog="system" width="128" height="106"/>
         <image name="person" catalog="system" width="128" height="117"/>
     </resources>
 </document>

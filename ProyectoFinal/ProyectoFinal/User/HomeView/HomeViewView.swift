@@ -38,8 +38,8 @@ class HomeViewView: UIViewController , MyViewDelegate, passTableToHome{
         noUser = presenter?.noUser
         TabBar.btnCart.backgroundColor = .clear
         TabBar.btnUserAccount.backgroundColor = .clear
-        TabBar.btnHome.tintColor = .systemPink
-        TabBar.btnHome.setImage(UIImage(systemName: "house.fill"), for: .normal)
+//        TabBar.btnHome.tintColor = .systemPink
+        TabBar.btnHome.setImage(UIImage(named: "bg_logo_png_pink"), for: .normal)
         TabBar.delegate = self
         viewCircle.layer.cornerRadius = viewCircle.frame.height / 2
     }
