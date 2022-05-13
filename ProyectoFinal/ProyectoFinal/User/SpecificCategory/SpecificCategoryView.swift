@@ -62,9 +62,7 @@ extension SpecificCategoryView: UICollectionViewDelegate, UICollectionViewDataSo
             var url: URL?
             do {
                 if self.dataProducts[indexPath.row].images?.count == 0{
-                    
                 }else{
-                    
                     url =  URL(string: self.dataProducts[indexPath.row].images?[0] ?? "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930")
                 }
             } 
