@@ -10,12 +10,13 @@ import Foundation
 import UIKit
 
 class HomeViewWireFrame: HomeViewWireFrameProtocol {
+    
     static func createHomeViewModule(user: Users) -> UIViewController {
         let navController = mainStoryboard.instantiateViewController(withIdentifier: "homeView")
         if let view = navController as? HomeViewView {
             let userDefault = UserDefaults()
             let presenter: HomeViewPresenterProtocol & HomeViewInteractorOutputProtocol = HomeViewPresenter()
-            let interactor: HomeViewInteractorInputProtocol & HomeViewRemoteDataManagerOutputProtocol = HomeViewInteractor()
+            let interactor: HomeViewInteractorInputProtocol & HomeViewRemoteDataManagerOutputProtocol & HomeViewLocalDataManagerOutputProtocol = HomeViewInteractor()
             let localDataManager: HomeViewLocalDataManagerInputProtocol = HomeViewLocalDataManager()
             let remoteDataManager: HomeViewRemoteDataManagerInputProtocol = HomeViewRemoteDataManager()
             let wireFrame: HomeViewWireFrameProtocol = HomeViewWireFrame()
@@ -44,6 +45,7 @@ class HomeViewWireFrame: HomeViewWireFrameProtocol {
             interactor.presenter = presenter
             interactor.localDatamanager = localDataManager
             interactor.remoteDatamanager = remoteDataManager
+            localDataManager.localRequestHandler = interactor
             remoteDataManager.remoteRequestHandler = interactor
             return navController
         }
@@ -64,6 +66,30 @@ class HomeViewWireFrame: HomeViewWireFrameProtocol {
             presenter.view = view
             presenter.wireFrame = wireFrame
             presenter.interactor = interactor
+            interactor.presenter = presenter
+            interactor.localDatamanager = localDataManager
+            interactor.remoteDatamanager = remoteDataManager
+            remoteDataManager.remoteRequestHandler = interactor
+            
+            return navController
+        }
+        return UIViewController()
+    }
+    
+    class func createHomeViewModule(user : Int) -> UIViewController {
+        let navController = mainStoryboard.instantiateViewController(withIdentifier: "homeView")
+        if let view = navController as? HomeViewView {
+            let presenter: HomeViewPresenterProtocol & HomeViewInteractorOutputProtocol = HomeViewPresenter()
+            let interactor: HomeViewInteractorInputProtocol & HomeViewRemoteDataManagerOutputProtocol = HomeViewInteractor()
+            let localDataManager: HomeViewLocalDataManagerInputProtocol = HomeViewLocalDataManager()
+            let remoteDataManager: HomeViewRemoteDataManagerInputProtocol = HomeViewRemoteDataManager()
+            let wireFrame: HomeViewWireFrameProtocol = HomeViewWireFrame()
+            
+            view.presenter = presenter
+            presenter.view = view
+            presenter.wireFrame = wireFrame
+            presenter.interactor = interactor
+            presenter.noUser = user
             interactor.presenter = presenter
             interactor.localDatamanager = localDataManager
             interactor.remoteDatamanager = remoteDataManager
@@ -101,6 +127,14 @@ class HomeViewWireFrame: HomeViewWireFrameProtocol {
     
     func showUserAccount(from view: HomeViewViewProtocol) {
         let newView = UserAccountWireFrame.createUserAccountModule()
+        if let view = view as? UIViewController{
+            view.present(newView, animated: true)
+        }
+    }
+    
+    func showShopingCartWithoutUser(from view: HomeViewViewProtocol, noUser: Int) {
+        let newView = ShopingCarWireFrame.createShopingCarModule(noUser: noUser)
+        
         if let view = view as? UIViewController{
             view.present(newView, animated: true)
         }

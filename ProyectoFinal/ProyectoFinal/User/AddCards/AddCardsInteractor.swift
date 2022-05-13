@@ -8,11 +8,10 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class AddCardsInteractor: AddCardsInteractorInputProtocol {
-   
     
-
     // MARK: Properties
     weak var presenter: AddCardsInteractorOutputProtocol?
     var localDatamanager: AddCardsLocalDataManagerInputProtocol?
@@ -21,6 +20,10 @@ class AddCardsInteractor: AddCardsInteractorInputProtocol {
     func saveCard(cvv: Int, day: Int, year: Int, idUser: Int, numSerie: String, name: String, color: UIColor, cardType: String) {
         localDatamanager?.localSaveCard(cvv: cvv, day: day, year: year, idUser: idUser, numSerie: numSerie, name: name, color: color, cardType: cardType)
     }
+    func getCards() {
+        localDatamanager?.getCards()
+    }
+
 }
 
 extension AddCardsInteractor : AddCardsRemoteDataManagerOutputProtocol {
@@ -28,8 +31,13 @@ extension AddCardsInteractor : AddCardsRemoteDataManagerOutputProtocol {
 }
 
 extension AddCardsInteractor : AddCardsLocalDataManagerOutputProtocol{
+   
     func localDataManagerCallBackCardAdded(added: Bool) {
         presenter?.interactorPushCardAdded(added: added)
+    }
+    
+    func localDataManagerCallBackCards(cards: [NSManagedObject]) {
+        presenter?.interactorPushCards(cards: cards)
     }
     
     

@@ -27,8 +27,8 @@ class DeleteEditCardsPresenter: DeleteEditCardsPresenterProtocol {
         wireFrame?.presentNewEditCards(from: view!, data: numSerie)
     }
     
-    func deleteCard() {
-        
+    func deleteCard(numSerie : String) {
+        interactor?.deleteCard(numSerie: numSerie)
     }
     
     
@@ -45,5 +45,4 @@ extension DeleteEditCardsPresenter: DeleteEditCardsInteractorOutputProtocol {
     func interactorPushCards(card: [NSManagedObject]) {
         view?.presenterPushCard(card: card)
     }
-    
 }

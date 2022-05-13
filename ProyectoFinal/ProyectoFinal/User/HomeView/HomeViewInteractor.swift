@@ -9,6 +9,7 @@
 import Foundation
 
 class HomeViewInteractor: HomeViewInteractorInputProtocol {
+   
     
 
     // MARK: Properties
@@ -20,6 +21,11 @@ class HomeViewInteractor: HomeViewInteractorInputProtocol {
         remoteDatamanager?.callCategoriesData()
     }
     
+    func deleteCarWithoutUser() {
+        localDatamanager?.localDeleteCartWithoutUser()
+    }
+    
+    
 
 }
 
@@ -28,5 +34,9 @@ extension HomeViewInteractor: HomeViewRemoteDataManagerOutputProtocol {
     func getCategoriesData(with data: [Categories]) {
         presenter?.pushData(with: data)
     }
+    
+}
+
+extension HomeViewInteractor : HomeViewLocalDataManagerOutputProtocol{
     
 }

@@ -21,6 +21,7 @@ class ShopingCarView: UIViewController, MyViewDelegate {
     var presenter: ShopingCarPresenterProtocol?
     var price = 0
     var carrito: [Product]?
+    var noUser : Int?
     @IBOutlet weak var tableCarProduct: UITableView!
     @IBOutlet weak var lblTotalPrice: UILabel!
     @IBOutlet weak var tabBar: TabBarNavigationButtons!
@@ -30,6 +31,7 @@ class ShopingCarView: UIViewController, MyViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        noUser = presenter?.noUser
         presenter?.viewDidLoad()
         tabBar.delegate = self
         viewCircle.layer.cornerRadius = viewCircle.frame.height / 2
@@ -41,11 +43,31 @@ class ShopingCarView: UIViewController, MyViewDelegate {
     func didTapButton(number: Int) {
         switch number{
         case 0:
+            
+            if noUser != 0{
             presenter?.showViewHome()
+            }else{
+                presenter?.showHomeUserViewWithoutUser(user: noUser!)
+            }
         case 1:
             print("Ya estas Aqui")
         case 2:
-            presenter?.showUserAccount()
+            if noUser != 0{
+              presenter?.showUserAccount()
+            }else{
+                let alert = UIAlertController(title: "No hay usuario", message: "No cuentas con un usuario, quieres ir al login?", preferredStyle: .alert)
+                
+                let action = UIAlertAction(title: "Si", style: .default) { [self] UIAlertAction in
+                    presenter?.deleteCarWithoutUser()
+                    self.view.window?.rootViewController?.dismiss(animated: true)
+                }
+                let cancel = UIAlertAction(title: "Cancelar", style: .cancel)
+                
+
+                alert.addAction(action)
+                alert.addAction(cancel)
+                present(alert, animated: true)
+            }
         default:
             print("Error")
         }

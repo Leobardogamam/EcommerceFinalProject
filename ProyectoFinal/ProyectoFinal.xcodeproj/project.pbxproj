@@ -22,6 +22,7 @@
 		6A8FFFBC282D9D6B009C9E73 /* EditCardViewRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8FFFB5282D9D6B009C9E73 /* EditCardViewRemoteDataManager.swift */; };
 		6A8FFFBD282D9D6B009C9E73 /* EditCardViewWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8FFFB6282D9D6B009C9E73 /* EditCardViewWireFrame.swift */; };
 		6A8FFFC0282D9DC9009C9E73 /* EditCardView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A8FFFBF282D9DC9009C9E73 /* EditCardView.storyboard */; };
+		6A8FFFC2282E136B009C9E73 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A8FFFC1282E136B009C9E73 /* Launch Screen.storyboard */; };
 		6AC0DB84282AABE600992919 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC0DB82282AABE600992919 /* Products.swift */; };
 		6AC0DB8F282AAC0400992919 /* ProductProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC0DB86282AAC0300992919 /* ProductProtocols.swift */; };
 		6AC0DB90282AAC0400992919 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC0DB87282AAC0400992919 /* ProductView.swift */; };
@@ -263,6 +264,7 @@
 		6A8FFFB5282D9D6B009C9E73 /* EditCardViewRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCardViewRemoteDataManager.swift; sourceTree = "<group>"; };
 		6A8FFFB6282D9D6B009C9E73 /* EditCardViewWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCardViewWireFrame.swift; sourceTree = "<group>"; };
 		6A8FFFBF282D9DC9009C9E73 /* EditCardView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditCardView.storyboard; sourceTree = "<group>"; };
+		6A8FFFC1282E136B009C9E73 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		6AC0DB82282AABE600992919 /* Products.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		6AC0DB86282AAC0300992919 /* ProductProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductProtocols.swift; sourceTree = "<group>"; };
 		6AC0DB87282AAC0400992919 /* ProductView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
@@ -526,6 +528,7 @@
 				97A49755282ABBE000ECDBF6 /* User */,
 				97A49754282ABBBF00ECDBF6 /* Login SingUp */,
 				6A1829032819D9FF004984D4 /* SceneDelegate.swift */,
+				6A8FFFC1282E136B009C9E73 /* Launch Screen.storyboard */,
 				6A1829012819D9FF004984D4 /* AppDelegate.swift */,
 				6A18290D2819DA01004984D4 /* Assets.xcassets */,
 				6A1829122819DA01004984D4 /* Info.plist */,
@@ -1137,6 +1140,7 @@
 				6A18290E2819DA01004984D4 /* Assets.xcassets in Resources */,
 				975B7810281A245C00AF96BD /* ViewPurchases.storyboard in Resources */,
 				975B77EC281A241900AF96BD /* ShopingCar.storyboard in Resources */,
+				6A8FFFC2282E136B009C9E73 /* Launch Screen.storyboard in Resources */,
 				6A8FFFC0282D9DC9009C9E73 /* EditCardView.storyboard in Resources */,
 				6AC0DBA2282AAC3300992919 /* ProductEditView.storyboard in Resources */,
 				6AC0DB94282AAC0400992919 /* ProductView.storyboard in Resources */,
