@@ -36,7 +36,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D9Z-VK-u2j">
-                                <rect key="frame" x="129" y="635" width="156.5" height="56"/>
+                                <rect key="frame" x="129" y="604" width="156.5" height="56"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -171,7 +171,7 @@
                             <constraint firstItem="iSL-Qp-TfW" firstAttribute="top" secondItem="qG0-B3-btr" secondAttribute="bottom" constant="12" id="j02-vF-XR6"/>
                             <constraint firstItem="iSL-Qp-TfW" firstAttribute="leading" secondItem="9Yl-Xc-A72" secondAttribute="leading" id="jMU-lU-pxM"/>
                             <constraint firstItem="a0k-V1-AZn" firstAttribute="top" secondItem="LJS-L4-U1x" secondAttribute="bottom" constant="8" symbolic="YES" id="mnW-CY-kvY"/>
-                            <constraint firstItem="D9Z-VK-u2j" firstAttribute="top" secondItem="iSL-Qp-TfW" secondAttribute="bottom" constant="91" id="nPI-Ue-H8L"/>
+                            <constraint firstItem="D9Z-VK-u2j" firstAttribute="top" secondItem="iSL-Qp-TfW" secondAttribute="bottom" constant="60" id="nPI-Ue-H8L"/>
                             <constraint firstItem="8SF-Ca-MkU" firstAttribute="centerX" secondItem="ddp-1X-CXI" secondAttribute="centerX" id="nRf-hK-TTo"/>
                             <constraint firstItem="D9Z-VK-u2j" firstAttribute="centerX" secondItem="ddp-1X-CXI" secondAttribute="centerX" id="pUh-xz-oxk"/>
                             <constraint firstItem="qG0-B3-btr" firstAttribute="leading" secondItem="9Yl-Xc-A72" secondAttribute="leading" constant="47" id="phY-FM-mM6"/>

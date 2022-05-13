@@ -21,7 +21,9 @@ class ProfileDetailView: UIViewController {
     @IBOutlet weak var view5: UIView!
     @IBOutlet weak var nameProfileLabel: UILabel!
     @IBOutlet weak var roleProfileLabel: UILabel!
-    @IBOutlet weak var emailProfileLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    var userDefault = UserDefaults()
+    
     
     // MARK: Lifecycle
 
@@ -35,6 +37,26 @@ class ProfileDetailView: UIViewController {
         view5.layer.cornerRadius = view5.frame.height / 2
         profileimageview.layer.cornerRadius = profileimageview.frame.height / 2
         presenter?.viewDidLoad()
+        
+        if let savedPerson = userDefault.object(forKey: "UserLogged") as? Data {
+            let decoder = JSONDecoder()
+            if let loadedPerson = try? decoder.decode(Users.self, from: savedPerson) {
+                roleProfileLabel.text = loadedPerson.role.capitalized
+                nameProfileLabel.text = loadedPerson.name.capitalized
+                emailLabel.text = loadedPerson.email
+                profileimageview.image = UIImage(named: "loading")
+                DispatchQueue.global(qos: .default).async {
+                        let url = URL(string: loadedPerson.avatar)
+                        guard let url = url else {return}
+                        let data = try? Data(contentsOf: url)
+                        DispatchQueue.main.async {
+                            guard let data = data else {return}
+                            self.profileimageview.image = UIImage(data: data)
+                        }
+                    }
+                   
+                }
+            }
     }
     @IBAction func backPressed(_ sender: Any) {
         self.dismiss(animated: true)
