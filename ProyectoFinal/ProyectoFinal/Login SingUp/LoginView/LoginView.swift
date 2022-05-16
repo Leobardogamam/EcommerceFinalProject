@@ -20,6 +20,7 @@ class LoginView: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passTextField: UITextField!
     var users : [Users]?
+    var flagUser = false
     
     // MARK: Lifecycle
 
@@ -66,20 +67,26 @@ class LoginView: UIViewController {
                 let action = UIAlertAction(title: "Ok", style: .default)
                 
        
+                flagUser = true
                 alert.addAction(action)
                 self.present(alert, animated: true)
                 break
                 
             }
             else{
-                let alert = UIAlertController(title: "Error", message: "Este usuario no esta registrado", preferredStyle: .alert)
+                flagUser = false
                 
-                let action = UIAlertAction(title: "Ok", style: .default)
-                
-       
-                alert.addAction(action)
-                self.present(alert, animated: true)
             }
+        }
+        
+        if flagUser == false{
+            let alert = UIAlertController(title: "Error", message: "Este usuario no esta registrado", preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "Ok", style: .default)
+            
+   
+            alert.addAction(action)
+            self.present(alert, animated: true)
         }
     }
     
